@@ -1,7 +1,6 @@
 # Mapper script
 ## Configuration
 ### source.json
-
 Le fichier `source.json` contient l'ensemble des source des donées qui vont être utilisées dans la création de la colleciton `fichers_event`.
 
 Ce fichier se présent comme ceci :
