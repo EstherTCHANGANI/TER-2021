@@ -1,10 +1,19 @@
+import argparse
 import json
+import os
 
 from pymongo import MongoClient
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
-def get_source():
-    with open('./source.json') as f:
+parser = argparse.ArgumentParser(description='Map collections to a unified event collection')
+parser.add_argument('--mapping', type=str, default=os.path.join(dir_path, './mapping.json'), nargs="?",
+                    help='The path of the mapping file')
+parser.add_argument('--source', type=str, default=os.path.join(dir_path, './source.json'), nargs="?",
+                    help='The path of the mapping file')
+
+def get_source(sourceFile):
+    with open(sourceFile) as f:
         return json.load(f)
 
 
@@ -20,8 +29,8 @@ def get_collection(source):
     return collection
 
 
-def get_mapping(sourceName: str):
-    with open('./mapping.json') as f:
+def get_mapping(mappingFile:str, sourceName: str):
+    with open(mappingFile) as f:
         return json.load(f)[sourceName]
 
 
@@ -35,7 +44,9 @@ def mapper(document: dict, mapping: dict, sourceName: str):
 
 
 if __name__ == '__main__':
-    sources = get_source()
+    args = parser.parse_args()
+
+    sources = get_source(args.source)
     collection_event = get_collection(
         {"hostname": "localhost", "port": "27017", "database": "admin", "collection": "fiches_event"})
 
@@ -44,7 +55,7 @@ if __name__ == '__main__':
     for source in sources:
         data = load_data_from_source(source)
         res = []
-        mapping = get_mapping(source["name"])
+        mapping = get_mapping(args.mapping, source["name"])
         for doc in data:
             res.append(mapper(doc, mapping, source["collection"]))
         collection_event.insert_many(res)
