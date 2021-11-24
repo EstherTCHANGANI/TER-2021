@@ -1,5 +1,4 @@
 FROM python:3-alpine
-
 WORKDIR /mapper
 
 COPY ./mapper.py ./main.py
