@@ -12,6 +12,7 @@ parser.add_argument('--mapping', type=str, default=os.path.join(dir_path, './map
 parser.add_argument('--source', type=str, default=os.path.join(dir_path, './source.json'), nargs="?",
                     help='The path of the mapping file')
 
+
 def get_source(sourceFile):
     with open(sourceFile) as f:
         return json.load(f)
@@ -29,7 +30,7 @@ def get_collection(source):
     return collection
 
 
-def get_mapping(mappingFile:str, sourceName: str):
+def get_mapping(mappingFile: str, sourceName: str):
     with open(mappingFile) as f:
         return json.load(f)[sourceName]
 
