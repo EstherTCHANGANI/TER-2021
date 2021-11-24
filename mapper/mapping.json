@@ -1,0 +1,10 @@
+{
+    "ina": {
+        "ID_notice": "id",
+        "Titre_propre": "titre"
+    },
+    "rai": {
+        "documento": "id",
+        "titolo_programma": "titre"
+    }
+}
