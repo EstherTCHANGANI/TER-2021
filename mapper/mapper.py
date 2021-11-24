@@ -1,7 +1,6 @@
 import argparse
 import json
 import os
-
 from pymongo import MongoClient
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
