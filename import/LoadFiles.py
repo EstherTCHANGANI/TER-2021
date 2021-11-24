@@ -1,8 +1,6 @@
 import json
-
 import pandas as pd
 import os
-
 import argparse
 
 from pymongo import MongoClient
