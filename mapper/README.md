@@ -26,11 +26,27 @@ Le fichier `mapping.json` défint comment les champs des différentes sources de
 ```json
 {
     "ina": {
-        "ID_notice": "id", # Champ de la source => champs dans fiches_event
-        "Titre_propre": "titre"
+        "id": "ID_notice", # Champs dans fiches_event => champ de la source
+        "titre": "Titre_propre",
+        "date_de_diffusion": {
+            "fields": ["Date_de_diffusion", "Heure_de_diffusion"], 
+          # Liste des champs qui seront passés en argument à la méthode suivante
+            "function": "lambda args : str(args[0]) + \" \" + str(args[1]) if len(args) > 1 else args[0]" 
+          # Fonction qui permet d'évaluer les champs précédents  
+        }
     }
  }
 ```
+
+Si le champ est une `string`, alors le champ correspondant dans le document initial est utilisé.
+
+Si le champ est un `objet`, alors :
+
+ - les `fields` sont récupérer dans le document initial
+ - la `function` est évaluée avec comme argument la liste des `fields` 
+ 
+Dans l'exemple ci-dessus, le champ `date_de_diffusion` vaudra `04/12/2005 13:02:40`, lorsque `Date_de_diffusion=04/12/2005` et `Heure_de_diffusion=13:02:40`. 
+
 
 ## Exceution
 

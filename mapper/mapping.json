@@ -1,10 +1,15 @@
 {
     "ina": {
-        "ID_notice": "id",
-        "Titre_propre": "titre"
+        "id": "ID_notice",
+        "titre": "Titre_propre",
+        "date_de_diffusion": {
+            "fields": ["Date_de_diffusion", "Heure_de_diffusion"],
+            "function": "lambda args : str(args[0]) + \" \" + str(args[1]) if len(args) > 1 else args[0]"
+        }
     },
     "rai": {
-        "documento": "id",
-        "titolo_programma": "titre"
+        "id": "documento",
+        "titre": "titolo_programma",
+        "date_de_diffusion": "Data Trasmissione"
     }
 }
