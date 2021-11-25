@@ -5,6 +5,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var configRouter = require('./routes/config');
+var sourceRouter = require('./routes/source');
+var mapperRouter = require('./routes/mapper');
 
 var app = express();
 
@@ -16,6 +18,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/config', configRouter);
+app.use("/source", sourceRouter)
+app.use("/mapper", mapperRouter)
 
 
 app.use((err, req,res, next) => {

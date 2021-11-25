@@ -1,5 +1,4 @@
 import mongoService from "./mongo.service";
-import NotFoundException from "../error/NotFound.error"
 
 class ConfigService {
 
