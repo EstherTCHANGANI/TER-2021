@@ -74,3 +74,6 @@ if __name__ == '__main__':
 
     if args.clear:
         os.rmdir(args.outputPath)
+# Etape principale realisée : 
+# Importation de Excel vers CSV
+# Importation de CSV vers Mangodb
