@@ -8,7 +8,7 @@ from pymongo import MongoClient
 parser = argparse.ArgumentParser(description='Load data into mongoDB collection')
 parser.add_argument('dataPath', metavar='dataPath', type=str,
                     help='The path of the directory containing the data')
-parser.add_argument('--outputPath', type=str, default="/tmp/ter-import", nargs="?",
+parser.add_argument('--outputPath', type=str, default="C:/Users/ibrah/Documents/TER/original_fils", nargs="?",
                     help='The path of the directory where the CSV files will be stored')
 parser.add_argument("--mongoUrl", type=str, default="mongodb://localhost:27017",
                     help="URL of the mongoDB server")
@@ -25,6 +25,7 @@ def csv_from_Excel(dir_path: str, file_name: str, output_dir: str):
 
     csv_file_name = os.path.join(output_dir, file_name.split(".")[0] + ".csv")
     read_file.to_csv(csv_file_name,
+                     encoding='utf-8',
                      index=None,
                      header=True)
     pd.DataFrame(pd.read_csv(csv_file_name))
