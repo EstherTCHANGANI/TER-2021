@@ -1,0 +1,28 @@
+section{
+  position:absolute;
+  margin-top: 5%;
+  margin-left: 15%;
+}
+
+section>mat-checkbox{
+  margin-left: 20px;
+}
+
+.Event{
+  color:black;
+}
+.Personality{
+  color:blue;
+}
+.Place{
+  color:red;
+}
+.Illustration{
+  color:green;
+}
+
+app-search-filters{
+  position:absolute;
+  margin-left: 73%;
+  margin-top: 15%;
+}
