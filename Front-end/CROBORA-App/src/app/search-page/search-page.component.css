@@ -1,15 +1,21 @@
 section{
+  display : flex;
   position:absolute;
-  margin-top: 5%;
-  margin-left: 15%;
+  margin-top: 4%;
 }
 
 section>mat-checkbox{
-  margin-left: 20px;
+  margin-left: 60px;
+}
+section>:first-child{
+  margin-left: 30px;
+}
+section> mat-checkbox, mat-checkbox-frame, mat-checkbox-checked, mat-checkbox-background {
+  transform: scale(1.5);
 }
 
 .Event{
-  color:black;
+  color:brown;
 }
 .Personality{
   color:blue;
@@ -25,4 +31,17 @@ app-search-filters{
   position:absolute;
   margin-left: 73%;
   margin-top: 15%;
+}
+
+.search-box{
+  display: flex;
+  position : fixed;
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 2rem;
+  margin-top: 8%;
+  margin-left: 12px;
+  width: 66%;
+  height: 70%;
+  overflow-y : scroll;
 }
