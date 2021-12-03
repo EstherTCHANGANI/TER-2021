@@ -12,11 +12,6 @@ interface Filter {
 })
 export class SearchFiltersComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
   databases: Filter[] = [
     {value: 'ina', viewValue: 'INA'},
     {value: 'rai', viewValue: 'RAI'},
@@ -25,11 +20,61 @@ export class SearchFiltersComponent implements OnInit {
   ];
 
   searchTypes: Filter[] = [
-    {value: 'clusters', viewValue: 'Clusters'},
-    {value: 'titles', viewValue: 'Titles'}
+    {value: 'cluster', viewValue: 'Clusters'},
+    {value: 'title', viewValue: 'Titles'}
   ];
 
-  selectedDatabase: string = this.databases[0].value;
-  selectedSearchType: string = this.searchTypes[0].value;
+  showTypes: Filter[] = [
+    {value: 'file', viewValue: 'Files'},
+    {value: 'thumbnail', viewValue: 'Thumbnails'}
+  ];
+
+  sortTypes: Filter[] = [
+    {value: 'relevance', viewValue: 'Relevance'},
+    {value: 'date', viewValue: 'Dates'},
+    {value: 'alphabetic', viewValue: 'Alphabetic'},
+  ];
+
+  selectedDatabase: string;
+  selectedSearchType: string;
+  selectedShowType: string;
+  selectedSortType: string;
+  searchingValue: string = '';
+
+  constructor() { 
+    this.selectedDatabase = this.databases[0].value;
+    this.selectedSearchType = this.searchTypes[0].value;
+    this.selectedShowType = this.showTypes[0].value;
+    this.selectedSortType = this.sortTypes[0].value;
+  }
+
+  ngOnInit(): void {
+    console.log(this.selectedDatabase);
+    console.log(this.selectedSearchType);
+    console.log(this.selectedShowType);
+    console.log(this.selectedSortType);
+  }
+
+  onDatabaseChange() {
+    console.log(this.selectedDatabase);
+  }
+
+  onSearchTypeChange() {
+    console.log(this.selectedSearchType);
+  }
+
+  onShowTypeChange() {
+    console.log(this.selectedShowType);
+  }
+
+  onSortTypeChange() {
+    console.log(this.selectedSortType);
+  }
+
+  onSearchKey(event: any) {
+    this.searchingValue = event.target.value;
+    console.log(this.searchingValue);
+  }
+
 
 }
