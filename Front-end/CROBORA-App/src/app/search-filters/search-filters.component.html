@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="database filter">
+        <h2>Database:</h2>
+        <mat-form-field appearance="fill">
+            <mat-select [(value)]="selectedDatabase">
+              <mat-option *ngFor="let database of databases" [value]="database.value">
+                {{database.viewValue}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="searchBy filter">
+        <h2>Search by:</h2>
+        <mat-form-field appearance="fill">
+            <mat-select [(value)]="selectedSearchType">
+              <mat-option *ngFor="let searchType of searchTypes" [value]="searchType.value">
+                {{searchType.viewValue}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>

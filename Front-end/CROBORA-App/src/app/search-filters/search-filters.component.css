@@ -1,0 +1,12 @@
+.container {
+    margin: 2px;
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 2rem;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
