@@ -10,6 +10,8 @@ router.get('/', async function (req, res, next) {
 });
 
 router.post("/file", upload.single("source"), async (req, res, next)=> {
+    console.log(req.file)
+    console.log(req.body)
     const collection = await sourceService.importFromFile(req.body.name, req.file)
     res.json(collection)
 })
