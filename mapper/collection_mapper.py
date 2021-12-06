@@ -92,8 +92,6 @@ if __name__ == '__main__':
 
     collection_event = get_collection(mongo_config, "fiches_event")
 
-    collection_event.drop()
-
     data = load_data_from_source(mongo_config, source["collection"])
     res = []
     print("Mapping collection: " + source["collection"])
