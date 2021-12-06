@@ -1,16 +1,19 @@
-section{
+body{
+  overflow-y: hidden;
+}
+
+.cluster-div{
   display : flex;
   position:absolute;
   margin-top: 4%;
 }
-
-section>mat-checkbox{
+.cluster-div>mat-checkbox{
   margin-left: 60px;
 }
-section>:first-child{
+.cluster-div>:first-child{
   margin-left: 30px;
 }
-section> mat-checkbox, mat-checkbox-frame, mat-checkbox-checked, mat-checkbox-background {
+.cluster-div> mat-checkbox, mat-checkbox-frame, mat-checkbox-checked, mat-checkbox-background {
   transform: scale(1.5);
 }
 
@@ -33,15 +36,10 @@ app-search-filters{
   margin-top: 15%;
 }
 
-.search-box{
-  display: flex;
-  position : fixed;
-  border: 3px solid black;
-  border-radius: 5px;
-  padding: 2rem;
-  margin-top: 8%;
-  margin-left: 12px;
-  width: 66%;
-  height: 70%;
-  overflow-y : scroll;
+mat-tab-group{
+  position: absolute;
+  margin-top: 6%;
+  width:70%;
+  height: 120% !important;
+  margin-left: 8px;
 }
