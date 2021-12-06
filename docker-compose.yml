@@ -3,15 +3,19 @@ version: "3.8"
 services:
   mongo-db:
     image: mongo
+    restart: unless-stopped
     container_name: mongo-db
     ports:
       - "27017:27017"
     volumes:
-      - mongo-data
+      - mongo-data:/data/db
 
   backend:
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile
     image: crobora-backend:latest
+    restart: unless-stopped
     container_name: crobora-backend
     depends_on:
       - mongo-db
