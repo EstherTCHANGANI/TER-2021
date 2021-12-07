@@ -24,3 +24,5 @@ hs_err_pid*
 
 backend/node_modules
 backend/public
+
+**/venv
