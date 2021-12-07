@@ -1,0 +1,52 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatTabsModule} from '@angular/material/tabs';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { SearchFiltersComponent } from './search-filters/search-filters.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchPageComponent } from './search-page/search-page.component';
+import { ListViewComponent } from './list-view/list-view.component';
+import { ClusterViewComponent } from './cluster-view/cluster-view.component';
+import { TreemapsComponent } from './treemaps/treemaps.component';
+import { DistributionComponent } from './distribution/distribution.component';
+import { ArchivePageComponent } from './observation-pages/archive-page/archive-page.component';
+import { ThumbnailsBoxComponent } from './observation-pages/archive/thumbnails-box/thumbnails-box.component';
+import { IndexCROBORABoxComponent } from './observation-pages/archive/index-crobora-box/index-crobora-box.component';
+import { OriginalinfoBoxComponent } from './observation-pages/archive/originalinfo-box/originalinfo-box.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    SearchFiltersComponent,
+    SearchPageComponent,
+    ListViewComponent,
+    ClusterViewComponent,
+    TreemapsComponent,
+    DistributionComponent,
+    ArchivePageComponent,
+    ThumbnailsBoxComponent,
+    IndexCROBORABoxComponent,
+    OriginalinfoBoxComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatCheckboxModule,
+    MatTabsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

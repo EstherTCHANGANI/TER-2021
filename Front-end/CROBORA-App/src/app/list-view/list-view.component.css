@@ -1,0 +1,9 @@
+.listview-box{
+  display: flex;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 2rem;
+  height: 68vh;
+  overflow-y : scroll;
+  margin-top: 0.5rem;
+}

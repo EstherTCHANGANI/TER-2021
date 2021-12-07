@@ -1,0 +1,79 @@
+body{
+  overflow: hidden;
+}
+
+.cluster-div{
+  display : flex;
+  position: relative;
+  top:4em;
+}
+.cluster-div>mat-checkbox{
+  margin-left: 40px;
+}
+.cluster-div>:first-child{
+  margin-left: 2rem;
+}
+.cluster-div> mat-checkbox, mat-checkbox-frame, mat-checkbox-checked, mat-checkbox-background {
+  transform: scale(1.3);
+}
+
+.Event{
+  color:brown;
+}
+.Personality{
+  color:blue;
+}
+.Place{
+  color:red;
+}
+.Illustration{
+  color:green;
+}
+
+/* app-search-filters{
+} */
+
+mat-tab-group{
+  margin-right: 1rem;
+}
+
+.flex-container {
+  display: flex;
+  position: relative;
+  top:4em;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+}
+
+.Event.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: brown;
+}
+.Personality.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: blue;
+}
+.Place.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: red;
+}
+.Illustration.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: green;
+}
+
+#user-icon{
+  display:flex;
+  float: right;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  top: 2em;
+  right:2em;
+}
+
+#user-icon>span{
+  font-size: 1.3em;
+}
+
+#user-icon>img{
+  height : 65px;
+  width : 65px;
+}

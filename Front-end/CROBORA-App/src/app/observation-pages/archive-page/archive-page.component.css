@@ -1,0 +1,50 @@
+body{
+  overflow:hidden;
+}
+
+mat-tab-group{
+  margin-right: 1rem;
+}
+
+.flex-container {
+  display: flex;
+  position: relative;
+  top:3em;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+}
+
+.flex-container>a{
+  position: relative;
+  display: flex;
+}
+
+#archive-title{
+  position: relative;
+  display:flex;
+  top: 1em;
+  left : 1rem;
+  font-weight: bold;
+  font-size: 3em;
+  font: w3-cursive;
+}
+
+#user-icon{
+  display:flex;
+  float: right;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  top: 2em;
+  right:2em;
+}
+
+#user-icon>span{
+  font-size: 1.3em;
+}
+
+#user-icon>img{
+  height : 65px;
+  width : 65px;
+}
