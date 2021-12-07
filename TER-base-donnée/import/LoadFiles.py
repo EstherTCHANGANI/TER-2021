@@ -77,12 +77,23 @@ def elimanate_extra_space(filename):
     wb.save(filename)
 
 
-def eliminate_duplicate_lines(filename):
-    data = pd.read_excel(filename)
-    data = data.drop_duplicates(subset=None)
-    data.to_excel(filename)
+#on peux appliquer cette fonction au cas ou on est sure que nos fichies contient qu'une seule fuielle
+#def eliminate_duplicate_lines(filename):
+    #data = pd.read_excel(filename)
+    #data = data.drop_duplicates(subset=None)
+    #data.to_excel(filename)
 
+#La fonction delete_duplicated_column permet de supprimer les lignes qui contient les memes données pour tous les champs en parcourant tous les fuielles de fichier excel 
 
+def delete_duplicated_column(filename):
+    excel_file = pd.ExcelFile(filename)
+    sheets = excel_file.sheet_names
+    for sheet in sheets:               # loop through sheets inside an Excel file
+        df = excel_file.parse(sheet_name = sheet)
+        df_total = df.drop_duplicates(subset=None)
+        df_total.to_excel(f"{file}")
+
+        
 def sanitize_file(file_path):
     with open(file_path, 'r') as fin:
         lines = fin.read().splitlines(True)
