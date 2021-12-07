@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ViewEncapsulation } from '@angular/core'
 import {ThemePalette} from '@angular/material/core';
+import { ViewEncapsulation } from '@angular/core';
 
 export interface Task {
   name: string;

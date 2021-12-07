@@ -1,0 +1,29 @@
+<div id="user-icon">
+  <span>John Doe</span>
+  <img src="../../assets/images/profil.png" alt="user icon">
+</div>
+
+<h1 id='archive-title'>50 d'amitiés franco-allemandes</h1>
+
+<div class="flex-container">
+  <mat-tab-group mat-align-tabs="end">
+    <mat-tab label="Thumbnails">
+      <ng-template matTabContent>
+        <app-thumbnails-box></app-thumbnails-box>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Original informations">
+      <ng-template matTabContent>
+        <app-originalinfo-box></app-originalinfo-box>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="index CROBORA">
+      <ng-template matTabContent>
+        <app-index-crobora-box></app-index-crobora-box>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+
+  <a>link to video</a>
+
+</div>

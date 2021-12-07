@@ -16,6 +16,10 @@ import { ListViewComponent } from './list-view/list-view.component';
 import { ClusterViewComponent } from './cluster-view/cluster-view.component';
 import { TreemapsComponent } from './treemaps/treemaps.component';
 import { DistributionComponent } from './distribution/distribution.component';
+import { ArchivePageComponent } from './observation-pages/archive-page/archive-page.component';
+import { ThumbnailsBoxComponent } from './observation-pages/archive/thumbnails-box/thumbnails-box.component';
+import { IndexCROBORABoxComponent } from './observation-pages/archive/index-crobora-box/index-crobora-box.component';
+import { OriginalinfoBoxComponent } from './observation-pages/archive/originalinfo-box/originalinfo-box.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,10 @@ import { DistributionComponent } from './distribution/distribution.component';
     ClusterViewComponent,
     TreemapsComponent,
     DistributionComponent,
+    ArchivePageComponent,
+    ThumbnailsBoxComponent,
+    IndexCROBORABoxComponent,
+    OriginalinfoBoxComponent,
   ],
   imports: [
     BrowserModule,
