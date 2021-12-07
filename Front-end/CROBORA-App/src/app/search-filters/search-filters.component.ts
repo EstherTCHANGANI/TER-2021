@@ -4,6 +4,10 @@ interface Filter {
   value: string;
   viewValue: string;
 }
+interface Cluster {
+  value: string;
+  type: string;
+}
 
 @Component({
   selector: 'app-search-filters',
@@ -34,6 +38,22 @@ export class SearchFiltersComponent implements OnInit {
     {value: 'date', viewValue: 'Dates'},
     {value: 'alphabetic', viewValue: 'Alphabetic'},
   ];
+
+  clusterList: Cluster[] = [
+    {value: 'Treaty', type: 'event'},
+    {value: 'Treaty of Rome', type: 'event'},
+    {value: 'Referendum', type: 'event'},
+    {value: 'Charles de Gaulle', type: 'personality'},
+    {value: 'Robert Schuman', type: 'personality'},
+    {value: 'François Mitterrand', type: 'personality'},
+    {value: 'François Hollande', type: 'personality'},
+    {value: 'Angela Merkel', type: 'personality'},
+    {value: 'Portugal', type: 'place'},
+    {value: 'Paris', type: 'place'},
+    {value: 'Lisbonne', type: 'place'},
+    {value: 'Accident', type: 'ilustration'},
+    {value: 'Factory', type: 'ilustration'}
+  ]
 
   selectedDatabase: string;
   selectedSearchType: string;
