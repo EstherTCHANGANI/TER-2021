@@ -85,13 +85,15 @@ def elimanate_extra_space(filename):
 
 #La fonction delete_duplicated_column permet de supprimer les lignes qui contient les memes données pour tous les champs en parcourant tous les fuielles de fichier excel 
 
-def delete_duplicated_column(filename):
-    excel_file = pd.ExcelFile(filename)
-    sheets = excel_file.sheet_names
-    for sheet in sheets:               # loop through sheets inside an Excel file
-        df = excel_file.parse(sheet_name = sheet)
-        df_total = df.drop_duplicates(subset=None)
-        df_total.to_excel(f"{file}")
+def eliminate_duplicate_lines(file):
+    sheets = []
+    donnees_xlsx = pd.ExcelFile(file)
+    sheets_name = donnees_xlsx.sheet_names
+    for sheet in sheets_name:
+        excel_data_df = pd.read_excel(file, sheet)
+        excel_data_df = excel_data_df.fillna(method='ffill', axis=0)
+        excel_data_df = excel_data_df.drop_duplicates(subset=None)
+        sheets.append(excel_data_df)
 
         
 def sanitize_file(file_path):
