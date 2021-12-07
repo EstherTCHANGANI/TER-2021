@@ -1,5 +1,4 @@
 import argparse
-import json
 import os
 from pymongo import MongoClient
 
