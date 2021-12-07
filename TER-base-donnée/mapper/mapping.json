@@ -1,15 +1,28 @@
 {
-    "ina": {
-        "id": "ID_notice",
+     "ina": {
+        "id": "ID Notice",
         "titre": "Titre_propre",
-        "date_de_diffusion": {
-            "fields": ["Date_de_diffusion", "Heure_de_diffusion"],
+        "date de diffusion": {
+            "fields": [
+                "Date_de_diffusion",
+                "Heure_de_diffusion"
+            ],
             "function": "lambda args : str(args[0]) + \" \" + str(args[1]) if len(args) > 1 else args[0]"
-        }
+        },
+        "canal de transmission": "France 2",
+        "duree": "Duree",
+        "Date_de_diffusion_meta": "Date_de_diffusion_meta",
+        "Image": "Image",
+        "Evenement"	: "Evenement",
+        "Lieu"	: "Lieu",
+        "Illustration":	"Illustration",
+        "Date et lieu de consultation" : "Date et lieu de consultation"
     },
-    "rai": {
-        "id": "documento",
-        "titre": "titolo_programma",
-        "date_de_diffusion": "Data Trasmissione"
+   "rai": {
+        "id": "Documento",
+        "titre": "Titolo Programma",
+        "date de diffusion": "Data Trasmissione",
+        "canal de transmission":"Canale Trasmissione",
+        "duree":"Durata"
     }
 }
