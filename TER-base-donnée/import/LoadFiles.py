@@ -77,10 +77,15 @@ def elimanate_extra_space(filename):
     wb.save(filename)
 
 
-def eliminate_duplicate_lines(filename):
-    data = pd.read_excel(filename)
-    data = data.drop_duplicates(subset=None)
-    data.to_excel(filename)
+def eliminate_duplicate_lines(file):
+    sheets = []
+    donnees_xlsx = pd.ExcelFile(file)
+    sheets_name = donnees_xlsx.sheet_names
+    for sheet in sheets_name:
+        excel_data_df = pd.read_excel(file, sheet)
+        excel_data_df = excel_data_df.fillna(method='ffill', axis=0)
+        excel_data_df = excel_data_df.drop_duplicates(subset=None)
+        sheets.append(excel_data_df)
 
 
 def sanitize_file(file_path):
