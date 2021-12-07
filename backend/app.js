@@ -25,9 +25,9 @@ app.use("/mapper", mapperRouter)
 app.use("/search", searchRouter)
 app.use("/cluster", clusterRouter)
 
-app.use((err, req,res, next) => {
-    if(err) {
-        
+app.use((err, req, res, next) => {
+    if (err) {
+        console.error(err)
     }
     next()
 })

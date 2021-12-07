@@ -16,5 +16,5 @@ npm i
 
 ## Lancement de l'application en mode développeur
 ```bash
-npm start
+MAPPER_PATH=<chemin_du_collection_mapper.py> npm start
 ```

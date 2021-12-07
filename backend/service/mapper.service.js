@@ -1,16 +1,28 @@
-import mongoService from "./mongo.service";
+import childProcess from "child_process"
 
 class MapperService {
 
+    constructor() {
+        this.maperPath  = process.env.MAPPER_PATH || "/mapper/mapper.py";
+        this.pythonExecutor  = process.env.PYTHON_EXECUTOR || "python3";
+    }
+
     /**
      * 
-     * @param {Object[]} sources 
+     * @param {Object[]} sourceNames 
      */
-    mapFromSources(sources) {
-        const events = mongoService.getCollection("fiches_event")
-        source.map(source=> {
-            console.log(source)
-        })
+    async mapFromSources(sourceNames) {
+        await Promise.all(sourceNames.map(sourceName =>
+            new Promise((resolve, reject) => childProcess.exec(`python3 ${this.maperPath} ${sourceName}`,
+                (err) => {
+                    if (!!err) {
+                        reject(err)
+                    } else {
+                        resolve()
+                    }
+                })
+            ))
+        )
     }
 
 
