@@ -1,5 +1,8 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {FormControl} from '@angular/forms';
+import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
+import {MatChipInputEvent} from '@angular/material/chips';
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
@@ -63,12 +66,16 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     {value: 'Factory', type: 'ilustration'}
   ];
 
+  // variables for search bar :
+
+  // @ViewChild('clusterInput', {static: true}) clusterInput: ElementRef<HTMLInputElement>;
+
   clusterListFilteredByTypes: Cluster[] = [];
   clusterListFilteredByEvent: Cluster[] = [];
   clusterListFilteredByPersonality: Cluster[] = [];
   clusterListFilteredByPlace: Cluster[] = [];
   clusterListFilteredByIllustration: Cluster[] = [];
-  filteredClusters: Observable<Cluster[]> | undefined;
+  filteredClusters?: Observable<Cluster[]>;
 
   myControl = new FormControl();
   selectedDatabase: string;
@@ -76,6 +83,16 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   selectedShowType: string;
   selectedSortType: string;
   searchingValue: string = '';
+
+  // variables for cluster chips :
+
+  selectedClusters: string[] = [];
+  visible: boolean = true;
+  selectable: boolean = true;
+  removable: boolean = true;
+  separatorKeysCodes: number[] = [ENTER, COMMA];
+  lastColorChip: string;
+  actualColorChip: string;
 
   constructor() { 
     this.selectedDatabase = this.databases[0].value;
@@ -99,6 +116,9 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     // console.log(this.selectedSortType);
   }
 
+  /**
+   * Functions related to search Bar :
+   */
   private filterClustersByType() {
       this.clusterListFilteredByEvent = this.clusterList.filter(cluster => cluster.type === 'event');
       this.clusterListFilteredByPersonality = this.clusterList.filter(cluster => cluster.type === 'personality');
@@ -111,7 +131,7 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     this.filteredClusters = this.myControl.valueChanges
     .pipe(
       startWith(''),
-      map(cluster => typeof cluster === 'string' ? cluster : cluster.value),
+      // map(cluster => typeof cluster === 'string' ? cluster : cluster.value),
       map(value => value ? this._filter(value) : this.clusterListFilteredByTypes.slice())
     );
   }
@@ -149,6 +169,89 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
       document.querySelector('.searchBar')?.classList.add('disabled');
       document.querySelector('.searchBarDisabled')?.classList.remove('disabled');
     }
+  }
+
+  /**
+   * Functions related to Cluster Chips :
+   */
+   addChip(event: MatChipInputEvent): void {
+    const input = event.input;
+    const value = event.value;
+    // Add a cluster
+    if ((value || '').trim()) {
+      this.selectedClusters.push(value.trim());
+    }
+    // Reset the input value
+    if (input) {
+      input.value = '';
+    }
+    this.myControl.setValue(null);
+  }
+
+  removeChip(cluster: string): void {
+    const index = this.selectedClusters.indexOf(cluster);
+    if (index >= 0) {
+      this.selectedClusters.splice(index, 1);
+    }
+    console.log(this.selectedClusters);
+  }
+
+  selectedChip(event: MatAutocompleteSelectedEvent): void {
+    const clusterSelected = event.option.viewValue;
+    this.selectedClusters.push(clusterSelected);
+    // document.getElementById('clusterInput').textContent = '';
+    this.myControl.setValue(null);
+    console.log(this.selectedClusters);
+    let chipElement = document.querySelectorAll('.mat-chip');
+    let lastChild = chipElement[chipElement.length - 1];
+    this.lastColorChip = this.actualColorChip;
+    if(this.getClusterTypeByValue(clusterSelected) === 'event') {
+      this.actualColorChip = 'brown';
+    }
+    else if(this.getClusterTypeByValue(clusterSelected) === 'personality') {
+      this.actualColorChip = 'blue';
+    }
+    else if(this.getClusterTypeByValue(clusterSelected) === 'place') {
+      this.actualColorChip = 'red';
+    }
+    else if(this.getClusterTypeByValue(clusterSelected) === 'illustration') {
+      this.actualColorChip = 'green';
+    }
+    // adding css class dynamically
+    if(chipElement.length > 0 && !lastChild.classList.contains('eventChip') && !lastChild.classList.contains('personalityChip') && !lastChild.classList.contains('placeChip') && !lastChild.classList.contains('illustrationChip')) {
+      if(this.lastColorChip === 'brown') {
+        lastChild.classList.add('eventChip');
+      }
+      else if(this.lastColorChip === 'blue') {
+        lastChild.classList.add('personalityChip');
+      }
+      else if(this.lastColorChip === 'red') {
+        lastChild.classList.add('placeChip');
+      }
+      else if(this.lastColorChip === 'green') {
+        lastChild.classList.add('illustrationChip');
+      }
+    }
+  }
+
+  private getClusterTypeByValue(value: string): string {
+    const isEvent = this.clusterListFilteredByEvent.some(cluster => cluster.value === value)
+    if(isEvent) {
+      return 'event';
+    }
+    const isPersonality = this.clusterListFilteredByPersonality.some(cluster => cluster.value === value)
+    if(isPersonality) {
+      return 'personality';
+    }
+    const isPlace = this.clusterListFilteredByPlace.some(cluster => cluster.value === value)
+    if(isPlace) {
+      return 'place';
+    }
+    const isIllustration = this.clusterListFilteredByIllustration.some(cluster => cluster.value === value)
+    if(isIllustration) {
+      return 'illustration';
+    }
+    return 'no-type';
   }
 
   onDatabaseChange() {
