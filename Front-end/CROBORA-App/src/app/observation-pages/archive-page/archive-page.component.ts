@@ -14,4 +14,7 @@ export class ArchivePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addToFav():void{
+
+  }
 }
