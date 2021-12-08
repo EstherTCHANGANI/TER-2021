@@ -6,7 +6,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatTabsModule} from '@angular/material/tabs';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
+import {MatAutocompleteModule} from '@angular/material/autocomplete'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchFiltersComponent } from './search-filters/search-filters.component';
@@ -44,7 +46,10 @@ import { OriginalinfoBoxComponent } from './observation-pages/archive/originalin
     MatInputModule,
     MatIconModule,
     MatCheckboxModule,
-    MatTabsModule
+    MatTabsModule,
+    MatAutocompleteModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import {FormControl} from '@angular/forms';
+import { Observable } from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 
 interface Filter {
   value: string;
@@ -14,7 +17,12 @@ interface Cluster {
   templateUrl: './search-filters.component.html',
   styleUrls: ['./search-filters.component.css']
 })
-export class SearchFiltersComponent implements OnInit {
+export class SearchFiltersComponent implements OnInit, OnChanges {
+
+  @Input() eventChecked?: boolean;
+  @Input() personalityChecked?: boolean;
+  @Input() placeChecked?: boolean;
+  @Input() illustrationChecked?: boolean;
 
   databases: Filter[] = [
     {value: 'ina', viewValue: 'INA'},
@@ -53,8 +61,16 @@ export class SearchFiltersComponent implements OnInit {
     {value: 'Lisbonne', type: 'place'},
     {value: 'Accident', type: 'ilustration'},
     {value: 'Factory', type: 'ilustration'}
-  ]
+  ];
 
+  clusterListFilteredByTypes: Cluster[] = [];
+  clusterListFilteredByEvent: Cluster[] = [];
+  clusterListFilteredByPersonality: Cluster[] = [];
+  clusterListFilteredByPlace: Cluster[] = [];
+  clusterListFilteredByIllustration: Cluster[] = [];
+  filteredClusters: Observable<Cluster[]> | undefined;
+
+  myControl = new FormControl();
   selectedDatabase: string;
   selectedSearchType: string;
   selectedShowType: string;
@@ -68,11 +84,71 @@ export class SearchFiltersComponent implements OnInit {
     this.selectedSortType = this.sortTypes[0].value;
   }
 
-  ngOnInit(): void {
-    console.log(this.selectedDatabase);
-    console.log(this.selectedSearchType);
-    console.log(this.selectedShowType);
-    console.log(this.selectedSortType);
+  ngOnInit() {
+    this.activateSearchBar();
+    this.filterClustersByType();
+    this.autoCompleteClusters();
+  }
+
+  ngOnChanges(): void {
+    this.activateSearchBar();
+    this.autoCompleteClusters();
+    // console.log(this.selectedDatabase);
+    // console.log(this.selectedSearchType);
+    // console.log(this.selectedShowType);
+    // console.log(this.selectedSortType);
+  }
+
+  private filterClustersByType() {
+      this.clusterListFilteredByEvent = this.clusterList.filter(cluster => cluster.type === 'event');
+      this.clusterListFilteredByPersonality = this.clusterList.filter(cluster => cluster.type === 'personality');
+      this.clusterListFilteredByPlace = this.clusterList.filter(cluster => cluster.type === 'place');
+      this.clusterListFilteredByIllustration = this.clusterList.filter(cluster => cluster.type === 'ilustration');
+  }
+
+  private autoCompleteClusters() {
+    this.filterClustersWithCheckboxValues();
+    this.filteredClusters = this.myControl.valueChanges
+    .pipe(
+      startWith(''),
+      map(cluster => typeof cluster === 'string' ? cluster : cluster.value),
+      map(value => value ? this._filter(value) : this.clusterListFilteredByTypes.slice())
+    );
+  }
+
+  private filterClustersWithCheckboxValues() {
+    this.clusterListFilteredByTypes = [];
+    if(this.eventChecked) {
+      this.clusterListFilteredByTypes.push(...this.clusterListFilteredByEvent);
+    }
+    if(this.personalityChecked) {
+      this.clusterListFilteredByTypes.push(...this.clusterListFilteredByPersonality);
+    } 
+    if(this.placeChecked) {
+      this.clusterListFilteredByTypes.push(...this.clusterListFilteredByPlace);
+    }
+    if(this.illustrationChecked) {
+      this.clusterListFilteredByTypes.push(...this.clusterListFilteredByIllustration);
+    }
+  }
+
+  private _filter(value: string): Cluster[] {
+    const filterValue = value.toLowerCase();
+    return this.clusterListFilteredByTypes.filter(cluster => cluster.value.toLowerCase().indexOf(filterValue) === 0);
+  }
+
+  displayFn(cluster: Cluster): string {
+    return cluster && cluster.value ? cluster.value : '';
+  }
+
+  private activateSearchBar() {
+    if(this.eventChecked || this.personalityChecked || this.placeChecked || this.illustrationChecked) {
+      document.querySelector('.searchBarDisabled')?.classList.add('disabled');
+      document.querySelector('.searchBar')?.classList.remove('disabled');
+    } else {
+      document.querySelector('.searchBar')?.classList.add('disabled');
+      document.querySelector('.searchBarDisabled')?.classList.remove('disabled');
+    }
   }
 
   onDatabaseChange() {
@@ -95,6 +171,5 @@ export class SearchFiltersComponent implements OnInit {
     this.searchingValue = event.target.value;
     console.log(this.searchingValue);
   }
-
 
 }

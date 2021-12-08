@@ -9,12 +9,24 @@
             </mat-select>
         </mat-form-field>
     </div>
-    <div class="searchBar filter">
+    <div class="searchBar filter disabled">
         <mat-form-field appearance="outline">
             <mat-label>Search</mat-label>
-            <input matInput type="text" placeholder="Enter a keyword" (keyup)="onSearchKey($event)">
+            <input matInput type="text" placeholder="Enter a keyword" [matAutocomplete]="auto" [formControl]="myControl">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let cluster of filteredClusters | async" [value]="cluster.value">
+                {{cluster.value}}
+              </mat-option>
+            </mat-autocomplete>
             <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
+    </div>
+    <div class="searchBarDisabled filter">
+      <mat-form-field appearance="outline">
+        <mat-label>Search</mat-label>
+        <input matInput type="text" placeholder="Enter a keyword" [disabled]="true">
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
     </div>
     <div class="searchBy filter">
         <h2>Search by:</h2>

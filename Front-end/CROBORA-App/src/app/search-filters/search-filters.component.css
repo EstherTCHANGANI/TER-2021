@@ -15,6 +15,12 @@
 .searchBar mat-form-field {
     width: 80%;
 }
+.searchBarDisabled mat-form-field {
+    width: 80%;
+}
+.searchBarDisabled mat-icon {
+    color: rgb(179, 179, 179);
+}
 
 mat-form-field {
      width: 50%;
@@ -22,4 +28,8 @@ mat-form-field {
 
 h2 {
     font-size: 1rem;
+}
+
+.disabled {
+    display: none ;
 }

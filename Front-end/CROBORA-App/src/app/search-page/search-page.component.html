@@ -1,13 +1,14 @@
-<div id="user-icon">
-  <span>John Doe</span>
-  <img src="../../assets/images/profil.png" alt="user icon">
-</div>
-
-<div class="cluster-div">
-  <mat-checkbox class="Event">Event</mat-checkbox>
-  <mat-checkbox class="Personality">Personality</mat-checkbox>
-  <mat-checkbox class="Place">Place</mat-checkbox>
-  <mat-checkbox class="Illustration" >Illustration</mat-checkbox>
+<div class="top-container">
+  <div class="cluster-div">
+    <mat-checkbox class="Event" (change)="toggleEventCheckbox($event)">Event</mat-checkbox>
+    <mat-checkbox class="Personality" (change)="togglePersonalityCheckbox($event)">Personality</mat-checkbox>
+    <mat-checkbox class="Place" (change)="togglePlaceCheckbox($event)">Place</mat-checkbox>
+    <mat-checkbox class="Illustration" (change)="toggleIllustrationCheckbox($event)" >Illustration</mat-checkbox>
+  </div>
+  <div id="user-icon">
+    <span>John Doe</span>
+    <img src="../../assets/images/profil.png" alt="user icon">
+  </div>
 </div>
 
 <div class="flex-container">
@@ -34,5 +35,7 @@
     </mat-tab>
   </mat-tab-group>
 
-  <app-search-filters></app-search-filters>
+  <app-search-filters 
+    [eventChecked]="eventChecked" [personalityChecked]="personalityChecked" [placeChecked]="placeChecked" [illustrationChecked]="illustrationChecked">
+  </app-search-filters>
 </div>
