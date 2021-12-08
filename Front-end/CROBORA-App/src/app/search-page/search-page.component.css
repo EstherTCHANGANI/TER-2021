@@ -61,14 +61,17 @@ mat-tab-group{
   display:flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 1rem;
+  top: 2em;
+  right:2em;
 }
 
 #user-icon>span{
+  position:relative;
   font-size: 1.3em;
+  bottom:1.3em;
 }
-
-#user-icon>img{
+#user-icon>mat-icon{
   height : 65px;
   width : 65px;
+  font-size: 65px;
 }
