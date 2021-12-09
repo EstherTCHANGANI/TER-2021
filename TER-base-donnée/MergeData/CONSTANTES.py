@@ -85,7 +85,7 @@ COLONNES_METADONNEES_RAI_1330 = {"ID Notice": "ID_notice",
                                  "Note ": "Note"
                                  }
 
-COLONNES_FICHES_RAIUNO_1330 = {"Documento": "Documento",
+COLONNES_FICHES_RAIUNO_1330 = {"Documento": "ID Notice",
                                "Titolo Programma": "Titolo_programma",
                                "Titolo Sequenza/Servizio": "Titolo_sequenza/servizio",
                                "Canale Trasmissione": "Canale_trasmissione",
@@ -93,7 +93,7 @@ COLONNES_FICHES_RAIUNO_1330 = {"Documento": "Documento",
                                "Durata": "Durata",
                                "Contenuto Audio": "Contenuto_audio",
                                "Contenuto Video": "Contenuto_video",
-                               "Identificatore Teca": "ID Notice",
+                               "Identificatore Teca": "Identificatore_teca",
                                "Note ": "Note",
                                "Time Start": "Time_start",
                                "Time Stop": "Time_stop"
@@ -114,7 +114,7 @@ COLONNES_METADONNEES_RAI_2000 = {"ID Notice": "ID_notice",
                                  "Date and Place of Research": "Date_and_Place_of_Research"
                                  }
 
-COLONNES_FICHES_RAIUNO_20 = {"Documento": "Documento",
+COLONNES_FICHES_RAIUNO_20 = {"Documento": "ID Notice",
                              "Titolo Programma": "Titolo_programma",
                              "Titolo Sequenza/Servizio": "Titolo_sequenza/servizio",
                              "Canale Trasmissione": "Canale_trasmissione",
@@ -122,7 +122,7 @@ COLONNES_FICHES_RAIUNO_20 = {"Documento": "Documento",
                              "Durata": "Durata",
                              "Contenuto Audio": "Contenuto_audio",
                              "Contenuto Video": "Contenuto_video",
-                             "Identificatore Teca": "ID Notice",
+                             "Identificatore Teca": "Identificatore_teca",
                              "Time Start": "Time_start",
                              "Time Stop": "Time_stop"
 

@@ -2,6 +2,7 @@
 
 from CONSTANTES import *
 
+import pandas
 import pandas as pd
 
 

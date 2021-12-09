@@ -22,15 +22,25 @@ Le fichier `mapping.json` défint comment les champs des différentes sources de
 
 ```json
 {
-    "ina": {
-        "id": "ID_notice", # Champs dans fiches_event => champ de la source
+   "ina": {
+        "id": "ID Notice",
         "titre": "Titre_propre",
-        "date_de_diffusion": {
-            "fields": ["Date_de_diffusion", "Heure_de_diffusion"], 
-          # Liste des champs qui seront passés en argument à la méthode suivante
-            "function": "lambda args : str(args[0]) + \" \" + str(args[1]) if len(args) > 1 else args[0]" 
-          # Fonction qui permet d'évaluer les champs précédents  
-        }
+        "date de diffusion": {
+            "fields": [
+                "Date_de_diffusion",
+                "Heure_de_diffusion"
+            ],
+            "function": "lambda args : str(args[0]) + \" \" + str(args[1]) if len(args) > 1 else args[0]"
+        },
+        "canal de transmission": "France 2",
+        "duree": "Duree",
+        "Date_de_diffusion_meta": "Date_de_diffusion_meta",
+        "Image": "Image",
+        "Personnalite": "Personnalité",
+        "Evenement"	: "Evenement",
+        "Lieu"	: "Lieu",
+        "Illustration":	"Illustration",
+        "Date et lieu de consultation" : "Date_et_lieu_de_consultation"
     }
  }
 ```
@@ -57,3 +67,11 @@ Lancer le script :
 ```bash
 $ python3 mapper.py
 ```
+# Merge des données 
+Pour realiser le merge des données avec leur metadonnées il suffit de lancer le script en utilisant 
+la commande python3 merge_donnee_metadonnee.py
+
+### Remarque :
+1. La configuration des chemins et parametres de ces etapes se realisent au niveau de fichier constantes.py
+2. Le script generalisée de merge est merge_donnee_metadonnee.py
+3. Le fichier merge_metadonnee_RAI.py est un cas special de merge ou on peux avoir plusieurs source des données

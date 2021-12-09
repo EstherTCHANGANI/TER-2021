@@ -24,10 +24,13 @@ FICHES_INA = "Fiches_INA.xlsx"
 META_DONNEES_INA = "MetaDonnees_INA.xlsx"
 
 # Configuration de fichier de donnéé avec le fichier de ces methadonnée en  specifiant le champs ou on veut faire le merge
-file_name = "Fiches_INA.csv"
+file_name = "Data/Fiches/Fiches_INA.csv"
 fiche_name = "MetaDonnees_INA.csv"
 champs = "ID Notice"
 
+# configuration de la base de donnée
+db_url = "mongodb://localhost:27017"
+db_name = "TER"
 # Variable
 UNNAMED = "Unnamed"
 
