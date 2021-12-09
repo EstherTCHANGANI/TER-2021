@@ -7,4 +7,4 @@ On lance le script d'importation des fichiers vers mongo db en utilisant la comm
 Python3 LoadFile.py
 
 ### Remarque :
-La configuration des chemins et parametres de ces etapes se realisent au niveau de fichier constantes.py
+La configuration des chemins et parametres de ces etapes se realisent au niveau de fichier CONSTANTES.py
