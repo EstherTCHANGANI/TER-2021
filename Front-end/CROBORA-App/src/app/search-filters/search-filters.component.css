@@ -2,7 +2,9 @@
     margin: 2px;
     border: 2px solid black;
     border-radius: 10px;
-    padding: 2rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .filter {

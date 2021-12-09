@@ -33,19 +33,20 @@ mat-tab-group{
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
   margin: -1rem 2rem 2rem 2rem;
 }
 #list-view>div{
-  width: 74em;
+  width: 65vw;
 }
 #cluster-view>div{
-  width: 74em;
+  width: 65vw;
 }
 #treemaps>div{
-  width: 74em;
+  width: 65vw;
 }
 #distribution>div{
-  width: 74em;
+  width: 65vw;
 }
 
 
@@ -88,4 +89,8 @@ mat-tab-group{
   height : 65px;
   width : 65px;
   font-size: 65px;
+}
+
+app-search-filters {
+  width: 25vw;
 }

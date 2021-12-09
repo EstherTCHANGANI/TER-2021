@@ -90,7 +90,7 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   visible: boolean = true;
   selectable: boolean = true;
   removable: boolean = true;
-  separatorKeysCodes: number[] = [ENTER, COMMA];
+  separatorKeysCodes: number[] = [];
   lastColorChip: string;
   actualColorChip: string;
 
