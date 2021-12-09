@@ -18,7 +18,7 @@ class ClusterService {
         const events = mockData;
 
         if (_.isEmpty(clusters) || _.isEmpty(keywords)) {
-            return events;
+            return _.groupBy(events, "Événement");
         }
 
         const filteredEvent = events.filter(event =>

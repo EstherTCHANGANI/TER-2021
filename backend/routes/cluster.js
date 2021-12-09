@@ -7,8 +7,23 @@ const _ = require("lodash")
 
 
 router.get("", async (req, res, next) => {
-    const clusters = _.isArray(req.query.cluster) ? req.query.cluster : [req.query.cluster];
-    const keywords = _.isArray(req.query.keyword) ? req.query.keyword : [req.query.keyword];
+    let clusters;
+    let keywords;
+    if (req.query.cluster === undefined){
+        clusters = []
+    }
+    else {
+        clusters = _.isArray(req.query.cluster) ? req.query.cluster : [req.query.cluster];
+
+    }
+
+
+    if(req.query.keyword === undefined){
+        keywords = []
+    }
+    else{
+        keywords = _.isArray(req.query.keyword) ? req.query.keyword : [req.query.keyword];
+    }
 
     console.log(clusters, keywords);
 
