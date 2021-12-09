@@ -4,6 +4,6 @@
   border-radius: 5px;
   padding: 2rem;
   height: 65vh;
-  overflow-y : scroll;
+  overflow-y : hidden;
   margin-top: 0.5rem;
 }

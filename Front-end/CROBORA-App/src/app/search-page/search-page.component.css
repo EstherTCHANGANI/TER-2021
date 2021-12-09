@@ -35,6 +35,19 @@ mat-tab-group{
   align-items: center;
   margin: -1rem 2rem 2rem 2rem;
 }
+#list-view>div{
+  width: 74em;
+}
+#cluster-view>div{
+  width: 74em;
+}
+#treemaps>div{
+  width: 74em;
+}
+#distribution>div{
+  width: 74em;
+}
+
 
 .Event.mat-checkbox-checked.mat-accent .mat-checkbox-background {
   background-color: brown;
@@ -59,6 +72,7 @@ mat-tab-group{
 
 #user-icon{
   display:flex;
+  position : relative;
   flex-direction: row;
   align-items: center;
   top: 2em;

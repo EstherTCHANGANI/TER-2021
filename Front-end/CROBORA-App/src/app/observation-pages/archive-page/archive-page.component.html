@@ -1,5 +1,7 @@
 <div id="back-icon">
-  <mat-icon inline="true">arrow_back</mat-icon>
+  <button mat-icon-button ng-click="goBack()" aria-label="go back symbol" id="back">
+    <mat-icon inline="true">arrow_back</mat-icon>
+  </button>
 </div>
 
 <div id="user-icon">
@@ -7,7 +9,7 @@
   <mat-icon inline="true">account_box</mat-icon>
 </div>
 
-<h1 id='archive-title'>50 d'amitiés franco-allemandes</h1>
+<h1 id='archive-title'>{{archiveTitle.viewValue}}</h1>
 
 <div id="options-box">
   <div class="flex-container">

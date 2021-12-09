@@ -41,12 +41,17 @@ body{
   border-radius: 50px;
   height:30px;
   width:30px;
-  font-size:30px;
-  color:white;
 }
-#back-icon>mat-icon{
+#back-icon>button{
+  background-color: transparent;
+  border: transparent;
+}
+#back-icon>button>mat-icon{
   position:relative;
-  top:5px;
+  right:6px;
+  bottom:1px;
+  color:white;
+  font-size:30px;
 }
 
 #options-box {
