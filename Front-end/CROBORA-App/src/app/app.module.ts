@@ -9,6 +9,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDividerModule} from '@angular/material/divider'; 
+import {MatListModule} from '@angular/material/list'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,7 +54,10 @@ import { OriginalinfoBoxComponent } from './observation-pages/archive/originalin
     MatAutocompleteModule,
     FormsModule,
     ReactiveFormsModule,
-    MatChipsModule
+    MatChipsModule,
+    MatExpansionModule,
+    MatDividerModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

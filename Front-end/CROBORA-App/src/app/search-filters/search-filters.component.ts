@@ -1,5 +1,4 @@
-import { Component, ElementRef, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
 import {MatChipInputEvent} from '@angular/material/chips';
@@ -53,17 +52,24 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   clusterList: Cluster[] = [
     {value: 'Treaty', type: 'event'},
     {value: 'Treaty of Rome', type: 'event'},
+    {value: 'Treaty of Lisbonne', type: 'event'},
     {value: 'Referendum', type: 'event'},
+    {value: 'France Germany relations', type: 'event'},
     {value: 'Charles de Gaulle', type: 'personality'},
     {value: 'Robert Schuman', type: 'personality'},
     {value: 'François Mitterrand', type: 'personality'},
     {value: 'François Hollande', type: 'personality'},
     {value: 'Angela Merkel', type: 'personality'},
+    {value: 'Hans-Gert Pöttering', type: 'personality'},
+    {value: 'Nicolas Sarkozy', type: 'personality'},
     {value: 'Portugal', type: 'place'},
     {value: 'Paris', type: 'place'},
     {value: 'Lisbonne', type: 'place'},
+    {value: 'Europe', type: 'place'},
     {value: 'Accident', type: 'ilustration'},
-    {value: 'Factory', type: 'ilustration'}
+    {value: 'Factory', type: 'ilustration'},
+    {value: 'Signature', type: 'ilustration'},
+    {value: 'Meeting', type: 'ilustration'}
   ];
 
   // variables for search bar :

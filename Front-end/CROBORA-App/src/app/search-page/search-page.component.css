@@ -4,13 +4,14 @@ body{
 
 .cluster-div>mat-checkbox{
   margin-left: 40px;
+  font-weight: 450;
 }
 .cluster-div> mat-checkbox, mat-checkbox-frame, mat-checkbox-checked, mat-checkbox-background {
   transform: scale(1.3);
 }
 
 .Event{
-  color:brown;
+  color: #632800;
 }
 .Personality{
   color:blue;
@@ -51,7 +52,7 @@ mat-tab-group{
 
 
 .Event.mat-checkbox-checked.mat-accent .mat-checkbox-background {
-  background-color: brown;
+  background-color: #632800 ;
 }
 .Personality.mat-checkbox-checked.mat-accent .mat-checkbox-background {
   background-color: blue;

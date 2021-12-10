@@ -15,7 +15,9 @@
   <mat-tab-group mat-align-tabs="end">
     <mat-tab label="List view">
       <ng-template matTabContent>
-        <app-list-view id="list-view"></app-list-view>
+        <app-list-view id="list-view"
+          [eventChecked]="eventChecked" [personalityChecked]="personalityChecked" [placeChecked]="placeChecked" [illustrationChecked]="illustrationChecked">
+        </app-list-view>
       </ng-template>
     </mat-tab>
     <mat-tab label="Cluster view">
