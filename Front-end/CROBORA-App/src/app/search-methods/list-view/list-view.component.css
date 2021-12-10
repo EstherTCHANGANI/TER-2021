@@ -9,22 +9,23 @@
   margin-top: 0.5rem;
 }
 
-mat-panel-title {
+mat-panel-title > h3{
   font-size: 1rem;
   font-weight: 500;
+}
+mat-panel-title > mat-icon{
+  padding-right: 0.5rem;
 }
 
 mat-list-item {
   font-size: 0.8rem !important;
   margin-top: -1rem;
   margin-bottom: -0.5rem;
-  margin-left: 0.2rem;
+  margin-left: 0.5rem;
 }
-
-/* .clusters-container {
-  font-weight: 600;
-  letter-spacing: 0.5px;
-} */
+mat-list-item  mat-icon {
+  padding-right: 0.5rem;
+}
 
 .eventClusters>mat-list-item {
   color: #632800;

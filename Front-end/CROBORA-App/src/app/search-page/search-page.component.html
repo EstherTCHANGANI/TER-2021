@@ -13,14 +13,14 @@
 
 <div class="flex-container">
   <mat-tab-group mat-align-tabs="end">
-    <mat-tab label="List view">
+    <mat-tab label="{{listViewName}}">
       <ng-template matTabContent>
         <app-list-view id="list-view"
           [eventChecked]="eventChecked" [personalityChecked]="personalityChecked" [placeChecked]="placeChecked" [illustrationChecked]="illustrationChecked">
         </app-list-view>
       </ng-template>
     </mat-tab>
-    <mat-tab label="Cluster view">
+    <mat-tab label="Cluster View">
       <ng-template matTabContent>
         <app-cluster-view id="cluster-view"></app-cluster-view>
       </ng-template>
@@ -38,6 +38,7 @@
   </mat-tab-group>
 
   <app-search-filters
-    [eventChecked]="eventChecked" [personalityChecked]="personalityChecked" [placeChecked]="placeChecked" [illustrationChecked]="illustrationChecked">
+    [eventChecked]="eventChecked" [personalityChecked]="personalityChecked" [placeChecked]="placeChecked" [illustrationChecked]="illustrationChecked"
+    (showTypeEvent)="renameFirstTab($event)">
   </app-search-filters>
 </div>

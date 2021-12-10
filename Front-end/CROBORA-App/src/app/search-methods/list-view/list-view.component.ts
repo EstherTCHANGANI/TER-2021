@@ -1,12 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-interface File {
-  title: string;
-  personality: string[];
-  event: string[];
-  place: string[];
-  illustration: string[];
-}
+import { File } from '../../../models/file.model'
 
 @Component({
   selector: 'app-list-view',

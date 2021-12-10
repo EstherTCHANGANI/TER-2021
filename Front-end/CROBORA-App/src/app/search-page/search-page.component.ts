@@ -1,13 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ThemePalette} from '@angular/material/core';
 import { ViewEncapsulation } from '@angular/core';
-
-export interface Task {
-  name: string;
-  completed: boolean;
-  color: ThemePalette;
-  subtasks?: Task[];
-}
 
 @Component({
   selector: 'app-search-page',
@@ -17,10 +9,13 @@ export interface Task {
 })
 export class SearchPageComponent implements OnInit {
 
+  listViewName: string = 'File View';
+
   eventChecked: boolean = false;
   personalityChecked: boolean = false;
   placeChecked: boolean = false;
   illustrationChecked: boolean = false;
+  showFiles: boolean = true;
 
   constructor() {
   }
@@ -43,6 +38,10 @@ export class SearchPageComponent implements OnInit {
   toggleIllustrationCheckbox(e: any) {
     console.log('illustration: ' + e.checked);
     this.illustrationChecked = e.checked;
+  }
+
+  renameFirstTab(showType: string) {
+    this.listViewName = showType + ' View';
   }
 
 }

@@ -9,6 +9,16 @@
             </mat-select>
         </mat-form-field>
     </div>
+    <div class="searchBy filter">
+      <h2>Search by:</h2>
+      <mat-form-field appearance="outline">
+          <mat-select [(value)]="selectedSearchType" (selectionChange)="onSearchTypeChange()">
+            <mat-option *ngFor="let searchType of searchTypes" [value]="searchType.value">
+              {{searchType.viewValue}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+    </div>
     <div class="searchBar filter disabled">
         <mat-form-field appearance="outline">
             <mat-label>Search</mat-label>
@@ -46,16 +56,6 @@
         <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
     </div>
-    <div class="searchBy filter">
-        <h2>Search by:</h2>
-        <mat-form-field appearance="outline">
-            <mat-select [(value)]="selectedSearchType" (selectionChange)="onSearchTypeChange()">
-              <mat-option *ngFor="let searchType of searchTypes" [value]="searchType.value">
-                {{searchType.viewValue}}
-              </mat-option>
-            </mat-select>
-        </mat-form-field>
-    </div>
     <div class="show filter">
       <h2>Show:</h2>
       <mat-form-field appearance="outline">
@@ -75,5 +75,5 @@
           </mat-option>
         </mat-select>
     </mat-form-field>
-</div>
+  </div>
 </div>

@@ -1,18 +1,11 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
 import {MatChipInputEvent} from '@angular/material/chips';
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-
-interface Filter {
-  value: string;
-  viewValue: string;
-}
-interface Cluster {
-  value: string;
-  type: string;
-}
+import { Cluster } from '../../models/cluster.model';
+import { Filter } from '../../models/filter.model';
 
 @Component({
   selector: 'app-search-filters',
@@ -25,7 +18,8 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   @Input() personalityChecked?: boolean;
   @Input() placeChecked?: boolean;
   @Input() illustrationChecked?: boolean;
-
+  @Output() showTypeEvent = new EventEmitter<string>();
+  
   databases: Filter[] = [
     {value: 'ina', viewValue: 'INA'},
     {value: 'rai', viewValue: 'RAI'},
@@ -39,8 +33,8 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   ];
 
   showTypes: Filter[] = [
-    {value: 'file', viewValue: 'Files'},
-    {value: 'thumbnail', viewValue: 'Thumbnails'}
+    {value: 'File', viewValue: 'Files'},
+    {value: 'Thumbnail', viewValue: 'Thumbnails'}
   ];
 
   sortTypes: Filter[] = [
@@ -270,6 +264,7 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
 
   onShowTypeChange() {
     console.log(this.selectedShowType);
+    this.showTypeEvent.emit(this.selectedShowType);
   }
 
   onSortTypeChange() {
