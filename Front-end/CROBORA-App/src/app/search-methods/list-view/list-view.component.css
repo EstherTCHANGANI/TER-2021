@@ -1,0 +1,41 @@
+.listview-box{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 2rem;
+  height: 65vh;
+  overflow-y : scroll;
+  margin-top: 0.5rem;
+}
+
+mat-panel-title > h3{
+  font-size: 1rem;
+  font-weight: 500;
+}
+mat-panel-title > mat-icon{
+  padding-right: 0.5rem;
+}
+
+mat-list-item {
+  font-size: 0.8rem !important;
+  margin-top: -1rem;
+  margin-bottom: -0.5rem;
+  margin-left: 0.5rem;
+}
+mat-list-item  mat-icon {
+  padding-right: 0.5rem;
+}
+
+.eventClusters>mat-list-item {
+  color: #632800;
+}
+.personalityClusters>mat-list-item {
+  color: blue;
+}
+.placeClusters>mat-list-item {
+  color: red;
+}
+.illustrationClusters>mat-list-item {
+  color: green;
+}

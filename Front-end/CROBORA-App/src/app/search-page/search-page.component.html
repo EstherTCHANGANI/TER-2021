@@ -1,38 +1,44 @@
-<div id="user-icon">
-  <span>John Doe</span>
-  <img src="../../assets/images/profil.png" alt="user icon">
-</div>
-
-<div class="cluster-div">
-  <mat-checkbox class="Event">Event</mat-checkbox>
-  <mat-checkbox class="Personality">Personality</mat-checkbox>
-  <mat-checkbox class="Place">Place</mat-checkbox>
-  <mat-checkbox class="Illustration" >Illustration</mat-checkbox>
+<div class="top-container">
+  <div class="cluster-div">
+    <mat-checkbox class="Event" (change)="toggleEventCheckbox($event)">Event</mat-checkbox>
+    <mat-checkbox class="Personality" (change)="togglePersonalityCheckbox($event)">Personality</mat-checkbox>
+    <mat-checkbox class="Place" (change)="togglePlaceCheckbox($event)">Place</mat-checkbox>
+    <mat-checkbox class="Illustration" (change)="toggleIllustrationCheckbox($event)" >Illustration</mat-checkbox>
+  </div>
+  <div id="user-icon">
+    <span>John Doe</span>
+    <mat-icon inline="true">account_box</mat-icon>
+  </div>
 </div>
 
 <div class="flex-container">
   <mat-tab-group mat-align-tabs="end">
-    <mat-tab label="List view">
+    <mat-tab label="{{listViewName}}">
       <ng-template matTabContent>
-        <app-list-view></app-list-view>
+        <app-list-view id="list-view"
+          [eventChecked]="eventChecked" [personalityChecked]="personalityChecked" [placeChecked]="placeChecked" [illustrationChecked]="illustrationChecked">
+        </app-list-view>
       </ng-template>
     </mat-tab>
-    <mat-tab label="Cluster view">
+    <mat-tab label="Cluster View">
       <ng-template matTabContent>
-        <app-cluster-view></app-cluster-view>
+        <app-cluster-view id="cluster-view"></app-cluster-view>
       </ng-template>
     </mat-tab>
     <mat-tab label="Treemaps">
       <ng-template matTabContent>
-        <app-treemaps></app-treemaps>
+        <app-treemaps id="treemaps"></app-treemaps>
       </ng-template>
     </mat-tab>
     <mat-tab label="Distribution">
       <ng-template matTabContent>
-        <app-distribution></app-distribution>
+        <app-distribution id="distribution"></app-distribution>
       </ng-template>
     </mat-tab>
   </mat-tab-group>
 
-  <app-search-filters></app-search-filters>
+  <app-search-filters
+    [eventChecked]="eventChecked" [personalityChecked]="personalityChecked" [placeChecked]="placeChecked" [illustrationChecked]="illustrationChecked"
+    (showTypeEvent)="renameFirstTab($event)">
+  </app-search-filters>
 </div>

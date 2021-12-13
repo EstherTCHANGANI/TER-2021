@@ -2,23 +2,16 @@ body{
   overflow: hidden;
 }
 
-.cluster-div{
-  display : flex;
-  position: relative;
-  top:4em;
-}
 .cluster-div>mat-checkbox{
   margin-left: 40px;
-}
-.cluster-div>:first-child{
-  margin-left: 2rem;
+  font-weight: 450;
 }
 .cluster-div> mat-checkbox, mat-checkbox-frame, mat-checkbox-checked, mat-checkbox-background {
   transform: scale(1.3);
 }
 
 .Event{
-  color:brown;
+  color: #632800;
 }
 .Personality{
   color:blue;
@@ -34,20 +27,32 @@ body{
 } */
 
 mat-tab-group{
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 .flex-container {
   display: flex;
-  position: relative;
-  top:4em;
   flex-direction: row;
   align-items: center;
-  padding: 1rem;
+  justify-content: space-evenly;
+  margin: -1rem 2rem 2rem 2rem;
+}
+#list-view>div{
+  width: 65vw;
+}
+#cluster-view>div{
+  width: 65vw;
+}
+#treemaps>div{
+  width: 65vw;
+}
+#distribution>div{
+  width: 65vw;
 }
 
+
 .Event.mat-checkbox-checked.mat-accent .mat-checkbox-background {
-  background-color: brown;
+  background-color: #632800 ;
 }
 .Personality.mat-checkbox-checked.mat-accent .mat-checkbox-background {
   background-color: blue;
@@ -59,21 +64,34 @@ mat-tab-group{
   background-color: green;
 }
 
-#user-icon{
-  display:flex;
-  float: right;
+.top-container {
+  display: flex;
   flex-direction: row;
   align-items: center;
-  position: relative;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+#user-icon{
+  display:flex;
+  position : relative;
+  flex-direction: row;
+  align-items: center;
   top: 2em;
   right:2em;
 }
 
 #user-icon>span{
+  position:relative;
   font-size: 1.3em;
+  bottom:1.3em;
 }
-
-#user-icon>img{
+#user-icon>mat-icon{
   height : 65px;
   width : 65px;
+  font-size: 65px;
+}
+
+app-search-filters {
+  width: 25vw;
 }

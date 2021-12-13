@@ -2,24 +2,6 @@ body{
   overflow:hidden;
 }
 
-mat-tab-group{
-  margin-right: 1rem;
-}
-
-.flex-container {
-  display: flex;
-  position: relative;
-  top:3em;
-  flex-direction: row;
-  align-items: center;
-  padding: 1rem;
-}
-
-.flex-container>a{
-  position: relative;
-  display: flex;
-}
-
 #archive-title{
   position: relative;
   display:flex;
@@ -36,15 +18,80 @@ mat-tab-group{
   flex-direction: row;
   align-items: center;
   position: relative;
-  top: 2em;
+  top: 1em;
   right:2em;
 }
-
 #user-icon>span{
+  position:relative;
   font-size: 1.3em;
+  bottom:1.3em;
 }
-
-#user-icon>img{
+#user-icon>mat-icon{
   height : 65px;
   width : 65px;
+  font-size: 65px;
+}
+
+#back-icon{
+  display:flex;
+  position: relative;
+  top: 15px;
+  left:15px;
+  background-color: black;
+  border-radius: 50px;
+  height:30px;
+  width:30px;
+}
+#back-icon>button{
+  background-color: transparent;
+  border: transparent;
+}
+#back-icon>button>mat-icon{
+  position:relative;
+  right:6px;
+  bottom:1px;
+  color:white;
+  font-size:30px;
+}
+
+#options-box {
+  display:list-item;
+  position: relative;
+  top:3em;
+  margin-left: 5px;
+}
+.flex-container {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+}
+#options-box>a{
+  position: relative;
+  display: flex;
+  float:right;
+  right:19em;
+  top:1em;
+  transform: scale(1.3);
+}
+
+#favorite{
+  position: relative;
+  display:flex;
+  bottom:10em;
+}
+#edit{
+  position: relative;
+  display:flex;
+  bottom:15em;
+  right:50px;
+}
+#options-box>.flex-container>button>mat-icon{
+  height: 40px;
+  width: 40px;
+  font-size: 40px;
+}
+#options-box>.flex-container>button{
+  background-color: transparent;
+  border: transparent;
 }

@@ -1,29 +1,43 @@
-<div id="user-icon">
-  <span>John Doe</span>
-  <img src="../../assets/images/profil.png" alt="user icon">
+<div id="back-icon">
+  <button mat-icon-button ng-click="goBack()" aria-label="go back symbol" id="back">
+    <mat-icon inline="true">arrow_back</mat-icon>
+  </button>
 </div>
 
-<h1 id='archive-title'>50 d'amitiés franco-allemandes</h1>
+<div id="user-icon">
+  <span>John Doe</span>
+  <mat-icon inline="true">account_box</mat-icon>
+</div>
 
-<div class="flex-container">
-  <mat-tab-group mat-align-tabs="end">
-    <mat-tab label="Thumbnails">
-      <ng-template matTabContent>
-        <app-thumbnails-box></app-thumbnails-box>
-      </ng-template>
-    </mat-tab>
-    <mat-tab label="Original informations">
-      <ng-template matTabContent>
-        <app-originalinfo-box></app-originalinfo-box>
-      </ng-template>
-    </mat-tab>
-    <mat-tab label="index CROBORA">
-      <ng-template matTabContent>
-        <app-index-crobora-box></app-index-crobora-box>
-      </ng-template>
-    </mat-tab>
-  </mat-tab-group>
+<h1 id='archive-title'>{{archiveTitle.viewValue}}</h1>
 
-  <a>link to video</a>
+<div id="options-box">
+  <div class="flex-container">
+    <mat-tab-group mat-align-tabs="end">
+      <mat-tab label="Thumbnails">
+        <ng-template matTabContent>
+          <app-thumbnails-box></app-thumbnails-box>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Original informations">
+        <ng-template matTabContent>
+          <app-originalinfo-box></app-originalinfo-box>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="index CROBORA">
+        <ng-template matTabContent>
+          <app-index-crobora-box></app-index-crobora-box>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+    <button mat-icon-button ng-click="addToFav()" aria-label="Favorite icon with a star" id="favorite">
+      <mat-icon inline="true">star_border</mat-icon>
+    </button>
+    <button mat-icon-button ng-click="editComment()" aria-label="Edit a comment icon" id="edit">
+      <mat-icon inline="true">edit</mat-icon>
+    </button>
+  </div>
+
+  <a href="https://crobora.hypotheses.org/">link to video</a>
 
 </div>

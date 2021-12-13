@@ -9,22 +9,52 @@
             </mat-select>
         </mat-form-field>
     </div>
-    <div class="searchBar filter">
+    <div class="searchBy filter">
+      <h2>Search by:</h2>
+      <mat-form-field appearance="outline">
+          <mat-select [(value)]="selectedSearchType" (selectionChange)="onSearchTypeChange()">
+            <mat-option *ngFor="let searchType of searchTypes" [value]="searchType.value">
+              {{searchType.viewValue}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="searchBar filter disabled">
         <mat-form-field appearance="outline">
             <mat-label>Search</mat-label>
-            <input matInput type="text" placeholder="Enter a keyword" (keyup)="onSearchKey($event)">
+            <input
+            matInput type="text"
+            placeholder="Enter a keyword"
+            #clusterInput
+            [matAutocomplete]="auto" 
+            [formControl]="myControl"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="addChip($event)">
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedChip($event)">
+              <mat-option *ngFor="let cluster of filteredClusters | async" [value]="cluster.value">
+                {{cluster.value}}
+              </mat-option>
+            </mat-autocomplete>
             <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
+        <mat-chip-list #chipList aria-label="Cluster selection">
+          <mat-chip
+          *ngFor="let cluster of selectedClusters"
+          [selectable]="selectable"
+          [removable]="removable"
+          (removed)="removeChip(cluster)">
+          {{cluster}}
+          <mat-icon matChipRemove="removable">cancel</mat-icon>
+          </mat-chip>
+      </mat-chip-list>
     </div>
-    <div class="searchBy filter">
-        <h2>Search by:</h2>
-        <mat-form-field appearance="outline">
-            <mat-select [(value)]="selectedSearchType" (selectionChange)="onSearchTypeChange()">
-              <mat-option *ngFor="let searchType of searchTypes" [value]="searchType.value">
-                {{searchType.viewValue}}
-              </mat-option>
-            </mat-select>
-        </mat-form-field>
+    <div class="searchBarDisabled filter">
+      <mat-form-field appearance="outline">
+        <mat-label>Search</mat-label>
+        <input matInput type="text" placeholder="Enter a keyword" [disabled]="true">
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
     </div>
     <div class="show filter">
       <h2>Show:</h2>
@@ -45,5 +75,5 @@
           </mat-option>
         </mat-select>
     </mat-form-field>
-</div>
+  </div>
 </div>

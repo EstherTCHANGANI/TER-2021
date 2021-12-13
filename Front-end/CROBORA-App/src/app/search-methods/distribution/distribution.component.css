@@ -1,10 +1,9 @@
-.indexCROBORA-box{
+.distribution-box{
   display: flex;
   border: 2px solid black;
   border-radius: 5px;
   padding: 2rem;
-  height: 60vh;
+  height: 65vh;
   overflow-y : scroll;
   margin-top: 0.5rem;
-  width: 87em;
 }

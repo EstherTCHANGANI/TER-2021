@@ -22,6 +22,7 @@ Le fichier `mapping.json` défint comment les champs des différentes sources de
 
 ```json
 {
+<<<<<<< HEAD
    "ina": {
         "id": "ID Notice",
         "titre": "Titre_propre",
@@ -41,6 +42,17 @@ Le fichier `mapping.json` défint comment les champs des différentes sources de
         "Lieu"	: "Lieu",
         "Illustration":	"Illustration",
         "Date et lieu de consultation" : "Date_et_lieu_de_consultation"
+=======
+    "ina": {
+        "id": "ID_notice", # Champs dans fiches_event => champ de la source
+        "titre": "Titre_propre",
+        "date_de_diffusion": {
+            "fields": ["Date_de_diffusion", "Heure_de_diffusion"], 
+          # Liste des champs qui seront passés en argument à la méthode suivante
+            "function": "lambda args : str(args[0]) + \" \" + str(args[1]) if len(args) > 1 else args[0]" 
+          # Fonction qui permet d'évaluer les champs précédents  
+        }
+>>>>>>> origin/develop
     }
  }
 ```
