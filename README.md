@@ -1,6 +1,13 @@
 # TER-2021
 
-todo :
+## Lancer le projet
+
+```bash
+$ docker-compose up -d
+```
+
+
+## Todo
 - Script import des fichiers fusionnés
 - Correction des script de fusion
 - Script de mapping

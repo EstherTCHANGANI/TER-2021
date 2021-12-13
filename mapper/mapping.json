@@ -1,0 +1,23 @@
+{
+    "ina": {
+        "id": "ID_notice",
+        "titre": "Titre_propre",
+        "date de diffusion": {
+            "fields": [
+                "Date_de_diffusion",
+                "Heure_de_diffusion"
+            ],
+            "function": "lambda args : str(args[0]) + \" \" + str(args[1]) if len(args) > 1 else args[0]"
+        },
+        "canal de transmission": "France 2",
+        "duree": "Duree"
+    },
+
+    "rai": {
+        "id": "Documento",
+        "titre": "Titolo Programma",
+        "date de diffusion": "Data Trasmissione",
+        "canal de transmission":"Canale Trasmissione",
+        "duree":"Durata"
+    }
+}

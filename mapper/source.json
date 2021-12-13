@@ -1,0 +1,25 @@
+[
+    {
+        "hostname": "localhost",
+        "port": "27017",
+        "database": "admin",
+        "collection": "fiches_INA",
+        "name":"ina"
+    },
+
+    {
+        "hostname": "localhost",
+        "port": "27017",
+        "database": "admin",
+        "collection": "fiches_RAIUNO 20",
+        "name":"rai"
+    },
+
+     {
+        "hostname": "localhost",
+        "port": "27017",
+        "database": "admin",
+        "collection": "Fiches RAIUNO 1330",
+        "name":"rai"
+    }
+]
