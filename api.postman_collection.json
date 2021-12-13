@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "59069a41-6fc5-4ea4-82b8-51d18ffc8847",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Config",
+			"item": [
+				{
+					"name": "Source",
+					"item": [
+						{
+							"name": "Find sources",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/config/sources",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"config",
+										"sources"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create/Update sources",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"hostname\": \"localhost\",\n        \"port\": \"27017\",\n        \"database\": \"admin\",\n        \"collection\": \"fiches_INA\",\n        \"name\":\"ina\"\n    }\n]\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/config/sources",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"config",
+										"sources"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Mapper",
+					"item": [
+						{
+							"name": "Find mapping",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/config/mapping",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"config",
+										"mapping"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create/Update mapping",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ina\": {\n        \"ID_notice\": \"id\",\n        \"Titre_propre\": \"titre\"\n    },\n    \"rai\": {\n        \"documento\": \"id\",\n        \"titolo_programma\": \"titre\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/config/mapping",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"config",
+										"mapping"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "List all confs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/config",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"config"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data",
+			"item": [
+				{
+					"name": "Add data file",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "fiches_INA",
+									"type": "text"
+								},
+								{
+									"key": "source",
+									"type": "file",
+									"src": "/home/thyvador/Downloads/Données_Crobora/fiches_INA.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/source/file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"source",
+								"file"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

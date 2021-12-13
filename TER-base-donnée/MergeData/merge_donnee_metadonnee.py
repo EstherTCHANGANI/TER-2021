@@ -10,17 +10,17 @@ def merge_data_mongodb(file_name_fiche, file_name_meta, champs):
     # exemple fiche ina contient ID Notice et metadonnée Ina contient le meme champs avec une ecriture differente
     # d'ou on peux renomer le champs au niveau de code au cas de besoin d'un champs specifique
     # df = f1.rename(columns={'ID_notice': 'ID Notice'})
-
-    data1 = pd.read_csv(file_name_fiche)
-    data2 = pd.read_csv(file_name_meta)
+    data = pd.read_csv(file_name_fiche)
+    meta_data = pd.read_csv(file_name_meta)
     # pour eviter les problemes de float et int ca serai mieu de convertir tous les données en float ou int
-    data1[champs] = data1[champs].astype(float)
+    data[champs] = data[champs].astype("string")
 
     # using merge function by setting how='inner'
 
-    output1 = pd.merge(data1, data2,
+    output1 = pd.merge(data, meta_data,
                        on=champs,
                        how='inner')
+
     output1.to_csv(merged_file, index=False)
     # f3 = pandas.merge(f1, f2, on='ID Notice', how='left')
     # for c in f1.columns:
@@ -30,5 +30,4 @@ def merge_data_mongodb(file_name_fiche, file_name_meta, champs):
 
 
 if __name__ == "__main__":
-    merge_data_mongodb(file_name, fiche_name,
-                       champs)
+    merge_data_mongodb(file_name, fiche_name, champs)
