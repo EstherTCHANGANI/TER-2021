@@ -23,17 +23,10 @@ router.get("", async (req, res, next) => {
         keywords = _.isArray(req.query.keyword) ? req.query.keyword : [req.query.keyword];
     }
 
-    res.json(await clusterService.groupByEvent(clusters, keywords))
+    console.log(clusters, keywords);
+
+    res.json(await clusterService.getAllEvents(clusters, keywords))
 })
 
-router.get("/names", async (req, res, next)=> {
-    res.json(await clusterService.getAllClusters())
-})
-
-router.get(/\/tree.*/, async (req, res, next) => {
-    const path = req.path.replace(/%20/ig, " ")
-    console.log(path);
-    res.json(await clusterService.getTree(path))
-})
 
 module.exports = router;

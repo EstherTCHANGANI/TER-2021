@@ -1,6 +1,5 @@
 import mongoService from "./mongo.service";
 import _ from "lodash";
-import { json } from "express";
 
 const baseClusters = ["evenement", "lieu", "personnalite", "illustration"];
 
@@ -62,31 +61,40 @@ class ClusterService {
      * @param {string[]} keywords 
      * @returns 
      */
-    async groupByEvent(clusters, keywords) {
+    async getAllEvents(clusters, keywords) {
         const events = await this.getEvents();
 
         if (_.isEmpty(clusters) || _.isEmpty(keywords)) {
-            return this.groupByEvents(events);
+            return events;
         }
 
-        for (let i = 0; i < keywords.length; i++) {
-            keywords[i] = _.lowerCase(keywords[i])
-        }
+        return events.filter(event =>
+            keywords.find(keyword => this.findKeywordInCluster(event, clusters, _.lowerCase(keyword)))
+        );
+    }
 
-        console.log(events)
-        const filteredEvent = events.filter(event =>
-            keywords.find(keyword => this.findKeywordInCluster(event, clusters, keyword))
-        )
+    /**
+     * 
+     * @param {string[]} clusters 
+     * @param {string[]} keywords 
+     * @returns 
+     */
+    async groupByEvent(clusters, keywords) {
+        const events = await this.getAllEvents(clusters, keywords)
 
-        return this.groupByEvents(filteredEvent);
+        return this.groupByEvents(events);
     }
 
     findKeywordInCluster(event, clusters, keyword) {
         return clusters.find(cluster => {
-            if (_.isArray(event[cluster])) {
-                return event[cluster].map(_.lowerCase).find(el => el.includes(keyword))
+            const value = event[cluster];
+            if (_.isUndefined(value) || _.isEmpty(value)) {
+                return false;
+            }
+            if (_.isArray(value)) {
+                return value.map(_.lowerCase).find(el => el.includes(keyword))
             } else {
-                return _.lowerCase(event[cluster]).includes(keyword)
+                return _.lowerCase(value).includes(keyword)
             }
         })
     }
@@ -98,6 +106,20 @@ class ClusterService {
                 groupedEvents[key] = _.groupBy(value, "titre");
             });
         return groupedEvents;
+    }
+
+    async getAllClusters() {
+        const events = await this.getEvents();
+        return _.uniqWith(_.flattenDeep(events.map(event => {
+            return baseClusters.map((cluster) => {
+                const value = event[cluster];
+                if (_.isArray(value)) {
+                    return value.map(el => ({ type: cluster, value: el }))
+                } else {
+                    return [{ type: cluster, value }]
+                }
+            })
+        })), (e1, e2) => {return e1.type === e2.type && e1.value === e2.value})
     }
 }
 

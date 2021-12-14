@@ -9,6 +9,7 @@ var sourceRouter = require('./routes/source');
 var mapperRouter = require('./routes/mapper');
 var searchRouter = require('./routes/search');
 var clusterRouter = require('./routes/cluster');
+var eventsRouter = require('./routes/events');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use("/source", sourceRouter)
 app.use("/mapper", mapperRouter)
 app.use("/search", searchRouter)
 app.use("/cluster", clusterRouter)
+app.use("/events", eventsRouter)
 
 app.use((err, req, res, next) => {
     if (err) {
