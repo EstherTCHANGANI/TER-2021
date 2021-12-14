@@ -1,11 +1,19 @@
 .thumbnails-box{
-  display: flex;
   border: 2px solid black;
   border-radius: 5px;
   padding: 2rem;
-  height: 60vh;
-  overflow-y :hidden;
-  overflow-x: scroll;
+  overflow-y :scroll;
   margin-top: 0.5rem;
-  width: 87em;
+}
+
+img{
+  width:15vw;
+  height:15vh;
+}
+mat-grid-tile{
+  margin-top: 5vh;
+}
+mat-grid-list{
+  position:relative;
+  bottom: 8vh;
 }

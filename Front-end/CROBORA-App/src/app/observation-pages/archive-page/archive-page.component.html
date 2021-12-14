@@ -6,7 +6,7 @@
 
 <div id="user-icon">
   <span>John Doe</span>
-  <mat-icon inline="true">account_box</mat-icon>
+  <img src="../../../assets/images/profil.png" alt="icone de profil">
 </div>
 
 <h1 id='archive-title'>{{archiveTitle.viewValue}}</h1>
@@ -16,28 +16,30 @@
     <mat-tab-group mat-align-tabs="end">
       <mat-tab label="Thumbnails">
         <ng-template matTabContent>
-          <app-thumbnails-box></app-thumbnails-box>
+          <app-thumbnails-box id="thumbnails"></app-thumbnails-box>
         </ng-template>
       </mat-tab>
       <mat-tab label="Original informations">
         <ng-template matTabContent>
-          <app-originalinfo-box></app-originalinfo-box>
+          <app-originalinfo-box id="infos"></app-originalinfo-box>
         </ng-template>
       </mat-tab>
       <mat-tab label="index CROBORA">
         <ng-template matTabContent>
-          <app-index-crobora-box></app-index-crobora-box>
+          <app-index-crobora-box id="index"></app-index-crobora-box>
         </ng-template>
       </mat-tab>
     </mat-tab-group>
-    <button mat-icon-button ng-click="addToFav()" aria-label="Favorite icon with a star" id="favorite">
-      <mat-icon inline="true">star_border</mat-icon>
-    </button>
-    <button mat-icon-button ng-click="editComment()" aria-label="Edit a comment icon" id="edit">
-      <mat-icon inline="true">edit</mat-icon>
-    </button>
+    <div id="icon-box">
+      <button mat-icon-button ng-click="editComment()" aria-label="Edit a comment icon" id="edit">
+        <mat-icon inline="true">edit</mat-icon>
+      </button>
+      <button mat-icon-button ng-click="addToFav()" aria-label="Favorite icon with a star" id="favorite">
+        <mat-icon inline="true">star_border</mat-icon>
+      </button>
+      <button mat-icon-button onclick="location.href='https://crobora.hypotheses.org/';" aria-label="Play icon for the video" id="video">
+        <mat-icon inline="true">play_circle_outline</mat-icon>
+      </button>
+    </div>
   </div>
-
-  <a href="https://crobora.hypotheses.org/">link to video</a>
-
 </div>
