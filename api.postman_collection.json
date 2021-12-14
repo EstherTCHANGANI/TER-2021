@@ -38,7 +38,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "[\n    {\n        \"hostname\": \"localhost\",\n        \"port\": \"27017\",\n        \"database\": \"admin\",\n        \"collection\": \"fiches_INA\",\n        \"name\":\"ina\"\n    }\n]\n",
+									"raw": "[\n    {\n        \"hostname\": \"localhost\",\n        \"port\": \"27017\",\n        \"database\": \"admin\",\n        \"collection\": \"fiches_INA_merged\",\n        \"name\":\"ina\"\n    }\n]\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -92,7 +92,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"ina\": {\n        \"ID_notice\": \"id\",\n        \"Titre_propre\": \"titre\"\n    },\n    \"rai\": {\n        \"documento\": \"id\",\n        \"titolo_programma\": \"titre\"\n    }\n}",
+									"raw": "{\n    \"ina\": {\n        \"id\": \"ID Notice\",\n        \"titre\": \"Titre_propre\",\n        \"date de diffusion\": {\n            \"fields\": [\n                \"Date_de_diffusion\",\n                \"Heure_de_diffusion\"\n            ],\n            \"function\": \"lambda args : str(args[0]) + \\\" \\\" + str(args[1]) if len(args) > 1 else args[0]\"\n        },\n        \"canal de transmission\": \"France 2\",\n        \"duree\": \"Duree\",\n        \"Date_de_diffusion_meta\": \"Date_de_diffusion_meta\",\n        \"Image\": \"Image\",\n        \"Personnalite\": \"Personnalité\",\n        \"Evenement\"\t: \"Evenement\",\n        \"Lieu\"\t: \"Lieu\",\n        \"Illustration\":\t\"Illustration\",\n        \"Date et lieu de consultation\" : \"Date_et_lieu_de_consultation\"\n    },\n\n\n     \"RAI\" : {\n       \"ID Notice\": \"ID_notice\",\n       \"Titolo Programma\": \"Titre_programme\",\n       \"Titolo Sequenza/Servizio\": \"Titre_sequence/service\",\n       \"Image\": \"Image\",\n       \"Celebrity\": \"Personalite\",\n       \"Event\": \"Evenement\",\n       \"Location\": \"Lieu\",\n       \"Illustration\": \"Illustration\",\n       \"Date and Place of Research\": \"Date_et_Lieu_de_Research\",\n       \"Durata\": \"Durata\",\n       \"Contenuto Audio\": \"Conteneur_audio\",\n       \"Contenuto Video\": \"Conteneur_video\"\n\n  }\n                               }\n\n\n\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -221,7 +221,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/search?keyword=airbus",
+							"raw": "http://localhost:3000/search?keyword=Europe",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -233,7 +233,7 @@
 							"query": [
 								{
 									"key": "keyword",
-									"value": "airbus"
+									"value": "Europe"
 								}
 							]
 						}
@@ -243,56 +243,226 @@
 			]
 		},
 		{
-			"name": "Get all events",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/cluster",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"cluster"
-					]
+			"name": "Tree",
+			"item": [
+				{
+					"name": "Root",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cluster/tree",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cluster",
+								"tree"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lieu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cluster/tree/lieu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cluster",
+								"tree",
+								"lieu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lieu/europe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cluster/tree/lieu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cluster",
+								"tree",
+								"lieu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lieu/europe/grexit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cluster/tree/lieu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cluster",
+								"tree",
+								"lieu"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Get all events with lieux",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/cluster?cluster=Lieu&cluster=Personnalité&keyword=Europe",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"cluster"
-					],
-					"query": [
-						{
-							"key": "cluster",
-							"value": "Lieu"
-						},
-						{
-							"key": "cluster",
-							"value": "Personnalité"
-						},
-						{
-							"key": "keyword",
-							"value": "Europe"
+			"name": "events",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events"
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "Get filtered by \"Europe\"",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/events?cluster=evenement&cluster=lieu&keyword=European",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "cluster",
+									"value": "evenement"
+								},
+								{
+									"key": "cluster",
+									"value": "lieu"
+								},
+								{
+									"key": "keyword",
+									"value": "European"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Cluster",
+			"item": [
+				{
+					"name": "Get all events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cluster",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cluster"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all events with lieux",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cluster?cluster=evenement&cluster=lieu&keyword=Europe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cluster"
+							],
+							"query": [
+								{
+									"key": "cluster",
+									"value": "evenement"
+								},
+								{
+									"key": "cluster",
+									"value": "lieu"
+								},
+								{
+									"key": "keyword",
+									"value": "Europe"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get names & types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cluster/names",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cluster",
+								"names"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
