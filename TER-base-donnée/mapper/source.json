@@ -3,14 +3,14 @@
         "hostname": "localhost",
         "port": "27017",
         "database": "TER",
-        "collection": "Fiches_INA_merged",
+        "collection": "Fiches_INA",
         "name":"ina"
     },
     {
         "hostname": "localhost",
         "port": "27017",
         "database": "TER",
-        "collection": "Fiches_RAI_merged",
+        "collection": "Fiches_RAI",
         "name":"rai"
     }
 ]
