@@ -14,4 +14,4 @@ La configuration des chemins et parametres de ces etapes se realisent au niveau 
 
 # Pour charger les fichiers
 
-Lancer le script : `python3 LoadFile.py`
+Lancer le script : `python3 LoadFile.py`en specifiant les fichiers a stocker dans constante
