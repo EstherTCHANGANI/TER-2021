@@ -26,10 +26,11 @@ body{
   font-size: 1.3em;
   bottom:1.3em;
 }
-#user-icon>mat-icon{
-  height : 65px;
-  width : 65px;
-  font-size: 65px;
+#user-icon>img{
+  width: 4rem;
+  height: 4rem;
+  position : relative;
+  bottom: 3.5vh;
 }
 
 #back-icon{
@@ -55,7 +56,7 @@ body{
 }
 
 #options-box {
-  display:list-item;
+  display:flex;
   position: relative;
   top:3em;
   margin-left: 5px;
@@ -65,33 +66,39 @@ body{
   position: relative;
   flex-direction: row;
   align-items: center;
+  left:1vw;
 }
-#options-box>a{
-  position: relative;
-  display: flex;
-  float:right;
-  right:19em;
-  top:1em;
-  transform: scale(1.3);
+#thumbnails>div{
+  width : 72vw;
+  height: 64vh;
+}
+#infos>div{
+  width : 72vw;
+  height: 64vh;
+}
+#index>div{
+  width : 72vw;
+  height: 64vh;
 }
 
-#favorite{
+#icon-box{
+  width: 15vw;
+  display: flex;
   position: relative;
-  display:flex;
-  bottom:10em;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
-#edit{
-  position: relative;
-  display:flex;
-  bottom:15em;
-  right:50px;
+#icon-box>button>mat-icon{
+  height: 7vh;
+  width: 7vw;
+  font-size: 7vh;
 }
-#options-box>.flex-container>button>mat-icon{
-  height: 40px;
-  width: 40px;
-  font-size: 40px;
-}
-#options-box>.flex-container>button{
+#icon-box>button{
   background-color: transparent;
   border: transparent;
+  position : relative;
+  display :flex;
+  bottom : 15vw;
+  left : 2.5vw;
 }

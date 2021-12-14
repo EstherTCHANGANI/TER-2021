@@ -86,10 +86,11 @@ mat-tab-group{
   font-size: 1.3em;
   bottom:1.3em;
 }
-#user-icon>mat-icon{
-  height : 65px;
-  width : 65px;
-  font-size: 65px;
+#user-icon>img{
+  width: 4rem;
+  height: 4rem;
+  position : relative;
+  bottom: 3.5vh;
 }
 
 app-search-filters {
