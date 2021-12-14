@@ -32,7 +32,7 @@
             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
             (matChipInputTokenEnd)="addChip($event)">
             <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedChip($event)">
-              <mat-option *ngFor="let cluster of filteredClusters | async" [value]="cluster.value">
+              <mat-option *ngFor="let cluster of filteredClusters | async" [value]="cluster.value" (onSelectionChange)="getSelectedCluster(cluster, $event)">
                 {{cluster.value}}
               </mat-option>
             </mat-autocomplete>
@@ -40,11 +40,11 @@
         </mat-form-field>
         <mat-chip-list #chipList aria-label="Cluster selection">
           <mat-chip
-          *ngFor="let cluster of selectedClusters"
+          *ngFor="let cluster of selectedClustersObjects"
           [selectable]="selectable"
           [removable]="removable"
           (removed)="removeChip(cluster)">
-          {{cluster}}
+          {{cluster.value}}
           <mat-icon matChipRemove="removable">cancel</mat-icon>
           </mat-chip>
       </mat-chip-list>

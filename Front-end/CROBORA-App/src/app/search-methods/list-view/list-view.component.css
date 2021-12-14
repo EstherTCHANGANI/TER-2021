@@ -39,3 +39,8 @@ mat-list-item  mat-icon {
 .illustrationClusters>mat-list-item {
   color: green;
 }
+
+mat-expansion-panel-header {
+  padding-top: 0.5rem;
+  margin-bottom: -0.5rem;
+}

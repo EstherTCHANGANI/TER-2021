@@ -1,9 +1,46 @@
 .clusterview-box{
   display: flex;
+  flex-direction: column;
   border: 2px solid black;
   border-radius: 5px;
   padding: 2rem;
   height: 65vh;
   overflow-y : scroll;
   margin-top: 0.5rem;
+}
+
+mat-panel-title > h3{
+  font-size: 1rem;
+  font-weight: 500;
+}
+mat-panel-title > mat-icon{
+  padding-right: 0.5rem;
+}
+
+mat-list-item {
+  font-size: 0.8rem !important;
+  margin-top: -1rem;
+  margin-bottom: -0.5rem;
+  margin-left: 0.5rem;
+}
+mat-list-item  mat-icon {
+  padding-right: 0.5rem;
+}
+
+mat-panel-title.event {
+  color: #632800;
+}
+mat-panel-title.personality{
+  color: blue;
+}
+mat-panel-title.place{
+  color: red;
+}
+mat-panel-title.illustration{
+  color: green;
+}
+
+mat-expansion-panel-header {
+  padding-top: 0.5rem;
+  margin-bottom: -0.5rem;
 }
