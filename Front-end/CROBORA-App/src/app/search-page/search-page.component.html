@@ -7,7 +7,7 @@
   </div>
   <div id="user-icon">
     <span>John Doe</span>
-    <mat-icon inline="true">account_box</mat-icon>
+    <img src="../../assets/images/profil.png" alt="icone de profil">
   </div>
 </div>
 
@@ -22,7 +22,9 @@
     </mat-tab>
     <mat-tab label="Cluster View">
       <ng-template matTabContent>
-        <app-cluster-view id="cluster-view"></app-cluster-view>
+        <app-cluster-view id="cluster-view"
+          [eventChecked]="eventChecked" [personalityChecked]="personalityChecked" [placeChecked]="placeChecked" [illustrationChecked]="illustrationChecked">
+        </app-cluster-view>
       </ng-template>
     </mat-tab>
     <mat-tab label="Treemaps">

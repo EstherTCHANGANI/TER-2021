@@ -1,0 +1,76 @@
+{
+  "ina": {
+    "id": "ID_notice",
+    "titre": "Titre",
+    "date de diffusion": {
+      "fields": [
+        "Date_de_diffusion",
+        "Heure_de_diffusion"
+      ],
+      "function": "lambda args : str(args[0]) + \" \" + str(args[1]) if len(args) > 1 else args[0]"
+    },
+    "Illustration": {
+      "fields": [
+        "Illustration"
+      ],
+      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
+    },
+    "Image": "Image",
+    "Canal de transmission": "Chaine",
+    "Duree": "Duree",
+    "Lieu": {
+      "fields": [
+        "Lieu"
+      ],
+      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
+    },
+    "Evenement": {
+      "fields": [
+        "Evenement"
+      ],
+      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
+    },
+    "Producteurs": {
+      "fields": [
+        "Producteurs"
+      ],
+      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
+    },
+    "Personnalite": {
+      "fields": [
+        "Personnalite"
+      ],
+      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
+    },
+    "Date_de_consultation": "Date_de_consultation",
+    "Lieu_de_consultation": "Lieu_de_consultation"
+  },
+  "RAI": {
+    "ID Notice": "ID_notice",
+    "Titolo Programma": "Titre_programme",
+    "Titolo Sequenza/Servizio": "Titre_sequence/service",
+    "Image": "Image",
+    "Celebrity": {
+      "fields": [
+        "Personalite"
+      ],
+      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
+    },
+    "Event": {
+      "fields": [
+        "Evenement"
+      ],
+      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
+    },
+    "Location": {
+      "fields": [
+        "Lieu"
+      ],
+      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
+    },
+    "Illustration": "Date and Place of Research": "Date_et_Lieu_de_Research",
+    "Durata": "Durata",
+    "Contenuto Audio": "Conteneur_audio",
+    "Contenuto Video": "Conteneur_video"
+  }
+}
