@@ -1,10 +1,10 @@
 # TER-2021
 
-## Lancer le projet
+## Lancer le backend (Mongo + Serveur)
 
 ```bash
 $ docker-compose up -d
-```
+``` 
 
 
 ## Todo

@@ -4,8 +4,8 @@
 # Le but est d'avoir un netoyage bien reussi pour les fichiers
 # Etape obligatoire (minimum avoir un des deux )
 
-PATH_META = "Data/MetaDonnees/*.xlsx"
-PATH_FICHES = "Data/Fiches/*.xlsx"
+PATH_META = "./Data/MetaDonnees/*.xlsx"
+PATH_FICHES = "./Data/Fiches/*.xlsx"
 
 # Configuration de La base de donnée
 # Etape obligatoire
@@ -24,7 +24,8 @@ FICHES_INA = "Fiches_INA.xlsx"
 META_DONNEES_INA = "MetaDonnees_INA.xlsx"
 
 # Configuration de fichier de donnéé avec le fichier de ces methadonnée en  specifiant le champs ou on veut faire le merge
-file_name = "Data/Fiches/Fiches_INA.csv"
+merged_file = "../MergeData/files/Fiches_INA_merged.csv"
+merged_file_rai = "../MergeData/files/Fiches_RAI_merged.csv"
 fiche_name = "MetaDonnees_INA.csv"
 champs = "ID Notice"
 

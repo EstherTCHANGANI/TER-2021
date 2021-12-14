@@ -28,3 +28,4 @@ backend/public
 **/venv
 
 **/.idea
+**/__pycache__

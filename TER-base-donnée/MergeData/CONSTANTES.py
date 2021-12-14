@@ -1,8 +1,8 @@
 PATH_META = "../Import/Data/MetaDonnees/*.xlsx"
 PATH_FICHES = "../Import/Data/Fiches/*.xlsx"
 
-file_name = "../import/Data/Fiches/Fiches_INA.csv"
-fiche_name = "../import/Data/MetaDonnees/MetaDonnees_INA.csv"
+file_name = "../Import/Data/Fiches/Fiches_INA.csv"
+fiche_name = "../Import/Data/MetaDonnees/MetaDonnees_INA.csv"
 merged_file = "../MergeData/files/Fiches_INA_merged.csv"
 merged_file_rai = "../MergeData/files/Fiches_RAI_merged.csv"
 FICHES_RAIUNO_20 = "Fiches_RAIUNO_20.xlsx"

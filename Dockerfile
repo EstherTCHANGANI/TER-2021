@@ -7,8 +7,8 @@ RUN apt -y upgrade
 RUN apt install -y build-essential libssl-dev libffi-dev python3-dev python3-pip
 
 
-COPY ./mapper/mapper.py /mapper/
-COPY ./mapper/requirements.txt /mapper/
+COPY ./TER-base-donnée/mapper/mapper.py /mapper/
+COPY ./TER-base-donnée/mapper/requirements.txt /mapper/
 
 RUN pip3 install -r requirements.txt
 

@@ -21,4 +21,5 @@ def import_csv_mongo(db_url, db_name, csv_file_path):
 
 # runs the csv_from_Excel function:
 if __name__ == '__main__':
-    import_csv_mongo(db_url, db_name, file_name)
+    import_csv_mongo(db_url, db_name, merged_file)
+    import_csv_mongo(db_url, db_name, merged_file_rai)
