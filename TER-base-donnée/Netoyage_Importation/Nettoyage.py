@@ -188,3 +188,4 @@ def clean_file(path_fiche):
 
 if __name__ == "__main__":
     clean_file(PATH_META)
+    clean_file(PATH_FICHES)
