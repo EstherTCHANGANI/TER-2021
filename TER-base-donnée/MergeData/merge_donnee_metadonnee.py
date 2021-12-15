@@ -25,7 +25,7 @@ def merge_data_mongodb(file_name_fiche, file_name_meta, champs):
     
     # Split column " Date et lieu de consultation" to 'Date de consultation' and 'Lieu de consultation'
     df = pd.read_csv(merged_file)
-    df[['Date de consultation', 'Lieu de consultation']] = df['Date et lieu de consultation'].str.split(' ', 1, expand=True)
+    df[['Date_de_consultation', 'Lieu_de_consultation']] = df['Date et lieu de consultation'].str.split(' ', 1, expand=True)
     df.to_csv("Fiches_INA_merged.csv")
 
 
