@@ -146,7 +146,7 @@ def xlsx_to_csv(filename):
     df = df.drop_duplicates(subset=None)
 
     # Création du fichier .csv
-    df.to_csv(f"{filename.split('.')[0]}.csv", index=False, encoding="utf-8")
+    df.to_csv(f"{filename.split('.xlsx')[0]}.csv", index=False, encoding="utf-8")
 
 
 def find_column_name(data_set, column_name):

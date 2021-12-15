@@ -9,6 +9,18 @@
             ],
             "function": "lambda args : str(args[0]) + \" \" + str(args[1]) if len(args) > 1 else args[0]"
         },
+        "Date_de_consultation": {
+            "fields": [
+                "Date et lieu de consultation"
+            ],
+            "function": "lambda args : args[0].split(', ')[0]"
+        },
+        "Lieu_de_consultation": {
+            "fields": [
+                "Date et lieu de consultation"
+            ],
+            "function": "lambda args : args[0].split(', ')[1]"
+        },
         "canal_de_transmission": "Chaine",
         "duree": "Duree",
         "date_de_diffusion_meta": "Date_de_diffusion",
