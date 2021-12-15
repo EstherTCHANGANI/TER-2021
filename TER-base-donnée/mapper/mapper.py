@@ -48,7 +48,7 @@ def mapper(document: dict, mapping: dict, sourceName: str):
             fields = _get_fields(document, value)
             try: 
                 new_doc[key] = func(fields)
-            except IndexError as e:
+            except Exception:
                 new_doc[key] = None
     return new_doc
 
