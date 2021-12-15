@@ -25,7 +25,7 @@ META_DONNEES_RAI = "MetaDonnees_RAI.xlsx"
 FICHES_INA = "Fiches_INA.xlsx"
 META_DONNEES_INA = "MetaDonnees_INA.xlsx"
 
-csv_file_path = "C:/Users/ibrah/Documents/ter_version1/Import/Data/Fiches/Fiches_INA.csv"
+csv_file_path = "./Data/Fiches/Fiches_INA.csv"
 
 # Configuration de fichier de donnéé avec le fichier de ces methadonnée en  specifiant le champs ou on veut faire le merge
 
