@@ -4,11 +4,9 @@
 # Le but est d'avoir un netoyage bien reussi pour les fichiers
 # Etape obligatoire (minimum avoir un des deux )
 
-<<<<<<< HEAD:TER-base-donnée/Netoyage_Importation/CONSTANTES.py
 PATH_META = "./Data/MetaDonnees/cat/*.xlsx"
-=======
 PATH_META = "./Data/MetaDonnees/*.xlsx"
->>>>>>> a334fb772fa627016975a6b92ca89cc38f3c6b66:TER-base-donnée/Import/CONSTANTES.py
+
 PATH_FICHES = "./Data/Fiches/*.xlsx"
 
 # Configuration de La base de donnée
@@ -30,12 +28,10 @@ META_DONNEES_INA = "MetaDonnees_INA.xlsx"
 csv_file_path = "C:/Users/ibrah/Documents/ter_version1/Import/Data/Fiches/Fiches_INA.csv"
 
 # Configuration de fichier de donnéé avec le fichier de ces methadonnée en  specifiant le champs ou on veut faire le merge
-<<<<<<< HEAD:TER-base-donnée/Netoyage_Importation/CONSTANTES.py
+
 file_name = "Fiches_INA.csv"
-=======
 merged_file = "../MergeData/files/Fiches_INA_merged.csv"
 merged_file_rai = "../MergeData/files/Fiches_RAI_merged.csv"
->>>>>>> a334fb772fa627016975a6b92ca89cc38f3c6b66:TER-base-donnée/Import/CONSTANTES.py
 fiche_name = "MetaDonnees_INA.csv"
 champs = "ID Notice"
 
