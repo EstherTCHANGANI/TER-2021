@@ -37,16 +37,19 @@ def get_mapping(mappingFile: str, sourceName: str):
 def mapper(document: dict, mapping: dict, sourceName: str):
     new_doc = dict(source=sourceName, extra=document)
     for key in mapping:
-        # print(document)
         value = mapping[key]
-        # print(value)
         if type(value) == str:
             if value in document:
                 new_doc[key] = document[value]
+            else:
+                new_doc[key] = None
         else:
             func = eval(value["function"])
             fields = _get_fields(document, value)
-            new_doc[key] = func(fields)
+            try: 
+                new_doc[key] = func(fields)
+            except IndexError as e:
+                new_doc[key] = None
     return new_doc
 
 
