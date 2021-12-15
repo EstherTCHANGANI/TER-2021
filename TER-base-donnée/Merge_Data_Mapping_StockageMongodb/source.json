@@ -2,14 +2,14 @@
     {
         "hostname": "localhost",
         "port": "27017",
-        "database": "base_ter",
+        "database": "admin",
         "collection": "Fiches_INA",
         "name":"ina"
     },
     {
         "hostname": "localhost",
         "port": "27017",
-        "database": "base_ter",
+        "database": "admin",
         "collection": "Fiches_RAI",
         "name":"RAI"
     }
