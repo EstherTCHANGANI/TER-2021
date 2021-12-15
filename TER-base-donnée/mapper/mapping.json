@@ -13,8 +13,18 @@
         "duree": "Duree",
         "date_de_diffusion_meta": "Date_de_diffusion",
         "image": "Image",
-        "evenement"	: "Événement",
-        "lieu"	: "Lieu",
+        "evenement": {
+            "fields":  [
+                "Événement"
+            ],
+            "function": "lambda args : list(args[0])"
+        },
+        "lieu": {
+            "fields":  [
+                "Lieu"
+            ],
+            "function": "lambda args : list(args[0])"
+        },
         "illustration": {
             "fields":  [
                 "Illustration"
