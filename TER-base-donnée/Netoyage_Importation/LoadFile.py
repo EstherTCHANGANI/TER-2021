@@ -20,9 +20,4 @@ def import_csv_mongo(db_url, db_name, csv_file_path):
 
 # runs the csv_from_Excel function:
 if __name__ == '__main__':
-<<<<<<< HEAD:TER-base-donnée/Netoyage_Importation/LoadFile.py
     import_csv_mongo(db_url, db_name, csv_file_path)
-=======
-    import_csv_mongo(db_url, db_name, merged_file)
-    import_csv_mongo(db_url, db_name, merged_file_rai)
->>>>>>> a334fb772fa627016975a6b92ca89cc38f3c6b66:TER-base-donnée/Import/LoadFile.py
