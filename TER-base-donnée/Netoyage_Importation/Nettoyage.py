@@ -148,7 +148,7 @@ def xlsx_to_csv(filename):
     # Création du fichier .csv
     df.to_csv(f"{filename.split('.')[0]}.csv", index=False, encoding="utf-8")
 
-
+# Changement des noms de colomes au niveau de constante.py
 def find_column_name(data_set, column_name):
     bool_columns_values = data_set.columns.str.match(column_name)
 
