@@ -7,6 +7,7 @@ export interface File {
   event: string[];
   place: string[];
   illustration: string[];
+  extra : Extra;
 }
 
 export interface Extra{
@@ -18,18 +19,18 @@ export interface Extra{
   Titre_programme: string;
   Chaine: string;
   Date_de_diffusion: string;
-  Jour: string;
-  Statut_de_diffusion: string;
+  Jour ?: string;
+  Statut_de_diffusion ?: string;
   Heure_de_diffusion: string;
   Heure_de_fin_de_diffusion: string;
   Duree: string;
   Genre: string;
   Generique: string;
-  Descripteurs: string;
-  Chapeau: string;
-  Societe_de_programmes: string;
-  Producteurs: string;
-  Extension_geographique: string;
-  Fonds: string;
-  Titre_materiel: string;
+  Descripteurs ?: string;
+  Chapeau ?: string;
+  Societe_de_programmes ?: string;
+  Producteurs ?: string;
+  Extension_geographique ?: string;
+  Fonds ?: string;
+  Titre_materiel ?: string;
 }
