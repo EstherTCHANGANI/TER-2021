@@ -1,19 +1,18 @@
 PATH_META = "../Import/Data/MetaDonnees/*.xlsx"
 PATH_FICHES = "../Import/Data/Fiches/*.xlsx"
 
-<<<<<<< HEAD:TER-base-donnée/Merge_Data_Mapping_StockageMongodb/CONSTANTES.py
-
 merged_file = "../MergeData/files/Fiches_INA_merged.csv"
 merged_file_rai = "../MergeData/files/Fiches_RAI_merged.csv"
 
 
 #Rennomage des fichiers
-=======
+
 file_name = "../Import/Data/Fiches/Fiches_INA.csv"
 fiche_name = "../Import/Data/MetaDonnees/MetaDonnees_INA.csv"
 merged_file = "../MergeData/files/Fiches_INA_merged.csv"
 merged_file_rai = "../MergeData/files/Fiches_RAI_merged.csv"
->>>>>>> a334fb772fa627016975a6b92ca89cc38f3c6b66:TER-base-donnée/MergeData/CONSTANTES.py
+
+
 FICHES_RAIUNO_20 = "Fiches_RAIUNO_20.xlsx"
 FICHES_RAIUNO_1330 = "Fiches_RAIUNO_1330.xlsx"
 META_DONNEES_RAI = "MetaDonnees_RAI.xlsx"
