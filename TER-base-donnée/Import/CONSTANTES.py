@@ -45,7 +45,9 @@ COLONNES_METADONNEES_INNA = {"ID Notice": "ID_notice",
                              "Personnalité": "Personnalité",
                              "Événement": "Événement",
                              "Lieu": "Lieu",
-                             "Illustration": "Illustration"
+                             "Illustration": "Illustration",
+                             "Date et lieu de consultation": "Date et lieu de consultation"
+
                              }
 
 COLONNES_METADONNEES_INNA_ARTE = {"Demonstration": "ID_notice",
