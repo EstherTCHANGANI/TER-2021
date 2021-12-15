@@ -18,8 +18,8 @@ Ce fichier se présent comme ceci :
 
 ### mapping.json
 
-Le fichier `mapping.json` défint comment les champs des différentes sources de données vont être mappés dans la collection `fiches_event`.
-
+Le fichier `mapping.json` définit comment les champs des différentes sources de données vont être mappés dans la collection `fiches_event`.
+Exemple en utilisant des champs de INA :
 ```json
 {
     "ina": {
@@ -45,7 +45,15 @@ Si le champ est un `objet`, alors :
 Dans l'exemple ci-dessus, le champ `date_de_diffusion` vaudra `04/12/2005 13:02:40`, lorsque `Date_de_diffusion=04/12/2005` et `Heure_de_diffusion=13:02:40`. 
 
 
-## Exceution
+
+## Installation
+
+```bash
+$ pip install -r requirements.txt
+```
+
+
+## Execution
 
 Obtenir de l'aide : 
 

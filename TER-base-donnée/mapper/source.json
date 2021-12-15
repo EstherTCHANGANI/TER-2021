@@ -2,8 +2,32 @@
     {
         "hostname": "localhost",
         "port": "27017",
-        "database": "admin",
-        "collection": "fiches_INA",
+        "database": "TER",
+        "collection": "Fiches_INA_merged",
         "name":"ina"
+    },
+<<<<<<< HEAD
+
+    {
+        "hostname": "localhost",
+        "port": "27017",
+        "database": "admin",
+        "collection": "fiches_RAIUNO 20",
+        "name":"rai"
+    },
+
+     {
+        "hostname": "localhost",
+        "port": "27017",
+        "database": "admin",
+        "collection": "Fiches RAIUNO 1330",
+=======
+    {
+        "hostname": "localhost",
+        "port": "27017",
+        "database": "TER",
+        "collection": "Fiches_RAI_merged",
+>>>>>>> a334fb772fa627016975a6b92ca89cc38f3c6b66
+        "name":"rai"
     }
 ]

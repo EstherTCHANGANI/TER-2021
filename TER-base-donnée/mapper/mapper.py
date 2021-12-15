@@ -1,6 +1,6 @@
-import argparse
 import json
 import os
+
 from pymongo import MongoClient
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -13,6 +13,11 @@ parser.add_argument('--source', type=str, default=os.path.join(dir_path, './sour
 
 
 def get_source(sourceFile):
+    """
+    Read the source file
+    :param sourceFile: path of the file
+    :return: dictionary
+    """
     with open(sourceFile) as f:
         return json.load(f)
 
@@ -39,19 +44,26 @@ def mapper(document: dict, mapping: dict, sourceName: str):
     for key in mapping:
         value = mapping[key]
         if type(value) == str:
-            new_doc[key] = document[value]
+            if value in document:
+                new_doc[key] = document[value]
+            else:
+                new_doc[key] = None
         else:
             func = eval(value["function"])
             fields = _get_fields(document, value)
-            new_doc[key] = func(fields)
+            try:
+                new_doc[key] = func(fields)
+            except:
+                new_doc[key] = None
     return new_doc
 
 
-def _get_fields(document, value):
+def _get_fields(document:dict, value):
     fields = list()
     for field_name in value["fields"]:
-        field = document[field_name]
-        fields.append(field)
+        if field_name in document:
+            field = document[field_name]
+            fields.append(field)
     return fields
 
 
@@ -67,7 +79,9 @@ if __name__ == '__main__':
     for source in sources:
         data = load_data_from_source(source)
         res = []
+        print("Mapping collection: " + source["collection"])
         mapping = get_mapping(args.mapping, source["name"])
         for doc in data:
             res.append(mapper(doc, mapping, source["collection"]))
+        print(str(len(res)) + " documents mapped.")
         collection_event.insert_many(res)
