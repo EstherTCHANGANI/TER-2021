@@ -69,9 +69,8 @@ Le fichier `mapping.json` défint comment les champs des différentes sources de
     "Lieu_de_consultation": "Lieu_de_consultation"
   },
 
-=======
 {
-<<<<<<< HEAD
+
    "ina": {
         "id": "ID Notice",
         "titre": "Titre_propre",
@@ -91,7 +90,6 @@ Le fichier `mapping.json` défint comment les champs des différentes sources de
         "Lieu"	: "Lieu",
         "Illustration":	"Illustration",
         "Date et lieu de consultation" : "Date_et_lieu_de_consultation"
-=======
     "ina": {
         "id": "ID_notice", # Champs dans fiches_event => champ de la source
         "titre": "Titre_propre",
@@ -101,10 +99,8 @@ Le fichier `mapping.json` défint comment les champs des différentes sources de
             "function": "lambda args : str(args[0]) + \" \" + str(args[1]) if len(args) > 1 else args[0]" 
           # Fonction qui permet d'évaluer les champs précédents  
         }
->>>>>>> origin/develop
     }
  }
->>>>>>> a334fb772fa627016975a6b92ca89cc38f3c6b66:TER-base-donnée/MergeData/README.md
 ```
 
 Si le champ est une `string`, alors le champ correspondant dans le document initial est utilisé.
