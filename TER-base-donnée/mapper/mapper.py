@@ -37,9 +37,12 @@ def get_mapping(mappingFile: str, sourceName: str):
 def mapper(document: dict, mapping: dict, sourceName: str):
     new_doc = dict(source=sourceName, extra=document)
     for key in mapping:
+        # print(document)
         value = mapping[key]
+        # print(value)
         if type(value) == str:
-            new_doc[key] = document[value]
+            if value in document:
+                new_doc[key] = document[value]
         else:
             func = eval(value["function"])
             fields = _get_fields(document, value)
@@ -50,8 +53,9 @@ def mapper(document: dict, mapping: dict, sourceName: str):
 def _get_fields(document, value):
     fields = list()
     for field_name in value["fields"]:
-        field = document[field_name]
-        fields.append(field)
+        if field_name in document :
+            field = document[field_name]
+            fields.append(field)
     return fields
 
 
