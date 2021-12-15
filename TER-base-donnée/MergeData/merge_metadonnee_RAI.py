@@ -18,8 +18,12 @@ def merge_data_mongodb(file_name_fiche, file_name_meta, champs):
     # using merge function by setting how='inner'
     output1 = pd.merge(result, file_name_fiche_2,
                        on="ID Notice",
-                       how='inner')
+                       how='outer')
     output1.to_csv(merged_file_rai, index=False)
+    df = pd.read_csv(merged_file_rai)
+    df[['Date of Research', 'Place of Research']] = df['Date and Place of Research'].str.split(' ', 1, expand=True)
+    
+    df.to_csv("Fiches_RAI_merged.csv")
 
 
 
