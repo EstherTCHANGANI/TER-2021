@@ -4,7 +4,7 @@
         *ngFor="let image of images"
         [colspan]="1"
         [rowspan]="1">
-      <img src={{image.src}}>
+      <img matTooltip={{image.name}} src={{image.src}}>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
