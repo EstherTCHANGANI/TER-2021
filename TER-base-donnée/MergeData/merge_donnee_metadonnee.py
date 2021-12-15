@@ -16,17 +16,17 @@ def merge_data_mongodb(file_name_fiche, file_name_meta, champs):
     data[champs] = data[champs].astype("string")
 
     # using merge function by setting how='inner'
-
+    # using outer for all data 
     output1 = pd.merge(data, meta_data,
                        on=champs,
-                       how='inner')
+                       how='outer')
 
     output1.to_csv(merged_file, index=False)
-    # f3 = pandas.merge(f1, f2, on='ID Notice', how='left')
-    # for c in f1.columns:
-    #     for g in f2.columns:
-    #         f3 = f1[[c]].merge(f2[[g]], on="ID Notice",
-    #                            how="left")
+    
+    # Split column " Date et lieu de consultation" to 'Date de consultation' and 'Lieu de consultation'
+    df = pd.read_csv(merged_file)
+    df[['Date de consultation', 'Lieu de consultation']] = df['Date et lieu de consultation'].str.split(' ', 1, expand=True)
+    df.to_csv("Fiches_INA_merged.csv")
 
 
 if __name__ == "__main__":
