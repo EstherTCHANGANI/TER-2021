@@ -65,12 +65,22 @@ class ClusterService {
         const events = await this.getEvents();
 
         if (_.isEmpty(clusters) || _.isEmpty(keywords)) {
-            return events;
+            return this.groupEvents(events)
         }
 
-        return events.filter(event =>
+        const filteredEvents = events.filter(event =>
             keywords.every(keyword => this.findKeywordInCluster(event, clusters, _.lowerCase(keyword)))
         );
+        return this.groupEvents(filteredEvents)
+    }
+
+    async groupEvents(events) {
+        console.log(_.groupBy(events, "id"))
+        return Object.values(_.groupBy(events, "id"))
+        .map(group => group.reduce((res, cur)=> {
+            res.images.push(cur.image);
+            return res;
+        }, {...group[0], images: [group[0].image]}))
     }
 
     /**
