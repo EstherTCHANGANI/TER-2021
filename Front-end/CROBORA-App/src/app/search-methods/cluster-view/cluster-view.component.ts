@@ -17,8 +17,8 @@ export class ClusterViewComponent implements OnChanges {
   selectedClusters: Cluster[] =  [];
 
   fileList: File[] = [
-    { title: "Signature du traité de Lisbonne", nbImage: 4, canal_de_transmission: null, date_de_diffusion: null,
-      personality: ['Hans-Gert Pöttering'], event: ['Treaty', 'Treaty of Lisbonne'], place: ['Lisbonne', 'Portugal'], illustration: ['Signature'],extra:{
+    { titre: "Signature du traité de Lisbonne", nbImage: 4, canal_de_transmission: null, date_de_diffusion: null,
+      Personnalite: ['Hans-Gert Pöttering'], Evenement: ['Treaty', 'Treaty of Lisbonne'], Lieu: ['Lisbonne', 'Portugal'], Illustration: ['Signature'],extra:{
         _id: "61a79ba58cdcf53b5627d811",
         database: "fiches_INA",
         ID_notice: 4712188001012,
@@ -42,8 +42,8 @@ export class ClusterViewComponent implements OnChanges {
         Fonds: "Télévision Francaise 1 Actualités",
         Titre_materiel: "[Journée de captation TF1 du 15 mai 2012]"
       }},
-    {title: "50 ans d'amitié franco-allemandes", nbImage: 12, canal_de_transmission: "TF1", date_de_diffusion: "2012-05-15 00:00:00",
-      personality: ['Angela Merkel', 'Nicolas Sarkozy'], event: ['France Germany relations'], place: ['Europe'], illustration: ['Meeting'],extra:{
+    {titre: "50 ans d'amitié franco-allemandes", nbImage: 12, canal_de_transmission: "TF1", date_de_diffusion: "2012-05-15 00:00:00",
+      Personnalite: ['Angela Merkel', 'Nicolas Sarkozy'], Evenement: ['France Germany relations'], Lieu: ['Europe'], Illustration: ['Meeting'],extra:{
         _id: "61a79ba58cdcf53b5627d811",
         database: "fiches_INA",
         ID_notice: 4712188001012,
@@ -77,10 +77,10 @@ export class ClusterViewComponent implements OnChanges {
   }
 
   getIconByClusterType(cluster: Cluster): string {
-    if (cluster.type === 'event') return 'event';
-    else if (cluster.type === 'personality') return 'emoji_people';
-    else if (cluster.type === 'place') return 'home';
-    else if (cluster.type === 'illustration') return 'auto_stories';
+    if (cluster.type === 'Evenement') return 'event';
+    else if (cluster.type === 'Personnalite') return 'emoji_people';
+    else if (cluster.type === 'Lieu') return 'home';
+    else if (cluster.type === 'Illustration') return 'auto_stories';
     else return 'block'
   }
 

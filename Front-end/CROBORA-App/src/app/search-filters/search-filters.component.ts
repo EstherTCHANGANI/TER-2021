@@ -7,6 +7,8 @@ import {map, startWith} from 'rxjs/operators';
 import { FilterService } from 'src/services/filter.service';
 import { Cluster } from '../../models/cluster.model';
 import { Filter } from '../../models/filter.model';
+import { File } from '../../models/file.model';
+import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'app-search-filters',
@@ -44,27 +46,28 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     {value: 'alphabetic', viewValue: 'Alphabetic'},
   ];
 
+  // clusterList: Cluster[] = [];
   clusterList: Cluster[] = [
-    {value: 'Treaty', type: 'event'},
-    {value: 'Treaty of Rome', type: 'event'},
-    {value: 'Treaty of Lisbonne', type: 'event'},
-    {value: 'Referendum', type: 'event'},
-    {value: 'France Germany relations', type: 'event'},
-    {value: 'Charles de Gaulle', type: 'personality'},
-    {value: 'Robert Schuman', type: 'personality'},
-    {value: 'François Mitterrand', type: 'personality'},
-    {value: 'François Hollande', type: 'personality'},
-    {value: 'Angela Merkel', type: 'personality'},
-    {value: 'Hans-Gert Pöttering', type: 'personality'},
-    {value: 'Nicolas Sarkozy', type: 'personality'},
-    {value: 'Portugal', type: 'place'},
-    {value: 'Paris', type: 'place'},
-    {value: 'Lisbonne', type: 'place'},
-    {value: 'Europe', type: 'place'},
-    {value: 'Accident', type: 'illustration'},
-    {value: 'Factory', type: 'illustration'},
-    {value: 'Signature', type: 'illustration'},
-    {value: 'Meeting', type: 'illustration'}
+    {value: 'Treaty', type: 'Evenement'},
+    {value: 'Treaty of Rome', type: 'Evenement'},
+    {value: 'Treaty of Lisbonne', type: 'Evenement'},
+    {value: 'Referendum', type: 'Evenement'},
+    {value: 'France Germany relations', type: 'Evenement'},
+    {value: 'Charles de Gaulle', type: 'Personnalite'},
+    {value: 'Robert Schuman', type: 'Personnalite'},
+    {value: 'François Mitterrand', type: 'Personnalite'},
+    {value: 'François Hollande', type: 'Personnalite'},
+    {value: 'Angela Merkel', type: 'Personnalite'},
+    {value: 'Hans-Gert Pöttering', type: 'Personnalite'},
+    {value: 'Nicolas Sarkozy', type: 'Personnalite'},
+    {value: 'Portugal', type: 'Lieu'},
+    {value: 'Paris', type: 'Lieu'},
+    {value: 'Lisbonne', type: 'Lieu'},
+    {value: 'Europe', type: 'Lieu'},
+    {value: 'Accident', type: 'Illustration'},
+    {value: 'Factory', type: 'Illustration'},
+    {value: 'Signature', type: 'Illustration'},
+    {value: 'Meeting', type: 'Illustration'}
   ];
 
   // variables for search bar :
@@ -96,17 +99,23 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   lastColorChip: string;
   actualColorChip: string;
 
-  constructor(private filterService: FilterService) { 
+  constructor(private filterService: FilterService, private httpService: HttpService) { 
     this.selectedDatabase = this.databases[0].value;
     this.selectedSearchType = this.searchTypes[0].value;
     this.selectedShowType = this.showTypes[0].value;
     this.selectedSortType = this.sortTypes[0].value;
+    this.httpService.getClusters()
+    .subscribe(clusters => {
+      this.clusterList = clusters;
+      console.log(clusters);
+    });
   }
 
   ngOnInit() {
     this.activateSearchBar();
     this.filterClustersByType();
     this.autoCompleteClusters();
+    console.log(this.clusterList);
   }
 
   ngOnChanges(): void {
@@ -122,10 +131,10 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
    * Functions related to search Bar :
    */
   private filterClustersByType() {
-      this.clusterListFilteredByEvent = this.clusterList.filter(cluster => cluster.type === 'event');
-      this.clusterListFilteredByPersonality = this.clusterList.filter(cluster => cluster.type === 'personality');
-      this.clusterListFilteredByPlace = this.clusterList.filter(cluster => cluster.type === 'place');
-      this.clusterListFilteredByIllustration = this.clusterList.filter(cluster => cluster.type === 'illustration');
+      this.clusterListFilteredByEvent = this.clusterList.filter(cluster => cluster.type === 'Evenement');
+      this.clusterListFilteredByPersonality = this.clusterList.filter(cluster => cluster.type === 'Personnalite');
+      this.clusterListFilteredByPlace = this.clusterList.filter(cluster => cluster.type === 'Lieu');
+      this.clusterListFilteredByIllustration = this.clusterList.filter(cluster => cluster.type === 'Illustration');
   }
 
   private autoCompleteClusters() {
@@ -176,7 +185,7 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   /**
    * Functions related to Cluster Chips :
    */
-   addChip(event: MatChipInputEvent): void {
+   async addChip(event: MatChipInputEvent) {
     const input = event.input;
     const value = event.value;
     // Add a cluster
@@ -190,22 +199,22 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     this.myControl.setValue(null);
   }
 
-  removeChip(selectedCluster: Cluster): void {
-    // const index = this.selectedClustersValues.indexOf(cluster.value);
-    // if (index >= 0) {
-    //   this.selectedClustersValues.splice(index, 1);
-    // }
+  async removeChip(selectedCluster: Cluster) {
+    const index = this.selectedClustersValues.indexOf(selectedCluster.value);
+    if (index >= 0) {
+      this.selectedClustersValues.splice(index, 1);
+    }
     this.selectedClustersObjects = this.selectedClustersObjects.filter((cluster) => cluster.value !== selectedCluster.value);
     this.filterService.selectedClusters = [...this.selectedClustersObjects];
-    console.log(this.selectedClustersObjects);
+    // console.log(this.selectedClustersObjects);
   }
 
-  getSelectedCluster(selectedCluster: Cluster, event: any): void {
+  getSelectedCluster(selectedCluster: Cluster, event: any) {
     if (event.isUserInput) {    // ignore on deselection of the previous option
-
       if (!this.selectedClustersObjects.includes(selectedCluster)) {
         this.selectedClustersObjects.push(selectedCluster);
       }
+      this.requestSearchFiles();
       this.filterService.selectedClusters = this.selectedClustersObjects;
       console.log(this.selectedClustersObjects);
       this.myControl.setValue(null);
@@ -213,16 +222,16 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
       let chipElement = document.querySelectorAll('.mat-chip');
       let lastChild = chipElement[chipElement.length - 1];
       this.lastColorChip = this.actualColorChip;
-      if(selectedCluster.type === 'event') {
+      if(selectedCluster.type === 'Evenement') {
         this.actualColorChip = 'brown';
       }
-      else if(selectedCluster.type === 'personality') {
+      else if(selectedCluster.type === 'Personnalite') {
         this.actualColorChip = 'blue';
       }
-      else if(selectedCluster.type === 'place') {
+      else if(selectedCluster.type === 'Lieu') {
         this.actualColorChip = 'red';
       }
-      else if(selectedCluster.type === 'illustration') {
+      else if(selectedCluster.type === 'Illustration') {
         this.actualColorChip = 'green';
       }
       // adding css class dynamically
@@ -243,61 +252,45 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     }
     event.value = '';
   }
+
+  private requestSearchFiles() {
+    // let reponseApi: File[] = [];
+    let clusterTypesChecked: string[] = [];
+    if(this.eventChecked) clusterTypesChecked.push('evenement');
+    if(this.personalityChecked) clusterTypesChecked.push('personnalite');
+    if(this.placeChecked) clusterTypesChecked.push('lieu');
+    if(this.illustrationChecked) clusterTypesChecked.push('illustration');
+    console.log(this.selectedClustersValues);
+    console.log(this.selectedClustersObjects);
+    this.httpService.getFilesByCluster(clusterTypesChecked, this.selectedClustersValues)
+    .subscribe(files => {
+      this.filterService.searchedfiles = files;
+    });
+  }
   
   
   selectedChip(event: MatAutocompleteSelectedEvent): void {
     const clusterSelectedValue = event.option.value;
     this.selectedClustersValues.push(clusterSelectedValue);
     this.myControl.setValue(null);
-  /*
-    let chipElement = document.querySelectorAll('.mat-chip');
-    let lastChild = chipElement[chipElement.length - 1];
-    this.lastColorChip = this.actualColorChip;
-    if(this.getClusterTypeByValue(clusterSelected) === 'event') {
-      this.actualColorChip = 'brown';
-    }
-    else if(this.getClusterTypeByValue(clusterSelected) === 'personality') {
-      this.actualColorChip = 'blue';
-    }
-    else if(this.getClusterTypeByValue(clusterSelected) === 'place') {
-      this.actualColorChip = 'red';
-    }
-    else if(this.getClusterTypeByValue(clusterSelected) === 'illustration') {
-      this.actualColorChip = 'green';
-    }
-    // adding css class dynamically
-    if(chipElement.length > 0 && !lastChild.classList.contains('eventChip') && !lastChild.classList.contains('personalityChip') && !lastChild.classList.contains('placeChip') && !lastChild.classList.contains('illustrationChip')) {
-      if(this.lastColorChip === 'brown') {
-        lastChild.classList.add('eventChip');
-      }
-      else if(this.lastColorChip === 'blue') {
-        lastChild.classList.add('personalityChip');
-      }
-      else if(this.lastColorChip === 'red') {
-        lastChild.classList.add('placeChip');
-      }
-      else if(this.lastColorChip === 'green') {
-        lastChild.classList.add('illustrationChip');
-      }
-    }*/
   }
   
   private getClusterTypeByValue(value: string): string {
     const isEvent = this.clusterListFilteredByEvent.some(cluster => cluster.value === value)
     if(isEvent) {
-      return 'event';
+      return 'Evenement';
     }
     const isPersonality = this.clusterListFilteredByPersonality.some(cluster => cluster.value === value)
     if(isPersonality) {
-      return 'personality';
+      return 'Personnalite';
     }
     const isPlace = this.clusterListFilteredByPlace.some(cluster => cluster.value === value)
     if(isPlace) {
-      return 'place';
+      return 'Lieu';
     }
     const isIllustration = this.clusterListFilteredByIllustration.some(cluster => cluster.value === value)
     if(isIllustration) {
-      return 'illustration';
+      return 'Illustration';
     }
     return 'no-type';
   }
