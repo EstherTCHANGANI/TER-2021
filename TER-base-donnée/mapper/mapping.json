@@ -27,7 +27,7 @@
         "image": "Image",
         "evenement": {
             "fields":  [
-                "Événement"
+                "Evenement"
             ],
             "function": "lambda args : args"
         },
@@ -45,16 +45,44 @@
         },
         "personnalite": {
             "fields":  [
-                "Personnalité"
+                "Personnalite"
             ],
             "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
         }
     },
-   "rai": {
-        "id": "Documento",
-        "titre": "Titolo Programma",
-        "date_de_diffusion": "Data Trasmissione",
-        "canal_de_transmission":"Canale Trasmissione",
-        "duree":"Durata"
+    "rai": {
+      "ID Notice": "ID Notice",
+      "Titre de programme": "Titolo Programma",
+      "Titre Sequence/Service": "Titolo Sequenza/Servizio",
+      "Image": "Image",
+      "Personalite": {
+        "fields": [
+          "Celebrity"
+        ],
+        "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
+      },
+      "Evenement": {
+        "fields": [
+          "Event"
+        ],
+        "function": "lambda args : args"
+      },
+      "Lieu": {
+        "fields": [
+          "Location"
+        ],
+        "function": "lambda args : args"
+      },
+      "Illustration": {
+        "fields": [
+          "Illustration"
+        ],
+        "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
+      },
+      "Date_of_Research": "Date_de_Research",
+      "Place_of_Research": "Place_de_Research",
+      "Duree": "Durata",
+      "Contenue audio": "Contenuto Audio",
+      "Contenuto Video": "Contenuto Video"
     }
 }

@@ -29,14 +29,14 @@ def merge_data_mongodb(file_name_fiche, file_name_meta, champs):
     # using outer for all data 
     output1 = pd.merge(data, meta_data,
                        on=champs,
-                       how='outer')
+                       how='inner')
 
     output1.to_csv(merged_file, index=False)
 
     # Split column " Date et lieu de consultation" to 'Date de consultation' and 'Lieu de consultation'
     df = pd.read_csv(merged_file)
-    df[['Date_de_consultation', 'Lieu_de_consultation']] = df['Date et lieu de consultation'].str.split(',', 1,
-                                                                                                        expand=True)
+    # df[['Date_de_consultation', 'Lieu_de_consultation']] = df['Date et lieu de consultation'].str.split(',', 1,
+    #                                                                                                     expand=True)
     df.to_csv(merged_file)
 
 
