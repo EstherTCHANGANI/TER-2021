@@ -3,7 +3,7 @@
 </div>
 <div class="listview-box">
   <mat-accordion multi *ngIf="eventChecked || personalityChecked || placeChecked || illustrationChecked">
-    <mat-expansion-panel *ngFor="let file of filterService.getSearchedFiles()">
+    <mat-expansion-panel *ngFor="let file of getFilesByDB()">
       <mat-expansion-panel-header>
         <mat-panel-title (click)="$event.stopPropagation()">
           <mat-icon>article</mat-icon>

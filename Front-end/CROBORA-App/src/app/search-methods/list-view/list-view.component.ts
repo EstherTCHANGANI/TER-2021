@@ -88,4 +88,15 @@ export class ListViewComponent implements OnInit {
     console.log(file);
   }
 
+  getFilesByDB(): File[] {
+    let filesFromRequest = this.filterService.getSearchedFiles()
+    if(this.filterService.getSelectedDatabase() === 'ina') {
+      return filesFromRequest.filter( file => file.source === 'Fiches_INA_merged');
+    } 
+    else if(this.filterService.getSelectedDatabase() === 'rai') {
+      return filesFromRequest.filter( file => file.source === 'Fiches_RAI_merged');
+    } 
+    else return filesFromRequest;  // 'all' or others
+  }
+
 }

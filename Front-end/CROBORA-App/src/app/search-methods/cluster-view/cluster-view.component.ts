@@ -93,8 +93,10 @@ export class ClusterViewComponent implements OnInit, OnChanges {
     console.log(file);
   }
 
-  getFilesByCluster(cluster: Cluster) {
-    return this.filterService.getSearchedFilesByCluster().get(cluster.value);
+  getFilesByCluster(cluster: Cluster): File[] {
+    if (this.filterService.getSearchedFilesByCluster().size > 0) {
+      return this.filterService.getSearchedFilesByCluster().get(cluster.value);
+    } else return this.fileList;
   }
 
 }

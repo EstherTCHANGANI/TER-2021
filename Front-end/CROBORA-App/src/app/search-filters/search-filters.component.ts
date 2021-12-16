@@ -324,6 +324,7 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
 
   onDatabaseChange() {
     console.log(this.selectedDatabase);
+    this.filterService.selectedDatabase = this.selectedDatabase;
   }
 
   onSearchTypeChange() {

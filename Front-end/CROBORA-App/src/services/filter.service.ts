@@ -10,6 +10,7 @@ export class FilterService{
   selectedClusters: Cluster[] = [];
   searchedfiles: File[] = [];
   searchedFilesByCluster = new Map<string, File[]>();
+  selectedDatabase: string = 'all';
 
   getSelectedClusters() {
     return this.selectedClusters;
@@ -21,6 +22,10 @@ export class FilterService{
 
   getSearchedFilesByCluster() {
     return this.searchedFilesByCluster;
+  }
+
+  getSelectedDatabase() {
+    return this.selectedDatabase;
   }
 
   constructor() { }
