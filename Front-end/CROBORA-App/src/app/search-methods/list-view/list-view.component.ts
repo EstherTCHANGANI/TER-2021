@@ -14,8 +14,8 @@ export class ListViewComponent implements OnInit {
   @Input() illustrationChecked?: boolean;
 
   fileList: File[] = [
-    { title: "Signature du traité de Lisbonne", nbImage: 4, canal_de_transmission: null, date_de_diffusion: null,
-     personality: ['Hans-Gert Pöttering'], event: ['Treaty', 'Treaty of Lisbonne'], place: ['Lisbonne', 'Portugal'], illustration: ['Signature'],
+    { titre: "Signature du traité de Lisbonne", nbImage: 4, canal_de_transmission: null, date_de_diffusion: null,
+     Personnalite: ['Hans-Gert Pöttering'], Evenement: ['Treaty', 'Treaty of Lisbonne'], Lieu: ['Lisbonne', 'Portugal'], Illustration: ['Signature'],
     extra:{
       _id: "61a79ba58cdcf53b5627d811",
       database: "fiches_INA",
@@ -40,8 +40,8 @@ export class ListViewComponent implements OnInit {
       Fonds: "Télévision Francaise 1 Actualités",
       Titre_materiel: "[Journée de captation TF1 du 15 mai 2012]"
     }},
-    {title: "50 ans d'amitié franco-allemande", nbImage: 12, canal_de_transmission: "TF1", date_de_diffusion: "2012-05-15 00:00:00",
-     personality: ['Angela Merkel', 'Nicolas Sarkozy'], event: ['France Germany relations'], place: ['Europe'], illustration: ['Meeting'],
+    {titre: "50 ans d'amitié franco-allemande", nbImage: 12, canal_de_transmission: "TF1", date_de_diffusion: "2012-05-15 00:00:00",
+     Personnalite: ['Angela Merkel', 'Nicolas Sarkozy'], Evenement: ['France Germany relations'], Lieu: ['Europe'], Illustration: ['Meeting'],
      extra:{
       _id: "61a79ba58cdcf53b5627d811",
       database: "fiches_INA",
@@ -79,7 +79,7 @@ export class ListViewComponent implements OnInit {
   }
 
   getClustersQuantity(file: File): number {
-    return file.event.length + file.personality.length + file.place.length + file.illustration.length;;
+    return file.Evenement.length + file.Personnalite.length + file.Lieu.length + file.Illustration.length;;
   }
 
 }

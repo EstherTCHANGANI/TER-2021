@@ -1,42 +1,47 @@
 import argparse
+import json
 import os
+
 from pymongo import MongoClient
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 parser = argparse.ArgumentParser(description='Map collections to a unified event collection')
-parser.add_argument('collection', type=str, default=None,
-                    help='The name of the collection to map')
+parser.add_argument('--mapping', type=str, default=os.path.join(dir_path, './mapping.json'), nargs="?",
+                    help='The path of the mapping file')
+parser.add_argument('--source', type=str, default=os.path.join(dir_path, './source.json'), nargs="?",
+                    help='The path of the mapping file')
 
 
-def get_source(mongo_config, collection_name):
-    config_collection = get_collection(mongo_config, "config")
-    configs = config_collection.find_one({"name": "sources"})
-    if configs is None: 
-        return None
-    for conf in configs["config"] :
-        if conf["collection"] == collection_name :
-            return conf
-    return None
+def get_source(sourceFile):
+    """
+    Read the source file
+    :param sourceFile: path of the file
+    :return: dictionary
+    """
+    with open(sourceFile) as f:
+        return json.load(f)
 
 
-def get_collection(source:dict, collection_name:str):
+def load_data_from_source(source: dict):
+    collection = get_collection(source)
+    return collection.find()
+
+
+def get_collection(source):
     client = MongoClient(host=source["hostname"], port=int(source["port"]))
     db = client[source["database"]]
-    collection = db[collection_name]
+    collection = db[source["collection"]]
     return collection
 
 
-def get_mapping(source_name: str):
-    config_collection = get_collection(mongo_config, "config")
-    configs = config_collection.find_one({"name": "mapping"})
-    if configs is None: 
-        return None
-    return configs["config"][source_name]
+def get_mapping(mappingFile: str, sourceName: str):
+    with open(mappingFile) as f:
+        return json.load(f)[sourceName]
 
 
-def mapper(document: dict, mapping: dict, source_name: str):
-    new_doc = dict(source=source_name, extra=document)
+def mapper(document: dict, mapping: dict, sourceName: str):
+    new_doc = dict(source=sourceName, extra=document)
     for key in mapping:
         value = mapping[key]
         if type(value) == str:
@@ -54,7 +59,7 @@ def mapper(document: dict, mapping: dict, source_name: str):
     return new_doc
 
 
-def _get_fields(document, value):
+def _get_fields(document:dict, value):
     fields = list()
     for field_name in value["fields"]:
         if field_name in document:
@@ -63,38 +68,21 @@ def _get_fields(document, value):
     return fields
 
 
-def load_data_from_source(source: dict,collection_name:str):
-    collection = get_collection(source, collection_name)
-    return collection.find()
-
-
-
 if __name__ == '__main__':
     args = parser.parse_args()
 
-    mongo_config = {
-        "hostname": os.environ["DB_HOST_NAME"] if "DB_HOST_NAME" in os.environ else "localhost", 
-        "port": os.environ["DB_PORT"] if "DB_PORT" in os.environ else "27017", 
-        "database": "admin"}
+    sources = get_source(args.source)
+    collection_event = get_collection(
+        {"hostname": "localhost", "port": "27017", "database": "TER", "collection": "fiches_event"})
 
-    source = get_source(mongo_config, args.collection)
+    collection_event.drop()
 
-    if source is None:
-        print("Source configuration for collection " + args.collection + " is not defined")
-        exit(1)
-
-    mapping = get_mapping(source["name"])
-
-    if mapping is None:
-        print("Mapping configuration for collection " + args.collection + " is not defined")
-        exit(1)
-
-    collection_event = get_collection(mongo_config, "fiches_event")
-
-    data = load_data_from_source(mongo_config, source["collection"])
-    res = []
-    print("Mapping collection: " + source["collection"])
-    for doc in data:
-        res.append(mapper(doc, mapping, source["collection"]))
-    print(str(len(res)) + " documents mapped.")
-    collection_event.insert_many(res)
+    for source in sources:
+        data = load_data_from_source(source)
+        res = []
+        print("Mapping collection: " + source["collection"])
+        mapping = get_mapping(args.mapping, source["name"])
+        for doc in data:
+            res.append(mapper(doc, mapping, source["collection"]))
+        print(str(len(res)) + " documents mapped.")
+        collection_event.insert_many(res)

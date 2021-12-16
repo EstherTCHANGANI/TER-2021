@@ -1,19 +1,27 @@
 export interface File {
-  title : string;
-  nbImage: number;
+  _id?: string;
+  id?: number;
+  source?: string;
+  titre : string;
+  nbImage?: number;
   canal_de_transmission: string;
   date_de_diffusion: string;
-  personality: string[];
-  event: string[];
-  place: string[];
-  illustration: string[];
+  date_de_diffusion_meta?: string;
+  Date_de_consultation?: string;
+  Lieu_de_consultation?: string;
+  duree?: string;
+  image?: string;
+  Personnalite: string[];
+  Evenement: string[];
+  Lieu: string[];
+  Illustration: string[];
   extra : Extra;
 }
 
 export interface Extra{
-  _id : string;
+  _id? : string;
   database: string;
-  ID_notice: number;
+  ID_notice?: number;
   Titre_propre: string;
   Titre_collection: string;
   Titre_programme: string;
@@ -33,4 +41,5 @@ export interface Extra{
   Extension_geographique ?: string;
   Fonds ?: string;
   Titre_materiel ?: string;
+  Image?: string;
 }

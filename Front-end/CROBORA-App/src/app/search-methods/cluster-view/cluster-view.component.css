@@ -27,16 +27,16 @@ mat-list-item  mat-icon {
   padding-right: 0.5rem;
 }
 
-mat-panel-title.event {
+mat-panel-title.Evenement {
   color: #632800;
 }
-mat-panel-title.personality{
+mat-panel-title.Personnalite{
   color: blue;
 }
-mat-panel-title.place{
+mat-panel-title.Lieu{
   color: red;
 }
-mat-panel-title.illustration{
+mat-panel-title.Illustration{
   color: green;
 }
 
