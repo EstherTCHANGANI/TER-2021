@@ -11,10 +11,10 @@ export interface File {
   Lieu_de_consultation?: string;
   duree?: string;
   image?: string;
-  Personnalite: string[];
-  Evenement: string[];
-  Lieu: string[];
-  Illustration: string[];
+  personnalite: string[];
+  evenement: string[];
+  lieu: string[];
+  illustration: string[];
   extra : Extra;
 }
 
@@ -22,8 +22,8 @@ export interface Extra{
   _id? : string;
   database: string;
   ID_notice?: number;
-  Titre_propre: string;
-  Titre_collection: string;
+  Titre_propre_x: string;
+  Titre_collection_x: string;
   Titre_programme: string;
   Chaine: string;
   Date_de_diffusion: string;

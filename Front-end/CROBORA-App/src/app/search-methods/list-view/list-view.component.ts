@@ -15,13 +15,13 @@ export class ListViewComponent implements OnInit {
 
   fileList: File[] = [
     { titre: "Signature du traité de Lisbonne", nbImage: 4, canal_de_transmission: null, date_de_diffusion: null,
-     Personnalite: ['Hans-Gert Pöttering'], Evenement: ['Treaty', 'Treaty of Lisbonne'], Lieu: ['Lisbonne', 'Portugal'], Illustration: ['Signature'],
+     personnalite: ['Hans-Gert Pöttering'], evenement: ['Treaty', 'Treaty of Lisbonne'], lieu: ['Lisbonne', 'Portugal'], illustration: ['Signature'],
     extra:{
       _id: "61a79ba58cdcf53b5627d811",
       database: "fiches_INA",
       ID_notice: 4712188001012,
-      Titre_propre: "50 ans d'amitie franco-allemande",
-      Titre_collection: "LE 13H",
+      Titre_propre_x: "50 ans d'amitie franco-allemande",
+      Titre_collection_x: "LE 13H",
       Titre_programme: "LE 13H : [émission du 15 mai 2012]",
       Chaine: "TF1",
       Date_de_diffusion: "15/05/2012",
@@ -41,13 +41,13 @@ export class ListViewComponent implements OnInit {
       Titre_materiel: "[Journée de captation TF1 du 15 mai 2012]"
     }},
     {titre: "50 ans d'amitié franco-allemande", nbImage: 12, canal_de_transmission: "TF1", date_de_diffusion: "2012-05-15 00:00:00",
-     Personnalite: ['Angela Merkel', 'Nicolas Sarkozy'], Evenement: ['France Germany relations'], Lieu: ['Europe'], Illustration: ['Meeting'],
+     personnalite: ['Angela Merkel', 'Nicolas Sarkozy'], evenement: ['France Germany relations'], lieu: ['Europe'], illustration: ['Meeting'],
      extra:{
       _id: "61a79ba58cdcf53b5627d811",
       database: "fiches_INA",
       ID_notice: 4712188001012,
-      Titre_propre: "50 ans d'amitie franco-allemande",
-      Titre_collection: "LE 13H",
+      Titre_propre_x: "50 ans d'amitie franco-allemande",
+      Titre_collection_x: "LE 13H",
       Titre_programme: "LE 13H : [émission du 15 mai 2012]",
       Chaine: "TF1",
       Date_de_diffusion: "15/05/2012",
@@ -79,7 +79,7 @@ export class ListViewComponent implements OnInit {
   }
 
   getClustersQuantity(file: File): number {
-    return file.Evenement.length + file.Personnalite.length + file.Lieu.length + file.Illustration.length;;
+    return file.evenement.length + file.personnalite.length + file.lieu.length + file.illustration.length;;
   }
 
 }

@@ -18,12 +18,12 @@ export class ClusterViewComponent implements OnChanges {
 
   fileList: File[] = [
     { titre: "Signature du traité de Lisbonne", nbImage: 4, canal_de_transmission: null, date_de_diffusion: null,
-      Personnalite: ['Hans-Gert Pöttering'], Evenement: ['Treaty', 'Treaty of Lisbonne'], Lieu: ['Lisbonne', 'Portugal'], Illustration: ['Signature'],extra:{
+      personnalite: ['Hans-Gert Pöttering'], evenement: ['Treaty', 'Treaty of Lisbonne'], lieu: ['Lisbonne', 'Portugal'], illustration: ['Signature'],extra:{
         _id: "61a79ba58cdcf53b5627d811",
         database: "fiches_INA",
         ID_notice: 4712188001012,
-        Titre_propre: "50 ans d'amitie franco-allemande",
-        Titre_collection: "LE 13H",
+        Titre_propre_x: "50 ans d'amitie franco-allemande",
+        Titre_collection_x: "LE 13H",
         Titre_programme: "LE 13H : [émission du 15 mai 2012]",
         Chaine: "TF1",
         Date_de_diffusion: "15/05/2012",
@@ -43,12 +43,12 @@ export class ClusterViewComponent implements OnChanges {
         Titre_materiel: "[Journée de captation TF1 du 15 mai 2012]"
       }},
     {titre: "50 ans d'amitié franco-allemandes", nbImage: 12, canal_de_transmission: "TF1", date_de_diffusion: "2012-05-15 00:00:00",
-      Personnalite: ['Angela Merkel', 'Nicolas Sarkozy'], Evenement: ['France Germany relations'], Lieu: ['Europe'], Illustration: ['Meeting'],extra:{
+      personnalite: ['Angela Merkel', 'Nicolas Sarkozy'], evenement: ['France Germany relations'], lieu: ['Europe'], illustration: ['Meeting'],extra:{
         _id: "61a79ba58cdcf53b5627d811",
         database: "fiches_INA",
         ID_notice: 4712188001012,
-        Titre_propre: "50 ans d'amitie franco-allemande",
-        Titre_collection: "LE 13H",
+        Titre_propre_x: "50 ans d'amitie franco-allemande",
+        Titre_collection_x: "LE 13H",
         Titre_programme: "LE 13H : [émission du 15 mai 2012]",
         Chaine: "TF1",
         Date_de_diffusion: "15/05/2012",
@@ -77,10 +77,10 @@ export class ClusterViewComponent implements OnChanges {
   }
 
   getIconByClusterType(cluster: Cluster): string {
-    if (cluster.type === 'Evenement') return 'event';
-    else if (cluster.type === 'Personnalite') return 'emoji_people';
-    else if (cluster.type === 'Lieu') return 'home';
-    else if (cluster.type === 'Illustration') return 'auto_stories';
+    if (cluster.type === 'evenement') return 'event';
+    else if (cluster.type === 'personnalite') return 'emoji_people';
+    else if (cluster.type === 'lieu') return 'home';
+    else if (cluster.type === 'illustration') return 'auto_stories';
     else return 'block'
   }
 

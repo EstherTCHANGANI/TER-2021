@@ -48,26 +48,26 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
 
   // clusterList: Cluster[] = [];
   clusterList: Cluster[] = [
-    {value: 'Treaty', type: 'Evenement'},
-    {value: 'Treaty of Rome', type: 'Evenement'},
-    {value: 'Treaty of Lisbonne', type: 'Evenement'},
-    {value: 'Referendum', type: 'Evenement'},
-    {value: 'France Germany relations', type: 'Evenement'},
-    {value: 'Charles de Gaulle', type: 'Personnalite'},
-    {value: 'Robert Schuman', type: 'Personnalite'},
-    {value: 'François Mitterrand', type: 'Personnalite'},
-    {value: 'François Hollande', type: 'Personnalite'},
-    {value: 'Angela Merkel', type: 'Personnalite'},
-    {value: 'Hans-Gert Pöttering', type: 'Personnalite'},
-    {value: 'Nicolas Sarkozy', type: 'Personnalite'},
-    {value: 'Portugal', type: 'Lieu'},
-    {value: 'Paris', type: 'Lieu'},
-    {value: 'Lisbonne', type: 'Lieu'},
-    {value: 'Europe', type: 'Lieu'},
-    {value: 'Accident', type: 'Illustration'},
-    {value: 'Factory', type: 'Illustration'},
-    {value: 'Signature', type: 'Illustration'},
-    {value: 'Meeting', type: 'Illustration'}
+    {value: 'Treaty', type: 'evenement'},
+    {value: 'Treaty of Rome', type: 'evenement'},
+    {value: 'Treaty of Lisbonne', type: 'evenement'},
+    {value: 'Referendum', type: 'evenement'},
+    {value: 'France Germany relations', type: 'evenement'},
+    {value: 'Charles de Gaulle', type: 'personnalite'},
+    {value: 'Robert Schuman', type: 'personnalite'},
+    {value: 'François Mitterrand', type: 'personnalite'},
+    {value: 'François Hollande', type: 'personnalite'},
+    {value: 'Angela Merkel', type: 'personnalite'},
+    {value: 'Hans-Gert Pöttering', type: 'personnalite'},
+    {value: 'Nicolas Sarkozy', type: 'personnalite'},
+    {value: 'Portugal', type: 'lieu'},
+    {value: 'Paris', type: 'lieu'},
+    {value: 'Lisbonne', type: 'lieu'},
+    {value: 'Europe', type: 'lieu'},
+    {value: 'Accident', type: 'illustration'},
+    {value: 'Factory', type: 'illustration'},
+    {value: 'Signature', type: 'illustration'},
+    {value: 'Meeting', type: 'illustration'}
   ];
 
   // variables for search bar :
@@ -131,10 +131,10 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
    * Functions related to search Bar :
    */
   private filterClustersByType() {
-      this.clusterListFilteredByEvent = this.clusterList.filter(cluster => cluster.type === 'Evenement');
-      this.clusterListFilteredByPersonality = this.clusterList.filter(cluster => cluster.type === 'Personnalite');
-      this.clusterListFilteredByPlace = this.clusterList.filter(cluster => cluster.type === 'Lieu');
-      this.clusterListFilteredByIllustration = this.clusterList.filter(cluster => cluster.type === 'Illustration');
+      this.clusterListFilteredByEvent = this.clusterList.filter(cluster => cluster.type === 'evenement');
+      this.clusterListFilteredByPersonality = this.clusterList.filter(cluster => cluster.type === 'personnalite');
+      this.clusterListFilteredByPlace = this.clusterList.filter(cluster => cluster.type === 'lieu');
+      this.clusterListFilteredByIllustration = this.clusterList.filter(cluster => cluster.type === 'illustration');
   }
 
   private autoCompleteClusters() {
@@ -222,16 +222,16 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
       let chipElement = document.querySelectorAll('.mat-chip');
       let lastChild = chipElement[chipElement.length - 1];
       this.lastColorChip = this.actualColorChip;
-      if(selectedCluster.type === 'Evenement') {
+      if(selectedCluster.type === 'evenement') {
         this.actualColorChip = 'brown';
       }
-      else if(selectedCluster.type === 'Personnalite') {
+      else if(selectedCluster.type === 'personnalite') {
         this.actualColorChip = 'blue';
       }
-      else if(selectedCluster.type === 'Lieu') {
+      else if(selectedCluster.type === 'lieu') {
         this.actualColorChip = 'red';
       }
-      else if(selectedCluster.type === 'Illustration') {
+      else if(selectedCluster.type === 'illustration') {
         this.actualColorChip = 'green';
       }
       // adding css class dynamically
@@ -278,19 +278,19 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   private getClusterTypeByValue(value: string): string {
     const isEvent = this.clusterListFilteredByEvent.some(cluster => cluster.value === value)
     if(isEvent) {
-      return 'Evenement';
+      return 'evenement';
     }
     const isPersonality = this.clusterListFilteredByPersonality.some(cluster => cluster.value === value)
     if(isPersonality) {
-      return 'Personnalite';
+      return 'personnalite';
     }
     const isPlace = this.clusterListFilteredByPlace.some(cluster => cluster.value === value)
     if(isPlace) {
-      return 'Lieu';
+      return 'lieu';
     }
     const isIllustration = this.clusterListFilteredByIllustration.some(cluster => cluster.value === value)
     if(isIllustration) {
-      return 'Illustration';
+      return 'illustration';
     }
     return 'no-type';
   }
