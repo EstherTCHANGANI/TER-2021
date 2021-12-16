@@ -209,7 +209,10 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
       this.selectedClustersValues.splice(index, 1);
     }
     this.selectedClustersObjects = this.selectedClustersObjects.filter((cluster) => cluster.value !== selectedCluster.value);
-    this.filterService.selectedClusters = [...this.selectedClustersObjects];
+    if (this.selectedClustersObjects.length > 0) {
+      this.filterService.selectedClusters = [...this.selectedClustersObjects];
+    } else this.filterService.selectedClusters = [];
+    this.requestSearchFiles();
     // console.log(this.selectedClustersObjects);
   }
 
@@ -266,10 +269,12 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     if(this.illustrationChecked) clusterTypesChecked.push('illustration');
     console.log(this.selectedClustersValues);
     console.log(this.selectedClustersObjects);
-    this.httpService.getFilesByCluster(clusterTypesChecked, this.selectedClustersObjects)
-    .subscribe(files => {
-      if(files) this.filterService.searchedfiles = files;
-    });
+    if (this.selectedClustersObjects.length > 0) {
+      this.httpService.getFilesByCluster(clusterTypesChecked, this.selectedClustersObjects)
+      .subscribe(files => {
+        if(files) this.filterService.searchedfiles = files;
+      });
+    }
   }
   
   
