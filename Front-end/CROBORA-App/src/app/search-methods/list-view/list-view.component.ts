@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FilterService } from 'src/services/filter.service';
 import { File } from '../../../models/file.model'
 
 @Component({
@@ -73,7 +74,7 @@ export class ListViewComponent implements OnInit {
   placeClusters: string[] = [];
   illustrationClusters: string[] = [];
 
-  constructor() { }
+  constructor(public filterService: FilterService) { }
 
   ngOnInit(): void {
   }

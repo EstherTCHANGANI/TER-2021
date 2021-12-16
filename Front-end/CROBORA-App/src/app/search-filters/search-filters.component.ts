@@ -46,29 +46,29 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     {value: 'alphabetic', viewValue: 'Alphabetic'},
   ];
 
-  // clusterList: Cluster[] = [];
-  clusterList: Cluster[] = [
-    {value: 'Treaty', type: 'evenement'},
-    {value: 'Treaty of Rome', type: 'evenement'},
-    {value: 'Treaty of Lisbonne', type: 'evenement'},
-    {value: 'Referendum', type: 'evenement'},
-    {value: 'France Germany relations', type: 'evenement'},
-    {value: 'Charles de Gaulle', type: 'personnalite'},
-    {value: 'Robert Schuman', type: 'personnalite'},
-    {value: 'François Mitterrand', type: 'personnalite'},
-    {value: 'François Hollande', type: 'personnalite'},
-    {value: 'Angela Merkel', type: 'personnalite'},
-    {value: 'Hans-Gert Pöttering', type: 'personnalite'},
-    {value: 'Nicolas Sarkozy', type: 'personnalite'},
-    {value: 'Portugal', type: 'lieu'},
-    {value: 'Paris', type: 'lieu'},
-    {value: 'Lisbonne', type: 'lieu'},
-    {value: 'Europe', type: 'lieu'},
-    {value: 'Accident', type: 'illustration'},
-    {value: 'Factory', type: 'illustration'},
-    {value: 'Signature', type: 'illustration'},
-    {value: 'Meeting', type: 'illustration'}
-  ];
+  clusterList: Cluster[] = [];
+  // clusterList: Cluster[] = [
+  //   {value: 'Treaty', type: 'evenement'},
+  //   {value: 'Treaty of Rome', type: 'evenement'},
+  //   {value: 'Treaty of Lisbonne', type: 'evenement'},
+  //   {value: 'Referendum', type: 'evenement'},
+  //   {value: 'France Germany relations', type: 'evenement'},
+  //   {value: 'Charles de Gaulle', type: 'personnalite'},
+  //   {value: 'Robert Schuman', type: 'personnalite'},
+  //   {value: 'François Mitterrand', type: 'personnalite'},
+  //   {value: 'François Hollande', type: 'personnalite'},
+  //   {value: 'Angela Merkel', type: 'personnalite'},
+  //   {value: 'Hans-Gert Pöttering', type: 'personnalite'},
+  //   {value: 'Nicolas Sarkozy', type: 'personnalite'},
+  //   {value: 'Portugal', type: 'lieu'},
+  //   {value: 'Paris', type: 'lieu'},
+  //   {value: 'Lisbonne', type: 'lieu'},
+  //   {value: 'Europe', type: 'lieu'},
+  //   {value: 'Accident', type: 'illustration'},
+  //   {value: 'Factory', type: 'illustration'},
+  //   {value: 'Signature', type: 'illustration'},
+  //   {value: 'Meeting', type: 'illustration'}
+  // ];
 
   // variables for search bar :
 
@@ -104,17 +104,11 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     this.selectedSearchType = this.searchTypes[0].value;
     this.selectedShowType = this.showTypes[0].value;
     this.selectedSortType = this.sortTypes[0].value;
-    this.httpService.getClusters()
-    .subscribe(clusters => {
-      this.clusterList = clusters;
-      console.log(clusters);
-    });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.activateSearchBar();
-    this.filterClustersByType();
-    this.autoCompleteClusters();
+    await this.requestClusters();
     console.log(this.clusterList);
   }
 
@@ -127,14 +121,24 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     // console.log(this.selectedSortType);
   }
 
+  private async requestClusters() {
+  this.httpService.getClusters()
+    .subscribe(clusters => {
+      this.clusterList = clusters;
+      console.log('REQUEST API');
+      this.filterClustersByType();
+      this.autoCompleteClusters();
+    });
+  }
+
   /**
    * Functions related to search Bar :
    */
   private filterClustersByType() {
-      this.clusterListFilteredByEvent = this.clusterList.filter(cluster => cluster.type === 'evenement');
-      this.clusterListFilteredByPersonality = this.clusterList.filter(cluster => cluster.type === 'personnalite');
-      this.clusterListFilteredByPlace = this.clusterList.filter(cluster => cluster.type === 'lieu');
-      this.clusterListFilteredByIllustration = this.clusterList.filter(cluster => cluster.type === 'illustration');
+    this.clusterListFilteredByEvent = this.clusterList.filter(cluster => cluster.value && cluster.type === 'evenement');
+    this.clusterListFilteredByPersonality = this.clusterList.filter(cluster => cluster.value && cluster.type === 'personnalite');
+    this.clusterListFilteredByPlace = this.clusterList.filter(cluster => cluster.value && cluster.type === 'lieu');
+    this.clusterListFilteredByIllustration = this.clusterList.filter(cluster => cluster.value && cluster.type === 'illustration');
   }
 
   private autoCompleteClusters() {
@@ -262,9 +266,9 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     if(this.illustrationChecked) clusterTypesChecked.push('illustration');
     console.log(this.selectedClustersValues);
     console.log(this.selectedClustersObjects);
-    this.httpService.getFilesByCluster(clusterTypesChecked, this.selectedClustersValues)
+    this.httpService.getFilesByCluster(clusterTypesChecked, this.selectedClustersObjects)
     .subscribe(files => {
-      this.filterService.searchedfiles = files;
+      if(files) this.filterService.searchedfiles = files;
     });
   }
   
@@ -275,6 +279,11 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     this.myControl.setValue(null);
   }
   
+  /**
+   * Return cluster type
+   * @param value text of cluster
+   * @returns 
+   */
   private getClusterTypeByValue(value: string): string {
     const isEvent = this.clusterListFilteredByEvent.some(cluster => cluster.value === value)
     if(isEvent) {
