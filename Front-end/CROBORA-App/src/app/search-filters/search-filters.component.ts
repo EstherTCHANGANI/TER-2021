@@ -100,7 +100,7 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   actualColorChip: string;
 
   constructor(private filterService: FilterService, private httpService: HttpService) { 
-    this.selectedDatabase = this.databases[0].value;
+    this.selectedDatabase = this.databases[2].value;
     this.selectedSearchType = this.searchTypes[0].value;
     this.selectedShowType = this.showTypes[0].value;
     this.selectedSortType = this.sortTypes[0].value;
@@ -125,7 +125,8 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   this.httpService.getClusters()
     .subscribe(clusters => {
       this.clusterList = clusters;
-      console.log('REQUEST API');
+      this.httpService.requestLoading = false;
+      console.log('REQUEST CLUSTERS FROM API');
       this.filterClustersByType();
       this.autoCompleteClusters();
     });
@@ -194,7 +195,9 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     const value = event.value;
     // Add a cluster
     if ((value || '').trim()) {
-      this.selectedClustersValues.push(value.trim());
+      if(!this.selectedClustersValues.includes(value.trim())) {
+        this.selectedClustersValues.push(value.trim());
+      }
     }
     // Reset the input value
     if (input) {
@@ -261,20 +264,30 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   }
 
   private requestSearchFiles() {
-    // let reponseApi: File[] = [];
     let clusterTypesChecked: string[] = [];
     if(this.eventChecked) clusterTypesChecked.push('evenement');
     if(this.personalityChecked) clusterTypesChecked.push('personnalite');
     if(this.placeChecked) clusterTypesChecked.push('lieu');
     if(this.illustrationChecked) clusterTypesChecked.push('illustration');
-    console.log(this.selectedClustersValues);
-    console.log(this.selectedClustersObjects);
+    // console.log(this.selectedClustersValues);
+    // console.log(this.selectedClustersObjects);
     if (this.selectedClustersObjects.length > 0) {
       this.httpService.getFilesByCluster(clusterTypesChecked, this.selectedClustersObjects)
       .subscribe(files => {
         if(files) this.filterService.searchedfiles = files;
+        this.httpService.requestLoading = false;
+      });
+      this.filterService.selectedClusters.forEach( (cluster) => {
+        let clusterList: Cluster[] = [];
+        clusterList.push(cluster)
+        this.httpService.getFilesByCluster(clusterTypesChecked, clusterList)
+        .subscribe(files => {
+          this.filterService.searchedFilesByCluster.set(cluster.value, files);
+          this.httpService.requestLoading = false;
+        });
       });
     }
+    // console.log(this.filterService.getSearchedFilesByCluster());
   }
   
   

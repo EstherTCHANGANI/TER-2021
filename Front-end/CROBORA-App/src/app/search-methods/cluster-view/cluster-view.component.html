@@ -2,15 +2,17 @@
   <mat-accordion multi *ngIf="eventChecked || personalityChecked || placeChecked || illustrationChecked">
     <mat-expansion-panel *ngFor="let cluster of this.filterService.getSelectedClusters()">
       <mat-expansion-panel-header>
-        <mat-panel-title (click)="$event.stopPropagation()" class={{cluster.type}}>
+        <mat-panel-title class={{cluster.type}}>
           <mat-icon>{{getIconByClusterType(cluster)}}</mat-icon>
           <h3>{{ cluster.value }}</h3>
         </mat-panel-title>
-        <mat-panel-description> See files </mat-panel-description>
+        <mat-panel-description> {{getFilesByCluster(cluster).length}} files </mat-panel-description>
       </mat-expansion-panel-header>
       <div class="clusters-container">
         <mat-list class="eventClusters">
-          <mat-list-item *ngFor="let file of fileList"><mat-icon>article</mat-icon>{{file.titre}}</mat-list-item>
+          <mat-list-item *ngFor="let file of getFilesByCluster(cluster)" (click)="goToVisualisationPage(file)">
+            <mat-icon>article</mat-icon>{{file.titre}}
+          </mat-list-item>
           <mat-divider class="fileDivider"></mat-divider>
         </mat-list>
       </div>

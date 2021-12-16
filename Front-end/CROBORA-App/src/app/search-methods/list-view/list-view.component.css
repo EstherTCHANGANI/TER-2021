@@ -44,3 +44,17 @@ mat-expansion-panel-header {
   padding-top: 0.5rem;
   margin-bottom: -0.5rem;
 }
+
+.spinner {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: rgba(128, 128, 128, 0.274);
+  z-index: 10;
+}
+
+mat-spinner {
+  position: relative;
+  left: 45%;
+  transform: scale(0.5);
+}
