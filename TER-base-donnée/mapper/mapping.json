@@ -79,8 +79,18 @@
         ],
         "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
       },
-      "Date_of_Research": "Date_de_Research",
-      "Place_of_Research": "Place_de_Research",
+      "Date_de_research": {
+           "fields": [
+                "Date and Place of Research"
+            ],
+           "function": "lambda args : args[0].split(', ')[0]"
+        },
+       "Lieu_de_research": {
+            "fields": [
+                "Date and Place of Research"
+            ],
+            "function": "lambda args : args[0].split(', ')[1]"
+        },
       "Duree": "Durata",
       "Contenue audio": "Contenuto Audio",
       "Contenuto Video": "Contenuto Video"
