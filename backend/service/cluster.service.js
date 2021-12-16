@@ -69,7 +69,7 @@ class ClusterService {
         }
 
         return events.filter(event =>
-            keywords.find(keyword => this.findKeywordInCluster(event, clusters, _.lowerCase(keyword)))
+            keywords.every(keyword => this.findKeywordInCluster(event, clusters, _.lowerCase(keyword)))
         );
     }
 
