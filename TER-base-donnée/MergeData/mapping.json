@@ -1,7 +1,7 @@
 {
   "ina": {
     "id": "ID_notice",
-    "titre": "Titre",
+    "titre": "Titre_propre_x",
     "date de diffusion": {
       "fields": [
         "Date_de_diffusion",
@@ -46,9 +46,9 @@
     "Lieu_de_consultation": "Lieu_de_consultation"
   },
   "RAI": {
-    "ID Notice": "ID_notice",
-    "Titolo Programma": "Titre_programme",
-    "Titolo Sequenza/Servizio": "Titre_sequence/service",
+    "ID Notice": "ID Notice",
+    "Titre de programme": "Titolo Programma",
+    "Titre Sequence/Service": "Titolo Sequenza/Servizio",
     "Image": "Image",
     "Personalite": {
       "fields": [
@@ -76,8 +76,8 @@
     },
     "Date_of_Research": "Date_de_Research",
     "Place_of_Research": "Place_de_Research",
-    "Durata": "Duree",
-    "Contenuto Audio": "Conteneur_audio",
-    "Contenuto Video": "Conteneur_video"
+    "Duree": "Durata",
+    "Contenue audio": "Contenuto Audio",
+    "Contenuto Video": "Contenuto Video"
   }
 }
