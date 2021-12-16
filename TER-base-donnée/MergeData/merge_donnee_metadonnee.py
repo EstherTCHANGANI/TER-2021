@@ -13,19 +13,30 @@ def merge_data_mongodb(file_name_fiche, file_name_meta, champs):
     data = pd.read_csv(file_name_fiche)
     meta_data = pd.read_csv(file_name_meta)
     # pour eviter les problemes de float et int ca serai mieu de convertir tous les données en float ou int
-    data[champs] = data[champs].astype("string")
+    if meta_data[champs].dtype == object:
+        meta_data[champs] = meta_data[champs].str.lstrip("CAB")
+        meta_data[champs] = meta_data[champs].astype("float")
+
+    if meta_data[champs].dtype == float:
+        meta_data[champs] = meta_data[champs].astype("float")
+
+    if data[champs].dtype == int:
+        print(data[champs])
+        data[champs] = data[champs].astype("float")
+        print(data[champs])
 
     # using merge function by setting how='inner'
     # using outer for all data 
     output1 = pd.merge(data, meta_data,
                        on=champs,
-                       how='inner')
+                       how='outer')
 
     output1.to_csv(merged_file, index=False)
-    
+
     # Split column " Date et lieu de consultation" to 'Date de consultation' and 'Lieu de consultation'
     df = pd.read_csv(merged_file)
-    # df[['Date_de_consultation', 'Lieu_de_consultation']] = df['Date et lieu de consultation'].str.split(' ', 1, expand=True)
+    df[['Date_de_consultation', 'Lieu_de_consultation']] = df['Date et lieu de consultation'].str.split(',', 1,
+                                                                                                        expand=True)
     df.to_csv(merged_file)
 
 

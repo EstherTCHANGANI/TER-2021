@@ -50,21 +50,21 @@
     "Titolo Programma": "Titre_programme",
     "Titolo Sequenza/Servizio": "Titre_sequence/service",
     "Image": "Image",
-    "Celebrity": {
+    "Personalite": {
       "fields": [
-        "Personalite"
+        "Celebrity"
       ],
       "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
     },
-    "Event": {
+    "Evenement": {
       "fields": [
-        "Evenement"
+        "Event"
       ],
       "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
     },
-    "Location": {
+    "Lieu": {
       "fields": [
-        "Lieu"
+        "Location"
       ],
       "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
     },
@@ -76,7 +76,7 @@
     },
     "Date_of_Research": "Date_de_Research",
     "Place_of_Research": "Place_de_Research",
-    "Durata": "Durata",
+    "Durata": "Duree",
     "Contenuto Audio": "Conteneur_audio",
     "Contenuto Video": "Conteneur_video"
   }
