@@ -83,4 +83,8 @@ export class ListViewComponent implements OnInit {
     return file.evenement.length + file.personnalite.length + file.lieu.length + file.illustration.length;;
   }
 
+  goToVisualisationPage(file: File) {
+    console.log(file);
+  }
+
 }

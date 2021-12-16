@@ -11,6 +11,7 @@ export interface File {
   Lieu_de_consultation?: string;
   duree?: string;
   image?: string;
+  images?: string[];
   personnalite: string[];
   evenement: string[];
   lieu: string[];
