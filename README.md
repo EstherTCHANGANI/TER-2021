@@ -26,8 +26,3 @@ cd ../mapper
 python3 mapper.py 
 ```
 
-
-## Todo
-- Script de mapping
-    - Split des champs personnalité
-    - Split des champs illustration
