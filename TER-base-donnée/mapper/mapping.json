@@ -10,12 +10,10 @@
             "function": "lambda args : str(args[0]) + \" \" + str(args[1]) if len(args) > 1 else args[0]"
         },
         "canal de transmission": "France 2",
-<<<<<<< HEAD
         "duree": "Duree"
     },
 
     "rai": {
-=======
         "duree": "Duree",
         "Date_de_diffusion_meta": "Date_de_diffusion_meta",
         "Image": "Image",
@@ -25,7 +23,6 @@
         "Date et lieu de consultation" : "Date et lieu de consultation"
     },
    "rai": {
->>>>>>> a334fb772fa627016975a6b92ca89cc38f3c6b66
         "id": "Documento",
         "titre": "Titolo Programma",
         "date de diffusion": "Data Trasmissione",
