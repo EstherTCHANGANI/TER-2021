@@ -1,6 +1,7 @@
-import argparse
 import json
 import os
+import argparse
+
 from pymongo import MongoClient
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -13,6 +14,11 @@ parser.add_argument('--source', type=str, default=os.path.join(dir_path, './sour
 
 
 def get_source(sourceFile):
+    """
+    Read the source file
+    :param sourceFile: path of the file
+    :return: dictionary
+    """
     with open(sourceFile) as f:
         return json.load(f)
 
@@ -53,7 +59,7 @@ def mapper(document: dict, mapping: dict, sourceName: str):
     return new_doc
 
 
-def _get_fields(document, value):
+def _get_fields(document:dict, value):
     fields = list()
     for field_name in value["fields"]:
         if field_name in document :
@@ -74,7 +80,9 @@ if __name__ == '__main__':
     for source in sources:
         data = load_data_from_source(source)
         res = []
+        print("Mapping collection: " + source["collection"])
         mapping = get_mapping(args.mapping, source["name"])
         for doc in data:
             res.append(mapper(doc, mapping, source["collection"]))
+        print(str(len(res)) + " documents mapped.")
         collection_event.insert_many(res)
