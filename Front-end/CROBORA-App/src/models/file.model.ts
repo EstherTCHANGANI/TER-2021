@@ -2,21 +2,21 @@ export interface File {
   _id?: string;
   id?: number;
   source?: string;
-  titre : string;
+  titre? : string;
   nbImage?: number;
-  canal_de_transmission: string;
-  date_de_diffusion: string;
+  canal_de_transmission?: string;
+  date_de_diffusion?: string;
   date_de_diffusion_meta?: string;
   Date_de_consultation?: string;
   Lieu_de_consultation?: string;
   duree?: string;
   image?: string;
   images?: string[];
-  personnalite: string[];
-  evenement: string[];
-  lieu: string[];
-  illustration: string[];
-  extra : Extra;
+  personnalite?: string[];
+  evenement?: string[];
+  lieu?: string[];
+  illustration?: string[];
+  extra? : Extra;
 }
 
 export interface Extra{

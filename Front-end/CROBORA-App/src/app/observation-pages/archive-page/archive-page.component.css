@@ -6,9 +6,9 @@ body{
   position: relative;
   display:flex;
   top: 1em;
-  left : 1rem;
+  left : 3rem;
   font-weight: bold;
-  font-size: 3em;
+  font-size: 2em;
   font: w3-cursive;
 }
 
@@ -90,9 +90,8 @@ body{
   justify-content: space-evenly;
 }
 #icon-box>button>mat-icon{
-  height: 7vh;
-  width: 7vw;
-  font-size: 7vh;
+  font-size: 3rem;
+  margin-left: 1rem;
 }
 #icon-box>button{
   background-color: transparent;
@@ -101,4 +100,7 @@ body{
   display :flex;
   bottom : 15vw;
   left : 2.5vw;
+}
+mat-icon {
+  cursor: pointer;
 }

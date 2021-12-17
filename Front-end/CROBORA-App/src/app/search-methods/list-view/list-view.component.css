@@ -56,5 +56,5 @@ mat-expansion-panel-header {
 mat-spinner {
   position: relative;
   left: 45%;
-  transform: scale(0.5);
+  transform: scale(0.5) translateY(50vh);
 }

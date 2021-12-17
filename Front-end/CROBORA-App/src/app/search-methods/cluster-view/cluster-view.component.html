@@ -10,8 +10,9 @@
       </mat-expansion-panel-header>
       <div class="clusters-container">
         <mat-list class="eventClusters">
-          <mat-list-item *ngFor="let file of getFilesByCluster(cluster)" (click)="goToVisualisationPage(file)">
-            <mat-icon>article</mat-icon>{{file.titre}}
+          <mat-list-item *ngFor="let file of getFilesByCluster(cluster)">
+            <mat-icon>article</mat-icon>
+            <span routerLink="/file-details/{{file.id}}" [state]="{ file: file }" matTooltip="See more details" matTooltipPosition="right">{{file.titre}}</span>
           </mat-list-item>
           <mat-divider class="fileDivider"></mat-divider>
         </mat-list>

@@ -1,5 +1,5 @@
 <div id="back-icon">
-  <button mat-icon-button ng-click="goBack()" aria-label="go back symbol" id="back">
+  <button mat-icon-button (click)="goBack()" aria-label="go back symbol" id="back">
     <mat-icon inline="true">arrow_back</mat-icon>
   </button>
 </div>
@@ -21,12 +21,12 @@
       </mat-tab>
       <mat-tab label="Original informations">
         <ng-template matTabContent>
-          <app-originalinfo-box id="infos"></app-originalinfo-box>
+          <app-originalinfo-box [info]="file.extra" id="infos"></app-originalinfo-box>
         </ng-template>
       </mat-tab>
       <mat-tab label="index CROBORA">
         <ng-template matTabContent>
-          <app-index-crobora-box id="index"></app-index-crobora-box>
+          <app-index-crobora-box [file]="file" id="index"></app-index-crobora-box>
         </ng-template>
       </mat-tab>
     </mat-tab-group>

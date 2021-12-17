@@ -22,10 +22,12 @@ mat-list-item {
   margin-top: -1rem;
   margin-bottom: -0.5rem;
   margin-left: 0.5rem;
-  cursor: pointer;
 }
 mat-list-item  mat-icon {
   padding-right: 0.5rem;
+}
+mat-list-item span {
+  cursor: pointer;
 }
 
 mat-panel-title.evenement {
