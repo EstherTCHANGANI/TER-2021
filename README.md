@@ -12,7 +12,7 @@ Sous linux :
 $ ./populate.sh
 ```
 
-Sous Windows, il va falloir lancé les script à la main :
+Sous Windows, il va falloir lancé les script à la main : (ou utiliser git bash pour lancer la commande)
 
 ```bash
 cd ./TER-base-donnée/Import
