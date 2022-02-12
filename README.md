@@ -1,5 +1,10 @@
 # TER-2021
 
+## Prérequis
+
+- Avoir docker et python installés.
+- Installer les modules pythons suivants : pymongo, pandas, openpyxl
+
 ## Lancer le backend (Mongo + Serveur)
 
 ```bash
