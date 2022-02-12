@@ -26,10 +26,10 @@ cd ../mapperCancel changes
 python3 mapper.py 
 ```
 
-## Lancer le backend (Angular)
+## Lancer le frontend (Angular)
 
 ```bash
 cd ./Front-end/CROBORA-App/
 npm i
-ng serve
+ng serve -o
 ```
