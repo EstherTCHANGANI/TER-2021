@@ -12,7 +12,7 @@ Sous linux :
 $ ./populate.sh
 ```
 
-Sous Windows, il va falloir lancé les script à la main : (ou utiliser git bash pour lancer la commande)
+Sous Windows, il va falloir lancé les script à la main : (ou utiliser git bash pour lancer la commande ./populate.sh)
 
 ```bash
 cd ./TER-base-donnée/Import
@@ -22,7 +22,14 @@ python3 merge_donnee_metadonnee.py
 python3 merge_metadonnee_RAI.py
 cd ../Import
 python3 LoadFile.py
-cd ../mapper
+cd ../mapperCancel changes
 python3 mapper.py 
 ```
 
+## Lancer le backend (Angular)
+
+```bash
+cd ./Front-end/CROBORA-App/
+npm i
+ng serve
+```
