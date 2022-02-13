@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3"
 
 services:
   mongo-db:
@@ -10,11 +10,11 @@ services:
     volumes:
       - mongo-data:/data/db
 
-  backend:
+  crobora-backend:
     build: 
-      context: .
+      context: ./backend
       dockerfile: Dockerfile
-    image: crobora-backend:latest
+    image: us-central1-docker.pkg.dev/ter-2021/ter-2021-repo/crobora-backend:latest
     restart: unless-stopped
     container_name: crobora-backend
     depends_on:
@@ -24,6 +24,20 @@ services:
     environment:
       - DB_HOST_NAME=mongo-db
       - DB_PORT=27017
+      - DB_NAME=admin
+
+  web-app:
+    build: 
+      context: ./Front-end/CROBORA-App
+      dockerfile: Dockerfile
+    image: us-central1-docker.pkg.dev/ter-2021/ter-2021-repo/crobora-front-end:latest
+    restart: unless-stopped
+    container_name: crobora-web
+    depends_on: 
+      - crobora-backend
+    ports:
+      - "80:80"
+
 
 
 volumes:

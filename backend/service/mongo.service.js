@@ -3,8 +3,8 @@ import { MongoClient } from "mongodb";
 const DB_HOST_NAME = process.env.DB_HOST_NAME || "localhost";
 const DB_PORT = process.env.DB_PORT || "27017";
 
-const uri = `mongodb://${DB_HOST_NAME}:${DB_PORT}?retryWrites=true&writeConcern=majority`;
-const DB_NAME = "admin"
+const uri = process.env.DB_URL || `mongodb://${DB_HOST_NAME}:${DB_PORT}?retryWrites=true&writeConcern=majority`;
+const DB_NAME = process.env.DB_NAME || "admin";
 
 class MongoService {
 
@@ -13,6 +13,7 @@ class MongoService {
     }
 
     async _loadDatabase() {
+        console.log("Mongo URL", uri)
         this.client = new MongoClient(uri);
         await this.client.connect()
         this.database = this.getDatabase(DB_NAME);
