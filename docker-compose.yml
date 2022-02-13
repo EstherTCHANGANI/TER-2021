@@ -5,6 +5,8 @@ services:
     image: mongo
     restart: unless-stopped
     container_name: mongo-db
+    networks:
+      - ter-2021
     ports:
       - "27017:27017"
     volumes:
@@ -17,6 +19,8 @@ services:
     image: us-central1-docker.pkg.dev/ter-2021/ter-2021-repo/crobora-backend:latest
     restart: unless-stopped
     container_name: crobora-backend
+    networks:
+      - ter-2021
     depends_on:
       - mongo-db
     ports:
@@ -33,12 +37,15 @@ services:
     image: us-central1-docker.pkg.dev/ter-2021/ter-2021-repo/crobora-front-end:latest
     restart: unless-stopped
     container_name: crobora-web
+    networks:
+      - ter-2021
     depends_on: 
       - crobora-backend
     ports:
       - "80:80"
 
-
+networks:
+  ter-2021:
 
 volumes:
   mongo-data:
