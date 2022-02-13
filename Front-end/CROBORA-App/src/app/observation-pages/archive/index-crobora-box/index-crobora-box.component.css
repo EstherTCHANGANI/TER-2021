@@ -5,6 +5,9 @@
   overflow-y : scroll;
   overflow-x: hidden;
   margin-top: 0.5rem;
+  display : flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 p{
@@ -18,4 +21,15 @@ p{
 }
 .keywords{
   margin-left: 6vw;
+}
+
+.row{
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  gap : 0.5vw 0.5vw;
+}
+
+.info-box{
+  width : 30%;
 }

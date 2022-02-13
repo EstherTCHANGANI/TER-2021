@@ -1,23 +1,44 @@
 <div class="indexCROBORA-box">
-  <h2>Number of images</h2>
-  <p>{{file.images.length}}</p>
 
-  <h2>Canal de transmission</h2>
-  <p>{{file.canal_de_transmission}}</p>
+  <div class="row">
+    <div class="info-box">
+      <h2>Number of images</h2>
+      <p>{{file.images.length}}</p>
+    </div>
 
-  <h2>Date de Diffusion</h2>
-  <p>{{file.date_de_diffusion}}</p>
+    <div class="info-box">
+      <h2>Canal de transmission</h2>
+      <p>{{file.canal_de_transmission}}</p>
+    </div>
 
+    <div class="info-box">
+      <h2>Date de Diffusion</h2>
+      <p>{{file.date_de_diffusion}}</p>
+    </div>
+  </div>
+
+  <div id="keywords">
   <h2>Keywords</h2>
-  <h3 class="keyword">Event</h3>
-  <p class="keywords">{{file.evenement}}</p>
+  <div class="row">
+    <div class="info-box">
+      <h3 class="keyword">Event</h3>
+      <p class="keywords">{{file.evenement}}</p>
+    </div>
 
-  <h3 class="keyword">Place</h3>
-  <p class="keywords">{{file.lieu}}</p>
+    <div class="info-box">
+      <h3 class="keyword">Place</h3>
+      <p class="keywords">{{file.lieu}}</p>
+    </div>
 
-  <h3 class="keyword">Personality</h3>
-  <p class="keywords">{{file.personnalite}}</p>
-
-  <h3 class="keyword">Illustration</h3>
-  <p class="keywords">{{file.illustration}}</p>
+    <div class="info-box">
+      <h3 class="keyword">Personality</h3>
+      <p class="keywords">{{file.personnalite}}</p>
+    </div>
+    
+    <div class="info-box">
+      <h3 class="keyword">Illustration</h3>
+      <p class="keywords">{{file.illustration}}</p>
+    </div>
+  </div>
+  </div>
 </div>
