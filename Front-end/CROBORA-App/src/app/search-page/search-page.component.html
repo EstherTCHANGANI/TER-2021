@@ -1,10 +1,4 @@
 <div class="top-container">
-  <div class="cluster-div">
-    <mat-checkbox class="Event" (change)="toggleEventCheckbox($event)">Event</mat-checkbox>
-    <mat-checkbox class="Personality" (change)="togglePersonalityCheckbox($event)">Personality</mat-checkbox>
-    <mat-checkbox class="Place" (change)="togglePlaceCheckbox($event)">Place</mat-checkbox>
-    <mat-checkbox class="Illustration" (change)="toggleIllustrationCheckbox($event)" >Illustration</mat-checkbox>
-  </div>
   <div id="user-icon">
     <span>John Doe</span>
     <img src="../../assets/images/profil.png" alt="icone de profil">
@@ -39,8 +33,16 @@
     </mat-tab>
   </mat-tab-group>
 
-  <app-search-filters
-    [eventChecked]="eventChecked" [personalityChecked]="personalityChecked" [placeChecked]="placeChecked" [illustrationChecked]="illustrationChecked"
-    (showTypeEvent)="renameFirstTab($event)">
-  </app-search-filters>
+  <div class="filters-container">
+    <div class="cluster-div">
+      <mat-checkbox class="Event" (change)="toggleEventCheckbox($event)" [checked]="eventChecked">Event</mat-checkbox>
+      <mat-checkbox class="Personality" (change)="togglePersonalityCheckbox($event)" [checked]="personalityChecked">Personality</mat-checkbox>
+      <mat-checkbox class="Place" (change)="togglePlaceCheckbox($event)" [checked]="placeChecked">Place</mat-checkbox>
+      <mat-checkbox class="Illustration" (change)="toggleIllustrationCheckbox($event)" [checked]="illustrationChecked">Illustration</mat-checkbox>
+    </div>
+    <app-search-filters
+      [eventChecked]="eventChecked" [personalityChecked]="personalityChecked" [placeChecked]="placeChecked" [illustrationChecked]="illustrationChecked"
+      (showTypeEvent)="renameFirstTab($event)">
+    </app-search-filters>
+  </div>
 </div>

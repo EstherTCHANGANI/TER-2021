@@ -10,7 +10,7 @@ export class FilterService{
   selectedClusters: Cluster[] = [];
   searchedfiles: File[] = [];
   searchedFilesByCluster = new Map<string, File[]>();
-  selectedDatabase: string = 'all';
+  // selectedDatabase: string = 'all';
 
   getSelectedClusters() {
     return this.selectedClusters;
@@ -24,8 +24,28 @@ export class FilterService{
     return this.searchedFilesByCluster;
   }
 
+  setSelectedDatabase(value: string) {
+    localStorage.setItem('selectedDatabase', value);
+  }
+
   getSelectedDatabase() {
-    return this.selectedDatabase;
+    const value = localStorage.getItem('selectedDatabase');
+    if(!value) {
+      return 'all';
+    }
+    else return value;
+  }
+
+  setClusterChecked(type: string, value: boolean) {
+    localStorage.setItem(type + 'Checked', value.toString());
+  }
+
+  getClusterChecked(type: string): boolean {
+    const value = localStorage.getItem(type + 'Checked');
+    if(!value) {
+      return false;
+    }
+    else return JSON.parse(value);
   }
 
   constructor() { }

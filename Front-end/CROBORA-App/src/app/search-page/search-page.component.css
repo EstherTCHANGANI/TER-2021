@@ -3,7 +3,6 @@ body{
 }
 
 .cluster-div>mat-checkbox{
-  margin-left: 40px;
   font-weight: 450;
 }
 .cluster-div> mat-checkbox, mat-checkbox-frame, mat-checkbox-checked, mat-checkbox-background {
@@ -15,16 +14,20 @@ body{
 }
 .Personality{
   color:blue;
+  margin-left: 40px;
 }
 .Place{
   color:red;
+  margin-left: 40px;
 }
 .Illustration{
   color:green;
+  margin-left: 40px;
 }
 
-/* app-search-filters{
-} */
+.cluster-div {
+  padding-bottom: 1rem;
+}
 
 mat-tab-group{
   margin-right: 2rem;
@@ -67,8 +70,7 @@ mat-tab-group{
 .top-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: end;
   padding: 1rem;
 }
 

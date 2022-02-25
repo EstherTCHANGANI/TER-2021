@@ -13,22 +13,21 @@
         <mat-panel-description></mat-panel-description>
       </mat-expansion-panel-header>
       <div class="clusters-container">
-        <mat-list class="eventClusters" *ngIf="eventChecked">
+        <mat-list class="eventClusters" >
           <mat-list-item *ngFor="let cluster of file.evenement"><mat-icon>event</mat-icon>{{cluster}}</mat-list-item>
         </mat-list>
-        <mat-divider class="eventDivider" *ngIf="eventChecked"></mat-divider>
-        <mat-list class="personalityClusters" *ngIf="personalityChecked">
+        <mat-divider class="eventDivider" ></mat-divider>
+        <mat-list class="personalityClusters" >
           <mat-list-item *ngFor="let cluster of file.personnalite"><mat-icon>emoji_people</mat-icon>{{cluster}}</mat-list-item>
         </mat-list>
-        <mat-divider class="personalityDivider" *ngIf="personalityChecked"></mat-divider>
-        <mat-list class="placeClusters" *ngIf="placeChecked">
+        <mat-divider class="personalityDivider" ></mat-divider>
+        <mat-list class="placeClusters" >
           <mat-list-item *ngFor="let cluster of file.lieu"><mat-icon>home</mat-icon>{{cluster}}</mat-list-item>
         </mat-list>
-        <mat-divider class="placeDivider" *ngIf="placeChecked"></mat-divider>
-        <mat-list class="illustrationClusters" *ngIf="illustrationChecked">
+        <mat-divider class="placeDivider" ></mat-divider>
+        <mat-list class="illustrationClusters" >
           <mat-list-item *ngFor="let cluster of file.illustration"><mat-icon>auto_stories</mat-icon>{{cluster}}</mat-list-item>
         </mat-list>
-        <mat-divider class="illustrationDivider" *ngIf="illustrationChecked"></mat-divider>
       </div>
     </mat-expansion-panel>
   </mat-accordion>

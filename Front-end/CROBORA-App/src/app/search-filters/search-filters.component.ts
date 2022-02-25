@@ -7,7 +7,6 @@ import {map, startWith} from 'rxjs/operators';
 import { FilterService } from 'src/services/filter.service';
 import { Cluster } from '../../models/cluster.model';
 import { Filter } from '../../models/filter.model';
-import { File } from '../../models/file.model';
 import { HttpService } from '../../services/http.service';
 
 @Component({
@@ -100,10 +99,10 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   actualColorChip: string;
 
   constructor(private filterService: FilterService, private httpService: HttpService) { 
-    this.selectedDatabase = this.databases[2].value;
     this.selectedSearchType = this.searchTypes[0].value;
     this.selectedShowType = this.showTypes[0].value;
     this.selectedSortType = this.sortTypes[0].value;
+    this.selectedDatabase = this.filterService.getSelectedDatabase();
   }
 
   async ngOnInit() {
@@ -324,7 +323,7 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
 
   onDatabaseChange() {
     console.log(this.selectedDatabase);
-    this.filterService.selectedDatabase = this.selectedDatabase;
+    this.filterService.setSelectedDatabase(this.selectedDatabase);
   }
 
   onSearchTypeChange() {
