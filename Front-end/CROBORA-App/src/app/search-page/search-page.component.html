@@ -34,7 +34,7 @@
   </mat-tab-group>
 
   <div class="filters-container">
-    <div class="cluster-div">
+    <div class="cluster-div" *ngIf="this.filterService.getSelectedSearchType() === 'cluster'">
       <mat-checkbox class="Event" (change)="toggleEventCheckbox($event)" [checked]="eventChecked">Event</mat-checkbox>
       <mat-checkbox class="Personality" (change)="togglePersonalityCheckbox($event)" [checked]="personalityChecked">Personality</mat-checkbox>
       <mat-checkbox class="Place" (change)="togglePlaceCheckbox($event)" [checked]="placeChecked">Place</mat-checkbox>

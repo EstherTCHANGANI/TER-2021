@@ -36,6 +36,11 @@ export class HttpService {
     return this.http.get<File[]>(this.BACKEND_URL + route.slice(0, -1), { headers: this.headers });
   }
 
+  getFilesByTitle(title: string) {
+    this.requestLoading = true;
+    return this.http.get<File[]>(this.BACKEND_URL + '/search?keyword=' + title, { headers: this.headers });
+  }
+
   isRequestLoading(): boolean {
     return this.requestLoading;
   }

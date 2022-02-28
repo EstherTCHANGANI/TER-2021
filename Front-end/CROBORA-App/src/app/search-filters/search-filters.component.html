@@ -19,10 +19,11 @@
           </mat-select>
       </mat-form-field>
     </div>
-    <div class="searchBar filter disabled">
+    <div class="searchBar filter" *ngIf="selectedSearchType === 'cluster'">
         <mat-form-field appearance="outline">
-            <mat-label>Search</mat-label>
+            <mat-label>Search by Clusters</mat-label>
             <input
+            [disabled]="!eventChecked && !personalityChecked && !placeChecked && !illustrationChecked"
             matInput type="text"
             placeholder="Enter a keyword"
             #clusterInput
@@ -49,10 +50,10 @@
           </mat-chip>
       </mat-chip-list>
     </div>
-    <div class="searchBarDisabled filter">
+    <div class="searchBar filter" *ngIf="selectedSearchType === 'title'">
       <mat-form-field appearance="outline">
-        <mat-label>Search</mat-label>
-        <input matInput type="text" placeholder="Enter a keyword" [disabled]="true">
+        <mat-label>Search by Titles</mat-label>
+        <input matInput type="text" placeholder="Enter a title" #txtVal (keydown.enter)="onSearchByTitle(txtVal.value)">
         <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
     </div>

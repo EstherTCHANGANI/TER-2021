@@ -36,6 +36,18 @@ export class FilterService{
     else return value;
   }
 
+  setSelectedSearchType(value: string) {
+    localStorage.setItem('selectedSearchType', value);
+  }
+
+  getSelectedSearchType() {
+    const value = localStorage.getItem('selectedSearchType');
+    if(!value) {
+      return 'cluster';
+    }
+    else return value;
+  }
+
   setClusterChecked(type: string, value: boolean) {
     localStorage.setItem(type + 'Checked', value.toString());
   }

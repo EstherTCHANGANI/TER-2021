@@ -99,20 +99,20 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   actualColorChip: string;
 
   constructor(private filterService: FilterService, private httpService: HttpService) { 
-    this.selectedSearchType = this.searchTypes[0].value;
+    this.selectedSearchType = this.filterService.getSelectedSearchType();
     this.selectedShowType = this.showTypes[0].value;
     this.selectedSortType = this.sortTypes[0].value;
     this.selectedDatabase = this.filterService.getSelectedDatabase();
   }
 
   async ngOnInit() {
-    this.activateSearchBar();
+    // this.activateSearchBar();
     await this.requestClusters();
     console.log(this.clusterList);
   }
 
   ngOnChanges(): void {
-    this.activateSearchBar();
+    // this.activateSearchBar();
     this.autoCompleteClusters();
     // console.log(this.selectedDatabase);
     // console.log(this.selectedSearchType);
@@ -184,6 +184,20 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
       document.querySelector('.searchBar')?.classList.add('disabled');
       document.querySelector('.searchBarDisabled')?.classList.remove('disabled');
     }
+  }
+
+  onSearchByTitle(value: string) {
+    console.log('searching: ' + value);
+    this.httpService.getFilesByTitle(value)
+    .subscribe(files => {
+      let filteredFiles = [];
+      if(files) {
+        const titles = files.map(file => file.titre);
+        filteredFiles = files.filter(({titre}, index) => !titles.includes(titre, index + 1))
+      }
+      this.filterService.searchedfiles = filteredFiles;
+      this.httpService.requestLoading = false;
+    });
   }
 
   /**
@@ -328,6 +342,7 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
 
   onSearchTypeChange() {
     console.log(this.selectedSearchType);
+    this.filterService.setSelectedSearchType(this.selectedSearchType);
   }
 
   onShowTypeChange() {

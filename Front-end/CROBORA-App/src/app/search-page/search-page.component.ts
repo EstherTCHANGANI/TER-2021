@@ -18,7 +18,7 @@ export class SearchPageComponent implements OnInit {
   illustrationChecked: boolean = false;
   showFiles: boolean = true;
 
-  constructor(private filterService: FilterService) {
+  constructor(public filterService: FilterService) {
   }
 
   ngOnInit(): void {

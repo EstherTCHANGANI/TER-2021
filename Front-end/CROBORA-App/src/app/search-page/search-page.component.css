@@ -41,16 +41,16 @@ mat-tab-group{
   margin: -1rem 2rem 2rem 2rem;
 }
 #list-view>div{
-  width: 65vw;
+  width: 60vw;
 }
 #cluster-view>div{
-  width: 65vw;
+  width: 60vw;
 }
 #treemaps>div{
-  width: 65vw;
+  width: 60vw;
 }
 #distribution>div{
-  width: 65vw;
+  width: 60vw;
 }
 
 
@@ -95,6 +95,9 @@ mat-tab-group{
   bottom: 3.5vh;
 }
 
-app-search-filters {
-  width: 25vw;
+.filters-container {
+  min-width: 25vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
