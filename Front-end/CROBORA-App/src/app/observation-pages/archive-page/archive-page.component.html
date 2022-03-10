@@ -9,11 +9,16 @@
   <img src="../../../assets/images/profil.png" alt="icone de profil">
 </div>
 
-<h1 id='archive-title'>{{file.titre}}</h1>
+<div id='archive-title'>
+  <button mat-icon-button onclick="window.open('https://youtu.be/ZqM9cAF73rA?t=41', '_blank');" aria-label="Play icon for the video" id="video">
+    <mat-icon inline="true">play_circle_outline</mat-icon>
+  </button>
+  <h1>{{file.titre}}</h1>
+</div>
 
 <div id="options-box">
   <div class="flex-container">
-    <mat-tab-group mat-align-tabs="end">
+    <mat-tab-group>
       <mat-tab label="Thumbnails">
         <ng-template matTabContent>
           <app-thumbnails-box id="thumbnails"></app-thumbnails-box>
@@ -36,9 +41,6 @@
       </button>
       <button mat-icon-button ng-click="addToFav()" aria-label="Favorite icon with a star" id="favorite">
         <mat-icon inline="true">star_border</mat-icon>
-      </button>
-      <button mat-icon-button onclick="window.open('https://youtu.be/ZqM9cAF73rA?t=41', '_blank');" aria-label="Play icon for the video" id="video">
-        <mat-icon inline="true">play_circle_outline</mat-icon>
       </button>
     </div>
   </div>

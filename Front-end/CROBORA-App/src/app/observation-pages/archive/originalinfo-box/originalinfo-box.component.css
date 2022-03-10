@@ -22,5 +22,15 @@ p{
 }
 
 .info-box{
-  width : 30%;
+  display: inline-flex;
+  align-items : baseline;
+}
+
+.title-info{
+  width:auto;
+}
+
+.infos{
+  margin-left: 1vw;
+  max-width: 85%;
 }

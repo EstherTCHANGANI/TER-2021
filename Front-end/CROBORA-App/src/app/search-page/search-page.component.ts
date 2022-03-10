@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { FilterService } from '../../services/filter.service';
+import { Filter } from '../../models/filter.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-search-page',
@@ -17,8 +19,24 @@ export class SearchPageComponent implements OnInit {
   placeChecked: boolean = false;
   illustrationChecked: boolean = false;
   showFiles: boolean = true;
+  showTypeEvent = new EventEmitter<string>();
+
+  showTypes: Filter[] = [
+    {value: 'File', viewValue: 'Files'},
+    {value: 'Thumbnail', viewValue: 'Thumbnails'}
+  ];
+
+  sortTypes: Filter[] = [
+    {value: 'alphabetic', viewValue: 'Alphabetic'},
+    {value: 'relevance', viewValue: 'Relevance'},
+    {value: 'date', viewValue: 'Dates'},
+  ];
+  selectedShowType: string;
+  selectedSortType: string;
 
   constructor(public filterService: FilterService) {
+    this.selectedShowType = this.showTypes[0].value;
+    this.selectedSortType = this.sortTypes[0].value;
   }
 
   ngOnInit(): void {
@@ -57,4 +75,12 @@ export class SearchPageComponent implements OnInit {
     this.listViewName = showType + ' View';
   }
 
+  onShowTypeChange() {
+    console.log(this.selectedShowType);
+    this.showTypeEvent.emit(this.selectedShowType);
+  }
+
+  onSortTypeChange() {
+    console.log(this.selectedSortType);
+  }
 }

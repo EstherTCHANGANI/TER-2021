@@ -1,12 +1,14 @@
-.listview-box{
+.viewport-scroll{
   display: flex;
   flex-direction: column;
   border: 2px solid black;
   border-radius: 5px;
   padding: 2rem;
-  height: 65vh;
-  overflow-y : scroll;
-  margin-top: 0.5rem;
+  height: 60vh;
+}
+
+.listview-box{
+  margin : 1.5vw;
 }
 
 mat-panel-title > h3{

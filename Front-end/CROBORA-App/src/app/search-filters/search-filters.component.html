@@ -57,24 +57,4 @@
         <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
     </div>
-    <div class="show filter">
-      <h2>Show:</h2>
-      <mat-form-field appearance="outline">
-          <mat-select [(value)]="selectedShowType" (selectionChange)="onShowTypeChange()">
-            <mat-option *ngFor="let showType of showTypes" [value]="showType.value">
-              {{showType.viewValue}}
-            </mat-option>
-          </mat-select>
-      </mat-form-field>
-  </div>
-  <div class="sortBy filter">
-    <h2>Sort by:</h2>
-    <mat-form-field appearance="outline">
-        <mat-select [(value)]="selectedSortType" (selectionChange)="onSortTypeChange()">
-          <mat-option *ngFor="let sortType of sortTypes" [value]="sortType.value">
-            {{sortType.viewValue}}
-          </mat-option>
-        </mat-select>
-    </mat-form-field>
-  </div>
 </div>

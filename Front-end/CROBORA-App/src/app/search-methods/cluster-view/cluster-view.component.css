@@ -4,9 +4,8 @@
   border: 2px solid black;
   border-radius: 5px;
   padding: 2rem;
-  height: 65vh;
+  height: 60vh;
   overflow-y : scroll;
-  margin-top: 0.5rem;
 }
 
 mat-panel-title > h3{

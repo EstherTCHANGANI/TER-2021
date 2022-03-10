@@ -34,17 +34,6 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     {value: 'title', viewValue: 'Titles'}
   ];
 
-  showTypes: Filter[] = [
-    {value: 'File', viewValue: 'Files'},
-    {value: 'Thumbnail', viewValue: 'Thumbnails'}
-  ];
-
-  sortTypes: Filter[] = [
-    {value: 'relevance', viewValue: 'Relevance'},
-    {value: 'date', viewValue: 'Dates'},
-    {value: 'alphabetic', viewValue: 'Alphabetic'},
-  ];
-
   clusterList: Cluster[] = [];
   // clusterList: Cluster[] = [
   //   {value: 'Treaty', type: 'evenement'},
@@ -83,8 +72,6 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   myControl = new FormControl();
   selectedDatabase: string;
   selectedSearchType: string;
-  selectedShowType: string;
-  selectedSortType: string;
   searchingValue: string = '';
 
   // variables for cluster chips :
@@ -100,8 +87,6 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
 
   constructor(private filterService: FilterService, private httpService: HttpService) { 
     this.selectedSearchType = this.filterService.getSelectedSearchType();
-    this.selectedShowType = this.showTypes[0].value;
-    this.selectedSortType = this.sortTypes[0].value;
     this.selectedDatabase = this.filterService.getSelectedDatabase();
   }
 
@@ -343,15 +328,6 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   onSearchTypeChange() {
     console.log(this.selectedSearchType);
     this.filterService.setSelectedSearchType(this.selectedSearchType);
-  }
-
-  onShowTypeChange() {
-    console.log(this.selectedShowType);
-    this.showTypeEvent.emit(this.selectedShowType);
-  }
-
-  onSortTypeChange() {
-    console.log(this.selectedSortType);
   }
 
   onSearchKey(event: any) {

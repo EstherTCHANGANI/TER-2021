@@ -16,6 +16,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {HttpClientModule} from '@angular/common/http'
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -65,7 +66,8 @@ import { OriginalinfoBoxComponent } from './observation-pages/archive/originalin
     MatGridListModule,
     MatTooltipModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ScrollingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

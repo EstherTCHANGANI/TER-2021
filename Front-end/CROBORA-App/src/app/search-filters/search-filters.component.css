@@ -1,10 +1,14 @@
 .container {
     margin: 2px;
-    border: 2px solid black;
     border-radius: 10px;
     padding-top: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .filter {
