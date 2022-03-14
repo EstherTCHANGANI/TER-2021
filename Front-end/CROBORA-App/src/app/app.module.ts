@@ -31,6 +31,7 @@ import { ArchivePageComponent } from './observation-pages/archive-page/archive-p
 import { ThumbnailsBoxComponent } from './observation-pages/archive/thumbnails-box/thumbnails-box.component';
 import { IndexCROBORABoxComponent } from './observation-pages/archive/index-crobora-box/index-crobora-box.component';
 import { OriginalinfoBoxComponent } from './observation-pages/archive/originalinfo-box/originalinfo-box.component';
+import { HeadbandCroboraComponent } from './headband-crobora/headband-crobora.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { OriginalinfoBoxComponent } from './observation-pages/archive/originalin
     ThumbnailsBoxComponent,
     IndexCROBORABoxComponent,
     OriginalinfoBoxComponent,
+    HeadbandCroboraComponent,
   ],
   imports: [
     BrowserModule,

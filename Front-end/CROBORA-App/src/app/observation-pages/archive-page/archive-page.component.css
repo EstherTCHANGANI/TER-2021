@@ -3,11 +3,10 @@ body{
 }
 
 #archive-title{
-  position: relative;
   display:flex;
-  top: 2.5vh;
-  left : 3.5rem;
   height:4vh;
+  margin: 0 1vw;
+  margin-bottom: 1vh;
 }
 #archive-title>h1{
   font-weight: bold;
@@ -22,61 +21,34 @@ body{
   font-size: 5vh;
 }
 
-#user-icon{
-  display:flex;
-  float: right;
-  flex-direction: row;
-  align-items: center;
-  position: relative;
-  top: 1em;
-  right:2em;
-}
-#user-icon>span{
-  position:relative;
-  font-size: 1.3em;
-  bottom:1.3em;
-}
-#user-icon>img{
-  width: 4rem;
-  height: 4rem;
-  position : relative;
-  bottom: 3.5vh;
-}
 
 #back-icon{
   display:flex;
-  position: relative;
-  top: 15px;
-  left:15px;
+  margin: 1vh 1vw;
   background-color: black;
   border-radius: 50px;
-  height:30px;
-  width:30px;
+  height:1.5vw;
+  width:1.5vw;
+  justify-items: baseline;
+  justify-content: center;
 }
 #back-icon>button{
   background-color: transparent;
   border: transparent;
 }
 #back-icon>button>mat-icon{
-  position:relative;
-  right:6px;
-  bottom:1px;
   color:white;
-  font-size:30px;
+  font-size:1.5vw;
 }
 
-#options-box {
-  display:flex;
-  position: relative;
-  top:3em;
-  margin-left: 5px;
-}
 .flex-container {
   display: flex;
   position: relative;
   flex-direction: row;
   align-items: center;
-  left:1vw;
+  margin-right: 1vw;
+  margin-bottom: 1vh;
+  margin-left:1vw;
 }
 #thumbnails>div{
   width : 72vw;

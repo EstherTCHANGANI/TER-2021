@@ -1,6 +1,8 @@
-<div class="clusterview-box">
-  <mat-accordion multi *ngIf="eventChecked || personalityChecked || placeChecked || illustrationChecked">
-    <mat-expansion-panel *ngFor="let cluster of this.filterService.getSelectedClusters()">
+
+<cdk-virtual-scroll-viewport itemSize="20" class="viewport-scroll">
+  <div class="clusterview-box">
+  <mat-accordion multi>
+    <mat-expansion-panel *cdkVirtualFor="let cluster of this.getClustersToShow()">
       <mat-expansion-panel-header>
         <mat-panel-title class={{cluster.type}}>
           <mat-icon>{{getIconByClusterType(cluster)}}</mat-icon>
@@ -20,3 +22,4 @@
     </mat-expansion-panel>
   </mat-accordion>
 </div>
+</cdk-virtual-scroll-viewport>

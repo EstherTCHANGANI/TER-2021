@@ -1,0 +1,33 @@
+.headband-container{
+    height:5vh;
+    background-color:rgb(138, 205, 230);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#user-icon{
+    display:flex;
+    position : relative;
+    flex-direction: row;
+    align-items: center;
+    border : solid 0.1vh black;
+    border-radius: 4%;
+    margin : 0.7vw;
+  }
+  
+  #user-icon>span{
+    font-size: 2vh;
+  }
+  #user-icon>img{
+    width: 2vw;
+    height: 2vw;
+  }
+
+#name{
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    margin : 1vw;
+}
