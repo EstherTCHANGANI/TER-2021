@@ -1,103 +1,98 @@
 {
-  "ina": {
-    "id": "ID_notice",
-    "titre": "Titre_propre_x",
-    "date de diffusion": {
-      "fields": [
-        "Date_de_diffusion",
-        "Heure_de_diffusion"
-      ],
-      "function": "lambda args : str(args[0]) + \" \" + str(args[1]) if len(args) > 1 else args[0]"
-    },
-    "Illustration": {
-      "fields": [
-        "Illustration"
-      ],
-      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
-    },
-    "Image": "Image",
-    "Canal de transmission": "Chaine",
-    "Duree": "Duree",
-    "Lieu": {
-      "fields": [
-        "Lieu"
-      ],
-      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
-    },
-    "Evenement": {
-      "fields": [
-        "Evenement"
-      ],
-      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
-    },
-    "Producteurs": {
-      "fields": [
-        "Producteurs"
-      ],
-      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
-    },
-    "Personnalite": {
-      "fields": [
-        "Personnalite"
-      ],
-      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
-    },
-    "Date_de_consultation": {
+     "ina": {
+        "ID_document": "ID_document",
+        "document_title": "document_title_x",
+        "airing_time": {
             "fields": [
-                "Date et lieu de consultation"
+                "airing_day",
+                "time_start"
+            ],
+            "function": "lambda args : str(args[0]) + \" \" + str(args[1]) if len(args) > 1 else args[0]"
+        },
+        "date_consult": {
+            "fields": [
+                "day_place_consult"
             ],
             "function": "lambda args : args[0].split(', ')[0]"
         },
-        "Lieu_de_consultation": {
+        "place_consult": {
             "fields": [
-                "Date et lieu de consultation"
+                "day_place_consult"
             ],
             "function": "lambda args : args[0].split(', ')[1]"
+        },
+        "channel": "channel",
+        "duration": "duration",
+        "airing_day": "airing_day",
+        "image_title": "image_title",
+        "event": {
+            "fields":  [
+                "event"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "location": {
+            "fields":  [
+                "location"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "illustration": {
+            "fields":  [
+                "illustration"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "celebrity": {
+            "fields":  [
+                "celebrity"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
         }
-  },
-  "RAI": {
-    "ID Notice": "ID Notice",
-    "Titre de programme": "Titolo Programma",
-    "Titre Sequence/Service": "Titolo Sequenza/Servizio",
-    "Image": "Image",
-    "Personalite": {
-      "fields": [
-        "Celebrity"
-      ],
-      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
     },
-    "Evenement": {
-      "fields": [
-        "Event"
-      ],
-      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
-    },
-    "Lieu": {
-      "fields": [
-        "Location"
-      ],
-      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
-    },
-    "Illustration": {
-      "fields": [
-        "Illustration"
-      ],
-      "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
-    },
-    "Date_de_research": {
+    "rai": {
+      "ID_document": "ID_document",
+      "title_programme": "title_programme",
+      "document_title": "document_title",
+      "image_title": "image_title",
+      "celebrity": {
+        "fields": [
+          "celebrity"
+        ],
+        "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
+      },
+      "event": {
+        "fields": [
+          "event"
+        ],
+        "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+      },
+      "location": {
+        "fields": [
+          "location"
+        ],
+        "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+      },
+      "illustration": {
+        "fields": [
+          "illustration"
+        ],
+        "function": "lambda args: list(map(str.strip,args[0].split(\",\")))"
+      },
+      "date_consult": {
            "fields": [
-                "Date and Place of Research"
+                "day_place_consult"
             ],
            "function": "lambda args : args[0].split(', ')[0]"
         },
-    "Lieu_de_research": {
+       "place_consult": {
             "fields": [
-                "Date and Place of Research"
+                "day_place_consult"
             ],
             "function": "lambda args : args[0].split(', ')[1]"
         },
-    "Duree": "Durata",
-    "Contenue audio": "Contenuto Audio",
-    "Contenuto Video": "Contenuto Video"
-  }
+      "duration": "duration",
+      "content_audio": "content_audio",
+      "content_video": "content_video"
+    }
 }

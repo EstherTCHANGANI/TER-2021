@@ -15,8 +15,8 @@ export class SearchPageComponent implements OnInit {
   listViewName: string = 'File View';
 
   eventChecked: boolean = false;
-  personalityChecked: boolean = false;
-  placeChecked: boolean = false;
+  celebrityChecked: boolean = false;
+  locationChecked: boolean = false;
   illustrationChecked: boolean = false;
   showFiles: boolean = true;
   showTypeEvent = new EventEmitter<string>();
@@ -41,8 +41,8 @@ export class SearchPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.eventChecked = this.filterService.getClusterChecked('event');
-    this.personalityChecked = this.filterService.getClusterChecked('personality');
-    this.placeChecked = this.filterService.getClusterChecked('place');
+    this.celebrityChecked = this.filterService.getClusterChecked('celebrity');
+    this.locationChecked = this.filterService.getClusterChecked('location');
     this.illustrationChecked = this.filterService.getClusterChecked('illustration');
   }
 
@@ -55,15 +55,15 @@ export class SearchPageComponent implements OnInit {
     this.filterService.setClusterChecked('event', e.checked);
     this.eventChecked = e.checked;
   }
-  togglePersonalityCheckbox(e: any) {
-    console.log('personality: ' + e.checked);
-    this.filterService.setClusterChecked('personality', e.checked);
-    this.personalityChecked = e.checked;
+  toggleCelebrityCheckbox(e: any) {
+    console.log('celebrity: ' + e.checked);
+    this.filterService.setClusterChecked('celebrity', e.checked);
+    this.celebrityChecked = e.checked;
   }
-  togglePlaceCheckbox(e: any) {
-    console.log('place: ' + e.checked);
-    this.filterService.setClusterChecked('place', e.checked);
-    this.placeChecked = e.checked;
+  toggleLocationCheckbox(e: any) {
+    console.log('location: ' + e.checked);
+    this.filterService.setClusterChecked('location', e.checked);
+    this.locationChecked = e.checked;
   }
   toggleIllustrationCheckbox(e: any) {
     console.log('illustration: ' + e.checked);

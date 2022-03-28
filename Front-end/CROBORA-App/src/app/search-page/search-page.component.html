@@ -1,13 +1,13 @@
 <div class="filters-container">
     <app-search-filters
-      [eventChecked]="eventChecked" [personalityChecked]="personalityChecked" [placeChecked]="placeChecked" [illustrationChecked]="illustrationChecked"
+      [eventChecked]="eventChecked" [celebrityChecked]="celebrityChecked" [locationChecked]="locationChecked" [illustrationChecked]="illustrationChecked"
       (showTypeEvent)="renameFirstTab($event)">
     </app-search-filters>
     <div class="cluster-div" *ngIf="this.filterService.getSelectedSearchType() === 'cluster'">
-      <mat-checkbox class="Event" (change)="toggleEventCheckbox($event)" [checked]="eventChecked">Event</mat-checkbox>
-      <mat-checkbox class="Personality" (change)="togglePersonalityCheckbox($event)" [checked]="personalityChecked">Personality</mat-checkbox>
-      <mat-checkbox class="Place" (change)="togglePlaceCheckbox($event)" [checked]="placeChecked">Place</mat-checkbox>
-      <mat-checkbox class="Illustration" (change)="toggleIllustrationCheckbox($event)" [checked]="illustrationChecked">Illustration</mat-checkbox>
+      <mat-checkbox class="event" (change)="toggleEventCheckbox($event)" [checked]="eventChecked">event</mat-checkbox>
+      <mat-checkbox class="celebrity" (change)="toggleCelebrityCheckbox($event)" [checked]="celebrityChecked">celebrity</mat-checkbox>
+      <mat-checkbox class="location" (change)="toggleLocationCheckbox($event)" [checked]="locationChecked">location</mat-checkbox>
+      <mat-checkbox class="illustration" (change)="toggleIllustrationCheckbox($event)" [checked]="illustrationChecked">illustration</mat-checkbox>
     </div>
   </div>
 
@@ -38,7 +38,7 @@
       </div>
     </div>
         <app-list-view id="list-view"
-          [eventChecked]="eventChecked" [personalityChecked]="personalityChecked" [placeChecked]="placeChecked" [illustrationChecked]="illustrationChecked">
+          [eventChecked]="eventChecked" [celebrityChecked]="celebrityChecked" [locationChecked]="locationChecked" [illustrationChecked]="illustrationChecked">
         </app-list-view>
       </ng-template>      
     </mat-tab>
@@ -58,7 +58,7 @@
           </div>
         </div>
         <app-cluster-view id="cluster-view"
-          [eventChecked]="eventChecked" [personalityChecked]="personalityChecked" [placeChecked]="placeChecked" [illustrationChecked]="illustrationChecked">
+          [eventChecked]="eventChecked" [celebrityChecked]="celebrityChecked" [locationChecked]="locationChecked" [illustrationChecked]="illustrationChecked">
         </app-cluster-view>
       </ng-template>
     </mat-tab>

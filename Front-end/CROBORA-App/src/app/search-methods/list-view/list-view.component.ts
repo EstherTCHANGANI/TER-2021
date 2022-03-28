@@ -11,8 +11,8 @@ import { HttpService } from '../../../services/http.service';
 export class ListViewComponent implements OnInit {
 
   @Input() eventChecked?: boolean;
-  @Input() personalityChecked?: boolean;
-  @Input() placeChecked?: boolean;
+  @Input() celebrityChecked?: boolean;
+  @Input() locationChecked?: boolean;
   @Input() illustrationChecked?: boolean;
 
  /*fileList: File[] = [
@@ -71,8 +71,8 @@ export class ListViewComponent implements OnInit {
  ]*/
 
   eventClusters: string[] = [];
-  personalityClusters: string[] = [];
-  placeClusters: string[] = [];
+  celebrityClusters: string[] = [];
+  locationClusters: string[] = [];
   illustrationClusters: string[] = [];
 
   constructor(public filterService: FilterService, public httpService: HttpService) { }
@@ -81,7 +81,7 @@ export class ListViewComponent implements OnInit {
   }
 
   getClustersQuantity(file: File): number {
-    return file.evenement.length + file.personnalite.length + file.lieu.length + file.illustration.length;;
+    return file.event.length + file.celebrity.length + file.location.length + file.illustration.length;;
   }
 
   goToVisualisationPage(file: File) {
@@ -90,6 +90,7 @@ export class ListViewComponent implements OnInit {
 
   getFilesByDB(): File[] {
     let filesFromRequest = this.filterService.getSearchedFiles()
+    console.log(filesFromRequest);
     if(this.filterService.getSelectedDatabase() === 'ina') {
       return filesFromRequest.filter( file => file.source === 'Fiches_INA_merged');
     } 

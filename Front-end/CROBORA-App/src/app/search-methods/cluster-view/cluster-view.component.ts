@@ -12,8 +12,8 @@ import { HttpService } from 'src/services/http.service';
 export class ClusterViewComponent implements OnInit, OnChanges {
 
   @Input() eventChecked?: boolean;
-  @Input() personalityChecked?: boolean;
-  @Input() placeChecked?: boolean;
+  @Input() celebrityChecked?: boolean;
+  @Input() locationChecked?: boolean;
   @Input() illustrationChecked?: boolean;
   selectedClusters: Cluster[] =  [];
 

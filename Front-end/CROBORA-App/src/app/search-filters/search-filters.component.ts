@@ -17,8 +17,8 @@ import { HttpService } from '../../services/http.service';
 export class SearchFiltersComponent implements OnInit, OnChanges {
 
   @Input() eventChecked?: boolean;
-  @Input() personalityChecked?: boolean;
-  @Input() placeChecked?: boolean;
+  @Input() celebrityChecked?: boolean;
+  @Input() locationChecked?: boolean;
   @Input() illustrationChecked?: boolean;
   @Output() showTypeEvent = new EventEmitter<string>();
   
@@ -36,22 +36,22 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
 
   clusterList: Cluster[] = [];
   // clusterList: Cluster[] = [
-  //   {value: 'Treaty', type: 'evenement'},
-  //   {value: 'Treaty of Rome', type: 'evenement'},
-  //   {value: 'Treaty of Lisbonne', type: 'evenement'},
-  //   {value: 'Referendum', type: 'evenement'},
-  //   {value: 'France Germany relations', type: 'evenement'},
-  //   {value: 'Charles de Gaulle', type: 'personnalite'},
-  //   {value: 'Robert Schuman', type: 'personnalite'},
-  //   {value: 'François Mitterrand', type: 'personnalite'},
-  //   {value: 'François Hollande', type: 'personnalite'},
-  //   {value: 'Angela Merkel', type: 'personnalite'},
-  //   {value: 'Hans-Gert Pöttering', type: 'personnalite'},
-  //   {value: 'Nicolas Sarkozy', type: 'personnalite'},
-  //   {value: 'Portugal', type: 'lieu'},
-  //   {value: 'Paris', type: 'lieu'},
-  //   {value: 'Lisbonne', type: 'lieu'},
-  //   {value: 'Europe', type: 'lieu'},
+  //   {value: 'Treaty', type: 'event'},
+  //   {value: 'Treaty of Rome', type: 'event'},
+  //   {value: 'Treaty of Lisbonne', type: 'event'},
+  //   {value: 'Referendum', type: 'event'},
+  //   {value: 'France Germany relations', type: 'event'},
+  //   {value: 'Charles de Gaulle', type: 'celebrity'},
+  //   {value: 'Robert Schuman', type: 'celebrity'},
+  //   {value: 'François Mitterrand', type: 'celebrity'},
+  //   {value: 'François Hollande', type: 'celebrity'},
+  //   {value: 'Angela Merkel', type: 'celebrity'},
+  //   {value: 'Hans-Gert Pöttering', type: 'celebrity'},
+  //   {value: 'Nicolas Sarkozy', type: 'celebrity'},
+  //   {value: 'Portugal', type: 'location'},
+  //   {value: 'Paris', type: 'location'},
+  //   {value: 'Lisbonne', type: 'location'},
+  //   {value: 'Europe', type: 'location'},
   //   {value: 'Accident', type: 'illustration'},
   //   {value: 'Factory', type: 'illustration'},
   //   {value: 'Signature', type: 'illustration'},
@@ -120,9 +120,9 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
    * Functions related to search Bar :
    */
   private filterClustersByType() {
-    this.clusterListFilteredByEvent = this.clusterList.filter(cluster => cluster.value && cluster.type === 'evenement');
-    this.clusterListFilteredByPersonality = this.clusterList.filter(cluster => cluster.value && cluster.type === 'personnalite');
-    this.clusterListFilteredByPlace = this.clusterList.filter(cluster => cluster.value && cluster.type === 'lieu');
+    this.clusterListFilteredByEvent = this.clusterList.filter(cluster => cluster.value && cluster.type === 'event');
+    this.clusterListFilteredByPersonality = this.clusterList.filter(cluster => cluster.value && cluster.type === 'celebrity');
+    this.clusterListFilteredByPlace = this.clusterList.filter(cluster => cluster.value && cluster.type === 'location');
     this.clusterListFilteredByIllustration = this.clusterList.filter(cluster => cluster.value && cluster.type === 'illustration');
   }
 
@@ -141,10 +141,10 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     if(this.eventChecked) {
       this.clusterListFilteredByTypes.push(...this.clusterListFilteredByEvent);
     }
-    if(this.personalityChecked) {
+    if(this.celebrityChecked) {
       this.clusterListFilteredByTypes.push(...this.clusterListFilteredByPersonality);
     } 
-    if(this.placeChecked) {
+    if(this.locationChecked) {
       this.clusterListFilteredByTypes.push(...this.clusterListFilteredByPlace);
     }
     if(this.illustrationChecked) {
@@ -162,7 +162,7 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   }
 
   private activateSearchBar() {
-    if(this.eventChecked || this.personalityChecked || this.placeChecked || this.illustrationChecked) {
+    if(this.eventChecked || this.celebrityChecked || this.locationChecked || this.illustrationChecked) {
       document.querySelector('.searchBarDisabled')?.classList.add('disabled');
       document.querySelector('.searchBar')?.classList.remove('disabled');
     } else {
@@ -177,8 +177,8 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     .subscribe(files => {
       let filteredFiles = [];
       if(files) {
-        const titles = files.map(file => file.titre);
-        filteredFiles = files.filter(({titre}, index) => !titles.includes(titre, index + 1))
+        const titles = files.map(file => file.document_title);
+        filteredFiles = files.filter(({document_title}, index) => !titles.includes(document_title, index + 1))
       }
       this.filterService.searchedfiles = filteredFiles;
       this.httpService.requestLoading = false;
@@ -230,28 +230,28 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
       let chipElement = document.querySelectorAll('.mat-chip');
       let lastChild = chipElement[chipElement.length - 1];
       this.lastColorChip = this.actualColorChip;
-      if(selectedCluster.type === 'evenement') {
+      if(selectedCluster.type === 'event') {
         this.actualColorChip = 'brown';
       }
-      else if(selectedCluster.type === 'personnalite') {
+      else if(selectedCluster.type === 'celebrity') {
         this.actualColorChip = 'blue';
       }
-      else if(selectedCluster.type === 'lieu') {
+      else if(selectedCluster.type === 'location') {
         this.actualColorChip = 'red';
       }
       else if(selectedCluster.type === 'illustration') {
         this.actualColorChip = 'green';
       }
       // adding css class dynamically
-      if(chipElement.length > 0 && !lastChild.classList.contains('eventChip') && !lastChild.classList.contains('personalityChip') && !lastChild.classList.contains('placeChip') && !lastChild.classList.contains('illustrationChip')) {
+      if(chipElement.length > 0 && !lastChild.classList.contains('eventChip') && !lastChild.classList.contains('celebrityChip') && !lastChild.classList.contains('locationChip') && !lastChild.classList.contains('illustrationChip')) {
         if(this.lastColorChip === 'brown') {
           lastChild.classList.add('eventChip');
         }
         else if(this.lastColorChip === 'blue') {
-          lastChild.classList.add('personalityChip');
+          lastChild.classList.add('celebrityChip');
         }
         else if(this.lastColorChip === 'red') {
-          lastChild.classList.add('placeChip');
+          lastChild.classList.add('locationChip');
         }
         else if(this.lastColorChip === 'green') {
           lastChild.classList.add('illustrationChip');
@@ -263,9 +263,9 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
 
   private requestSearchFiles() {
     let clusterTypesChecked: string[] = [];
-    if(this.eventChecked) clusterTypesChecked.push('evenement');
-    if(this.personalityChecked) clusterTypesChecked.push('personnalite');
-    if(this.placeChecked) clusterTypesChecked.push('lieu');
+    if(this.eventChecked) clusterTypesChecked.push('event');
+    if(this.celebrityChecked) clusterTypesChecked.push('celebrity');
+    if(this.locationChecked) clusterTypesChecked.push('location');
     if(this.illustrationChecked) clusterTypesChecked.push('illustration');
     // console.log(this.selectedClustersValues);
     // console.log(this.selectedClustersObjects);
@@ -303,15 +303,15 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   private getClusterTypeByValue(value: string): string {
     const isEvent = this.clusterListFilteredByEvent.some(cluster => cluster.value === value)
     if(isEvent) {
-      return 'evenement';
+      return 'event';
     }
     const isPersonality = this.clusterListFilteredByPersonality.some(cluster => cluster.value === value)
     if(isPersonality) {
-      return 'personnalite';
+      return 'celebrity';
     }
     const isPlace = this.clusterListFilteredByPlace.some(cluster => cluster.value === value)
     if(isPlace) {
-      return 'lieu';
+      return 'location';
     }
     const isIllustration = this.clusterListFilteredByIllustration.some(cluster => cluster.value === value)
     if(isIllustration) {

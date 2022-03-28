@@ -1,7 +1,7 @@
 import mongoService from "./mongo.service";
 import _ from "lodash";
 
-const baseClusters = ["evenement", "lieu", "personnalite", "illustration"];
+const baseClusters = ["event", "location", "celebrity", "illustration"];
 
 class ClusterService {
 
@@ -75,12 +75,12 @@ class ClusterService {
     }
 
     async groupEvents(events) {
-        console.log(_.groupBy(events, "id"))
-        return Object.values(_.groupBy(events, "id"))
+        console.log(_.groupBy(events, "ID_document"))
+        return Object.values(_.groupBy(events, "ID_document"))
         .map(group => group.reduce((res, cur)=> {
-            res.images.push(cur.image);
+            res.images_title.push(cur.image_title);
             return res;
-        }, {...group[0], images: [group[0].image]}))
+        }, {...group[0], images_title: [group[0].image_title]}))
     }
 
     /**
@@ -110,10 +110,10 @@ class ClusterService {
     }
 
     groupByEvents(events) {
-        const groupedEvents = _.groupBy(events, "evenement");
+        const groupedEvents = _.groupBy(events, "event");
         Object.entries(groupedEvents)
             .forEach(([key, value]) => {
-                groupedEvents[key] = _.groupBy(value, "titre");
+                groupedEvents[key] = _.groupBy(value, "document_title");
             });
         return groupedEvents;
     }

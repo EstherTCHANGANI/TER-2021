@@ -4,97 +4,97 @@
   
   <div class="info-box">
       <h2 class="title-info">Identifiant notice : </h2>
-      <span class="infos">{{info.ID_notice}}</span>
+      <span class="infos">{{info.ID_document}}</span>
       <hr class="line">
     </div>
 
     <div class="info-box">
       <h2 class="title-info">Titre de l'archive : </h2>
-      <span class="infos">{{info.Titre_propre_x}}</span>
+      <span class="infos">{{info.document_title_x}}</span>
     </div>
 
     <div class="info-box">
       <h2 class="title-info">Titre de la collection : </h2>
-      <span class="infos">{{info.Titre_collection_x}}</span>
+      <span class="infos">{{info.title_programme_x}}</span>
     </div>
   
     <div class="info-box">
       <h2 class="title-info">Titre du programme : </h2>
-      <span class="infos">{{info.Titre_programme}}</span>
+      <span class="infos">{{info.program_details}}</span>
     </div>
 
     <div class="info-box">
       <h2 class="title-info">Chaîne de diffusion : </h2>
-      <span class="infos">{{info.Chaine}}</span>
+      <span class="infos">{{info.channel}}</span>
     </div>
 
     <div class="info-box">
       <h2 class="title-info">Date de la diffusion : </h2>
-      <span class="infos">Le {{info.Jour}} {{info.Date_de_diffusion}}</span>
+      <span class="infos">Le {{info.day}} {{info.time_start}}</span>
     </div>
   
     <div class="info-box">
       <h2 class="title-info">Statut de la diffusion : </h2>
-      <span class="infos">{{info.Statut_de_diffusion}}</span>
+      <span class="infos">{{info.airing_state}}</span>
     </div>
 
     <div class="info-box">
       <h2 class="title-info">Heure du début de diffusion : </h2>
-      <span class="infos">{{info.Heure_de_diffusion}}</span>
+      <span class="infos">{{info.time_start}}</span>
     </div>
 
     <div class="info-box">
       <h2 class="title-info">Heure de fin de diffusion : </h2>
-      <span class="infos">{{info.Heure_de_fin_de_diffusion}}</span>
+      <span class="infos">{{info.time_stop}}</span>
     </div>
   
     <div class="info-box">
       <h2 class="title-info">Durée de diffusion : </h2>
-      <span class="infos">{{info.Duree}}</span>
+      <span class="infos">{{info.duration}}</span>
     </div>
 
     <div class="info-box">
       <h2 class="title-info">Genre : </h2>
-      <span class="infos">{{info.Genre}}</span>
+      <span class="infos">{{info.type}}</span>
     </div>
 
     <div class="info-box">
       <h2 class="title-info">Générique : </h2>
-      <span class="infos">{{info.Generique}}</span>
+      <span class="infos">{{info.credits}}</span>
     </div>
   
     <div class="info-box">
       <h2 class="title-info">Descripteurs : </h2>
-      <span class="infos">{{info.Descripteurs}}</span>
+      <span class="infos">{{info.descriptors}}</span>
     </div>
 
-    <div class="info-box" *ngIf="info.Chapeau !== null">
+    <div class="info-box" *ngIf="info.introductory_summary !== null">
       <h2 class="title-info">Chapeau : </h2>
-      <span class="infos">{{info.Chapeau}}</span>
+      <span class="infos">{{info.introductory_summary}}</span>
     </div>
 
     <div class="info-box">
       <h2 class="title-info">Société du programme : </h2>
-      <span class="infos">{{info.Societe_de_programmes}}</span>
+      <span class="infos">{{info.airing_company}}</span>
     </div>
     
     <div class="info-box">
       <h2 class="title-info">Producteurs : </h2>
-      <span class="infos">{{info.Producteurs}}</span>
+      <span class="infos">{{info.producers}}</span>
     </div>
 
     <div class="info-box">
       <h2 class="title-info">Extension géographique : </h2>
-      <span class="infos">{{info.Extension_geographique}}</span>
+      <span class="infos">{{info.range}}</span>
     </div>
 
     <div class="info-box">
       <h2 class="title-info">Fonds : </h2>
-      <span class="infos">{{info.Fonds}}</span>
+      <span class="infos">{{info.collection}}</span>
     </div>
   
   <div class="info-box">
     <h2 class="title-info">Titre matériel : </h2>
-    <span class="infos">{{info.Titre_materiel}}</span>
+    <span class="infos">{{info.title_material}}</span>
   </div>
 </div>

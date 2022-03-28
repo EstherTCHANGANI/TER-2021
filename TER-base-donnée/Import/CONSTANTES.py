@@ -17,11 +17,11 @@ db_name = "admin"
 # Cette etape n'est pas obligatoire
 # Le code est automatisé il peut convertir tous les fichiers excel
 # Cette etape utilisé si on  utilise  toujours les memes fichiers mais on veut faire des modifications
-FICHES_RAIUNO_20 = "fiches_RAIUNO_20.xlsx"
-FICHES_RAIUNO_1330 = "Fiches_RAIUNO_1330.xlsx"
-META_DONNEES_RAI = "MetaDonnees_RAI.xlsx"
-FICHES_INA = "Fiches_INA.xlsx"
-META_DONNEES_INA = "MetaDonnees_INA.xlsx"
+FICHES_RAIUNO_20 = "fiches_RAIUNO 20.xlsx"
+FICHES_RAIUNO_1330 = "Fiches RAIUNO 1330.xlsx"
+META_DONNEES_RAI = "MetaDonnées_RAI.xlsx"
+FICHES_INA = "fiches_INA.xlsx"
+META_DONNEES_INA = "MetaDonnées_INA.xlsx"
 
 # Configuration de fichier de donnéé avec le fichier de ces methadonnée en  specifiant le champs ou on veut faire le merge
 merged_file = "../MergeData/files/Fiches_INA_merged.csv"
@@ -37,113 +37,112 @@ UNNAMED = "Unnamed"
 
 # Renomage des champs des fichiers qu'on actuellement
 # Cette etape va faciliter le merge et la liason entre les données et les metadonnées
-COLONNES_METADONNEES_INNA = {"ID Notice": "ID_notice",
-                             "Titre propre": "Titre_propre",
-                             "Titre collection": "Titre_collection",
-                             "Date de diffusion": "Date de diffusion",
-                             "Image": "Image",
-                             "Personnalité": "Personnalite",
-                             "Événement": "Evenement",
-                             "Lieu": "Lieu",
-                             "Illustration": "Illustration",
-                             "Date et lieu de consultation": "Date et lieu de consultation"
+COLONNES_METADONNEES_INNA = {"ID Notice": "ID_document",
+                             "Titre propre": "document_title",
+                             "Titre collection": "title_programme",
+                             "Date de diffusion": "day_airing",
+                             "Image": "image_title",
+                             "Personnalité": "celebrity",
+                             "Événement": "event",
+                             "Lieu": "location",
+                             "Illustration": "illustration",
+                             "Date et lieu de consultation": "day_place_consult"
                              }
 
-COLONNES_METADONNEES_INNA_ARTE = {"Demonstration": "ID_notice",
-                                  "Titre propre": "Titre_propre",
-                                  "Titre collection": "Titre_collection",
-                                  "Date de diffusion": "Date de diffusion",
-                                  "Image": "Image",
-                                  "Pérsonnalité": "Personnalite",
-                                  "Événement": "Evenement",
-                                  "Lieu": "Lieu",
-                                  "Illustration": "Illustration"
+COLONNES_METADONNEES_INNA_ARTE = {"Demonstration": "ID_document",
+                                  "Titre propre": "document_title",
+                                  "Titre collection": "title_programme",
+                                  "Date de diffusion": "day_airing",
+                                  "Image": "image_title",
+                                  "Pérsonnalité": "celebrity",
+                                  "Événement": "event",
+                                  "Lieu": "location",
+                                  "Illustration": "illustration"
                                   }
 
-COLONNES_METADONNEES_INNA_ARTE_NIK = {"ID Notice": "ID_notice",
-                                      "Titre propre": "Titre_propre",
-                                      "Titre collection": "Titre_collection",
-                                      "Date de diffusion": "Date de diffusion",
-                                      "Image": "Image",
-                                      "Pérsonnalité": "Personnalite",
-                                      "Événement": "Evenement",
-                                      "Lieu": "Lieu",
-                                      "Illustration": "Illustration"
+COLONNES_METADONNEES_INNA_ARTE_NIK = {"ID Notice": "ID_document",
+                                      "Titre propre": "document_title",
+                                      "Titre collection": "title_programme",
+                                      "Date de diffusion": "day_airing",
+                                      "Image": "image_title",
+                                      "Pérsonnalité": "celebrity",
+                                      "Événement": "event",
+                                      "Lieu": "location",
+                                      "Illustration": "illustration"
                                       }
 
-COLONNES_FICHES_INNA = {"ID_notice": "ID_notice",
-                        "Titre_propre": "Titre_propre",
-                        "Titre_collection": "Titre_collection",
-                        "Titre_programme": "Titre_programme",
-                        "France 2": "Chaine",
-                        "Date_de_diffusion": "Date_de_diffusion",
-                        "Jour": "Jour",
-                        "Statut_de_diffusion": "Statut_de_diffusion",
-                        "Heure_de_diffusion": "Heure_de_diffusion",
-                        "Heure_de_fin_de_diffusion": "Heure_de_fin_de_diffusion",
-                        "Duree": "Duree",
-                        "Genre": "Genre",
-                        "Generique": "Generique",
-                        "Descripteurs": "Descripteurs",
-                        "Chapeau": "Chapeau",
-                        "Societe_de_programmes": "Societe_de_programmes",
-                        "Producteurs": "Producteurs",
-                        "Extension_geographique": "Extension_geographique",
-                        "Fonds": "Fonds",
-                        "Titre_materiel": "Titre_materiel"
+COLONNES_FICHES_INNA = {"ID_notice": "ID_document",
+                        "Titre_propre": "document_title",
+                        "Titre_collection": "title_programme",
+                        "Titre_programme": "program_details",
+                        "France 2": "channel",
+                        "Date_de_diffusion": "day_airing",
+                        "Jour": "day",
+                        "Statut_de_diffusion": "airing_state",
+                        "Heure_de_diffusion": "time_start",
+                        "Heure_de_fin_de_diffusion": "time_stop",
+                        "Duree": "duration",
+                        "Genre": "type",
+                        "Generique": "credits",
+                        "Descripteurs": "descriptors",
+                        "Chapeau": "introductory_summary",
+                        "Societe_de_programmes": "airing_company",
+                        "Producteurs": "producers",
+                        "Extension_geographique": "range",
+                        "Fonds": "collection",
+                        "Titre_materiel": "title_material"
                         }
 
 #
-COLONNES_METADONNEES_RAI_1330 = {"ID Notice": "ID Notice",
-                                 "Service Title": "Service_Title",
-                                 "Edition of TG News": "Edition_of_TG_News",
-                                 "Trasmission Date": "Trasmission_Date",
-                                 "Time Start": "Time_start",
-                                 "Time Stop": "Time_stop",
-                                 "Image": "Image",
-                                 "Celebrity": "Celebrity",
-                                 "Event": "Event",
-                                 "Location": "Location",
-                                 "Illustration": "Illustration",
-                                 "Date and Place of Research": "Date_and_Place_of_Research",
-                                 "Note ": "Note"
+COLONNES_METADONNEES_RAI_1330 = {"ID Notice": "ID_document",
+                                 "Service Title": "document_title",
+                                 "Edition of TG News": "title_programme",
+                                 "Trasmission Date": "day_airing",
+                                 "Time Start": "time_start",
+                                 "Time Stop": "time_stop",
+                                 "Image": "image_title",
+                                 "Celebrity": "celebrity",
+                                 "Event": "event",
+                                 "Location": "location",
+                                 "Illustration": "illustration",
+                                 "Date and Place of Research": "day_place_consult",
                                  }
 
-COLONNES_FICHES_RAIUNO_1330 = {"Documento": "Documento",
-                               "Titolo Programma": "Titolo programma",
-                               "Titolo Sequenza/Servizio": "Titolo sequenza/servizio",
-                               "Canale Trasmissione": "Canale Trasmissione",
-                               "Data Trasmissione": "Data Trasmissione",
-                               "Durata": "Durata",
-                               "Contenuto Audio": "Contenuto Audio",
-                               "Contenuto Video": "Contenuto Video",
-                               "Identificatore Teca": "ID Notice",
-                               "Note ": "Note",
-                               "Time Start": "Time Start",
-                               "Time Stop": "Time Stop"
+COLONNES_FICHES_RAIUNO_1330 = {"Documento": "document",
+                               "Titolo Programma": "title_programme",
+                               "Titolo Sequenza/Servizio": "document_title",
+                               "Canale Trasmissione": "channel",
+                               "Data Trasmissione": "day_airing",
+                               "Durata": "duration",
+                               "Contenuto Audio": "content_audio",
+                               "Contenuto Video": "content_video",
+                               "Identificatore Teca": "ID_document",
+                               "Note ": "note",
+                               "Time Start": "time_start",
+                               "Time Stop": "time_stop"
                                }
 
-COLONNES_METADONNEES_RAI_2000 = {"ID Notice": "ID Notice",
-                                 "Service Title": "Service_Title",
-                                 "Edition of TG News": "Edition_of_TG_News",
-                                 "Trasmission Date": "Trasmission_Date",
-                                 "Time code start": "Time_start",
-                                 "Time code stop": "Time_stop",
-                                 "Image": "Image",
-                                 "Celebrity": "Celebrity",
-                                 "Event": "Event",
-                                 "Location": "Location",
-                                 "Illustration": "Illustration",
-                                 "Date and Place of Research": "Date_and_Place_of_Research"
+COLONNES_METADONNEES_RAI_2000 = {"ID Notice": "ID_document",
+                                 "Service Title": "document_title",
+                                 "Edition of TG News": "title_programme",
+                                 "Trasmission Date": "day_airing",
+                                 "Time code start": "time_start",
+                                 "Time code stop": "time_stop",
+                                 "Image": "image_title",
+                                 "Celebrity": "celebrity",
+                                 "Event": "event",
+                                 "Location": "location",
+                                 "Illustration": "illustration",
+                                 "Date and Place of Research": "day_place_consult"
                                  }
 
-COLONNES_FICHES_RAIUNO_20 = {"Documento": "Documento",
-                             "Titolo Programma": "Titolo Programma",
-                             "Titolo Sequenza/Servizio": "Titolo Sequenza/servizio",
-                             "Canale Trasmissione": "Canale Trasmissione",
-                             "Data Trasmissione": "Data Trasmissione",
-                             "Durata": "Durata",
-                             "Contenuto Audio": "Contenuto Audio",
-                             "Contenuto Video": "Contenuto Video",
-                             "Identificatore Teca": "ID Notice",
+COLONNES_FICHES_RAIUNO_20 = {"Documento": "document",
+                             "Titolo Programma": "title_programme",
+                             "Titolo Sequenza/Servizio": "document_title",
+                             "Canale Trasmissione": "channel",
+                             "Data Trasmissione": "day_airing",
+                             "Durata": "duration",
+                             "Contenuto Audio": "content_audio",
+                             "Contenuto Video": "content_video",
+                             "Identificatore Teca": "ID_document",
                              }

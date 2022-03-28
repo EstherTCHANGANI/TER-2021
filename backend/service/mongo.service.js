@@ -29,9 +29,13 @@ class MongoService {
     async findManyByKeyWord(keyword){
         const re = new RegExp(".*" + keyword + ".*")
         const res = await this.getCollection("fiches_event").find({
-            "titre":re
+            "document_title":re
         }).toArray() 
         console.log(res)
+        console.log(uri);
+        console.log(DB_HOST_NAME);
+        console.log(DB_PORT);
+        console.log("============");
         return res
     }
 

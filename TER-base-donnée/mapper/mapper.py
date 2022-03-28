@@ -70,6 +70,7 @@ def _get_fields(document:dict, value):
 
 if __name__ == '__main__':
     args = parser.parse_args()
+    print(args)
 
     sources = get_source(args.source)
     collection_event = get_collection(

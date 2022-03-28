@@ -8,14 +8,14 @@
   <button mat-icon-button onclick="window.open('https://youtu.be/ZqM9cAF73rA?t=41', '_blank');" aria-label="Play icon for the video" id="video">
     <mat-icon inline="true">play_circle_outline</mat-icon>
   </button>
-  <h1>{{file.titre}}</h1>
+  <h1>{{file.document_title}}</h1>
 </div>
 
   <div class="flex-container">
     <mat-tab-group>
       <mat-tab label="Thumbnails">
         <ng-template matTabContent>
-          <app-thumbnails-box id="thumbnails"></app-thumbnails-box>
+          <app-thumbnails-box [file]="file" id="thumbnails"></app-thumbnails-box>
         </ng-template>
       </mat-tab>
       <mat-tab label="Original informations">

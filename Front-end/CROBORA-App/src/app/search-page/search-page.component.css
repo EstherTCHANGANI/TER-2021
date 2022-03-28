@@ -9,18 +9,18 @@ body{
   transform: scale(1.2);
 }
 
-.Event{
+.event{
   color: #632800;
 }
-.Personality{
+.celebrity{
   color:blue;
   margin-left: 40px;
 }
-.Place{
+.location{
   color:red;
   margin-left: 40px;
 }
-.Illustration{
+.illustration{
   color:green;
   margin-left: 40px;
 }
@@ -56,16 +56,16 @@ mat-tab-group{
 }
 
 
-.Event.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+.event.mat-checkbox-checked.mat-accent .mat-checkbox-background {
   background-color: #632800 ;
 }
-.Personality.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+.celebrity.mat-checkbox-checked.mat-accent .mat-checkbox-background {
   background-color: blue;
 }
-.Place.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+.location.mat-checkbox-checked.mat-accent .mat-checkbox-background {
   background-color: red;
 }
-.Illustration.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+.illustration.mat-checkbox-checked.mat-accent .mat-checkbox-background {
   background-color: green;
 }
 

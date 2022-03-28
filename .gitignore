@@ -24,9 +24,17 @@ hs_err_pid*
 
 backend/node_modules
 backend/public
+Front-end\CROBORA-App\src\assets\images\images_archives
 
 **/venv
 
 **/.idea
 **/__pycache__
 **/__pycache__/**
+*.csv
+
+*.png
+
+*.mp4
+
+*.jpg
