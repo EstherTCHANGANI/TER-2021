@@ -31,7 +31,7 @@ export class ThumbnailsBoxComponent implements OnInit {
         let image : Image = {name : "", src :""};
         let source : String = '../../../../assets/images/images_archives/'
         if (this.file.extra.channel === "TF1"){
-          source += "Atlas_TF1/" + title + ".png";
+          source += "Atlas_TF1/"+title+".png"
         }
         if (this.file.extra.channel === "France 2"){
           source += "Atlas_France2/" + title + ".png";
@@ -52,6 +52,7 @@ export class ThumbnailsBoxComponent implements OnInit {
           if(programme20.some(programme20=> this.file.extra.title_programme_x.includes(programme20))){
             source+= "Screenshot TG1 edizione 20.00 (Alessia)/" + title + ".png";
           }
+        }
 
         image.name=title;
         image.src=source;
@@ -60,12 +61,10 @@ export class ThumbnailsBoxComponent implements OnInit {
 
         console.log("image " + image.name);
         console.log("image " + image.src);
-      
-      }else{
-        console.log(this.file);
       }
-    }
-    }
+    }else{
+      console.log(this.file);
+    }  
   }
 
 

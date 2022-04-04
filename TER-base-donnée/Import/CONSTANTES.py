@@ -118,8 +118,6 @@ COLONNES_FICHES_RAIUNO_1330 = {"Documento": "document",
                                "Contenuto Video": "content_video",
                                "Identificatore Teca": "ID_document",
                                "Note ": "note",
-                               "Time Start": "time_start",
-                               "Time Stop": "time_stop"
                                }
 
 COLONNES_METADONNEES_RAI_2000 = {"ID Notice": "ID_document",

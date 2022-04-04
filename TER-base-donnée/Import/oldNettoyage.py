@@ -81,7 +81,9 @@ def xlsx_to_csv(filename):
             if nom_feuille == "Tg1 edizione1330":
                 excel_data_df.drop("Titolo Puntata", axis=1, inplace=True)
             if not(nom_feuille== "TG1 1330"):
-                excel_data_df = excel_data_df.reindex(columns = excel_data_df.columns.tolist() + ["note", "time_start", "time_stop"])
+                excel_data_df = excel_data_df.reindex(columns = excel_data_df.columns.tolist() + ["note"])
+            else:
+                excel_data_df=excel_data_df.drop(columns = ["Time Start", "Time Stop"])
             excel_data_df = excel_data_df.rename(
                 columns=COLONNES_FICHES_RAIUNO_1330)
             excel_data_df = excel_data_df[list(
