@@ -8,6 +8,7 @@ const _ = require("lodash");
 router.get("", async (req, res, next) => {
     let clusters;
     let keywords;
+    let allImages;
     if (req.query.cluster === undefined) {
         clusters = []
     }
@@ -23,7 +24,9 @@ router.get("", async (req, res, next) => {
         keywords = _.isArray(req.query.keyword) ? req.query.keyword : [req.query.keyword];
     }
 
-    res.json(await clusterService.groupByEvent(clusters, keywords))
+    allImages = req.query.allImages;
+
+    res.json(await clusterService.groupByEvent(clusters, keywords, allImages))
 })
 
 router.get("/names", async (req, res, next)=> {

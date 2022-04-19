@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { Cluster } from 'src/models/cluster.model';
-import { File } from 'src/models/file.model';
+import { Subject } from 'src/models/subject.model';
+import { Image } from 'src/models/image.model';
 import { FilterService } from 'src/services/filter.service';
 import { HttpService } from 'src/services/http.service';
 
@@ -17,8 +18,9 @@ export class ClusterViewComponent implements OnInit, OnChanges {
   @Input() illustrationChecked?: boolean;
   selectedClusters: Cluster[] =  [];
 
-  fileList: File[] = [];
-  // fileList: File[] = [
+  subjectList: Subject[] = [];
+  imageList: Image[] = [];
+  // subjectList: Subject[] = [
   //   { titre: "Signature du traité de Lisbonne", nbImage: 4, canal_de_transmission: null, date_de_diffusion: null,
   //     personnalite: ['Hans-Gert Pöttering'], evenement: ['Treaty', 'Treaty of Lisbonne'], lieu: ['Lisbonne', 'Portugal'], illustration: ['Signature'],extra:{
   //       _id: "61a79ba58cdcf53b5627d811",
@@ -89,14 +91,14 @@ export class ClusterViewComponent implements OnInit, OnChanges {
     else return 'block'
   }
 
-  goToVisualisationPage(file: File) {
-    console.log(file);
+  goToVisualisationPage(image: Image) {
+    console.log(image);
   }
 
-  getFilesByCluster(cluster: Cluster): File[] {
-    if (this.filterService.getSearchedFilesByCluster().size > 0) {
-      return this.filterService.getSearchedFilesByCluster().get(cluster.value);
-    } else return this.fileList;
+  getImagesByCluster(cluster: Cluster): Image[] {
+    if (this.filterService.getSearchedImageByCluster().size > 0) {
+      return this.filterService.getSearchedImageByCluster().get(cluster.value);
+    } else return this.imageList;
   }
 
 }

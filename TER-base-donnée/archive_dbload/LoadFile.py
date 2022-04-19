@@ -1,0 +1,34 @@
+import glob
+import json
+import pandas as pd
+import os
+from pymongo import MongoClient
+from CONSTANTES_archivesLoad import *
+
+
+def import_csv_mongo(db_url, db_name, csv_file_path):
+    coll_name = os.path.split(csv_file_path)[-1].split(".csv")[0]
+    print("Importing " + coll_name + "...")
+    client = MongoClient(db_url)
+    db = client[db_name]
+    coll = db[coll_name]
+    data = pd.read_csv(csv_file_path)
+    if csv_file_path == final_INA_file:
+        data["ID_document"] = data["ID_document"].astype("string")
+    if csv_file_path == MData_INA:
+        data["ID_document"] = data["ID_document"].astype("int64").astype("string")
+    payload = json.loads(data.to_json(orient='records'))
+    coll.drop()
+    coll.insert_many(payload)
+    print(coll_name + " imported")
+
+
+# runs the csv_from_Excel function:
+if __name__ == '__main__':
+    # pour les champs db_url , db_collection_name, merge_file sont modifier dans constante .py
+    import_csv_mongo(db_url, db_collection_file, final_INA_file)
+    import_csv_mongo(db_url, db_collection_file, final_rai_file)
+    import_csv_mongo(db_url, db_collection_file, MData_INA)
+    import_csv_mongo(db_url, db_collection_file, MData_RAI)
+    import_csv_mongo(db_url, db_collection_file, Webfr_CROBORA_file)
+    import_csv_mongo(db_url, db_collection_file, Webfr_subject_file)

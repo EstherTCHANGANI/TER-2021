@@ -1,0 +1,177 @@
+{
+     "ina": {
+        "ID_document": "ID_document",
+        "document_title": "document_title",
+        "title_programme": "title_programme",
+        "date_place_consult": "day_place_consult",
+        "channel": "channel",
+        "day_airing": "day_airing",
+        "time_start" : "time_start",
+        "time_stop" : "time_stop",
+        "images": {
+            "fields":  [
+                "images"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "extra" : {
+            "program_details" : "program_details",
+            "day" : "day",
+            "duration": "duration",
+            "airing_state" : "airing_state",
+            "type" : "type",
+            "credits" : "credits",
+            "descriptor" : "descriptor",
+            "introductory_summary" : "introductory_summary",
+            "document_summary" : "document_summary",
+            "airing_company" : "airing_company",
+            "producers" : "producers",
+            "range" : "range",
+            "collection" : "collection",
+            "title_material" : "title_material"
+        }
+    },
+    "rai": {
+        "ID_document": "ID_document",
+        "title_programme": "title_programme",
+        "document_title": "document_title",
+        "channel" : "channel",
+        "day_airing" : "day_airing",
+        "time_start" : "time_start",
+        "time_stop" : "time_stop",
+        "date_place_consult": "day_place_consult",
+        "images": {
+            "fields":  [
+                "images"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "extra" : {
+          "duration": "duration",
+          "content_audio": "content_audio",
+          "content_video": "content_video",
+          "document" : "document"
+        }
+    },
+    "webfr": {
+        "ID_document": "ID_document",
+        "document_title": "document_title",
+        "channel" : "channel",
+        "day_airing" : "day_airing",
+        "time_start" : "time_start",
+        "time_stop" : "time_stop",
+        "date_place_consult": "day_place_consult",
+        "link_to_video":"link_to_video",
+        "images": {
+            "fields":  [
+                "images"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "extra" : {
+          "type": "type",
+          "subscribers": "subscribers",
+          "language": "language",
+          "comments_authorization" : "comments_authorization",
+          "likes": "likes",
+          "dislikes": "dislikes",
+          "views": "views",
+          "other(fiction)" : "other(fiction)",
+          "comments" : "comments",
+          "platform" : "platform"
+        }
+    },
+
+
+    "ina_crobora" : {
+        "ID_document": "ID_document",
+        "document_title": "document_title",
+        "image_title": "image_title",
+        "day_airing" : "day_airing",
+        "event": {
+            "fields":  [
+                "event"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "location": {
+            "fields":  [
+                "location"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "illustration": {
+            "fields":  [
+                "illustration"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "celebrity": {
+            "fields":  [
+                "celebrity"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        }
+    },
+    
+    "rai_crobora" : {
+        "ID_document": "ID_document",
+        "document_title": "document_title",
+        "image_title": "image_title",
+        "day_airing" : "day_airing",
+        "event": {
+            "fields":  [
+                "event"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "location": {
+            "fields":  [
+                "location"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "illustration": {
+            "fields":  [
+                "illustration"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "celebrity": {
+            "fields":  [
+                "celebrity"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        }
+    },
+    "webfr_crobora" : {
+        "ID_document": "ID_document",
+        "document_title": "document_title",
+        "image_title": "image_title",
+        "day_airing" : "day_airing",
+        "event": {
+            "fields":  [
+                "event"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "location": {
+            "fields":  [
+                "location"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "illustration": {
+            "fields":  [
+                "illustration"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        },
+        "celebrity": {
+            "fields":  [
+                "celebrity"
+            ],
+            "function": "lambda args : list(map(str.strip, args[0].split(\",\")))"
+        }
+    }
+}

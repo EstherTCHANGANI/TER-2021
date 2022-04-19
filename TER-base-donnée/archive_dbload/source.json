@@ -1,0 +1,45 @@
+[
+    {
+        "hostname": "localhost",
+        "port": "27017",
+        "database": "TER",
+        "collection": "Fiches_INA_final",
+        "name":"ina"
+    },
+    {
+        "hostname": "localhost",
+        "port": "27017",
+        "database": "TER",
+        "collection": "Fiches_RAI_final",
+        "name":"rai"
+    },
+    {
+        "hostname": "localhost",
+        "port": "27017",
+        "database": "TER",
+        "collection": "WEBfr_subject",
+        "name":"webfr"
+    },
+
+    {
+        "hostname": "localhost",
+        "port": "27017",
+        "database": "TER",
+        "collection": "MetaDonnees_INA",
+        "name":"ina_crobora"
+    },
+    {
+        "hostname": "localhost",
+        "port": "27017",
+        "database": "TER",
+        "collection": "MetaDonnees_RAI",
+        "name":"rai_crobora"
+    },
+    {
+        "hostname": "localhost",
+        "port": "27017",
+        "database": "TER",
+        "collection": "WEBfr_CROBORA",
+        "name":"webfr_crobora"
+    }
+]

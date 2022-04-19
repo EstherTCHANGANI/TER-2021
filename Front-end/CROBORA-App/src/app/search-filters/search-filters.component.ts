@@ -85,7 +85,7 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   lastColorChip: string;
   actualColorChip: string;
 
-  constructor(private filterService: FilterService, private httpService: HttpService) { 
+  constructor(public filterService: FilterService, private httpService: HttpService) { 
     this.selectedSearchType = this.filterService.getSelectedSearchType();
     this.selectedDatabase = this.filterService.getSelectedDatabase();
   }
@@ -173,14 +173,16 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
 
   onSearchByTitle(value: string) {
     console.log('searching: ' + value);
-    this.httpService.getFilesByTitle(value)
-    .subscribe(files => {
-      let filteredFiles = [];
-      if(files) {
-        const titles = files.map(file => file.document_title);
-        filteredFiles = files.filter(({document_title}, index) => !titles.includes(document_title, index + 1))
+    this.httpService.getImagesByTitle(value)
+    .subscribe(images => {
+      let filteredImages = [];
+      if(images) {
+        const titles = images.map(image => image[0].document_title);
+        console.log(titles);
+        filteredImages = images.filter(({document_title}, index) => !titles.includes(document_title, index + 1))
       }
-      this.filterService.searchedfiles = filteredFiles;
+      console.log(filteredImages)
+      this.filterService.searchedImages = filteredImages;
       this.httpService.requestLoading = false;
     });
   }
@@ -213,7 +215,7 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     if (this.selectedClustersObjects.length > 0) {
       this.filterService.selectedClusters = [...this.selectedClustersObjects];
     } else this.filterService.selectedClusters = [];
-    this.requestSearchFiles();
+    this.requestSearchImages();
     // console.log(this.selectedClustersObjects);
   }
 
@@ -222,7 +224,7 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
       if (!this.selectedClustersObjects.includes(selectedCluster)) {
         this.selectedClustersObjects.push(selectedCluster);
       }
-      this.requestSearchFiles();
+      this.requestSearchImages();
       this.filterService.selectedClusters = this.selectedClustersObjects;
       console.log(this.selectedClustersObjects);
       this.myControl.setValue(null);
@@ -261,7 +263,7 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     event.value = '';
   }
 
-  private requestSearchFiles() {
+  private requestSearchImages() {
     let clusterTypesChecked: string[] = [];
     if(this.eventChecked) clusterTypesChecked.push('event');
     if(this.celebrityChecked) clusterTypesChecked.push('celebrity');
@@ -270,22 +272,22 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     // console.log(this.selectedClustersValues);
     // console.log(this.selectedClustersObjects);
     if (this.selectedClustersObjects.length > 0) {
-      this.httpService.getFilesByCluster(clusterTypesChecked, this.selectedClustersObjects)
-      .subscribe(files => {
-        if(files) this.filterService.searchedfiles = files;
+      this.httpService.getImagesByCluster(clusterTypesChecked, this.selectedClustersObjects,1)
+      .subscribe(images => {
+        if(images) this.filterService.searchedImages = images;
         this.httpService.requestLoading = false;
       });
       this.filterService.selectedClusters.forEach( (cluster) => {
         let clusterList: Cluster[] = [];
         clusterList.push(cluster)
-        this.httpService.getFilesByCluster(clusterTypesChecked, clusterList)
-        .subscribe(files => {
-          this.filterService.searchedFilesByCluster.set(cluster.value, files);
+        this.httpService.getImagesByCluster(clusterTypesChecked, clusterList,1)
+        .subscribe(images => {
+          this.filterService.searchedImageByCluster.set(cluster.value, images);
           this.httpService.requestLoading = false;
         });
       });
     }
-    // console.log(this.filterService.getSearchedFilesByCluster());
+    // console.log(this.filterService.getSearchedImagesByCluster());
   }
   
   

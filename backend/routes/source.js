@@ -4,6 +4,7 @@ const { default: sourceService } = require('../service/source.service');
 const router = express.Router();
 
 const upload = multer({dest:"/tmp/uploads"})
+console.log(upload)
 /* GET home page. */
 router.get('/', async function (req, res, next) {
     res.json(await sourceService.getAllNames())

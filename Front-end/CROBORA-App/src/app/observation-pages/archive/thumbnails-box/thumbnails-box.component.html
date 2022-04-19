@@ -1,7 +1,7 @@
 <div class="thumbnails-box">
   <mat-grid-list cols="4" rowHeight="10rem">
     <mat-grid-tile
-        *ngFor="let image of images"
+        *ngFor="let image of imagesLink"
         [colspan]="1"
         [rowspan]="1">
       <img matTooltip={{image.name}} src={{image.src}}>

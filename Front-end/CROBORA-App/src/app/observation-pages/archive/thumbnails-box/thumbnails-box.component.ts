@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { File } from 'src/models/file.model';
+import { Image } from 'src/models/image.model';
+import { Subject } from 'src/models/subject.model';
 
-export class Image {
+export class ImageLink {
   name: String;
   src : String;
 }
@@ -14,57 +15,61 @@ export class Image {
 export class ThumbnailsBoxComponent implements OnInit {
 
   @Input()
-  file : File;
+  subject : Subject;
+
+  @Input()
+  images : Image[];
 
   constructor() { }
 
   ngOnInit(): void {
     this.accessImage();
-    console.log(this.images);
+    console.log(this.imagesLink);
   }
 
-   images : Image[] = [];
+   imagesLink : ImageLink[] = [];
 
   accessImage(){
-    if (this.file.images_title.length > 0){
-      for (let title of this.file.images_title){
-        let image : Image = {name : "", src :""};
+    if (this.subject.images != null){
+      for (let title of this.subject.images){
+        let image : ImageLink = {name : "", src :""};
         let source : String = '../../../../assets/images/images_archives/'
-        if (this.file.extra.channel === "TF1"){
+        if (this.subject.channel === "TF1"){
           source += "Atlas_TF1/" + title + ".png";
         }
-        if (this.file.extra.channel === "France 2"){
+        if (this.subject.channel === "France 2"){
           source += "Atlas_France2/" + title + ".png";
         }
-        if (this.file.extra.channel === "France 3"){
+        if (this.subject.channel === "France 3"){
           source += "Atlas_France3/" + title + ".png";
         }
-        if (this.file.extra.channel === "ARTE"){
+        if (this.subject.channel === "ARTE"){
           source += "Atlas_Arte/" + title + ".jpg";
         }
-        if(this.file.source === "Fiches_RAI_merged"){
+        if(this.subject.source === "Fiches_RAI_final"){
           source += "Atlas_RaiUno/" ;
           let programme13 = ["13.30","1330","13 30","13.00","1300","13 00"];
           let programme20 = ["20.00","2000","20 00","2030","20.30","20 30"];
-          if(programme13.some(programme13=> this.file.extra.title_programme_x.includes(programme13))){
+          if(programme13.some(programme13=> this.subject.title_programme.includes(programme13))){
             source+= "Screenshot TG1 edizione 1330 (Chiara)/" + title + ".png";
           }
-          if(programme20.some(programme20=> this.file.extra.title_programme_x.includes(programme20))){
+          if(programme20.some(programme20=> this.subject.title_programme.includes(programme20))){
             source+= "Screenshot TG1 edizione 20.00 (Alessia)/" + title + ".png";
           }
+        }
 
         image.name=title;
         image.src=source;
 
-        this.images.push(image);
-
+        
         console.log("image " + image.name);
         console.log("image " + image.src);
-      
-      }else{
-        console.log(this.file);
+
+        this.imagesLink.push(image);
+        
       }
-    }
+    }else{
+      console.log(this.subject);
     }
   }
 

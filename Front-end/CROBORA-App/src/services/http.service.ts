@@ -2,7 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cluster } from 'src/models/cluster.model';
-import { File } from 'src/models/file.model';
+import { Subject } from 'src/models/subject.model';
+import { Image } from 'src/models/image.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class HttpService {
     return this.http.get<Cluster[]>(this.BACKEND_URL + "/cluster/names", { headers: this.headers });
   }
 
-  getFilesByCluster(clusterTypes: string[], clusters: Cluster[]): Observable<File[]> {
+  getImagesByCluster(clusterTypes: string[], clusters: Cluster[], option: Number): Observable<Image[]> {
     this.requestLoading = true;
     let route = '/events?';
     clusterTypes.forEach((type) => {
@@ -32,22 +33,28 @@ export class HttpService {
     clusters.forEach((cluster) => {
       route = route + 'keyword=' + cluster.value + '&';
     });
+    route = route + 'allImages=' + option;
     console.log(route.slice(0, -1));
-    return this.http.get<File[]>(this.BACKEND_URL + route.slice(0, -1), { headers: this.headers });
+    return this.http.get<Image[]>(this.BACKEND_URL + route, { headers: this.headers });
   }
 
-  getFilesByTitle(title: string) {
+  getImagesByTitle(title: string): Observable<Image[]> {
     this.requestLoading = true;
-    return this.http.get<File[]>(this.BACKEND_URL + '/search?keyword=' + title, { headers: this.headers });
+    return this.http.get<Image[]>(this.BACKEND_URL + '/search?keyword=' + title, { headers: this.headers });
   }
 
-  getAllFiles(){
+  getAllImages(){
     this.requestLoading = true;
-    return this.http.get<File[]>(this.BACKEND_URL + '/cluster', { headers: this.headers });
+    return this.http.get<Image[]>(this.BACKEND_URL + '/cluster', { headers: this.headers });
   }
 
   isRequestLoading(): boolean {
     return this.requestLoading;
+  }
+
+  getSubject(ID_document : string): Observable<Subject> {
+    this.requestLoading = true;
+    return this.http.get<Subject>(this.BACKEND_URL + '/subject?ID_doc=' + ID_document, { headers: this.headers });
   }
 
 }

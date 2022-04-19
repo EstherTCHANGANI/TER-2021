@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Cluster } from 'src/models/cluster.model';
-import { File } from 'src/models/file.model';
+import { Subject } from 'src/models/subject.model';
+import { Image } from 'src/models/image.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,20 +9,30 @@ import { File } from 'src/models/file.model';
 export class FilterService{
 
   selectedClusters: Cluster[] = [];
-  searchedfiles: File[] = [];
-  searchedFilesByCluster = new Map<string, File[]>();
+  searchedSubjects: Subject[] = [];
+  searchedImages: Image[] = [];
+  searchedSubjectByCluster = new Map<string, Subject[]>();
+  searchedImageByCluster = new Map<string, Image[]>();
   // selectedDatabase: string = 'all';
 
   getSelectedClusters() {
     return this.selectedClusters;
   }
 
-  getSearchedFiles() {
-    return this.searchedfiles;
+  getSearchedSubjects() {
+    return this.searchedSubjects;
   }
 
-  getSearchedFilesByCluster() {
-    return this.searchedFilesByCluster;
+  getSearchedImages() {
+    return this.searchedImages;
+  }
+
+  getSearchedSubjectByCluster() {
+    return this.searchedSubjectByCluster;
+  }
+
+  getSearchedImageByCluster() {
+    return this.searchedImageByCluster;
   }
 
   setSelectedDatabase(value: string) {

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { File } from 'src/models/file.model';
+import { Subject } from 'src/models/subject.model';
+import { Image } from 'src/models/image.model';
 
 @Component({
   selector: 'app-index-crobora-box',
@@ -8,14 +9,15 @@ import { File } from 'src/models/file.model';
 })
 export class IndexCROBORABoxComponent implements OnInit {
 
-  @Input() file: File;
+  @Input() images: Image[];
+  @Input() subject: Subject;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  // index : File = {
+  // index : Subject = {
   //   titre: "50 ans d'amitié franco-allemande",
   //   nbImage: 12,
   //   canal_de_transmission: "TF1",
@@ -49,4 +51,25 @@ export class IndexCROBORABoxComponent implements OnInit {
   //     Titre_materiel: "[Journée de captation TF1 du 15 mai 2012]"
   //   }
   // }
+
+  getAllKeywords(keywordType : string){
+    let resString="";
+    for (let keyword of this.getGroupKeywords(this.images, keywordType)){
+      resString+= keyword + ", ";
+    }
+    return resString;
+  }
+
+  getGroupKeywords(group_image : Image[], keyword : string) : string[] {
+    let keywords = [];
+    for(let image of group_image){
+      let keyword_list = image[keyword];
+      if (keyword_list!==null){
+        for (let el of keyword_list){
+          keywords.push(el);
+        }
+      }
+    }
+    return [...new Set(keywords)];
+  } 
 }

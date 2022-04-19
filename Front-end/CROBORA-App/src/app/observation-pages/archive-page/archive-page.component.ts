@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
-import { File } from 'src/models/file.model';
+import { Subject } from 'src/models/subject.model';
+import { Image } from 'src/models/image.model';
 import { Location } from '@angular/common';
+import { HttpService } from '../../../services/http.service';
 
 @Component({
   selector: 'app-archive-page',
@@ -11,12 +13,13 @@ import { Location } from '@angular/common';
 })
 export class ArchivePageComponent implements OnInit {
 
-  file: File;
+  images: Image[];
+  subject :Subject;
 
-  constructor(private location: Location) { 
+  constructor(private location: Location, private httpService: HttpService) { 
   }
 
-  // file : File = {
+  // Subject : Subject = {
   //   titre: "50 ans d'amitié franco-allemande",
   //   nbImage: 12,
   //   canal_de_transmission: "TF1",
@@ -51,8 +54,9 @@ export class ArchivePageComponent implements OnInit {
   //   }
   // }
 
-  ngOnInit(): void {
-    this.file = history.state.file;
+  async ngOnInit(){
+    this.images = history.state.images;
+    await this.requestSubject();
   }
 
   addToFav():void{
@@ -61,5 +65,14 @@ export class ArchivePageComponent implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  private async requestSubject() {
+    this.httpService.getSubject(this.images[0].ID_document)
+      .subscribe(subject => {
+        this.subject = subject;
+        this.httpService.requestLoading = false;
+        console.log('REQUEST SUBJECT FROM API');
+      });
   }
 }

@@ -8,24 +8,24 @@
   <button mat-icon-button onclick="window.open('https://youtu.be/ZqM9cAF73rA?t=41', '_blank');" aria-label="Play icon for the video" id="video">
     <mat-icon inline="true">play_circle_outline</mat-icon>
   </button>
-  <h1>{{file.document_title}}</h1>
+  <h1>{{this.images[0].document_title}}</h1>
 </div>
 
   <div class="flex-container">
     <mat-tab-group>
       <mat-tab label="Thumbnails">
         <ng-template matTabContent>
-          <app-thumbnails-box [file]="file" id="thumbnails"></app-thumbnails-box>
+          <app-thumbnails-box [subject]="this.subject" [images]="this.images" id="thumbnails"></app-thumbnails-box>
         </ng-template>
       </mat-tab>
       <mat-tab label="Original informations">
         <ng-template matTabContent>
-          <app-originalinfo-box [info]="file.extra" id="infos"></app-originalinfo-box>
+          <app-originalinfo-box [subject]="this.subject" [images]="this.images" id="infos"></app-originalinfo-box>
         </ng-template>
       </mat-tab>
       <mat-tab label="index CROBORA">
         <ng-template matTabContent>
-          <app-index-crobora-box [file]="file" id="index"></app-index-crobora-box>
+          <app-index-crobora-box [subject]="this.subject" [images]="this.images" id="index"></app-index-crobora-box>
         </ng-template>
       </mat-tab>
     </mat-tab-group>

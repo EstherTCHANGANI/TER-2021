@@ -1,0 +1,1368 @@
+[{
+  "_id": {
+    "$oid": "6238baacb802c487c0af5374"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070e9551"
+    },
+    "Unnamed: 0": 83,
+    "ID_document": 5880499001043,
+    "document_title_x": "[Accumulation des attentats terroristes islamistes en Europe depuis un an]",
+    "title_programme_x": "Arte journal",
+    "program_details": "Arte journal : [émission du 20 décembre 2016]",
+    "channel": "ARTE",
+    "day_airing_x": "20/12/2016",
+    "day": "mardi",
+    "airing_state": "Première diffusion",
+    "time_start": "20:01:09",
+    "time_stop": "20:02:47",
+    "duration": "00:01:38:00",
+    "type": "Journal télévisé ; Reportage",
+    "credits": "JOU,Lohr Barbara ; PAR,Kovacs Zoltan ; PAR,Milanovic Zoran ; PAR,Faymann Werner",
+    "descriptors": "Europe ; terrorisme ; islamisme ; intégrisme ; attentat ; victime ; terroriste ; Etat islamique",
+    "introductory_summary": "Reportage consacré aux précédents attentats revendiqués par l'Etat islamique ousupposé tel visant la population civile ces derniers mois en Europe (Nice, Bruxelles, Paris, Allemagne). Commentaire sur images d'archives.",
+    "airing_company": "ARTE",
+    "producers": "Producteur, Strasbourg : Arte GEIE (Association relative aux télévisions européennes), 2016",
+    "range": "Multinational",
+    "collection": "ARTE Actualités",
+    "title_material": "[Journée de captation ART du 20 décembre 2016]",
+    "document_title_y": "Accumulation des attentats terroristes islamistes en Europe depuis un an",
+    "title_programme_y": "Arte journal",
+    "day_airing_y": "2016-12-20 00:00:00",
+    "image_title": "201216_AccumulationDesAttentatsTerroristesIslamistesEnEuropeDepuisUnAn_ArteJournal_ARTE",
+    "celebrity": "Angela Merkel",
+    "event": "2016 Nice truck attack",
+    "location": "Nice",
+    "illustration": "Attack",
+    "day_place_consult": null
+  },
+  "ID_document": 5880499001043,
+  "document_title": "[Accumulation des attentats terroristes islamistes en Europe depuis un an]",
+  "airing_time": "20:01:09",
+  "date_consult": null,
+  "place_consult": null,
+  "channel": "ARTE",
+  "duration": "00:01:38:00",
+  "airing_day": null,
+  "image_title": "201216_AccumulationDesAttentatsTerroristesIslamistesEnEuropeDepuisUnAn_ArteJournal_ARTE",
+  "event": [
+    "2016 Nice truck attack"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Attack"
+  ],
+  "celebrity": [
+    "Angela Merkel"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af5375"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070e9552"
+    },
+    "Unnamed: 0": 84,
+    "ID_document": 5880499001043,
+    "document_title_x": "[Accumulation des attentats terroristes islamistes en Europe depuis un an]",
+    "title_programme_x": "Arte journal",
+    "program_details": "Arte journal : [émission du 20 décembre 2016]",
+    "channel": "ARTE",
+    "day_airing_x": "20/12/2016",
+    "day": "mardi",
+    "airing_state": "Première diffusion",
+    "time_start": "20:01:09",
+    "time_stop": "20:02:47",
+    "duration": "00:01:38:00",
+    "type": "Journal télévisé ; Reportage",
+    "credits": "JOU,Lohr Barbara ; PAR,Kovacs Zoltan ; PAR,Milanovic Zoran ; PAR,Faymann Werner",
+    "descriptors": "Europe ; terrorisme ; islamisme ; intégrisme ; attentat ; victime ; terroriste ; Etat islamique",
+    "introductory_summary": "Reportage consacré aux précédents attentats revendiqués par l'Etat islamique ousupposé tel visant la population civile ces derniers mois en Europe (Nice, Bruxelles, Paris, Allemagne). Commentaire sur images d'archives.",
+    "airing_company": "ARTE",
+    "producers": "Producteur, Strasbourg : Arte GEIE (Association relative aux télévisions européennes), 2016",
+    "range": "Multinational",
+    "collection": "ARTE Actualités",
+    "title_material": "[Journée de captation ART du 20 décembre 2016]",
+    "document_title_y": "Accumulation des attentats terroristes islamistes en Europe depuis un an",
+    "title_programme_y": "Arte journal",
+    "day_airing_y": "2016-12-20 00:00:00",
+    "image_title": "201216_AccumulationDesAttentatsTerroristesIslamistesEnEuropeDepuisUnAn_ArteJournal_ARTE_2",
+    "celebrity": "Angela Merkel",
+    "event": "2016 Nice truck attack",
+    "location": "Nice",
+    "illustration": "Attack",
+    "day_place_consult": null
+  },
+  "ID_document": 5880499001043,
+  "document_title": "[Accumulation des attentats terroristes islamistes en Europe depuis un an]",
+  "airing_time": "20:01:09",
+  "date_consult": null,
+  "place_consult": null,
+  "channel": "ARTE",
+  "duration": "00:01:38:00",
+  "airing_day": null,
+  "image_title": "201216_AccumulationDesAttentatsTerroristesIslamistesEnEuropeDepuisUnAn_ArteJournal_ARTE_2",
+  "event": [
+    "2016 Nice truck attack"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Attack"
+  ],
+  "celebrity": [
+    "Angela Merkel"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af5376"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070e9553"
+    },
+    "Unnamed: 0": 85,
+    "ID_document": 5880499001043,
+    "document_title_x": "[Accumulation des attentats terroristes islamistes en Europe depuis un an]",
+    "title_programme_x": "Arte journal",
+    "program_details": "Arte journal : [émission du 20 décembre 2016]",
+    "channel": "ARTE",
+    "day_airing_x": "20/12/2016",
+    "day": "mardi",
+    "airing_state": "Première diffusion",
+    "time_start": "20:01:09",
+    "time_stop": "20:02:47",
+    "duration": "00:01:38:00",
+    "type": "Journal télévisé ; Reportage",
+    "credits": "JOU,Lohr Barbara ; PAR,Kovacs Zoltan ; PAR,Milanovic Zoran ; PAR,Faymann Werner",
+    "descriptors": "Europe ; terrorisme ; islamisme ; intégrisme ; attentat ; victime ; terroriste ; Etat islamique",
+    "introductory_summary": "Reportage consacré aux précédents attentats revendiqués par l'Etat islamique ousupposé tel visant la population civile ces derniers mois en Europe (Nice, Bruxelles, Paris, Allemagne). Commentaire sur images d'archives.",
+    "airing_company": "ARTE",
+    "producers": "Producteur, Strasbourg : Arte GEIE (Association relative aux télévisions européennes), 2016",
+    "range": "Multinational",
+    "collection": "ARTE Actualités",
+    "title_material": "[Journée de captation ART du 20 décembre 2016]",
+    "document_title_y": "Accumulation des attentats terroristes islamistes en Europe depuis un an",
+    "title_programme_y": "Arte journal",
+    "day_airing_y": "2016-12-20 00:00:00",
+    "image_title": "201216_AccumulationDesAttentatsTerroristesIslamistesEnEuropeDepuisUnAn_ArteJournal_ARTE_3",
+    "celebrity": "Angela Merkel",
+    "event": "2016 Nice truck attack",
+    "location": "Nice",
+    "illustration": "Rescue, Destruction",
+    "day_place_consult": null
+  },
+  "ID_document": 5880499001043,
+  "document_title": "[Accumulation des attentats terroristes islamistes en Europe depuis un an]",
+  "airing_time": "20:01:09",
+  "date_consult": null,
+  "place_consult": null,
+  "channel": "ARTE",
+  "duration": "00:01:38:00",
+  "airing_day": null,
+  "image_title": "201216_AccumulationDesAttentatsTerroristesIslamistesEnEuropeDepuisUnAn_ArteJournal_ARTE_3",
+  "event": [
+    "2016 Nice truck attack"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Rescue",
+    "Destruction"
+  ],
+  "celebrity": [
+    "Angela Merkel"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af5377"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070e9554"
+    },
+    "Unnamed: 0": 86,
+    "ID_document": 5880499001043,
+    "document_title_x": "[Accumulation des attentats terroristes islamistes en Europe depuis un an]",
+    "title_programme_x": "Arte journal",
+    "program_details": "Arte journal : [émission du 20 décembre 2016]",
+    "channel": "ARTE",
+    "day_airing_x": "20/12/2016",
+    "day": "mardi",
+    "airing_state": "Première diffusion",
+    "time_start": "20:01:09",
+    "time_stop": "20:02:47",
+    "duration": "00:01:38:00",
+    "type": "Journal télévisé ; Reportage",
+    "credits": "JOU,Lohr Barbara ; PAR,Kovacs Zoltan ; PAR,Milanovic Zoran ; PAR,Faymann Werner",
+    "descriptors": "Europe ; terrorisme ; islamisme ; intégrisme ; attentat ; victime ; terroriste ; Etat islamique",
+    "introductory_summary": "Reportage consacré aux précédents attentats revendiqués par l'Etat islamique ousupposé tel visant la population civile ces derniers mois en Europe (Nice, Bruxelles, Paris, Allemagne). Commentaire sur images d'archives.",
+    "airing_company": "ARTE",
+    "producers": "Producteur, Strasbourg : Arte GEIE (Association relative aux télévisions européennes), 2016",
+    "range": "Multinational",
+    "collection": "ARTE Actualités",
+    "title_material": "[Journée de captation ART du 20 décembre 2016]",
+    "document_title_y": "Accumulation des attentats terroristes islamistes en Europe depuis un an",
+    "title_programme_y": "Arte journal",
+    "day_airing_y": "2016-12-20 00:00:00",
+    "image_title": "201216_AccumulationDesAttentatsTerroristesIslamistesEnEuropeDepuisUnAn_ArteJournal_ARTE_4",
+    "celebrity": "Angela Merkel",
+    "event": "2016 Nice truck attack",
+    "location": "Nice",
+    "illustration": "Police, Surveillance",
+    "day_place_consult": null
+  },
+  "ID_document": 5880499001043,
+  "document_title": "[Accumulation des attentats terroristes islamistes en Europe depuis un an]",
+  "airing_time": "20:01:09",
+  "date_consult": null,
+  "place_consult": null,
+  "channel": "ARTE",
+  "duration": "00:01:38:00",
+  "airing_day": null,
+  "image_title": "201216_AccumulationDesAttentatsTerroristesIslamistesEnEuropeDepuisUnAn_ArteJournal_ARTE_4",
+  "event": [
+    "2016 Nice truck attack"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Police",
+    "Surveillance"
+  ],
+  "celebrity": [
+    "Angela Merkel"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af55e5"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070e97c2"
+    },
+    "Unnamed: 0": 708,
+    "ID_document": 2816878001010,
+    "document_title_x": "Constitution européenne = EU Verfassung",
+    "title_programme_x": "Arte info",
+    "program_details": "Arte info : [émission du 1 Mai 2005]",
+    "channel": "ARTE",
+    "day_airing_x": "01/05/2005",
+    "day": "dimanche",
+    "airing_state": "Première diffusion",
+    "time_start": "19:53:36",
+    "time_stop": "19:55:20",
+    "duration": "00:01:44:00",
+    "type": "Journal télévisé ; Reportage",
+    "credits": "JOU,Watine Tania",
+    "descriptors": "Union européenne ; Convention européenne ; constitution",
+    "introductory_summary": "Reportage. Série quotidienne sur le traité constitutionnel européen. Commentaire sur images d'archives à propos des origines de la communauté européenne et de la construction de l'Europe.",
+    "airing_company": "ARTE",
+    "producers": "Producteur, Strasbourg : Arte GEIE (Association relative aux télévisions européennes), 2005",
+    "range": "Multinational",
+    "collection": "ARTE Actualités",
+    "title_material": "[Journée de captation ARTE du 1er mai 2005]",
+    "document_title_y": "Constitution européenne = EU Verfassung",
+    "title_programme_y": "Arte Info",
+    "day_airing_y": "2005-05-01 00:00:00",
+    "image_title": "010505_ConstitutionEU_ArteInfo_ARTE_11",
+    "celebrity": "Jacques Chirac, Lionel Jospin",
+    "event": "Treaty of Nice",
+    "location": "Nice",
+    "illustration": "European Council",
+    "day_place_consult": null
+  },
+  "ID_document": 2816878001010,
+  "document_title": "Constitution européenne = EU Verfassung",
+  "airing_time": "19:53:36",
+  "date_consult": null,
+  "place_consult": null,
+  "channel": "ARTE",
+  "duration": "00:01:44:00",
+  "airing_day": null,
+  "image_title": "010505_ConstitutionEU_ArteInfo_ARTE_11",
+  "event": [
+    "Treaty of Nice"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "European Council"
+  ],
+  "celebrity": [
+    "Jacques Chirac",
+    "Lionel Jospin"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af55e6"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070e97c3"
+    },
+    "Unnamed: 0": 709,
+    "ID_document": 2816878001010,
+    "document_title_x": "Constitution européenne = EU Verfassung",
+    "title_programme_x": "Arte info",
+    "program_details": "Arte info : [émission du 1 Mai 2005]",
+    "channel": "ARTE",
+    "day_airing_x": "01/05/2005",
+    "day": "dimanche",
+    "airing_state": "Première diffusion",
+    "time_start": "19:53:36",
+    "time_stop": "19:55:20",
+    "duration": "00:01:44:00",
+    "type": "Journal télévisé ; Reportage",
+    "credits": "JOU,Watine Tania",
+    "descriptors": "Union européenne ; Convention européenne ; constitution",
+    "introductory_summary": "Reportage. Série quotidienne sur le traité constitutionnel européen. Commentaire sur images d'archives à propos des origines de la communauté européenne et de la construction de l'Europe.",
+    "airing_company": "ARTE",
+    "producers": "Producteur, Strasbourg : Arte GEIE (Association relative aux télévisions européennes), 2005",
+    "range": "Multinational",
+    "collection": "ARTE Actualités",
+    "title_material": "[Journée de captation ARTE du 1er mai 2005]",
+    "document_title_y": "Constitution européenne = EU Verfassung",
+    "title_programme_y": "Arte Info",
+    "day_airing_y": "2005-05-01 00:00:00",
+    "image_title": "010505_ConstitutionEU_ArteInfo_ARTE_12",
+    "celebrity": "Jacques Chirac, Lionel Jospin",
+    "event": "Treaty of Nice",
+    "location": "Nice",
+    "illustration": "European Council",
+    "day_place_consult": null
+  },
+  "ID_document": 2816878001010,
+  "document_title": "Constitution européenne = EU Verfassung",
+  "airing_time": "19:53:36",
+  "date_consult": null,
+  "place_consult": null,
+  "channel": "ARTE",
+  "duration": "00:01:44:00",
+  "airing_day": null,
+  "image_title": "010505_ConstitutionEU_ArteInfo_ARTE_12",
+  "event": [
+    "Treaty of Nice"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "European Council"
+  ],
+  "celebrity": [
+    "Jacques Chirac",
+    "Lionel Jospin"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af5719"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070e98f6"
+    },
+    "Unnamed: 0": 1016,
+    "ID_document": 3372673001008,
+    "document_title_x": "[Difficile compromis au sujet du traité constitutionnel européen]",
+    "title_programme_x": "Arte info",
+    "program_details": "Arte info : [émission du 14 juin 2007]",
+    "channel": "ARTE",
+    "day_airing_x": "14/06/2007",
+    "day": "jeudi",
+    "airing_state": "Première diffusion",
+    "time_start": "19:52:32",
+    "time_stop": "19:54:23",
+    "duration": "00:01:51:04",
+    "type": "Journal télévisé ; Reportage",
+    "credits": "JOU,Dürr Frank ; PAR,Sarkozy Nicolas ; PAR,Kaczynski Lech ; PAR,Merkel Angela",
+    "descriptors": "France ; Pologne ; Union européenne ; relations diplomatiques ; Convention européenne ; traité (simplifié) ; voyage",
+    "introductory_summary": "Reportage. Le président de la république française, Nicolas SARKOZY, rend visite à son homologue polonais Lech KACZYNSKI pour trouver un compromis au sujet du traité constitutionnel européen sur la question de la répartition des voix au parlement.",
+    "airing_company": "ARTE",
+    "producers": "Producteur, Strasbourg : Arte GEIE (Association relative aux télévisions européennes), 2007",
+    "range": "Multinational",
+    "collection": "ARTE Actualités",
+    "title_material": "[Journée de captation ARTE du 14 juin 2007]",
+    "document_title_y": "[Difficile compromis au sujet du traité constitutionnel européen]",
+    "title_programme_y": "Arte Info",
+    "day_airing_y": "2007-06-14 00:00:00",
+    "image_title": "140607_DifficileComproùisTraitéConstitutionnelEU_ArteInfo_ARTE_2",
+    "celebrity": "Hubert Vedrine",
+    "event": "Treaty of Nice",
+    "location": "Nice",
+    "illustration": "Signature",
+    "day_place_consult": null
+  },
+  "ID_document": 3372673001008,
+  "document_title": "[Difficile compromis au sujet du traité constitutionnel européen]",
+  "airing_time": "19:52:32",
+  "date_consult": null,
+  "place_consult": null,
+  "channel": "ARTE",
+  "duration": "00:01:51:04",
+  "airing_day": null,
+  "image_title": "140607_DifficileComproùisTraitéConstitutionnelEU_ArteInfo_ARTE_2",
+  "event": [
+    "Treaty of Nice"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Signature"
+  ],
+  "celebrity": [
+    "Hubert Vedrine"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af5762"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070e993f"
+    },
+    "Unnamed: 0": 1089,
+    "ID_document": 2826982001004,
+    "document_title_x": "[Dossier. Traité de Constitution de l'Union Europeénne. Ses origines]",
+    "title_programme_x": "TF1 20 heures",
+    "program_details": "TF1 20 heures : [émission du 2 Mai 2005]",
+    "channel": "TF1",
+    "day_airing_x": "02/05/2005",
+    "day": "lundi",
+    "airing_state": "Première diffusion",
+    "time_start": "20:02:49",
+    "time_stop": "20:04:26",
+    "duration": "00:01:37:05",
+    "type": "Journal télévisé",
+    "credits": "JOU,Lefèvre Antoine ; JOU,Champenois Stéphane ; JRI,Champonnois Laurent",
+    "descriptors": "Union européenne ; constitution ; Convention européenne ; traité",
+    "introductory_summary": "Reportage retraçant les étapes de l'élaboration du traité de Constitution Européenne. Commentaire sur images d'archives (la Convention autour de Valéry Giscard d'Estaing, la conférence intergouvernementale) et banc titres. Evocation des raisons de la réalisation du traité, des parties dont il est constitué, et en quoi il se rapproche d'une constitution.",
+    "airing_company": "Télévision Française 1",
+    "producers": "Producteur, Boulogne Billancourt : Télévision Française 1, 2005",
+    "range": "National",
+    "collection": "Télévision Francaise 1 Actualités",
+    "title_material": "[Journée de captation TF1 du 2 mai 2005]",
+    "document_title_y": "[Dossier. Traité de Constitution de l'Union Europeénne. Ses origines]",
+    "title_programme_y": "TF1 20 heures",
+    "day_airing_y": "2005-05-02 00:00:00",
+    "image_title": "020505_DossierTraiteDeConstitutionDeLUnionEuropeenneSesOrigines_20h_TF1_2",
+    "celebrity": "Hubert Vedrine",
+    "event": "Treaty of Nice",
+    "location": "Nice",
+    "illustration": "Signature",
+    "day_place_consult": "03/05/2021, Lyon"
+  },
+  "ID_document": 2826982001004,
+  "document_title": "[Dossier. Traité de Constitution de l'Union Europeénne. Ses origines]",
+  "airing_time": "20:02:49",
+  "date_consult": "03/05/2021",
+  "place_consult": "Lyon",
+  "channel": "TF1",
+  "duration": "00:01:37:05",
+  "airing_day": null,
+  "image_title": "020505_DossierTraiteDeConstitutionDeLUnionEuropeenneSesOrigines_20h_TF1_2",
+  "event": [
+    "Treaty of Nice"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Signature"
+  ],
+  "celebrity": [
+    "Hubert Vedrine"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af57ad"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070e998a"
+    },
+    "Unnamed: 0": 1164,
+    "ID_document": 2133254001004,
+    "document_title_x": "Elargissement = EU Erwelterung [le traité de Nice]",
+    "title_programme_x": "Arte info",
+    "program_details": "Arte info : [émission du 20 octobre 2002]",
+    "channel": "ARTE",
+    "day_airing_x": "20/10/2002",
+    "day": "dimanche",
+    "airing_state": "Première diffusion",
+    "time_start": "19:48:42",
+    "time_stop": "19:50:10",
+    "duration": "00:01:28:00",
+    "type": "Journal télévisé ; Reportage",
+    "credits": "JOU,Miller Sandra ; PAR,Kallas Siim",
+    "descriptors": "Irlande République ; référendum ; Union européenne (élargissement) ; traité (traité de Nice) ; institution ; réforme",
+    "introductory_summary": "Reportage. Les Irlandais ont approuvé le traité de Nice. Le processus d'adhésion à l'Union européenne va pouvoir rentrer dans sa phase finale. Le traité de Nice a été négocié en décembre 2000. Dans la perspective de l'adhésion de dix nouveaux pays en 2004, il a pour objectif de réformer le fonctionnement des institutions européennes. Les derniers détails seront réglés au sommet européen de Bruxelles, le 24 octobre prochain.",
+    "airing_company": "ARTE",
+    "producers": "Producteur, Strasbourg : Arte GEIE (Association relative aux télévisions européennes), 2002",
+    "range": "Multinational",
+    "collection": "ARTE Actualités",
+    "title_material": "[Journée de programme ARTE du 20 octobre 2002]",
+    "document_title_y": "Elargissement = EU Erwelterung [le traité de Nice]",
+    "title_programme_y": "Arte Info",
+    "day_airing_y": "2002-10-20 00:00:00",
+    "image_title": "201002_ElargissementTraitédeNice_ArteInfo_ARTE",
+    "celebrity": "Hubert Vedrine",
+    "event": "Treaty of Nice",
+    "location": "Nice",
+    "illustration": "Signature",
+    "day_place_consult": null
+  },
+  "ID_document": 2133254001004,
+  "document_title": "Elargissement = EU Erwelterung [le traité de Nice]",
+  "airing_time": "19:48:42",
+  "date_consult": null,
+  "place_consult": null,
+  "channel": "ARTE",
+  "duration": "00:01:28:00",
+  "airing_day": null,
+  "image_title": "201002_ElargissementTraitédeNice_ArteInfo_ARTE",
+  "event": [
+    "Treaty of Nice"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Signature"
+  ],
+  "celebrity": [
+    "Hubert Vedrine"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af57ae"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070e998b"
+    },
+    "Unnamed: 0": 1165,
+    "ID_document": 2133254001004,
+    "document_title_x": "Elargissement = EU Erwelterung [le traité de Nice]",
+    "title_programme_x": "Arte info",
+    "program_details": "Arte info : [émission du 20 octobre 2002]",
+    "channel": "ARTE",
+    "day_airing_x": "20/10/2002",
+    "day": "dimanche",
+    "airing_state": "Première diffusion",
+    "time_start": "19:48:42",
+    "time_stop": "19:50:10",
+    "duration": "00:01:28:00",
+    "type": "Journal télévisé ; Reportage",
+    "credits": "JOU,Miller Sandra ; PAR,Kallas Siim",
+    "descriptors": "Irlande République ; référendum ; Union européenne (élargissement) ; traité (traité de Nice) ; institution ; réforme",
+    "introductory_summary": "Reportage. Les Irlandais ont approuvé le traité de Nice. Le processus d'adhésion à l'Union européenne va pouvoir rentrer dans sa phase finale. Le traité de Nice a été négocié en décembre 2000. Dans la perspective de l'adhésion de dix nouveaux pays en 2004, il a pour objectif de réformer le fonctionnement des institutions européennes. Les derniers détails seront réglés au sommet européen de Bruxelles, le 24 octobre prochain.",
+    "airing_company": "ARTE",
+    "producers": "Producteur, Strasbourg : Arte GEIE (Association relative aux télévisions européennes), 2002",
+    "range": "Multinational",
+    "collection": "ARTE Actualités",
+    "title_material": "[Journée de programme ARTE du 20 octobre 2002]",
+    "document_title_y": "Elargissement = EU Erwelterung [le traité de Nice]",
+    "title_programme_y": "Arte Info",
+    "day_airing_y": "2002-10-20 00:00:00",
+    "image_title": "201002_ElargissementTraitédeNice_ArteInfo_ARTE_2",
+    "celebrity": "Hubert Vedrine",
+    "event": "Treaty of Nice",
+    "location": "Nice",
+    "illustration": "Signature",
+    "day_place_consult": null
+  },
+  "ID_document": 2133254001004,
+  "document_title": "Elargissement = EU Erwelterung [le traité de Nice]",
+  "airing_time": "19:48:42",
+  "date_consult": null,
+  "place_consult": null,
+  "channel": "ARTE",
+  "duration": "00:01:28:00",
+  "airing_day": null,
+  "image_title": "201002_ElargissementTraitédeNice_ArteInfo_ARTE_2",
+  "event": [
+    "Treaty of Nice"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Signature"
+  ],
+  "celebrity": [
+    "Hubert Vedrine"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af57af"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070e998c"
+    },
+    "Unnamed: 0": 1166,
+    "ID_document": 2133254001004,
+    "document_title_x": "Elargissement = EU Erwelterung [le traité de Nice]",
+    "title_programme_x": "Arte info",
+    "program_details": "Arte info : [émission du 20 octobre 2002]",
+    "channel": "ARTE",
+    "day_airing_x": "20/10/2002",
+    "day": "dimanche",
+    "airing_state": "Première diffusion",
+    "time_start": "19:48:42",
+    "time_stop": "19:50:10",
+    "duration": "00:01:28:00",
+    "type": "Journal télévisé ; Reportage",
+    "credits": "JOU,Miller Sandra ; PAR,Kallas Siim",
+    "descriptors": "Irlande République ; référendum ; Union européenne (élargissement) ; traité (traité de Nice) ; institution ; réforme",
+    "introductory_summary": "Reportage. Les Irlandais ont approuvé le traité de Nice. Le processus d'adhésion à l'Union européenne va pouvoir rentrer dans sa phase finale. Le traité de Nice a été négocié en décembre 2000. Dans la perspective de l'adhésion de dix nouveaux pays en 2004, il a pour objectif de réformer le fonctionnement des institutions européennes. Les derniers détails seront réglés au sommet européen de Bruxelles, le 24 octobre prochain.",
+    "airing_company": "ARTE",
+    "producers": "Producteur, Strasbourg : Arte GEIE (Association relative aux télévisions européennes), 2002",
+    "range": "Multinational",
+    "collection": "ARTE Actualités",
+    "title_material": "[Journée de programme ARTE du 20 octobre 2002]",
+    "document_title_y": "Elargissement = EU Erwelterung [le traité de Nice]",
+    "title_programme_y": "Arte Info",
+    "day_airing_y": "2002-10-20 00:00:00",
+    "image_title": "201002_ElargissementTraitédeNice_ArteInfo_ARTE_3",
+    "celebrity": "Hubert Vedrine",
+    "event": "Treaty of Nice",
+    "location": "Nice",
+    "illustration": "Signature",
+    "day_place_consult": null
+  },
+  "ID_document": 2133254001004,
+  "document_title": "Elargissement = EU Erwelterung [le traité de Nice]",
+  "airing_time": "19:48:42",
+  "date_consult": null,
+  "place_consult": null,
+  "channel": "ARTE",
+  "duration": "00:01:28:00",
+  "airing_day": null,
+  "image_title": "201002_ElargissementTraitédeNice_ArteInfo_ARTE_3",
+  "event": [
+    "Treaty of Nice"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Signature"
+  ],
+  "celebrity": [
+    "Hubert Vedrine"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af57b0"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070e998d"
+    },
+    "Unnamed: 0": 1167,
+    "ID_document": 2133254001004,
+    "document_title_x": "Elargissement = EU Erwelterung [le traité de Nice]",
+    "title_programme_x": "Arte info",
+    "program_details": "Arte info : [émission du 20 octobre 2002]",
+    "channel": "ARTE",
+    "day_airing_x": "20/10/2002",
+    "day": "dimanche",
+    "airing_state": "Première diffusion",
+    "time_start": "19:48:42",
+    "time_stop": "19:50:10",
+    "duration": "00:01:28:00",
+    "type": "Journal télévisé ; Reportage",
+    "credits": "JOU,Miller Sandra ; PAR,Kallas Siim",
+    "descriptors": "Irlande République ; référendum ; Union européenne (élargissement) ; traité (traité de Nice) ; institution ; réforme",
+    "introductory_summary": "Reportage. Les Irlandais ont approuvé le traité de Nice. Le processus d'adhésion à l'Union européenne va pouvoir rentrer dans sa phase finale. Le traité de Nice a été négocié en décembre 2000. Dans la perspective de l'adhésion de dix nouveaux pays en 2004, il a pour objectif de réformer le fonctionnement des institutions européennes. Les derniers détails seront réglés au sommet européen de Bruxelles, le 24 octobre prochain.",
+    "airing_company": "ARTE",
+    "producers": "Producteur, Strasbourg : Arte GEIE (Association relative aux télévisions européennes), 2002",
+    "range": "Multinational",
+    "collection": "ARTE Actualités",
+    "title_material": "[Journée de programme ARTE du 20 octobre 2002]",
+    "document_title_y": "Elargissement = EU Erwelterung [le traité de Nice]",
+    "title_programme_y": "Arte Info",
+    "day_airing_y": "2002-10-20 00:00:00",
+    "image_title": "201002_ElargissementTraitédeNice_ArteInfo_ARTE_4",
+    "celebrity": "Hubert Vedrine",
+    "event": "Treaty of Nice",
+    "location": "Nice",
+    "illustration": "Signature",
+    "day_place_consult": null
+  },
+  "ID_document": 2133254001004,
+  "document_title": "Elargissement = EU Erwelterung [le traité de Nice]",
+  "airing_time": "19:48:42",
+  "date_consult": null,
+  "place_consult": null,
+  "channel": "ARTE",
+  "duration": "00:01:28:00",
+  "airing_day": null,
+  "image_title": "201002_ElargissementTraitédeNice_ArteInfo_ARTE_4",
+  "event": [
+    "Treaty of Nice"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Signature"
+  ],
+  "celebrity": [
+    "Hubert Vedrine"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af5bee"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070e9dcb"
+    },
+    "Unnamed: 0": 2253,
+    "ID_document": 2828705001014,
+    "document_title_x": "[La charte des droits fondamentaux]",
+    "title_programme_x": "TF1 20 heures",
+    "program_details": "TF1 20 heures : [émission du 8 Mai 2005]",
+    "channel": "TF1",
+    "day_airing_x": "08/05/2005",
+    "day": "dimanche",
+    "airing_state": "Première diffusion",
+    "time_start": "20:11:41",
+    "time_stop": "20:13:00",
+    "duration": "00:01:19:00",
+    "type": "Journal télévisé",
+    "credits": "JOU,Torre Isabelle",
+    "descriptors": "Nice ; Union européenne ; Conseil européen ; institution ; réforme ; charte (charte européenne)",
+    "introductory_summary": "Reportage avec alternance d'images d'archives, factuelles et d'illustration. La charte européenne des droits fondamentaux a été adoptée en l'an 2000 à Nice. Analyse du contenu de cette charte qui fera partie de la Constitution européenne.",
+    "airing_company": "Télévision Française 1",
+    "producers": "Producteur, Boulogne Billancourt : TF1 Entreprises, 2005 ; Producteur, Boulogne Billancourt : Télévision Française 1, 2005",
+    "range": "National",
+    "collection": "Télévision Francaise 1 Actualités",
+    "title_material": "[Journée de captation TF1 du 8 mai 2005]",
+    "document_title_y": "[La charte des droits fondamentaux]",
+    "title_programme_y": "TF1 20 heures",
+    "day_airing_y": "2005-05-08 00:00:00",
+    "image_title": "080505_LaCharteDesDroitsFondamentaux_20h_TF1_6",
+    "celebrity": "Nicole Fontaine",
+    "event": "Charter of Fundamental Rights of the European Union",
+    "location": "Nice",
+    "illustration": "Signature",
+    "day_place_consult": "03/05/2021, Lyon"
+  },
+  "ID_document": 2828705001014,
+  "document_title": "[La charte des droits fondamentaux]",
+  "airing_time": "20:11:41",
+  "date_consult": "03/05/2021",
+  "place_consult": "Lyon",
+  "channel": "TF1",
+  "duration": "00:01:19:00",
+  "airing_day": null,
+  "image_title": "080505_LaCharteDesDroitsFondamentaux_20h_TF1_6",
+  "event": [
+    "Charter of Fundamental Rights of the European Union"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Signature"
+  ],
+  "celebrity": [
+    "Nicole Fontaine"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af5bef"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070e9dcc"
+    },
+    "Unnamed: 0": 2254,
+    "ID_document": 2828705001014,
+    "document_title_x": "[La charte des droits fondamentaux]",
+    "title_programme_x": "TF1 20 heures",
+    "program_details": "TF1 20 heures : [émission du 8 Mai 2005]",
+    "channel": "TF1",
+    "day_airing_x": "08/05/2005",
+    "day": "dimanche",
+    "airing_state": "Première diffusion",
+    "time_start": "20:11:41",
+    "time_stop": "20:13:00",
+    "duration": "00:01:19:00",
+    "type": "Journal télévisé",
+    "credits": "JOU,Torre Isabelle",
+    "descriptors": "Nice ; Union européenne ; Conseil européen ; institution ; réforme ; charte (charte européenne)",
+    "introductory_summary": "Reportage avec alternance d'images d'archives, factuelles et d'illustration. La charte européenne des droits fondamentaux a été adoptée en l'an 2000 à Nice. Analyse du contenu de cette charte qui fera partie de la Constitution européenne.",
+    "airing_company": "Télévision Française 1",
+    "producers": "Producteur, Boulogne Billancourt : TF1 Entreprises, 2005 ; Producteur, Boulogne Billancourt : Télévision Française 1, 2005",
+    "range": "National",
+    "collection": "Télévision Francaise 1 Actualités",
+    "title_material": "[Journée de captation TF1 du 8 mai 2005]",
+    "document_title_y": "[La charte des droits fondamentaux]",
+    "title_programme_y": "TF1 20 heures",
+    "day_airing_y": "2005-05-08 00:00:00",
+    "image_title": "080505_LaCharteDesDroitsFondamentaux_20h_TF1_7",
+    "celebrity": "Nicole Fontaine",
+    "event": "Charter of Fundamental Rights of the European Union",
+    "location": "Nice",
+    "illustration": "Signature",
+    "day_place_consult": "03/05/2021, Lyon"
+  },
+  "ID_document": 2828705001014,
+  "document_title": "[La charte des droits fondamentaux]",
+  "airing_time": "20:11:41",
+  "date_consult": "03/05/2021",
+  "place_consult": "Lyon",
+  "channel": "TF1",
+  "duration": "00:01:19:00",
+  "airing_day": null,
+  "image_title": "080505_LaCharteDesDroitsFondamentaux_20h_TF1_7",
+  "event": [
+    "Charter of Fundamental Rights of the European Union"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Signature"
+  ],
+  "celebrity": [
+    "Nicole Fontaine"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af6015"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070ea1f2"
+    },
+    "Unnamed: 0": 3316,
+    "ID_document": 2843998001006,
+    "document_title_x": "[Période d'incertitudes en Europe]",
+    "title_programme_x": "Arte info Spécial",
+    "program_details": "Arte info Spécial : [émission du 30 Mai 2005]",
+    "channel": "ARTE",
+    "day_airing_x": "30/05/2005",
+    "day": "lundi",
+    "airing_state": "Première diffusion",
+    "time_start": "19:55:33",
+    "time_stop": "19:57:07",
+    "duration": "00:01:33:09",
+    "type": "Journal télévisé ; Reportage",
+    "credits": "JOU,Boissier Nicole",
+    "descriptors": "politique intérieure ; Union européenne ; Convention européenne ; constitution ; référendum ; résultat de vote ; refus",
+    "introductory_summary": "Reportage. Suite au rejet de la constitution europèenne par les français, point sur la suite des évenements que prèvoient les textes europèens. Les dirigeants européens veulent poursuivre la ratification, seul Tony Blair s'est montré réserver. Commentaires sur des images d'illustration et d'archives en alternance avec l'interview de Tony BLAIR, premier ministre britannique. ",
+    "airing_company": "ARTE",
+    "producers": "Producteur, Strasbourg : Arte GEIE (Association relative aux télévisions européennes), 2005",
+    "range": "Multinational",
+    "collection": "ARTE Actualités",
+    "title_material": "[Journée de captation ARTE du 30 mai 2005]",
+    "document_title_y": "[Période d'incertitudes en Europe]",
+    "title_programme_y": "Arte Info",
+    "day_airing_y": "2005-05-30 00:00:00",
+    "image_title": "300505_PériodeIncertitudeEU_ArteInfo_ARTE_2",
+    "celebrity": "Hubert Vedrine",
+    "event": "Treaty of Nice",
+    "location": "Nice",
+    "illustration": "Signature",
+    "day_place_consult": null
+  },
+  "ID_document": 2843998001006,
+  "document_title": "[Période d'incertitudes en Europe]",
+  "airing_time": "19:55:33",
+  "date_consult": null,
+  "place_consult": null,
+  "channel": "ARTE",
+  "duration": "00:01:33:09",
+  "airing_day": null,
+  "image_title": "300505_PériodeIncertitudeEU_ArteInfo_ARTE_2",
+  "event": [
+    "Treaty of Nice"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Signature"
+  ],
+  "celebrity": [
+    "Hubert Vedrine"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af62d6"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070ea4b3"
+    },
+    "Unnamed: 0": 4021,
+    "ID_document": 1643652004006,
+    "document_title_x": "[Signature du traité de Nice]",
+    "title_programme_x": "Arte info",
+    "program_details": "Arte info : [émission du 26 Février 2001]",
+    "channel": "ARTE",
+    "day_airing_x": "26/02/2001",
+    "day": "lundi",
+    "airing_state": "Première diffusion",
+    "time_start": "19:56:06",
+    "time_stop": "19:58:56",
+    "duration": "00:02:50:00",
+    "type": "Journal télévisé",
+    "credits": "JOU,Jullien Lionel ; PAR,Gautier Yves",
+    "descriptors": "Nice ; Union européenne ; conférence au sommet (élargissement) ; chef d'Etat ; politique ; document d'archives ; Chirac Jacques ; Fischer Joschka",
+    "introductory_summary": "Reportage. Montage d'archives sur l'historique de la CEE et la genèse du traité de Nice prévoyant l'élargissement de l'Union européenne avec des extraits des déclarations de Joschka FISHER, ministre allemand des affaires étrangères du 12/05/2000 et de Jacques CHIRAC du 27/06/2000 et entretien avec Yves GAUTIER, professeur de droit européen à Strasbourg sur l'absence de projet politique de l'Union européenne, le problème de l'accroissement des pouvoirs de la commission européenne et les progrès faits en faveur de la simplification et de la transparence des procèdures.",
+    "airing_company": "ARTE",
+    "producers": "Producteur, Strasbourg : Arte GEIE (Association relative aux télévisions européennes), 2001",
+    "range": "Multinational",
+    "collection": "ARTE Actualités",
+    "title_material": "[Arte du 26 février 2001 de 19h40 à 20h50]",
+    "document_title_y": "[Signature du traité de Nice]",
+    "title_programme_y": "Arte info",
+    "day_airing_y": "2001-02-26 00:00:00",
+    "image_title": "260201_SignatureTraotéNice_ArteInfo_ARTE",
+    "celebrity": "Hubert Vedrine",
+    "event": "Treaty of Nice",
+    "location": "Nice",
+    "illustration": "Signature",
+    "day_place_consult": null
+  },
+  "ID_document": 1643652004006,
+  "document_title": "[Signature du traité de Nice]",
+  "airing_time": "19:56:06",
+  "date_consult": null,
+  "place_consult": null,
+  "channel": "ARTE",
+  "duration": "00:02:50:00",
+  "airing_day": null,
+  "image_title": "260201_SignatureTraotéNice_ArteInfo_ARTE",
+  "event": [
+    "Treaty of Nice"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Signature"
+  ],
+  "celebrity": [
+    "Hubert Vedrine"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baacb802c487c0af62d7"
+  },
+  "source": "Fiches_INA_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070ea4b4"
+    },
+    "Unnamed: 0": 4022,
+    "ID_document": 1643652004006,
+    "document_title_x": "[Signature du traité de Nice]",
+    "title_programme_x": "Arte info",
+    "program_details": "Arte info : [émission du 26 Février 2001]",
+    "channel": "ARTE",
+    "day_airing_x": "26/02/2001",
+    "day": "lundi",
+    "airing_state": "Première diffusion",
+    "time_start": "19:56:06",
+    "time_stop": "19:58:56",
+    "duration": "00:02:50:00",
+    "type": "Journal télévisé",
+    "credits": "JOU,Jullien Lionel ; PAR,Gautier Yves",
+    "descriptors": "Nice ; Union européenne ; conférence au sommet (élargissement) ; chef d'Etat ; politique ; document d'archives ; Chirac Jacques ; Fischer Joschka",
+    "introductory_summary": "Reportage. Montage d'archives sur l'historique de la CEE et la genèse du traité de Nice prévoyant l'élargissement de l'Union européenne avec des extraits des déclarations de Joschka FISHER, ministre allemand des affaires étrangères du 12/05/2000 et de Jacques CHIRAC du 27/06/2000 et entretien avec Yves GAUTIER, professeur de droit européen à Strasbourg sur l'absence de projet politique de l'Union européenne, le problème de l'accroissement des pouvoirs de la commission européenne et les progrès faits en faveur de la simplification et de la transparence des procèdures.",
+    "airing_company": "ARTE",
+    "producers": "Producteur, Strasbourg : Arte GEIE (Association relative aux télévisions européennes), 2001",
+    "range": "Multinational",
+    "collection": "ARTE Actualités",
+    "title_material": "[Arte du 26 février 2001 de 19h40 à 20h50]",
+    "document_title_y": "[Signature du traité de Nice]",
+    "title_programme_y": "Arte info",
+    "day_airing_y": "2001-02-26 00:00:00",
+    "image_title": "260201_SignatureTraotéNice_ArteInfo_ARTE_2",
+    "celebrity": "Jacques Chirac, Lionel Jospin",
+    "event": "Treaty of Nice",
+    "location": "Nice",
+    "illustration": "Meeting",
+    "day_place_consult": null
+  },
+  "ID_document": 1643652004006,
+  "document_title": "[Signature du traité de Nice]",
+  "airing_time": "19:56:06",
+  "date_consult": null,
+  "place_consult": null,
+  "channel": "ARTE",
+  "duration": "00:02:50:00",
+  "airing_day": null,
+  "image_title": "260201_SignatureTraotéNice_ArteInfo_ARTE_2",
+  "event": [
+    "Treaty of Nice"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Meeting"
+  ],
+  "celebrity": [
+    "Jacques Chirac",
+    "Lionel Jospin"
+  ]
+},{
+  "_id": {
+    "$oid": "6238baadb802c487c0af6f95"
+  },
+  "source": "Fiches_RAI_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070eb172"
+    },
+    "Unnamed: 0": 2835,
+    "document": "105.0",
+    "title_programme_x": "TG1 2000",
+    "document_title_x": "BUSH IN SPAGNA",
+    "channel": "RAI UNO",
+    "day_airing_x": "2001-06-12 00:00:00",
+    "duration": "00:01:18:00",
+    "content_audio": "BUSH GEORGE JUNIOR VIAGGIO SPAGNA, AZNAR JOSE MARIA, BERLUSCONI SILVIO, JUAN CARLOS I SPAGNA",
+    "content_video": "MADRID, SPAGNA, PRESIDENTE STATUNITENSE BUSH, IN VIAGGIO IN EUROPA PER PARTECIPARE AL VERTICE NATO DEL 20010613, INCONTRA RE JUAN CARLOS I E PRIMO MINISTRO SPAGNOLO AZNAR. BUSH E AZNAR TENGONO CONFERENZA STAMPA CONGIUNTA. INSERTI SU: NEO PRESIDENTE DEL CONSIGLIO ITALIANO BERLUSCONI TIENE DISCORSO, VEDUTE FORESTE DISBOSCATE. INSERITO REPERTORIO SU: MILITARI PREPARANO POSTAZIONE MISSILISTICA, FASI LANCIO MISSILE. 20001207: NIZZA, FRANCIA, CAPI DI STATO E DI GOVERNO PARTECIAPNTI CONSIGLIO DELL UNIONE EUROPEA POSANO PER FOTOGRAFIA. SONORO SPEAKER.",
+    "ID_document": "T01163/109",
+    "note": null,
+    "time_start_x": null,
+    "time_stop_x": null,
+    "document_title_y": "BUSH IN SPAGNA",
+    "title_programme_y": "TG1 20.00",
+    "day_airing_y": "2001-06-12 00:00:00",
+    "time_start_y": null,
+    "time_stop_y": null,
+    "image_title": "120601_BushInSpagna_20h_TG1",
+    "celebrity": null,
+    "event": "UK Echelon spy network",
+    "location": "Nice, France",
+    "illustration": "Photo posing",
+    "day_place_consult": "2021-09-28 00:00:00"
+  },
+  "ID_document": "T01163/109",
+  "title_programme": null,
+  "document_title": null,
+  "image_title": "120601_BushInSpagna_20h_TG1",
+  "celebrity": null,
+  "event": [
+    "UK Echelon spy network"
+  ],
+  "location": [
+    "Nice",
+    "France"
+  ],
+  "illustration": [
+    "Photo posing"
+  ],
+  "date_consult": "2021-09-28 00:00:00",
+  "place_consult": null,
+  "duration": "00:01:18:00",
+  "content_audio": null,
+  "content_video": null
+},{
+  "_id": {
+    "$oid": "6238baadb802c487c0af6f96"
+  },
+  "source": "Fiches_RAI_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070eb173"
+    },
+    "Unnamed: 0": 2836,
+    "document": "105.0",
+    "title_programme_x": "TG1 2000",
+    "document_title_x": "BUSH IN SPAGNA",
+    "channel": "RAI UNO",
+    "day_airing_x": "2001-06-12 00:00:00",
+    "duration": "00:01:18:00",
+    "content_audio": "BUSH GEORGE JUNIOR VIAGGIO SPAGNA, AZNAR JOSE MARIA, BERLUSCONI SILVIO, JUAN CARLOS I SPAGNA",
+    "content_video": "MADRID, SPAGNA, PRESIDENTE STATUNITENSE BUSH, IN VIAGGIO IN EUROPA PER PARTECIPARE AL VERTICE NATO DEL 20010613, INCONTRA RE JUAN CARLOS I E PRIMO MINISTRO SPAGNOLO AZNAR. BUSH E AZNAR TENGONO CONFERENZA STAMPA CONGIUNTA. INSERTI SU: NEO PRESIDENTE DEL CONSIGLIO ITALIANO BERLUSCONI TIENE DISCORSO, VEDUTE FORESTE DISBOSCATE. INSERITO REPERTORIO SU: MILITARI PREPARANO POSTAZIONE MISSILISTICA, FASI LANCIO MISSILE. 20001207: NIZZA, FRANCIA, CAPI DI STATO E DI GOVERNO PARTECIAPNTI CONSIGLIO DELL UNIONE EUROPEA POSANO PER FOTOGRAFIA. SONORO SPEAKER.",
+    "ID_document": "T01163/109",
+    "note": null,
+    "time_start_x": null,
+    "time_stop_x": null,
+    "document_title_y": "BUSH IN SPAGNA",
+    "title_programme_y": "TG1 20.00",
+    "day_airing_y": "2001-06-12 00:00:00",
+    "time_start_y": null,
+    "time_stop_y": null,
+    "image_title": "120601_BushInSpagna_20h_TG1_2",
+    "celebrity": null,
+    "event": "UK Echelon spy network",
+    "location": "Nice, France",
+    "illustration": "Bombing",
+    "day_place_consult": "2021-09-28 00:00:00"
+  },
+  "ID_document": "T01163/109",
+  "title_programme": null,
+  "document_title": null,
+  "image_title": "120601_BushInSpagna_20h_TG1_2",
+  "celebrity": null,
+  "event": [
+    "UK Echelon spy network"
+  ],
+  "location": [
+    "Nice",
+    "France"
+  ],
+  "illustration": [
+    "Bombing"
+  ],
+  "date_consult": "2021-09-28 00:00:00",
+  "place_consult": null,
+  "duration": "00:01:18:00",
+  "content_audio": null,
+  "content_video": null
+},{
+  "_id": {
+    "$oid": "6238baadb802c487c0af6f97"
+  },
+  "source": "Fiches_RAI_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070eb174"
+    },
+    "Unnamed: 0": 2837,
+    "document": "143.0",
+    "title_programme_x": "TG1 2000",
+    "document_title_x": "CONSUMI DI CARNE BOVINA",
+    "channel": "RAI UNO",
+    "day_airing_x": "2001-06-14 00:00:00",
+    "duration": "00:01:35:00",
+    "content_audio": "ALLEVAMENTO BOVINI, MACELLAI, ENCEFALOPATIA SPONGIFORME BOVINA, TUTELA SALUTE PUBBLICA, CONSUMO CARNE BOVINA ; ALLEVAMENTO BOVINI, MACELLAI, ENCEFALOPATIA SPONGIFORME BOVINA, TUTELA SALUTE PUBBLICA, CONSUMO CARNE BOVINA ; GUAZZALOCA GIORGIO, DELTOMA EUGENIO",
+    "content_video": "INTERVISTE SEPARATE A MACELLAI E A CLIENTI SU RIPRESA CONSUMI DI CARNE BOVINA AL TERMINE DELL EMERGENZA \"MUCCA PAZZA\" , CAUSATA DA MALATTIA ENCEFALOPATIA SPONGIFORME BOVINA BSE, CHE HA COLPITO DIVERSI ALLEVAMENTI BOVINI IN EUROPA. INTERVISTE SEPARATE A NUTRIZIONISTA DELTOMA SU PROPRIETA NUTRITIVE DELLA CARNE BOVINA E A SINDACO DI BOLOGNA, GUAZZALOCA, SU QUALI PIATTI PREPAREREBBE SE INVITASSE I MINISTRI DEL GOVERNO BERLUSCONI IN CITTA. MACELLAI AL LAVORO. PP OPUSCOLO EDITO DALLA FEDERCARNI DAL TITOLO \"BENTORNATI IN MACELLERIA\" . INSERTO SU: MUCCHE AL PASCOLO. INSERITO REPERTORIO SU: VITELLO COLPITO DA BSE. INSERITO CARTELLO CON ANDAMENTO CONSUMI CARNE BOVINA NEL 2000. SONORO ORIGINALE E SPEAKER.",
+    "ID_document": "T01165/109",
+    "note": null,
+    "time_start_x": null,
+    "time_stop_x": null,
+    "document_title_y": "CONSUMI DI CARNE BOVINA",
+    "title_programme_y": "TG1 20.00",
+    "day_airing_y": "2001-06-14 00:00:00",
+    "time_start_y": null,
+    "time_stop_y": null,
+    "image_title": "140601_ConsumiDiCarneBovina_20h_TG1",
+    "celebrity": null,
+    "event": "Mad Cow desease",
+    "location": "Nice, France",
+    "illustration": "Meat",
+    "day_place_consult": "2021-09-28 00:00:00"
+  },
+  "ID_document": "T01165/109",
+  "title_programme": null,
+  "document_title": null,
+  "image_title": "140601_ConsumiDiCarneBovina_20h_TG1",
+  "celebrity": null,
+  "event": [
+    "Mad Cow desease"
+  ],
+  "location": [
+    "Nice",
+    "France"
+  ],
+  "illustration": [
+    "Meat"
+  ],
+  "date_consult": "2021-09-28 00:00:00",
+  "place_consult": null,
+  "duration": "00:01:35:00",
+  "content_audio": null,
+  "content_video": null
+},{
+  "_id": {
+    "$oid": "6238baadb802c487c0af6f98"
+  },
+  "source": "Fiches_RAI_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070eb175"
+    },
+    "Unnamed: 0": 2838,
+    "document": "57.0",
+    "title_programme_x": "TG1 2000",
+    "document_title_x": "GIOVANI ANTI G8",
+    "channel": "RAI UNO",
+    "day_airing_x": "2001-06-22 00:00:00",
+    "duration": "00:01:35:00",
+    "content_audio": "ORDINE PUBBLICO PROBLEMA, GIOVANI CONTESTATORI, DIMOSTRAZIONE ANTI GLOBALIZZAZIONE ECONOMIA MONDIALE, MOVIMENTO ANTI GLOBALIZZAZIONE ECONOMIA MONDIALE, FESTA, GIOVANI BALLANO ; ORDINE PUBBLICO PROBLEMA, GIOVANI CONTESTATORI, DIMOSTRAZIONE ANTI GLOBALIZZAZIONE ECONOMIA MONDIALE, MOVIMENTO ANTI GLOBALIZZAZIONE ECONOMIA MONDIALE, FESTA, GIOVANI BALLANO",
+    "content_video": "RIPRESE ANCHE NOTTURNE, RAGAZZI BALLANO DURANTE FESTA ANTI CONFERENZA PAESE INDUSTRIALIZZATO VERTICE G8, PREVISTO A GENOVA DAL 20010720 AL 20010722. INTERVISTA A RAGAZZI MEMBRI DI ASSOCIAZIONI COME PUNTO G, LILLIPUT ED ATTAC, SU FORME DELLA LORO PROTESTA A GENOVA, CHE INTENDE ESSERE PACIFICA. RAGAZZO SROTOLA GRANDE STRISCIONE CON SCRITTA ANTI G8. INSERITO REPERTORIO 20010615 SU: GIOVANI CONTESTATORI DIMOSTRANO CONTRO VERTICE UNIONE EUROPEA - USA E CONTRO CONSIGLIO UNIONE EUROPEA DI GOTEBORG, SVEZIA. PACIFISTA CAMMINA NUDO, PER DIMOSTRARE DI ADERIRE A FORME DI PROTESTA NON VIOLENTE. SONORO ORIGINALE E SPEAKER.",
+    "ID_document": "T01173/109",
+    "note": null,
+    "time_start_x": null,
+    "time_stop_x": null,
+    "document_title_y": "GIOVANI ANTI G8",
+    "title_programme_y": "TG1 20.00",
+    "day_airing_y": "2001-06-22 00:00:00",
+    "time_start_y": null,
+    "time_stop_y": null,
+    "image_title": "220601_GiovaniAntiG8_20h_TG1",
+    "celebrity": null,
+    "event": "G8 Summit",
+    "location": "Nice, France",
+    "illustration": "Demonstration",
+    "day_place_consult": "2021-09-28 00:00:00"
+  },
+  "ID_document": "T01173/109",
+  "title_programme": null,
+  "document_title": null,
+  "image_title": "220601_GiovaniAntiG8_20h_TG1",
+  "celebrity": null,
+  "event": [
+    "G8 Summit"
+  ],
+  "location": [
+    "Nice",
+    "France"
+  ],
+  "illustration": [
+    "Demonstration"
+  ],
+  "date_consult": "2021-09-28 00:00:00",
+  "place_consult": null,
+  "duration": "00:01:35:00",
+  "content_audio": null,
+  "content_video": null
+},{
+  "_id": {
+    "$oid": "6238baadb802c487c0af6f99"
+  },
+  "source": "Fiches_RAI_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070eb176"
+    },
+    "Unnamed: 0": 2839,
+    "document": "109.0",
+    "title_programme_x": "TG1 2000",
+    "document_title_x": "CONGRESSO CONTRO PENA DI MORTE",
+    "channel": "RAI UNO",
+    "day_airing_x": "2001-06-22 00:00:00",
+    "duration": "00:01:30:00",
+    "content_audio": "LOTTA ANTI PENA MORTE CONGRESSO MONDIALE CONTRO PENA MORTE STRASBURGO ; LOTTA ANTI PENA MORTE ; CASINI PIERFERDINANDO ; CONGRESSO MONDIALE CONTRO PENA MORTE STRASBURGO",
+    "content_video": "PARLAMENTARI EUROPEI E PRESIDENTI PARLAMENTI DEI PAESI DELL UNIONE EUROPEA PARTECIPANO A PRIMO CONGRESSO MONDIALE CONTRO PENA DI MORTE, PER ABOLIZIONE PENA CAPITALE, ORGANIZZATO DAL PARLAMENTO EUROPEO E DA VARIE ASSOCIAZIONI UMANITARIE E POSANO PER FOTO UFFICIALE, PRESSO SEDE DEL PARLAMENTO UE. INTERVISTA A PRESIDENTE ITALIANO DELLA CAMERA CASINI SU APPELLO FIRMATO AL CONGRESSO PER SOSPENSIONE DELLE ESECUZIONI CAPITALI NEL MONDO. INSERITO REPERTORIO SU: ESECUZIONE CAPITALE IN CINA POP E INTERNI CARCERE STATUNITENSE, LETTO DOVE AVVIENE INIEZIONE DI SOSTANZE LETALI. INSERITO REDATTORE. SONORO ORIGINALE E SPEAKER.",
+    "ID_document": "T01173/109",
+    "note": null,
+    "time_start_x": null,
+    "time_stop_x": null,
+    "document_title_y": "GIOVANI ANTI G8",
+    "title_programme_y": "TG1 20.00",
+    "day_airing_y": "2001-06-22 00:00:00",
+    "time_start_y": null,
+    "time_stop_y": null,
+    "image_title": "220601_GiovaniAntiG8_20h_TG1",
+    "celebrity": null,
+    "event": "G8 Summit",
+    "location": "Nice, France",
+    "illustration": "Demonstration",
+    "day_place_consult": "2021-09-28 00:00:00"
+  },
+  "ID_document": "T01173/109",
+  "title_programme": null,
+  "document_title": null,
+  "image_title": "220601_GiovaniAntiG8_20h_TG1",
+  "celebrity": null,
+  "event": [
+    "G8 Summit"
+  ],
+  "location": [
+    "Nice",
+    "France"
+  ],
+  "illustration": [
+    "Demonstration"
+  ],
+  "date_consult": "2021-09-28 00:00:00",
+  "place_consult": null,
+  "duration": "00:01:30:00",
+  "content_audio": null,
+  "content_video": null
+},{
+  "_id": {
+    "$oid": "6238baadb802c487c0af7ad8"
+  },
+  "source": "Fiches_RAI_merged",
+  "extra": {
+    "_id": {
+      "$oid": "6238ba9d7fe7a45c070ebcb5"
+    },
+    "Unnamed: 0": 5718,
+    "document": "67",
+    "title_programme_x": "TG1 1330",
+    "document_title_x": "APPUNTAMENTI DI POLITICA ESTERA",
+    "channel": "RAI UNO",
+    "day_airing_x": "2001-12-06 00:00:00",
+    "duration": "00:01:21:00",
+    "content_audio": "BUSH GEORGE JUNIOR VIAGGIO SPAGNA, BERLUSCONI SILVIO",
+    "content_video": "MADRID, SPAGNA, PRESIDENTE STATUNITENSE BUSH, IN VIAGGIO IN EUROPA PER PARTECIPARE AL VERTICE NATO DEL 20010613, SCENDE DALL AEREO ALL AEROPORTO. ITALIA, PRESIDENTE CONSIGLIO BERLUSCONI ENTRA IN PALAZZO E PARLA DA TAVOLO RELATORI DURANTE CONVEGNO. INSERITO REPERTORIO 20001207: NIZZA, FRANCIA, CAPI STATO E DI GOVERNO PARTECIPANTI A CONSIGLIO UNIONE EUROPEA POSANO PER FOTOGRAFIA. PP PRIMO MINISTRO FRANCESE JOSPIN LIONEL E PRESIDENTE FRANCESE CHIRAC JACQUES CHE DISCUTONO. CANCELLIERE TEDESCO SCHRODER GERHARD RAGGIUNGE SEDE VERTICE. ESTERNI PALAZZO NATO A BRUXELLES. SONORO SPEAKER.",
+    "ID_document": "T01163/105",
+    "note": "data invertita",
+    "time_start_x": "14:02:56:00",
+    "time_stop_x": "14:04:19:00",
+    "document_title_y": "APPUNTAMENTI DI POLITICA ESTERA",
+    "title_programme_y": "TG1 13:30",
+    "day_airing_y": "2001-06-12 00:00:00",
+    "time_start_y": "13:33:13:00",
+    "time_stop_y": "13:34:34:00",
+    "image_title": "12062001_AppuntamentiDiPoliticaEstera_1330h_TG1_2",
+    "celebrity": "Osama Bin Laden",
+    "event": "Foreign policy",
+    "location": "Nice",
+    "illustration": "Photo Posing",
+    "day_place_consult": "28/09/2021; Milan"
+  },
+  "ID_document": "T01163/105",
+  "title_programme": null,
+  "document_title": null,
+  "image_title": "12062001_AppuntamentiDiPoliticaEstera_1330h_TG1_2",
+  "celebrity": [
+    "Osama Bin Laden"
+  ],
+  "event": [
+    "Foreign policy"
+  ],
+  "location": [
+    "Nice"
+  ],
+  "illustration": [
+    "Photo Posing"
+  ],
+  "date_consult": "28/09/2021; Milan",
+  "place_consult": null,
+  "duration": "00:01:21:00",
+  "content_audio": null,
+  "content_video": null
+}]

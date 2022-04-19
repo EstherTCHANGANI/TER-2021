@@ -6,7 +6,7 @@ import { ArchivePageComponent } from './observation-pages/archive-page/archive-p
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
   { path: 'search', component: SearchPageComponent },
-  { path: 'file-details/:id', component: ArchivePageComponent }
+  { path: 'subject-details/:id', component: ArchivePageComponent }
 ];
 
 @NgModule({

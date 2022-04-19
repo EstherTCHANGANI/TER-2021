@@ -8,15 +8,15 @@
           <mat-icon>{{getIconByClusterType(cluster)}}</mat-icon>
           <h3>{{ cluster.value }}</h3>
         </mat-panel-title>
-        <mat-panel-description> {{getFilesByCluster(cluster).length}} files </mat-panel-description>
+        <mat-panel-description> {{getImagesByCluster(cluster).length}} images </mat-panel-description>
       </mat-expansion-panel-header>
       <div class="clusters-container">
         <mat-list class="eventClusters">
-          <mat-list-item *ngFor="let file of getFilesByCluster(cluster)">
+          <mat-list-item *ngFor="let image of getImagesByCluster(cluster)">
             <mat-icon>article</mat-icon>
-            <span routerLink="/file-details/{{file.ID_document}}" [state]="{ file: file }" matTooltip="See more details" matTooltipPosition="right">{{file.document_title}}</span>
+            <span routerLink="/subject-details/{{image.ID_document}}" [state]="{ image: image }" matTooltip="See more details" matTooltipPosition="right">{{image.document_title}}</span>
           </mat-list-item>
-          <mat-divider class="fileDivider"></mat-divider>
+          <mat-divider class="imageDivider"></mat-divider>
         </mat-list>
       </div>
     </mat-expansion-panel>

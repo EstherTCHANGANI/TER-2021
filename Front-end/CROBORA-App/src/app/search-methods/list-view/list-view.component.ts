@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FilterService } from 'src/services/filter.service';
-import { File } from '../../../models/file.model'
+import { Subject } from '../../../models/subject.model';
+import { Image } from '../../../models/image.model';
 import { HttpService } from '../../../services/http.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class ListViewComponent implements OnInit {
   @Input() locationChecked?: boolean;
   @Input() illustrationChecked?: boolean;
 
- /*fileList: File[] = [
+ /*SubjectList: Subject[] = [
    { titre: "Signature du traité de Lisbonne", nbImage: 4, canal_de_transmission: null, date_de_diffusion: null,
     personnalite: ['Hans-Gert Pöttering'], evenement: ['Treaty', 'Treaty of Lisbonne'], lieu: ['Lisbonne', 'Portugal'], illustration: ['Signature'],
    extra:{
@@ -80,24 +81,37 @@ export class ListViewComponent implements OnInit {
   ngOnInit(): void { 
   }
 
-  getClustersQuantity(file: File): number {
-    return file.event.length + file.celebrity.length + file.location.length + file.illustration.length;;
+  getClustersQuantity(image: Image): number {
+    return image.event.length + image.celebrity.length + image.location.length + image.illustration.length;
   }
 
-  goToVisualisationPage(file: File) {
-    console.log(file);
+  goToVisualisationPage(image: Image) {
+    console.log(image);
   }
 
-  getFilesByDB(): File[] {
-    let filesFromRequest = this.filterService.getSearchedFiles()
-    console.log(filesFromRequest);
+  getImagesByDB(): Image[] {
+    let imagesFromRequest = this.filterService.getSearchedImages()
+    console.log(imagesFromRequest);
     if(this.filterService.getSelectedDatabase() === 'ina') {
-      return filesFromRequest.filter( file => file.source === 'Fiches_INA_merged');
+      return imagesFromRequest.filter( image => image[0].source.includes('INA'));
     } 
     else if(this.filterService.getSelectedDatabase() === 'rai') {
-      return filesFromRequest.filter( file => file.source === 'Fiches_RAI_merged');
+      return imagesFromRequest.filter( image => image[0].source.includes('RAI'));
     } 
-    else return filesFromRequest; // 'all' or others
+    else return imagesFromRequest; // 'all' or others
   }
+
+  getGroupKeywords(group_image : Image[], keyword : string) : string[] {
+    let keywords = [];
+    for(let image of group_image){
+      let keyword_list = image[keyword];
+      if (keyword_list!==null){
+        for (let el of keyword_list){
+          keywords.push(el);
+        }
+      }
+    }
+    return [...new Set(keywords)];
+  } 
 
 }

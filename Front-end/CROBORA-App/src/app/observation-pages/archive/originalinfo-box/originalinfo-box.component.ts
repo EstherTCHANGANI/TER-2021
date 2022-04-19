@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Extra } from 'src/models/file.model';
+import { Image } from 'src/models/image.model';
+import { Subject } from 'src/models/subject.model';
 
 @Component({
   selector: 'app-originalinfo-box',
@@ -8,11 +9,13 @@ import { Extra } from 'src/models/file.model';
 })
 export class OriginalinfoBoxComponent implements OnInit {
 
-  @Input() info: Extra;
+  @Input() subject: Subject;
+  @Input() images : Image[];
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.subject);
   }
 
   // info : Extra = {
@@ -40,5 +43,23 @@ export class OriginalinfoBoxComponent implements OnInit {
   //   Titre_materiel: "[Journée de captation TF1 du 15 mai 2012]"
   // }
 
+  correctID(id_rai :string){
+    return id_rai.replace(/_/g,"/")
+  }
+
+  correctSource(source_document){
+    if(source_document.includes("INA")){
+      return("INA");
+    }
+    if(source_document.includes("RAI")){
+      return('RAI');
+    }
+    if(source_document.includes("WEB")){
+      return('WEB');
+    }
+    else{
+      return(source_document);
+    }
+  }
 
 }

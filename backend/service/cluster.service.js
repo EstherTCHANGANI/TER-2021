@@ -49,7 +49,7 @@ class ClusterService {
 
     async getEvents() {
         return await mongoService
-            .getCollection("fiches_event")
+            .getCollection("crobora_doc")
             .find()
             .toArray();
     }
@@ -71,16 +71,14 @@ class ClusterService {
         const filteredEvents = events.filter(event =>
             keywords.every(keyword => this.findKeywordInCluster(event, clusters, _.lowerCase(keyword)))
         );
-        return this.groupEvents(filteredEvents)
+        const resEvents = events.filter(event => filteredEvents.find(filteredEvent => event["ID_document"]==filteredEvent["ID_document"]));
+
+        return this.groupEvents(resEvents)
     }
 
     async groupEvents(events) {
-        console.log(_.groupBy(events, "ID_document"))
+       // console.log(_.groupBy(events, "ID_document"))
         return Object.values(_.groupBy(events, "ID_document"))
-        .map(group => group.reduce((res, cur)=> {
-            res.images_title.push(cur.image_title);
-            return res;
-        }, {...group[0], images_title: [group[0].image_title]}))
     }
 
     /**

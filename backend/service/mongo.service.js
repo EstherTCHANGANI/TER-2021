@@ -1,4 +1,6 @@
+import { values } from "lodash";
 import { MongoClient } from "mongodb";
+import _ from "lodash";
 
 const DB_HOST_NAME = process.env.DB_HOST_NAME || "localhost";
 const DB_PORT = process.env.DB_PORT || "27017";
@@ -28,16 +30,19 @@ class MongoService {
 
     async findManyByKeyWord(keyword){
         const re = new RegExp(".*" + keyword + ".*")
-        const res = await this.getCollection("fiches_event").find({
+        const res = await this.getCollection("crobora_doc").find({
             "document_title":re
-        }).toArray() 
-        console.log(res)
+        }).toArray()
         console.log(uri);
         console.log(DB_HOST_NAME);
         console.log(DB_PORT);
         console.log("============");
-        return res
+        const final_res = Object.values(_.groupBy(res, "ID_document"));
+        console.log(final_res) 
+        return final_res;
     }
+
+
 
 }
 

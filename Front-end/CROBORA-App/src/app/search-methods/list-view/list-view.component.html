@@ -4,31 +4,31 @@
 <cdk-virtual-scroll-viewport itemSize="20" class="viewport-scroll">
 <div class="listview-box">
     <mat-accordion multi>
-    <ng-container *cdkVirtualFor="let file of getFilesByDB(); TemplateCacheSize:0">
+    <ng-container *cdkVirtualFor="let group_image of getImagesByDB(); TemplateCacheSize:0">
     <mat-expansion-panel >
       <mat-expansion-panel-header>
         <mat-panel-title (click)="$event.stopPropagation()">
           <mat-icon>article</mat-icon>
-          <h3 routerLink="/file-details/{{file.ID_document}}" [state]="{ file: file }" matTooltip="See more details" matTooltipPosition="right">
-            {{ file.document_title }}</h3>
+          <h3 routerLink="/subject-details/{{group_image[0].ID_document}}" [state]="{ images: group_image }" matTooltip="See more details" matTooltipPosition="right">
+            {{ group_image[0].document_title }}</h3>
         </mat-panel-title>
         <mat-panel-description></mat-panel-description>
       </mat-expansion-panel-header>
       <div class="clusters-container">
-        <mat-list class="eventClusters" >
-          <mat-list-item *ngFor="let cluster of file.event"><mat-icon>event</mat-icon>{{cluster}}</mat-list-item>
+        <mat-list class="eventClusters" *ngIf="this.getGroupKeywords(group_image,'event').length>0; else show_empty">
+          <mat-list-item *ngFor="let cluster of this.getGroupKeywords(group_image,'event')"><mat-icon>event</mat-icon>{{cluster}}</mat-list-item>
         </mat-list>
         <mat-divider class="eventDivider" ></mat-divider>
-        <mat-list class="personalityClusters" >
-          <mat-list-item *ngFor="let cluster of file.celebrity"><mat-icon>emoji_people</mat-icon>{{cluster}}</mat-list-item>
+        <mat-list class="personalityClusters" *ngIf="this.getGroupKeywords(group_image,'celebrity').length>0; else show_empty">
+          <mat-list-item *ngFor="let cluster of this.getGroupKeywords(group_image,'celebrity')"><mat-icon>emoji_people</mat-icon>{{cluster}}</mat-list-item>
         </mat-list>
         <mat-divider class="personalityDivider" ></mat-divider>
-        <mat-list class="placeClusters" >
-          <mat-list-item *ngFor="let cluster of file.location"><mat-icon>home</mat-icon>{{cluster}}</mat-list-item>
+        <mat-list class="placeClusters" *ngIf="this.getGroupKeywords(group_image,'location').length>0; else show_empty">
+            <mat-list-item *ngFor="let cluster of this.getGroupKeywords(group_image,'location')"><mat-icon>home</mat-icon>{{cluster}}</mat-list-item>
         </mat-list>
         <mat-divider class="placeDivider" ></mat-divider>
-        <mat-list class="illustrationClusters" >
-          <mat-list-item *ngFor="let cluster of file.illustration"><mat-icon>auto_stories</mat-icon>{{cluster}}</mat-list-item>
+        <mat-list class="illustrationClusters" *ngIf="this.getGroupKeywords(group_image,'illustration').length>0; else show_empty">
+          <mat-list-item *ngFor="let cluster of this.getGroupKeywords(group_image,'illustration')"><mat-icon>auto_stories</mat-icon>{{cluster}}</mat-list-item>
         </mat-list>
       </div>
     </mat-expansion-panel>
@@ -36,3 +36,5 @@
   </mat-accordion>
 </div>
 </cdk-virtual-scroll-viewport>
+
+<ng-template #show_empty><mat-list-item><mat-icon>not_interested</mat-icon>no keyword in that category</mat-list-item></ng-template> 

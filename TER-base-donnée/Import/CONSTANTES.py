@@ -22,6 +22,9 @@ FICHES_RAIUNO_1330 = "Fiches RAIUNO 1330.xlsx"
 META_DONNEES_RAI = "MetaDonnées_RAI.xlsx"
 FICHES_INA = "fiches_INA.xlsx"
 META_DONNEES_INA = "MetaDonnées_INA.xlsx"
+CROBORA_DATA_WEB = "Catalogue Rudy.xlsx"
+
+CROBORA_FILES = [CROBORA_DATA_WEB,META_DONNEES_INA,META_DONNEES_RAI]
 
 # Configuration de fichier de donnéé avec le fichier de ces methadonnée en  specifiant le champs ou on veut faire le merge
 merged_file = "../MergeData/files/Fiches_INA_merged.csv"
@@ -118,8 +121,6 @@ COLONNES_FICHES_RAIUNO_1330 = {"Documento": "document",
                                "Contenuto Video": "content_video",
                                "Identificatore Teca": "ID_document",
                                "Note ": "note",
-                               "Time Start": "time_start",
-                               "Time Stop": "time_stop"
                                }
 
 COLONNES_METADONNEES_RAI_2000 = {"ID Notice": "ID_document",
@@ -146,3 +147,33 @@ COLONNES_FICHES_RAIUNO_20 = {"Documento": "document",
                              "Contenuto Video": "content_video",
                              "Identificatore Teca": "ID_document",
                              }
+
+
+
+VALUES_WEB_CATALOGUE_FR = { "url" : "link_to_video",
+                            "title_video " : "document_title",
+                            "platform": "platform",
+                            "subscribers":"subscribers",
+                            "language":"language",
+                            "account":"channel",
+                            "date (publication)":"day_airing",
+                            "Time code (start)":"time_start",
+                            "Time code (end)":"time_stop",
+                            "date (scrapping)":"date_pace_consult",
+                            "Genre(patrimoine, média, youtuber, institutions européennes)":"type",
+                            "comments_authorization":"comments_authorization",
+                            "likes":"likes",
+                            "unlike":"dislikes",
+                            "views":"views",
+                            "place":"location",
+                            "event":"event",
+                            "celebrity":"celebrity",
+                            "illustration":"illustration",
+                            "other (fiction)":"other_fiction",
+                            "name_image":"image_title",
+                            "comments":"comments",
+                            "item" : "item"
+                            }
+
+
+COLUMNS_NOT_TO_FILL = ["event","celebrity","illustration","place"]

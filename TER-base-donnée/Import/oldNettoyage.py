@@ -1,3 +1,4 @@
+from poplib import CR
 import pandas as pd
 import glob
 
@@ -23,7 +24,6 @@ def xlsx_to_csv(filename):
     for nom_feuille in liste_nom_feuilles:
         # Lecture du fichier xlsx
         excel_data_df = pd.read_excel(filename, nom_feuille)
-
         if find_column_name(excel_data_df, UNNAMED) and nom_feuille!="TG1 EDIZIONE 1330" and nom_feuille!="Tg edizione 20.00":
             excel_data_df = pd.read_excel(filename, nom_feuille, header=1)
 
@@ -81,17 +81,35 @@ def xlsx_to_csv(filename):
             if nom_feuille == "Tg1 edizione1330":
                 excel_data_df.drop("Titolo Puntata", axis=1, inplace=True)
             if not(nom_feuille== "TG1 1330"):
-                excel_data_df = excel_data_df.reindex(columns = excel_data_df.columns.tolist() + ["note", "time_start", "time_stop"])
+                excel_data_df = excel_data_df.reindex(columns = excel_data_df.columns.tolist() + ["note"])
+            else:
+                excel_data_df=excel_data_df.drop(columns = ["Time Start", "Time Stop"])
             excel_data_df = excel_data_df.rename(
                 columns=COLONNES_FICHES_RAIUNO_1330)
             excel_data_df = excel_data_df[list(
-                COLONNES_FICHES_RAIUNO_1330.values())]   
+                COLONNES_FICHES_RAIUNO_1330.values())]  
+        elif (CROBORA_DATA_WEB in filename):
+            excel_data_df = excel_data_df.rename(
+                columns=VALUES_WEB_CATALOGUE_FR)
+            excel_data_df = excel_data_df[list(VALUES_WEB_CATALOGUE_FR.values())] 
 
-        
-        excel_data_df["ID_document"] = excel_data_df["ID_document"].replace(regex=["/"], value=["_"])
-        excel_data_df["ID_document"] = excel_data_df["ID_document"].replace(regex=["\\n"], value=[""])
+        if (CROBORA_DATA_WEB not in filename):
+            excel_data_df["ID_document"] = excel_data_df["ID_document"].replace(regex=["/"], value=["_"])
+            excel_data_df["ID_document"] = excel_data_df["ID_document"].replace(regex=["\\n"], value=[""])
+
         # Défussionne les lignes fusionnés
+
+        #last_index=0
+        #last_row=excel_data_df.iloc[0]
+        #for index,row in excel_data_df.iterrows():
+        #    if row["document_title"] == "" or row["document_title"] is None or pd.isna(row["document_title"]) or pd.isnull(row["document_title"]):
+        #        print(0)
+        #    elif not row["document_title"] == last_row["document_title"]:    
+        #        print(1)
+        
         excel_data_df = excel_data_df.fillna(method='ffill', axis=0)
+        ##faire une fonction ou l'on boucle sur les lignes, retiens la dernière ligne vu, compare le nom du sujet actuel avec la ligne retenu : si pareil rempalcé toute les colonnes désirés de la ligne actuelle par la ligne retenu sinon remplacé ligne retenu 
+        ##quelques colonnes ont des inconnus donc un simple fill supprimerait ses inconnus (notamment date_place_research)
 
         liste_feuilles.append(excel_data_df)
         print(excel_data_df)
@@ -145,7 +163,7 @@ def xlsx_to_csv(filename):
     df = df.drop_duplicates(subset=None)
 
     # Création du fichier .csv
-    df.to_csv(f"{filename.split('.xlsx')[0]}.csv", index=False, encoding="utf-8")
+    df.to_csv(f"{filename.split('.xlsx')[0]}.csv".replace("é","e"), index=False, encoding="utf-8")
 
 
 def find_column_name(data_set, column_name):
