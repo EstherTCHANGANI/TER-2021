@@ -1,45 +1,14 @@
 <div class="filters-container">
     <app-search-filters
-      [eventChecked]="eventChecked" [celebrityChecked]="celebrityChecked" [locationChecked]="locationChecked" [illustrationChecked]="illustrationChecked"
       (showTypeEvent)="renameFirstTab($event)">
     </app-search-filters>
-    <div class="cluster-div" *ngIf="this.filterService.getSelectedSearchType() === 'cluster'">
-      <mat-checkbox class="event" (change)="toggleEventCheckbox($event)" [checked]="eventChecked">event</mat-checkbox>
-      <mat-checkbox class="celebrity" (change)="toggleCelebrityCheckbox($event)" [checked]="celebrityChecked">celebrity</mat-checkbox>
-      <mat-checkbox class="location" (change)="toggleLocationCheckbox($event)" [checked]="locationChecked">location</mat-checkbox>
-      <mat-checkbox class="illustration" (change)="toggleIllustrationCheckbox($event)" [checked]="illustrationChecked">illustration</mat-checkbox>
-    </div>
   </div>
 
 <div class="flex-container">
-  <mat-tab-group>
+  <mat-tab-group class="search-box">
     <mat-tab label="{{listViewName}}">
       <ng-template matTabContent>
-      <div class="filter-types-container">
-      <!--<div class="show filter-types">           //image ou fichier à effacer
-          <h2>Show:</h2>
-          <mat-form-field appearance="outline">
-              <mat-select [(value)]="selectedShowType" (selectionChange)="onShowTypeChange()">
-                <mat-option *ngFor="let showType of showTypes" [value]="showType.value">
-                  {{showType.viewValue}}
-                </mat-option>
-              </mat-select>
-          </mat-form-field>
-      </div>-->
-      <div class="sortBy filter-types">
-        <h2>Sort by:</h2>
-        <mat-form-field appearance="outline">
-            <mat-select [(value)]="selectedSortType" (selectionChange)="onSortTypeChange()">
-              <mat-option *ngFor="let sortType of sortTypes" [value]="sortType.value">
-                {{sortType.viewValue}}
-              </mat-option>
-            </mat-select>
-        </mat-form-field>
-      </div>
-    </div>
-        <app-list-view id="list-view"
-          [eventChecked]="eventChecked" [celebrityChecked]="celebrityChecked" [locationChecked]="locationChecked" [illustrationChecked]="illustrationChecked">
-        </app-list-view>
+        <app-list-view id="list-view"></app-list-view>
       </ng-template>      
     </mat-tab>
 
@@ -57,15 +26,7 @@
             </mat-form-field>
           </div>
         </div>
-        <app-cluster-view id="cluster-view"
-          [eventChecked]="eventChecked" [celebrityChecked]="celebrityChecked" [locationChecked]="locationChecked" [illustrationChecked]="illustrationChecked">
-        </app-cluster-view>
-      </ng-template>
-    </mat-tab>
-    
-    <mat-tab label="Thumbnails" disabled="true">
-      <ng-template matTabContent>
-        <app-distribution id="thumbnails"></app-distribution>
+        <app-cluster-view id="cluster-view"></app-cluster-view>
       </ng-template>
     </mat-tab>
 

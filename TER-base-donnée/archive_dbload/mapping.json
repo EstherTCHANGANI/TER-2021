@@ -88,6 +88,8 @@
         "document_title": "document_title",
         "image_title": "image_title",
         "day_airing" : "day_airing",
+        "channel" : "channel",
+        "language" : "language",
         "event": {
             "fields":  [
                 "event"
@@ -119,6 +121,8 @@
         "document_title": "document_title",
         "image_title": "image_title",
         "day_airing" : "day_airing",
+        "channel" : "channel",
+        "language" : "language",
         "event": {
             "fields":  [
                 "event"
@@ -149,6 +153,8 @@
         "document_title": "document_title",
         "image_title": "image_title",
         "day_airing" : "day_airing",
+        "channel" : "channel",
+        "language" : "language",
         "event": {
             "fields":  [
                 "event"

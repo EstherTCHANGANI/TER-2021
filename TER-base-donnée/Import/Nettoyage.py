@@ -1,6 +1,7 @@
 from poplib import CR
 import pandas as pd
 import glob
+import unicodedata
 
 from openpyxl import load_workbook
 
@@ -48,6 +49,11 @@ def xlsx_to_csv(filename):
                     columns=COLONNES_METADONNEES_INNA)
                 excel_data_df = excel_data_df[list(
                     COLONNES_METADONNEES_INNA.values())]
+            
+            for index,row in excel_data_df.iterrows():
+                excel_data_df.at[index,"image_title"]=strip_accents(row["image_title"])
+            print(excel_data_df['image_title'])
+
         elif (META_DONNEES_RAI in filename):
             if nom_feuille == "TG1 2000":
                 new_colunm_index = list(COLONNES_METADONNEES_RAI_2000.keys())
@@ -62,8 +68,10 @@ def xlsx_to_csv(filename):
                 
                 excel_data_df = excel_data_df[list(
                     COLONNES_METADONNEES_RAI_1330.values())]
+                    
+            for index,row in excel_data_df.iterrows():
+                excel_data_df.at[index,"image_title"]=strip_accents(row["image_title"])
 
-            #
         elif (FICHES_RAIUNO_20 in filename):
             print(excel_data_df.columns)
             excel_data_df = excel_data_df.rename(
@@ -98,16 +106,9 @@ def xlsx_to_csv(filename):
             excel_data_df["ID_document"] = excel_data_df["ID_document"].replace(regex=["\\n"], value=[""])
 
         # Défussionne les lignes fusionnés
-
-        #last_index=0
-        #last_row=excel_data_df.iloc[0]
-        #for index,row in excel_data_df.iterrows():
-        #    if row["document_title"] == "" or row["document_title"] is None or pd.isna(row["document_title"]) or pd.isnull(row["document_title"]):
-        #        print(0)
-        #    elif not row["document_title"] == last_row["document_title"]:    
-        #        print(1)
-        
-        excel_data_df = excel_data_df.fillna(method='ffill', axis=0)
+        if any(map(filename.__contains__, CROBORA_FILES)):
+            fill_sheet(excel_data_df)
+        #excel_data_df = excel_data_df.fillna(method='ffill', axis=0)
         ##faire une fonction ou l'on boucle sur les lignes, retiens la dernière ligne vu, compare le nom du sujet actuel avec la ligne retenu : si pareil rempalcé toute les colonnes désirés de la ligne actuelle par la ligne retenu sinon remplacé ligne retenu 
         ##quelques colonnes ont des inconnus donc un simple fill supprimerait ses inconnus (notamment date_place_research)
 
@@ -195,12 +196,30 @@ def eliminate_duplicate_lines(file):
         excel_data_df = excel_data_df.drop_duplicates(subset=None)
         sheets.append(excel_data_df)
 
+def fill_sheet(sheet):    
+    last_row=sheet.iloc[0]
+    for index,row in sheet.iterrows():
+        if pd.isna(row["image_title"]):
+            continue
+        if (pd.isna(row["document_title"])):#(row["document_title"] == "") or (row["document_title"] is None) or  or (pd.isnull(row["document_title"])):
+            for column in sheet:
+                if not (column in COLUMNS_NOT_TO_FILL):
+                    sheet.at[index,column] = last_row[column]
+        elif not (row["document_title"] == last_row["document_title"]):    
+            last_row=row
+            
+
 
 def clean_file(path_fiche):
 
     for filename in glob.glob(path_fiche):
         xlsx_to_csv(filename)
 
+def strip_accents(s):
+    try:
+        return ''.join(c for c in unicodedata.normalize('NFD',s) if unicodedata.category(c) != 'Mn')
+    except:
+        print(s)
 
 if __name__ == "__main__":
     clean_file(PATH_META)

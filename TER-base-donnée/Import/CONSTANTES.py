@@ -176,4 +176,4 @@ VALUES_WEB_CATALOGUE_FR = { "url" : "link_to_video",
                             }
 
 
-COLUMNS_NOT_TO_FILL = ["event","celebrity","illustration","place"]
+COLUMNS_NOT_TO_FILL = ["event","celebrity","illustration","location","image_title","other_fiction","comments"]

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Image } from 'src/models/image.model';
-import { Subject } from 'src/models/subject.model';
+import { ArchiveData } from 'src/models/archiveData.model';
+import { HttpService } from '../../../../services/http.service';
 
 @Component({
   selector: 'app-originalinfo-box',
@@ -9,13 +10,13 @@ import { Subject } from 'src/models/subject.model';
 })
 export class OriginalinfoBoxComponent implements OnInit {
 
-  @Input() subject: Subject;
+  @Input() archiveData: ArchiveData;
   @Input() images : Image[];
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
-    console.log(this.subject);
+    console.log(this.archiveData);
   }
 
   // info : Extra = {
@@ -60,6 +61,10 @@ export class OriginalinfoBoxComponent implements OnInit {
     else{
       return(source_document);
     }
+  }
+  
+  requestNotLoaded(){
+    return this.httpService.isRequestLoading();
   }
 
 }

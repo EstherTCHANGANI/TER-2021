@@ -1,50 +1,20 @@
-.viewport-scroll{
+/*.viewport-scroll{
   display: flex;
   flex-direction: column;
   border: 2px solid black;
   border-radius: 5px;
   padding: 2rem;
   height: 60vh;
-}
+  overflow-x: hidden;
+}*/
 
 .listview-box{
-  margin : 1.5vw;
-}
-
-mat-panel-title > h3{
-  font-size: 1rem;
-  font-weight: 500;
-}
-mat-panel-title > mat-icon{
-  padding-right: 0.5rem;
-}
-
-mat-list-item {
-  font-size: 0.8rem !important;
-  margin-top: -1rem;
-  margin-bottom: -0.5rem;
-  margin-left: 0.5rem;
-}
-mat-list-item  mat-icon {
-  padding-right: 0.5rem;
-}
-
-.eventClusters>mat-list-item {
-  color: #632800;
-}
-.personalityClusters>mat-list-item {
-  color: blue;
-}
-.placeClusters>mat-list-item {
-  color: red;
-}
-.illustrationClusters>mat-list-item {
-  color: green;
-}
-
-mat-expansion-panel-header {
-  padding-top: 0.5rem;
-  margin-bottom: -0.5rem;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 0 1vw 1vh 1vw;
+  overflow-x: hidden;
 }
 
 .spinner {
@@ -54,9 +24,72 @@ mat-expansion-panel-header {
   background-color: rgba(128, 128, 128, 0.274);
   z-index: 10;
 }
-
 mat-spinner {
   position: relative;
   left: 45%;
   transform: scale(0.5) translateY(50vh);
+}
+
+.title-icon-part{
+  display:inline-flex;
+  justify-content: flex-start;
+}
+
+.mat-accordion .mat-header-row {
+  padding-left: 1.5rem;
+  padding-right: 2rem;
+  border-bottom: none;
+}
+
+.mat-panel-title.panel-header-row {
+  border-bottom: none;
+}
+
+/*copied from https://github.com/angular/material2/blob/master/src/lib/table/table.scss
+$mat-header-row-height: 56px;
+$mat-row-height: 48px;
+$mat-row-horizontal-padding: 24px;*/
+
+.accordion-g {
+  display: block;
+}
+
+.mat-header-row {
+  min-height: 2.5vh;
+}
+
+.mat-row {
+  min-height: 5vh;
+}
+
+.mat-row, .mat-header-row {
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  box-sizing: border-box;
+
+  /* Workaround for https://goo.gl/pFmjJD in IE 11. Adds a pseudo
+  // element that will stretch the row the correct height. See:
+  // https://connect.microsoft.com/IE/feedback/details/802625 */
+}
+
+.mat-row::after, .mat-header-row::after {
+  display: inline-block;
+  min-height: inherit;
+  content: '';
+}
+
+.mat-cell, .mat-header-cell {
+  flex: 1;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.title{
+  min-width:20vw;
+  max-width:20vw;
+}
+
+.mat-cell{
+  margin-right: 2.5vw;
 }

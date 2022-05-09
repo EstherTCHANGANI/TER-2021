@@ -23,7 +23,6 @@
         <mat-form-field appearance="outline">
             <mat-label>Search by Clusters</mat-label>
             <input
-            [disabled]="!eventChecked && !celebrityChecked && !locationChecked && !illustrationChecked"
             matInput type="text"
             placeholder="Enter a keyword"
             #clusterInput
@@ -33,9 +32,28 @@
             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
             (matChipInputTokenEnd)="addChip($event)">
             <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedChip($event)">
-              <mat-option *ngFor="let cluster of filteredClusters | async" [value]="cluster.value" (onSelectionChange)="getSelectedCluster(cluster, $event)">
-                {{cluster.value}}
-              </mat-option>
+              <ng-container *ngFor="let cluster of autocompleteCluster | async">
+                <ng-container *ngIf="cluster.type == 'event';">
+                  <mat-option class="event_autocomplete" [value]="cluster.value" (onSelectionChange)="getSelectedCluster(cluster, $event)">
+                    <mat-icon>event</mat-icon>{{cluster.value}}
+                  </mat-option>
+                </ng-container>
+                <ng-container *ngIf="cluster.type == 'celebrity';">
+                  <mat-option class="celebrity_autocomplete" [value]="cluster.value" (onSelectionChange)="getSelectedCluster(cluster, $event)">
+                    <mat-icon>emoji_people</mat-icon>{{cluster.value}}
+                  </mat-option>
+                </ng-container>
+                <ng-container *ngIf="cluster.type == 'location';">
+                  <mat-option class="location_autocomplete" [value]="cluster.value" (onSelectionChange)="getSelectedCluster(cluster, $event)">
+                    <mat-icon>home</mat-icon>{{cluster.value}}
+                  </mat-option>
+                </ng-container>
+                <ng-container *ngIf="cluster.type == 'illustration';">
+                  <mat-option class="illustration_autocomplete" [value]="cluster.value" (onSelectionChange)="getSelectedCluster(cluster, $event)">
+                    <mat-icon>auto_stories</mat-icon>{{cluster.value}}
+                  </mat-option>        
+                </ng-container>
+              </ng-container>
             </mat-autocomplete>
             <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>

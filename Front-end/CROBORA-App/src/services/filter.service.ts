@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cluster } from 'src/models/cluster.model';
-import { Subject } from 'src/models/subject.model';
+import { ArchiveData } from 'src/models/archiveData.model';
 import { Image } from 'src/models/image.model';
 
 @Injectable({
@@ -9,26 +9,29 @@ import { Image } from 'src/models/image.model';
 export class FilterService{
 
   selectedClusters: Cluster[] = [];
-  searchedSubjects: Subject[] = [];
+  searchedArchiveData: ArchiveData[] = [];
   searchedImages: Image[] = [];
-  searchedSubjectByCluster = new Map<string, Subject[]>();
+  searchedArchiveDataByCluster = new Map<string, ArchiveData[]>();
   searchedImageByCluster = new Map<string, Image[]>();
   // selectedDatabase: string = 'all';
+
+  newSort=false;
+  newdata=false;
 
   getSelectedClusters() {
     return this.selectedClusters;
   }
 
-  getSearchedSubjects() {
-    return this.searchedSubjects;
+  getSearchedArchiveData() {
+    return this.searchedArchiveData;
   }
 
   getSearchedImages() {
     return this.searchedImages;
   }
 
-  getSearchedSubjectByCluster() {
-    return this.searchedSubjectByCluster;
+  getSearchedArchiveDataByCluster() {
+    return this.searchedArchiveDataByCluster;
   }
 
   getSearchedImageByCluster() {

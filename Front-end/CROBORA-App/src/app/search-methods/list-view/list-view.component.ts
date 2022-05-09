@@ -1,8 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { FilterService } from 'src/services/filter.service';
-import { Subject } from '../../../models/subject.model';
 import { Image } from '../../../models/image.model';
 import { HttpService } from '../../../services/http.service';
+import {PageEvent} from '@angular/material/paginator';
+import { Observable, Subscription } from 'rxjs';
+import {Sort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-list-view',
@@ -10,75 +12,54 @@ import { HttpService } from '../../../services/http.service';
   styleUrls: ['./list-view.component.css']
 })
 export class ListViewComponent implements OnInit {
-
-  @Input() eventChecked?: boolean;
-  @Input() celebrityChecked?: boolean;
-  @Input() locationChecked?: boolean;
-  @Input() illustrationChecked?: boolean;
-
- /*SubjectList: Subject[] = [
-   { titre: "Signature du traité de Lisbonne", nbImage: 4, canal_de_transmission: null, date_de_diffusion: null,
-    personnalite: ['Hans-Gert Pöttering'], evenement: ['Treaty', 'Treaty of Lisbonne'], lieu: ['Lisbonne', 'Portugal'], illustration: ['Signature'],
-   extra:{
-     _id: "61a79ba58cdcf53b5627d811",
-     database: "fiches_INA",
-     ID_notice: 4712188001012,
-     Titre_propre_x: "50 ans d'amitie franco-allemande",
-     Titre_collection_x: "LE 13H",
-     Titre_programme: "LE 13H : [émission du 15 mai 2012]",
-     Chaine: "TF1",
-     Date_de_diffusion: "15/05/2012",
-     Jour: "mardi",
-     Statut_de_diffusion: "Première diffusion",
-     Heure_de_diffusion: "13:14:23",
-     Heure_de_fin_de_diffusion: "13:16:13",
-     Duree: "00:01:50:00",
-     Genre: "Journal télévisé",
-     Generique: "JOU,Cros Anne Laure",
-     Descripteurs: "Europe ; France ; politique ; Allemagne ; relations diplomatiques ; Union européenne ; document d'archives ; chancelier ; chef d'Etat ; Sarkozy Nicolas ; Merkel Angela ; Gaulle Charles de ; signature ; Pompidou Georges ; Brandt Willy ; Schmidt Helmut ; Mitterrand François ; Kohl Helmut ; Chirac Jacques ; Schröder Gerhard ; commémoration ; anniversaire ; débarquement",
-     Chapeau: null,
-     Societe_de_programmes: "Télévision Française 1",
-     Producteurs: "Producteur, Boulogne Billancourt : Télévision Française 1, 2012 ; Producteur, Bry sur Marne : Institut national de l'audiovisuel, 2012 ; Producteur, Royaume Uni : Reuters Television, 2012",
-     Extension_geographique: "National",
-     Fonds: "Télévision Francaise 1 Actualités",
-     Titre_materiel: "[Journée de captation TF1 du 15 mai 2012]"
-   }},
-   {titre: "50 ans d'amitié franco-allemande", nbImage: 12, canal_de_transmission: "TF1", date_de_diffusion: "2012-05-15 00:00:00",
-    personnalite: ['Angela Merkel', 'Nicolas Sarkozy'], evenement: ['France Germany relations'], lieu: ['Europe'], illustration: ['Meeting'],
-    extra:{
-     _id: "61a79ba58cdcf53b5627d811",
-     database: "fiches_INA",
-     ID_notice: 4712188001012,
-     Titre_propre_x: "50 ans d'amitie franco-allemande",
-     Titre_collection_x: "LE 13H",
-     Titre_programme: "LE 13H : [émission du 15 mai 2012]",
-     Chaine: "TF1",
-     Date_de_diffusion: "15/05/2012",
-     Jour: "mardi",
-     Statut_de_diffusion: "Première diffusion",
-     Heure_de_diffusion: "13:14:23",
-     Heure_de_fin_de_diffusion: "13:16:13",
-     Duree: "00:01:50:00",
-     Genre: "Journal télévisé",
-     Generique: "JOU,Cros Anne Laure",
-     Descripteurs: "Europe ; France ; politique ; Allemagne ; relations diplomatiques ; Union européenne ; document d'archives ; chancelier ; chef d'Etat ; Sarkozy Nicolas ; Merkel Angela ; Gaulle Charles de ; signature ; Pompidou Georges ; Brandt Willy ; Schmidt Helmut ; Mitterrand François ; Kohl Helmut ; Chirac Jacques ; Schröder Gerhard ; commémoration ; anniversaire ; débarquement",
-     Chapeau: null,
-     Societe_de_programmes: "Télévision Française 1",
-     Producteurs: "Producteur, Boulogne Billancourt : Télévision Française 1, 2012 ; Producteur, Bry sur Marne : Institut national de l'audiovisuel, 2012 ; Producteur, Royaume Uni : Reuters Television, 2012",
-     Extension_geographique: "National",
-     Fonds: "Télévision Francaise 1 Actualités",
-     Titre_materiel: "[Journée de captation TF1 du 15 mai 2012]"
-   }}
- ]*/
-
+  lengthPaginator=0;
+  pageSize = 100;
+  pageIndex=0;
+ 
   eventClusters: string[] = [];
   celebrityClusters: string[] = [];
   locationClusters: string[] = [];
   illustrationClusters: string[] = [];
 
-  constructor(public filterService: FilterService, public httpService: HttpService) { }
+  changeDetected=false;
+  imagesFetched:Image[]=[];
+  displayedImages=[];
+  sortedData:Image[]=[];
 
-  ngOnInit(): void { 
+  noChangeCount=0;
+
+  constructor(public filterService: FilterService, public httpService: HttpService) {
+  }
+
+  ngOnInit():void{
+  }
+
+  ngDoCheck():void{
+    if (this.filterService.newSort){
+      this.changeDetected=true;
+      this.imagesFetched=this.sortedData;
+      console.log("sorted")
+      this.updatePage();
+      this.filterService.newSort=false;
+      console.log(this.displayedImages);
+    }
+    if(this.filterService.newdata){
+        this.changeDetected=true;
+        this.imagesFetched=this.getImagesByDB();
+        this.sortedData=this.imagesFetched;
+        this.resetPage();
+        this.filterService.newdata=false;
+    }
+/*    if (this.changeDetected) {
+      this.noChangeCount = 0;
+  } else {
+      // log that hook was called when there was no relevant change.
+      const count = this.noChangeCount += 1;
+      const noChangeMsg = `DoCheck called ${count}x when no change to hero or power`;
+      console.log(noChangeMsg);
+  }*/
+
+  this.changeDetected = false;
   }
 
   getClustersQuantity(image: Image): number {
@@ -91,7 +72,6 @@ export class ListViewComponent implements OnInit {
 
   getImagesByDB(): Image[] {
     let imagesFromRequest = this.filterService.getSearchedImages()
-    console.log(imagesFromRequest);
     if(this.filterService.getSelectedDatabase() === 'ina') {
       return imagesFromRequest.filter( image => image[0].source.includes('INA'));
     } 
@@ -101,17 +81,192 @@ export class ListViewComponent implements OnInit {
     else return imagesFromRequest; // 'all' or others
   }
 
-  getGroupKeywords(group_image : Image[], keyword : string) : string[] {
-    let keywords = [];
-    for(let image of group_image){
-      let keyword_list = image[keyword];
-      if (keyword_list!==null){
-        for (let el of keyword_list){
-          keywords.push(el);
-        }
-      }
-    }
-    return [...new Set(keywords)];
-  } 
+  getPage(event?:PageEvent){
+    this.pageIndex = event.pageIndex;
+    this.pageSize = event.pageSize;
+    let indexStart = this.pageSize*this.pageIndex;
+    let indexEnd= indexStart+this.pageSize > this.lengthPaginator ? this.lengthPaginator : indexStart+this.pageSize;
+    this.displayedImages = this.imagesFetched.slice(indexStart,indexEnd);
+  }
 
+  resetPage(){
+    this.pageIndex=0;
+    this.lengthPaginator=this.imagesFetched.length;
+    let indexEnd= this.pageSize > this.lengthPaginator ? this.lengthPaginator : this.pageSize;
+    this.displayedImages = this.imagesFetched.slice(0,indexEnd);
+  }
+
+  updatePage(){
+    let indexStart = this.pageSize*this.pageIndex;
+    let indexEnd= indexStart+this.pageSize > this.lengthPaginator ? this.lengthPaginator : indexStart+this.pageSize;
+    this.displayedImages = this.imagesFetched.slice(indexStart,indexEnd);
+  }
+
+  sortData(sort: Sort) {
+    const data = this.sortedData.slice();
+    if (!sort.active || sort.direction === '') {
+      this.sortedData = data;
+      return;
+    }
+
+    this.sortedData = data.sort((a, b) => {
+      const isAsc = sort.direction === 'asc';
+      switch (sort.active) {
+        case 'archiveName':
+          return compare(a[0].document_title, b[0].document_title, isAsc);
+        case 'archiveDate':
+          return compare(a[0].day_airing, b[0].day_airing, isAsc);
+        case 'archiveChannel':
+          return compare(a[0].channel, b[0].channel, isAsc);
+        case 'archiveLanguage':
+          return compare(a[0].language, b[0].language, isAsc);
+        default:
+          return 0;
+      }
+    });
+    this.filterService.newSort=true;
+  }
 }
+
+  function compare(a: number | string, b: number | string, isAsc: boolean) {
+    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+}
+
+
+
+/*
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { FilterService } from 'src/services/filter.service';
+import { Image } from '../../../models/image.model';
+import { HttpService } from '../../../services/http.service';
+import {PageEvent} from '@angular/material/paginator';
+import { Observable, Subscription } from 'rxjs';
+import {Sort} from '@angular/material/sort';
+
+@Component({
+  selector: 'app-list-view',
+  templateUrl: './list-view.component.html',
+  styleUrls: ['./list-view.component.css']
+})
+export class ListViewComponent implements OnInit {
+  lengthPaginator=0;
+  pageSize = 50;
+  pageIndex=0;
+ 
+  eventClusters: string[] = [];
+  celebrityClusters: string[] = [];
+  locationClusters: string[] = [];
+  illustrationClusters: string[] = [];
+
+  changeDetected=false;
+  imagesFetched:Image[]=[];
+  displayedImages=[];
+  sortedData:Image[]=[];
+
+  noChangeCount=0;
+
+  constructor(public filterService: FilterService, public httpService: HttpService) {
+  }
+
+  ngOnInit():void{
+  }
+
+  ngDoCheck():void{
+    if (this.filterService.newSort){
+      this.changeDetected=true;
+      this.imagesFetched=this.sortedData;
+      console.log("sorted")
+      this.updatePage();
+      this.filterService.newSort=false;
+      console.log(this.displayedImages);
+    }
+    if(this.filterService.newdata){
+        this.changeDetected=true;
+        this.imagesFetched=this.getImagesByDB();
+        this.sortedData=this.imagesFetched;
+        this.resetPage();
+        this.filterService.newdata=false;
+    }
+/*    if (this.changeDetected) {
+      this.noChangeCount = 0;
+  } else {
+      // log that hook was called when there was no relevant change.
+      const count = this.noChangeCount += 1;
+      const noChangeMsg = `DoCheck called ${count}x when no change to hero or power`;
+      console.log(noChangeMsg);
+  } replacer fin de commentaire ici
+
+  this.changeDetected = false;
+  }
+
+  getClustersQuantity(image: Image): number {
+    return image.event.length + image.celebrity.length + image.location.length + image.illustration.length;
+  }
+
+  goToVisualisationPage(image: Image) {
+    console.log(image);
+  }
+
+  getImagesByDB(): Image[] {
+    let imagesFromRequest = this.filterService.getSearchedImages()
+    if(this.filterService.getSelectedDatabase() === 'ina') {
+      return imagesFromRequest.filter( image => image[0].source.includes('INA'));
+    } 
+    else if(this.filterService.getSelectedDatabase() === 'rai') {
+      return imagesFromRequest.filter( image => image[0].source.includes('RAI'));
+    } 
+    else return imagesFromRequest; // 'all' or others
+  }
+
+  getPage(event?:PageEvent){
+    this.pageIndex = event.pageIndex;
+    this.pageSize = event.pageSize;
+    let indexStart = this.pageSize*this.pageIndex;
+    let indexEnd= indexStart+this.pageSize > this.lengthPaginator ? this.lengthPaginator : indexStart+this.pageSize;
+    this.displayedImages = this.imagesFetched.slice(indexStart,indexEnd);
+  }
+
+  resetPage(){
+    this.pageIndex=0;
+    this.lengthPaginator=this.imagesFetched.length;
+    let indexEnd= this.pageSize > this.lengthPaginator ? this.lengthPaginator : this.pageSize;
+    this.displayedImages = this.imagesFetched.slice(0,indexEnd);
+  }
+
+  updatePage(){
+    let indexStart = this.pageSize*this.pageIndex;
+    let indexEnd= indexStart+this.pageSize > this.lengthPaginator ? this.lengthPaginator : indexStart+this.pageSize;
+    this.displayedImages = this.imagesFetched.slice(indexStart,indexEnd);
+  }
+
+  sortData(sort: Sort) {
+    const data = this.sortedData.slice();
+    if (!sort.active || sort.direction === '') {
+      this.sortedData = data;
+      return;
+    }
+
+    this.sortedData = data.sort((a, b) => {
+      const isAsc = sort.direction === 'asc';
+      switch (sort.active) {
+        case 'archiveName':
+          return compare(a[0].document_title, b[0].document_title, isAsc);
+        case 'archiveDate':
+          return compare(a[0].day_airing, b[0].day_airing, isAsc);
+        case 'archiveChannel':
+          return compare(a[0].document_title, b[0].document_title, isAsc);
+        case 'archiveLanguage':
+          return compare(a[0].document_title, b[0].document_title, isAsc);
+        default:
+          return 0;
+      }
+    });
+    this.filterService.newSort=true;
+  }
+}
+
+  function compare(a: number | string, b: number | string, isAsc: boolean) {
+    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+}
+
+*/

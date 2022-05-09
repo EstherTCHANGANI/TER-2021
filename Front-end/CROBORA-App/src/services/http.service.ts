@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable,of } from 'rxjs';
 import { Cluster } from 'src/models/cluster.model';
-import { Subject } from 'src/models/subject.model';
+import { ArchiveData } from 'src/models/archiveData.model';
 import { Image } from 'src/models/image.model';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -52,9 +53,23 @@ export class HttpService {
     return this.requestLoading;
   }
 
-  getSubject(ID_document : string): Observable<Subject> {
+  getArchiveData(ID_document : string): Observable<ArchiveData> {
     this.requestLoading = true;
-    return this.http.get<Subject>(this.BACKEND_URL + '/subject?ID_doc=' + ID_document, { headers: this.headers });
+    return this.http.get<ArchiveData>(this.BACKEND_URL + '/subject?ID_doc=' + ID_document, { headers: this.headers });
   }
+  /*!!!!! mettre à jour dans le back-end pour que l'on recherche plus des "subjects"!!!!!!!*/
 
+  /* Pour vérifier si une image existe bien dans le dossier assets de la plateforme */
+
+  screenExists(url: string): Observable<boolean> {
+    return this.http.get(url)
+        .pipe(
+            map(response => {
+                return true;
+            }),
+            catchError(error => {
+                return of(false);
+            })
+        );
+  }
 }

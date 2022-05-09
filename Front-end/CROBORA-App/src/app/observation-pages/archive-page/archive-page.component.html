@@ -11,30 +11,30 @@
   <h1>{{this.images[0].document_title}}</h1>
 </div>
 
-  <div class="flex-container">
-    <mat-tab-group>
-      <mat-tab label="Thumbnails">
-        <ng-template matTabContent>
-          <app-thumbnails-box [subject]="this.subject" [images]="this.images" id="thumbnails"></app-thumbnails-box>
-        </ng-template>
-      </mat-tab>
-      <mat-tab label="Original informations">
-        <ng-template matTabContent>
-          <app-originalinfo-box [subject]="this.subject" [images]="this.images" id="infos"></app-originalinfo-box>
-        </ng-template>
-      </mat-tab>
-      <mat-tab label="index CROBORA">
-        <ng-template matTabContent>
-          <app-index-crobora-box [subject]="this.subject" [images]="this.images" id="index"></app-index-crobora-box>
-        </ng-template>
-      </mat-tab>
-    </mat-tab-group>
-    <div id="icon-box">
-      <button mat-icon-button ng-click="editComment()" aria-label="Edit a comment icon" id="edit">
-        <mat-icon inline="true">edit</mat-icon>
-      </button>
-      <button mat-icon-button ng-click="addToFav()" aria-label="Favorite icon with a star" id="favorite">
-        <mat-icon inline="true">star_border</mat-icon>
-      </button>
-    </div>
+<div class="flex-container">
+  <mat-tab-group>
+    <mat-tab label="Thumbnails">
+      <ng-template matTabContent>
+        <app-thumbnails-box [archiveData]="this.archiveData" [images]="this.images" id="thumbnails"></app-thumbnails-box>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Original informations">
+      <ng-template matTabContent>
+        <app-originalinfo-box [archiveData]="this.archiveData" [images]="this.images" id="infos"></app-originalinfo-box>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="index CROBORA">
+      <ng-template matTabContent>
+        <app-index-crobora-box [archiveData]="this.archiveData" [images]="this.images" id="index"></app-index-crobora-box>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+  <div id="icon-box">
+    <button mat-icon-button ng-click="editComment()" aria-label="Edit a comment icon" id="edit">
+      <mat-icon inline="true">edit</mat-icon>
+    </button>
+    <button mat-icon-button ng-click="addToFav()" aria-label="Favorite icon with a star" id="favorite">
+      <mat-icon inline="true">star_border</mat-icon>
+    </button>
   </div>
+</div>

@@ -16,10 +16,6 @@ import { HttpService } from '../../services/http.service';
 })
 export class SearchFiltersComponent implements OnInit, OnChanges {
 
-  @Input() eventChecked?: boolean;
-  @Input() celebrityChecked?: boolean;
-  @Input() locationChecked?: boolean;
-  @Input() illustrationChecked?: boolean;
   @Output() showTypeEvent = new EventEmitter<string>();
   
   databases: Filter[] = [
@@ -34,40 +30,12 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     {value: 'title', viewValue: 'Titles'}
   ];
 
-  clusterList: Cluster[] = [];
-  // clusterList: Cluster[] = [
-  //   {value: 'Treaty', type: 'event'},
-  //   {value: 'Treaty of Rome', type: 'event'},
-  //   {value: 'Treaty of Lisbonne', type: 'event'},
-  //   {value: 'Referendum', type: 'event'},
-  //   {value: 'France Germany relations', type: 'event'},
-  //   {value: 'Charles de Gaulle', type: 'celebrity'},
-  //   {value: 'Robert Schuman', type: 'celebrity'},
-  //   {value: 'François Mitterrand', type: 'celebrity'},
-  //   {value: 'François Hollande', type: 'celebrity'},
-  //   {value: 'Angela Merkel', type: 'celebrity'},
-  //   {value: 'Hans-Gert Pöttering', type: 'celebrity'},
-  //   {value: 'Nicolas Sarkozy', type: 'celebrity'},
-  //   {value: 'Portugal', type: 'location'},
-  //   {value: 'Paris', type: 'location'},
-  //   {value: 'Lisbonne', type: 'location'},
-  //   {value: 'Europe', type: 'location'},
-  //   {value: 'Accident', type: 'illustration'},
-  //   {value: 'Factory', type: 'illustration'},
-  //   {value: 'Signature', type: 'illustration'},
-  //   {value: 'Meeting', type: 'illustration'}
-  // ];
+  autocompleteCluster:Observable<Cluster[]>; 
+  clusterList:Cluster[];
 
   // variables for search bar :
 
   // @ViewChild('clusterInput', {static: true}) clusterInput: ElementRef<HTMLInputElement>;
-
-  clusterListFilteredByTypes: Cluster[] = [];
-  clusterListFilteredByEvent: Cluster[] = [];
-  clusterListFilteredByPersonality: Cluster[] = [];
-  clusterListFilteredByPlace: Cluster[] = [];
-  clusterListFilteredByIllustration: Cluster[] = [];
-  filteredClusters?: Observable<Cluster[]>;
 
   myControl = new FormControl();
   selectedDatabase: string;
@@ -96,7 +64,7 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     console.log(this.clusterList);
   }
 
-  ngOnChanges(): void {
+  ngOnChanges() {
     // this.activateSearchBar();
     this.autoCompleteClusters();
     // console.log(this.selectedDatabase);
@@ -108,67 +76,36 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   private async requestClusters() {
   this.httpService.getClusters()
     .subscribe(clusters => {
-      this.clusterList = clusters;
+      this.clusterList = clusters.filter(cluster => cluster.value != null && cluster.value != "");
       this.httpService.requestLoading = false;
       console.log('REQUEST CLUSTERS FROM API');
-      this.filterClustersByType();
       this.autoCompleteClusters();
+      console.log(this.clusterList);
     });
   }
 
   /**
    * Functions related to search Bar :
    */
-  private filterClustersByType() {
-    this.clusterListFilteredByEvent = this.clusterList.filter(cluster => cluster.value && cluster.type === 'event');
-    this.clusterListFilteredByPersonality = this.clusterList.filter(cluster => cluster.value && cluster.type === 'celebrity');
-    this.clusterListFilteredByPlace = this.clusterList.filter(cluster => cluster.value && cluster.type === 'location');
-    this.clusterListFilteredByIllustration = this.clusterList.filter(cluster => cluster.value && cluster.type === 'illustration');
-  }
 
   private autoCompleteClusters() {
-    this.filterClustersWithCheckboxValues();
-    this.filteredClusters = this.myControl.valueChanges
+    this.autocompleteCluster = this.myControl.valueChanges
     .pipe(
       startWith(''),
       // map(cluster => typeof cluster === 'string' ? cluster : cluster.value),
-      map(value => value ? this._filter(value) : this.clusterListFilteredByTypes.slice())
+      map(value => value ? 
+        this._filter(value) : this.clusterList.slice()
+          .sort(function(a,b){return a.value.localeCompare(b.value);})) //sort by alphabetical order
     );
-  }
-
-  private filterClustersWithCheckboxValues() {
-    this.clusterListFilteredByTypes = [];
-    if(this.eventChecked) {
-      this.clusterListFilteredByTypes.push(...this.clusterListFilteredByEvent);
-    }
-    if(this.celebrityChecked) {
-      this.clusterListFilteredByTypes.push(...this.clusterListFilteredByPersonality);
-    } 
-    if(this.locationChecked) {
-      this.clusterListFilteredByTypes.push(...this.clusterListFilteredByPlace);
-    }
-    if(this.illustrationChecked) {
-      this.clusterListFilteredByTypes.push(...this.clusterListFilteredByIllustration);
-    }
   }
 
   private _filter(value: string): Cluster[] {
     const filterValue = value.toLowerCase();
-    return this.clusterListFilteredByTypes.filter(cluster => cluster.value.toLowerCase().indexOf(filterValue) === 0);
+    return this.clusterList.filter(cluster => cluster.value.toLowerCase().indexOf(filterValue) === 0);
   }
 
   displayFn(cluster: Cluster): string {
     return cluster && cluster.value ? cluster.value : '';
-  }
-
-  private activateSearchBar() {
-    if(this.eventChecked || this.celebrityChecked || this.locationChecked || this.illustrationChecked) {
-      document.querySelector('.searchBarDisabled')?.classList.add('disabled');
-      document.querySelector('.searchBar')?.classList.remove('disabled');
-    } else {
-      document.querySelector('.searchBar')?.classList.add('disabled');
-      document.querySelector('.searchBarDisabled')?.classList.remove('disabled');
-    }
   }
 
   onSearchByTitle(value: string) {
@@ -264,29 +201,40 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
   }
 
   private requestSearchImages() {
-    let clusterTypesChecked: string[] = [];
-    if(this.eventChecked) clusterTypesChecked.push('event');
-    if(this.celebrityChecked) clusterTypesChecked.push('celebrity');
-    if(this.locationChecked) clusterTypesChecked.push('location');
-    if(this.illustrationChecked) clusterTypesChecked.push('illustration');
-    // console.log(this.selectedClustersValues);
+    let categoriesChecked = [];
+    if (this.selectedClustersObjects.some(categorie => categorie.type == 'event')){
+      categoriesChecked.push('event')
+    }
+    if (this.selectedClustersObjects.some(categorie => categorie.type == 'celebrity')){
+      categoriesChecked.push('celebrity')
+    }
+    if (this.selectedClustersObjects.some(categorie => categorie.type == 'location')){
+      categoriesChecked.push('location')
+    }
+    if (this.selectedClustersObjects.some(categorie => categorie.type == 'illustration')){
+      categoriesChecked.push('illustration')
+    }
+    console.log(categoriesChecked);
     // console.log(this.selectedClustersObjects);
     if (this.selectedClustersObjects.length > 0) {
-      this.httpService.getImagesByCluster(clusterTypesChecked, this.selectedClustersObjects,1)
-      .subscribe(images => {
-        if(images) this.filterService.searchedImages = images;
-        this.httpService.requestLoading = false;
-      });
-      this.filterService.selectedClusters.forEach( (cluster) => {
+      this.httpService.getImagesByCluster(categoriesChecked, this.selectedClustersObjects, 1)
+        .subscribe(images => {
+          if (images)
+            this.filterService.searchedImages = images;
+          this.httpService.requestLoading=false;
+          this.filterService.newdata=true;
+        });
+        
+/*      this.filterService.selectedClusters.forEach( (cluster) => {
         let clusterList: Cluster[] = [];
         clusterList.push(cluster)
-        this.httpService.getImagesByCluster(clusterTypesChecked, clusterList,1)
+        this.httpService.getImagesByCluster(categoriesChecked, clusterList,1)
         .subscribe(images => {
           this.filterService.searchedImageByCluster.set(cluster.value, images);
           this.httpService.requestLoading = false;
         });
-      });
-    }
+      });*/
+      }
     // console.log(this.filterService.getSearchedImagesByCluster());
   }
   
@@ -295,31 +243,6 @@ export class SearchFiltersComponent implements OnInit, OnChanges {
     const clusterSelectedValue = event.option.value;
     this.selectedClustersValues.push(clusterSelectedValue);
     this.myControl.setValue(null);
-  }
-  
-  /**
-   * Return cluster type
-   * @param value text of cluster
-   * @returns 
-   */
-  private getClusterTypeByValue(value: string): string {
-    const isEvent = this.clusterListFilteredByEvent.some(cluster => cluster.value === value)
-    if(isEvent) {
-      return 'event';
-    }
-    const isPersonality = this.clusterListFilteredByPersonality.some(cluster => cluster.value === value)
-    if(isPersonality) {
-      return 'celebrity';
-    }
-    const isPlace = this.clusterListFilteredByPlace.some(cluster => cluster.value === value)
-    if(isPlace) {
-      return 'location';
-    }
-    const isIllustration = this.clusterListFilteredByIllustration.some(cluster => cluster.value === value)
-    if(isIllustration) {
-      return 'illustration';
-    }
-    return 'no-type';
   }
 
   onDatabaseChange() {

@@ -1,0 +1,115 @@
+.eventKeyword {
+    color: #632800;
+ }
+.celebrityKeyword {
+    color: blue;
+}
+.locationKeyword {
+    color: red;
+}
+.illustrationKeyword {
+    color: green;
+}
+
+.Keyword{
+    width:15vw;
+    min-width: 15vw;
+    display: inline-flex;
+    align-items: center;
+}
+
+/*
+.mat-list-base.inline-list {
+  display: flex;
+}
+*/
+.image-part{
+    display:flex;
+    flex-direction: row;
+    border: 2px solid rgba(0, 0, 0, 0.333);
+    box-shadow: lightgray 0.3vh;
+    padding: 0.3vh;
+    overflow-y: hidden;
+    max-width:75vw;
+}
+img{
+    width: 15vw;
+    height:15vh;
+    padding : 0.7vw;
+}
+
+span {
+    font-size: larger;
+    margin-top: -1rem;
+    margin-bottom: -0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 1vw;
+}
+mat-icon {
+    padding-right: 0.2rem;
+}
+
+.keyword-row{
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    margin-top: 1.5vh;
+}
+
+/*
+.list-part{
+    display : flex;
+    flex-direction: row;
+    margin-bottom: 0.5vh;
+}
+
+.keywords-list-container{
+    width: 20vw;
+}
+.divider{
+    height :auto;
+}
+.eventClusters>mat-list-item {
+    color: #632800;
+    margin-bottom: 0.5vh;
+ }
+.personalityClusters>mat-list-item {
+    color: blue;
+}
+.placeClusters>mat-list-item {
+    color: red;
+}
+.illustrationClusters>mat-list-item {
+    color: green;
+}
+
+/*
+.mat-list-base.inline-list {
+  display: flex;
+}
+remettre fin de commentaires ici
+.image-part{
+    display:flex;
+    flex-direction: row;
+    border: 2px solid black;
+    padding: 2rem;
+    width:83vw;
+    overflow-y: hidden;
+}
+img{
+    width: 15vw;
+    height:15vh;
+    padding : 2vw;
+}
+
+mat-list-item {
+    font-size: 0.8rem !important;
+    margin-top: -1rem;
+    margin-bottom: -0.5rem;
+    margin-left: 0.5rem;
+}
+mat-list-item  mat-icon {
+    padding-right: 0.5rem;
+}
+*/

@@ -8,12 +8,16 @@ def concat_data(file_name_fiche, file_name_meta):
 
     RAI_meta_df = pd.read_csv(MData_RAI)
     columns_transfer=["ID_document", "time_start","time_stop","day_place_consult"]
+    columns_transfer_toCROBO = ["ID_document","channel"]
 
     result = complete_data(concated, RAI_meta_df,columns_transfer)
     link_images(RAI_meta_df,result)
+    result_CROBO=complete_data(RAI_meta_df,concated,columns_transfer_toCROBO)
+    result_CROBO["language"]="Italian"
     #count(RAI_meta_df,concated,1,result)
     print("files formated : " + str(len(result["ID_document"])))
     result = result.to_csv(final_rai_file, index=False)
+    result_CROBO=result_CROBO.to_csv(final_rai_CROBORA_file, index=False)
 
 def complete_data(df_to_complete,df_to_read,columns):
     return(df_to_complete.merge(df_to_read.get(columns), on="ID_document", how="left").drop_duplicates())

@@ -1,4 +1,4 @@
-export interface Subject {
+export interface ArchiveData {
   _id?: string;
   ID_document?: string;
   source?: string;

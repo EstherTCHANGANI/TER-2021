@@ -25,14 +25,14 @@
         "hostname": "localhost",
         "port": "27017",
         "database": "TER",
-        "collection": "MetaDonnees_INA",
+        "collection": "file_INA_CROBORA_final",
         "name":"ina_crobora"
     },
     {
         "hostname": "localhost",
         "port": "27017",
         "database": "TER",
-        "collection": "MetaDonnees_RAI",
+        "collection": "file_RAI_CROBORA_final",
         "name":"rai_crobora"
     },
     {

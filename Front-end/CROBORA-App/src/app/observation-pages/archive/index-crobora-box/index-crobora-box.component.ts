@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Subject } from 'src/models/subject.model';
+import { ArchiveData } from 'src/models/archiveData.model';
 import { Image } from 'src/models/image.model';
+import { HttpService } from '../../../../services/http.service';
 
 @Component({
   selector: 'app-index-crobora-box',
@@ -10,14 +11,14 @@ import { Image } from 'src/models/image.model';
 export class IndexCROBORABoxComponent implements OnInit {
 
   @Input() images: Image[];
-  @Input() subject: Subject;
+  @Input() archiveData: ArchiveData;
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
   }
 
-  // index : Subject = {
+  // index : ArchiveData = {
   //   titre: "50 ans d'amitié franco-allemande",
   //   nbImage: 12,
   //   canal_de_transmission: "TF1",
@@ -72,4 +73,9 @@ export class IndexCROBORABoxComponent implements OnInit {
     }
     return [...new Set(keywords)];
   } 
+  
+  requestNotLoaded(){
+    return this.httpService.isRequestLoading();
+  }
+
 }

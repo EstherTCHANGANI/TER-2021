@@ -40,3 +40,11 @@ p{
 .infos{
   margin-left: 1vw;
 }
+
+.spinner {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: rgba(128, 128, 128, 0.274);
+  z-index: 10;
+}

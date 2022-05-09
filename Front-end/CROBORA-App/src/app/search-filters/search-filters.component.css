@@ -28,10 +28,10 @@
     margin-bottom: 0.5rem;
 }
 .searchBar mat-form-field {
-    width: 80%;
+    width: 100%;
 }
 .searchBarDisabled mat-form-field {
-    width: 80%;
+    width: 100%;
 }
 .searchBarDisabled mat-icon {
     color: rgb(179, 179, 179);
@@ -59,20 +59,20 @@ h2 {
     opacity: 0.8;
 }
 
-.personalityChip.mat-chip.mat-standard-chip {
+.celebrityChip.mat-chip.mat-standard-chip {
     color: white;
     background-color: blue;
 }
-.personalityChip.mat-chip.mat-standard-chip .mat-chip-remove {
+.celebrityChip.mat-chip.mat-standard-chip .mat-chip-remove {
     color: white;
     opacity: 0.8;
 }
 
-.placeChip.mat-chip.mat-standard-chip {
+.locationChip.mat-chip.mat-standard-chip {
     color: white;
     background-color: red;
 }
-.placeChip.mat-chip.mat-standard-chip .mat-chip-remove {
+.locationChip.mat-chip.mat-standard-chip .mat-chip-remove {
     color: white;
     opacity: 0.8;
 }
@@ -84,4 +84,17 @@ h2 {
 .illustrationChip.mat-chip.mat-standard-chip .mat-chip-remove {
     color: white;
     opacity: 0.8;
+}
+
+.event_autocomplete{
+    color: #632800;
+}
+.celebrity_autocomplete{
+    color: blue;
+}
+.location_autocomplete{
+    color: red;
+}
+.illustration_autocomplete{
+    color: green;
 }

@@ -42,8 +42,11 @@ mat-tab-group{
   margin-bottom: 1vh;
   margin-left:1vw;
 }
-#list-view>cdk-virtual-scroll-viewport{
-  width: 90vw;
+
+#list-view>div{
+  margin-top: 1.5vh;
+  width: 94vw;
+  height: 74vh;
 }
 #cluster-view>cdk-virtual-scroll-viewport{
   width: 90vw;
@@ -97,7 +100,41 @@ mat-tab-group{
 }
 .filter-types h2{
   font-size: medium;
+  align-items: baseline;
 }
 /*.filter-types mat-form-field{
   height:2vh;
+}*/
+
+.radio-group{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: baseline;
+  margin-bottom: 0.5vh;
+}
+
+mat-radio-button{
+  margin-left: 1vw;
+  font-size: larger;
+}
+
+.mat-tab-label{
+    background-color: #d7d7d7ba;
+    color : #1c1c1c;
+    border-radius: 0px 12px 0px 0px;
+    margin-right: 0.5vw;
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+  border-radius: 0px 12px 0px 0px;
+  margin-right: 0.5vw;
+  background-color: #919191;
+  color: #000000;
+  transform: translateY(-7%) scaleY(1.2);
+}
+
+/* Styles for the ink bar 
+.mat-ink-bar {
 }*/

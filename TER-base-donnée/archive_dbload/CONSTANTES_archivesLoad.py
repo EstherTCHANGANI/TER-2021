@@ -10,7 +10,9 @@ CROBORA_WEB_FR="../Import/Data/MetaDonnees/Catalogue Rudy.csv"
 
 
 final_INA_file = "./files/Fiches_INA_final.csv"
+final_INA_CROBORA_file="./files/file_INA_CROBORA_final.csv"
 final_rai_file = "./files/Fiches_RAI_final.csv"
+final_rai_CROBORA_file="./files/file_RAI_CROBORA_final.csv"
 Webfr_subject_file = "./files/WEBfr_subject.csv"
 Webfr_CROBORA_file = "./files/WEBfr_CROBORA.csv"
 
@@ -154,14 +156,12 @@ COLUMNS_TRANSFER_WEBFR_CroToArc = [ "ID_document",
                                     "platform"
                                     ]
 
-COLUMNS_WEBFR_TODROP_Cro = ["channel",
-                            "time_start",
+COLUMNS_WEBFR_TODROP_Cro = ["time_start",
                             "time_stop",
                             "date_pace_consult",
                             "link_to_video",
                             "type",
                             "subscribers",
-                            "language",
                             "comments_authorization",
                             "likes",
                             "dislikes",

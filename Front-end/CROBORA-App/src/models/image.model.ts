@@ -3,7 +3,9 @@ export interface Image{
     source?:string;
     document_title? : string;
     day_airing?: string;
-    title_programme: string;
+    channel?:string;
+    language?:string;
+    title_programme?: string;
     image_title?: string;
     celebrity?: string[];
     event?: string[];

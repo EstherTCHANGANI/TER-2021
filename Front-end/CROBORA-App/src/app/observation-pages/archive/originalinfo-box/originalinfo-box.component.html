@@ -6,190 +6,190 @@
   
   <div class="info-box">
     <h2 class="title-info">Identifier document : </h2>
-    <span class="infos">{{this.correctID(subject.ID_document)}}</span>
+    <span class="infos">{{this.correctID(archiveData.ID_document)}}</span>
     <hr class="line">
   </div>
 
   <div class="info-box">
     <h2 class="title-info">Title of the document : </h2>
-    <span class="infos">{{this.subject.document_title}}</span>
+    <span class="infos">{{this.archiveData.document_title}}</span>
   </div>
 
-  <div class="info-box" *ngIf="subject.title_programme !== null">
+  <div class="info-box" *ngIf="archiveData.title_programme !== null">
     <h2 class="title-info">Title program : </h2>
-    <span class="infos">{{this.subject.title_programme}}</span>
+    <span class="infos">{{this.archiveData.title_programme}}</span>
   </div>
 
   <div class="info-box">
     <h2 class="title-info">Channel :</h2>
-    <span class="infos">{{this.subject.channel}}</span>
+    <span class="infos">{{this.archiveData.channel}}</span>
   </div>
 
   <div class="info-box">
     <h2 class="title-info">Source :</h2>
-    <span class="infos">{{this.correctSource(subject.source)}}</span>
+    <span class="infos">{{this.correctSource(archiveData.source)}}</span>
   </div>
 
   <div class="info-box">
     <h2 class="title-info">Time the video start :</h2>
-    <span class="infos">{{this.subject.time_start}}</span>
+    <span class="infos">{{this.archiveData.time_start}}</span>
   </div>
 
   <div class="info-box">
     <h2 class="title-info">Time the video end :</h2>
-    <span class="infos">{{this.subject.time_stop}}</span>
+    <span class="infos">{{this.archiveData.time_stop}}</span>
   </div>
 
   <div class="info-box">
     <h2 class="title-info">day airing :</h2>
-    <span class="infos">{{this.subject.day_airing}}</span>
+    <span class="infos">{{this.archiveData.day_airing}}</span>
   </div>
 
 
-  <ng-container *ngIf="this.subject.source.includes('INA'); else RAI">
+  <ng-container *ngIf="this.archiveData.source.includes('INA'); else RAI">
 
-    <div class="info-box" *ngIf="this.subject.extra.program_details!== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.program_details!== null">
       <h2 class="title-info">Details of the program : </h2>
-      <span class="infos">{{this.subject.extra.program_details}}</span>
+      <span class="infos">{{this.archiveData.extra.program_details}}</span>
     </div>
 
-    <div class="info-box" *ngIf="this.subject.extra.day !== null || subject.time_start !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.day !== null || archiveData.time_start !== null">
       <h2 class="title-info">Time the video aired </h2>
-      <span class="infos">Le {{this.subject.extra.day}} {{subject.time_start}}</span>
+      <span class="infos">Le {{this.archiveData.extra.day}} {{archiveData.time_start}}</span>
     </div>
   
-    <div class="info-box" *ngIf="this.subject.extra.airing_state !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.airing_state !== null">
       <h2 class="title-info">Airing status : </h2>
-      <span class="infos">{{this.subject.extra.airing_state}}</span>
+      <span class="infos">{{this.archiveData.extra.airing_state}}</span>
     </div>
   
-    <div class="info-box" *ngIf="this.subject.extra.duration !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.duration !== null">
       <h2 class="title-info">Duration of the airing </h2>
-      <span class="infos">{{this.subject.extra.duration}}</span>
+      <span class="infos">{{this.archiveData.extra.duration}}</span>
     </div>
 
-    <div class="info-box" *ngIf="this.subject.extra.type !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.type !== null">
       <h2 class="title-info">Type :</h2>
-      <span class="infos">{{this.subject.extra.type}}</span>
+      <span class="infos">{{this.archiveData.extra.type}}</span>
     </div>
 
-    <div class="info-box" *ngIf="this.subject.extra.credits !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.credits !== null">
       <h2 class="title-info">Credits :</h2>
-      <span class="infos">{{this.subject.extra.credits}}</span>
+      <span class="infos">{{this.archiveData.extra.credits}}</span>
     </div>
   
-    <div class="info-box" *ngIf="this.subject.extra.descriptor !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.descriptor !== null">
       <h2 class="title-info">Descriptors :</h2>
-      <span class="infos">{{this.subject.extra.descriptor}}</span>
+      <span class="infos">{{this.archiveData.extra.descriptor}}</span>
     </div>
 
-    <div class="info-box" *ngIf="this.subject.extra.introductory_summary !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.introductory_summary !== null">
       <h2 class="title-info">Chapeau : </h2>
-      <span class="infos">{{this.subject.extra.introductory_summary}}</span>
+      <span class="infos">{{this.archiveData.extra.introductory_summary}}</span>
     </div>
 
     <!--document_summary missing-->
 
-    <div class="info-box" *ngIf="this.subject.extra.airing_company !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.airing_company !== null">
       <h2 class="title-info">Airing company :</h2>
-      <span class="infos">{{this.subject.extra.airing_company}}</span>
+      <span class="infos">{{this.archiveData.extra.airing_company}}</span>
     </div>
     
-    <div class="info-box" *ngIf="this.subject.extra.producers !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.producers !== null">
       <h2 class="title-info">Producers :</h2>
-      <span class="infos">{{this.subject.extra.producers}}</span>
+      <span class="infos">{{this.archiveData.extra.producers}}</span>
     </div>
 
-    <div class="info-box" *ngIf="this.subject.extra.range !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.range !== null">
       <h2 class="title-info">Range :</h2>
-      <span class="infos">{{this.subject.extra.range}}</span>
+      <span class="infos">{{this.archiveData.extra.range}}</span>
     </div>
 
-    <div class="info-box" *ngIf="this.subject.extra.collection !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.collection !== null">
       <h2 class="title-info">Collection :</h2>
-      <span class="infos">{{this.subject.extra.collection}}</span>
+      <span class="infos">{{this.archiveData.extra.collection}}</span>
     </div>
   
-    <div class="info-box" *ngIf="this.subject.extra.title_material !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.title_material !== null">
       <h2 class="title-info">Title material :</h2>
-      <span class="infos">{{this.subject.extra.title_material}}</span>
+      <span class="infos">{{this.archiveData.extra.title_material}}</span>
     </div>
   </ng-container>
 </div>
 
 <ng-template #RAI>
-  <ng-container *ngIf="this.subject.source.includes('RAI'); else Web">
+  <ng-container *ngIf="this.archiveData.source.includes('RAI'); else Web">
 
-    <div class="info-box" *ngIf="this.subject.extra.duration !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.duration !== null">
       <h2 class="title-info">Duration of the airing:</h2>
-      <span class="infos">{{this.subject.extra.duration}}</span>
+      <span class="infos">{{this.archiveData.extra.duration}}</span>
     </div>
 
-    <div class="info-box" *ngIf="this.subject.extra.content_audio !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.content_audio !== null">
       <h2 class="title-info">Content audio :</h2>
-      <span class="infos">{{this.subject.extra.content_audio}}</span>
+      <span class="infos">{{this.archiveData.extra.content_audio}}</span>
     </div>
 
-    <div class="info-box" *ngIf="this.subject.extra.content_video !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.content_video !== null">
       <h2 class="title-info">Content video :</h2>
-      <span class="infos">{{this.subject.extra.content_video}}</span>
+      <span class="infos">{{this.archiveData.extra.content_video}}</span>
     </div>
 
-    <div class="info-box" *ngIf="this.subject.extra.document !== null">
+    <div class="info-box" *ngIf="this.archiveData.extra.document !== null">
       <h2 class="title-info">Number of the document :</h2>
-      <span class="infos">{{this.subject.extra.document}}</span>
+      <span class="infos">{{this.archiveData.extra.document}}</span>
     </div>
   </ng-container>
 </ng-template>
 
 <ng-template #Web>
-  <div class="info-box" *ngIf="this.subject.extra.type !== null">
+  <div class="info-box" *ngIf="this.archiveData.extra.type !== null">
     <h2 class="title-info">Type:</h2>
-    <span class="infos">{{this.subject.extra.type}}</span>
+    <span class="infos">{{this.archiveData.extra.type}}</span>
   </div>
 
-  <div class="info-box" *ngIf="this.subject.extra.subscribers !== null">
+  <div class="info-box" *ngIf="this.archiveData.extra.subscribers !== null">
     <h2 class="title-info">Subscribers :</h2>
-    <span class="infos">{{this.subject.extra.subscribers}}</span>
+    <span class="infos">{{this.archiveData.extra.subscribers}}</span>
   </div>
 
-  <div class="info-box" *ngIf="this.subject.extra.language !== null">
+  <div class="info-box" *ngIf="this.archiveData.extra.language !== null">
     <h2 class="title-info">Language of the video:</h2>
-    <span class="infos">{{this.subject.extra.language}}</span>
+    <span class="infos">{{this.archiveData.extra.language}}</span>
   </div>
 
-  <div class="info-box" *ngIf="this.subject.extra.comments_authorization !== null">
+  <div class="info-box" *ngIf="this.archiveData.extra.comments_authorization !== null">
     <h2 class="title-info">Comments authorization :</h2>
-    <span class="infos">{{this.subject.extra.comments_authorization}}</span>
+    <span class="infos">{{this.archiveData.extra.comments_authorization}}</span>
   </div>
 
-  <div class="info-box" *ngIf="this.subject.extra.likes !== null">
+  <div class="info-box" *ngIf="this.archiveData.extra.likes !== null">
     <h2 class="title-info">Likes :</h2>
-    <span class="infos">{{this.subject.extra.likes}}</span>
+    <span class="infos">{{this.archiveData.extra.likes}}</span>
   </div>
 
-  <div class="info-box" *ngIf="this.subject.extra.dislikes !== null">
+  <div class="info-box" *ngIf="this.archiveData.extra.dislikes !== null">
     <h2 class="title-info">Dislikes :</h2>
-    <span class="infos">{{this.subject.extra.dislikes}}</span>
+    <span class="infos">{{this.archiveData.extra.dislikes}}</span>
   </div>
 
-  <div class="info-box" *ngIf="this.subject.extra.views !== null">
+  <div class="info-box" *ngIf="this.archiveData.extra.views !== null">
     <h2 class="title-info">Views :</h2>
-    <span class="infos">{{this.subject.extra.views}}</span>
+    <span class="infos">{{this.archiveData.extra.views}}</span>
   </div>
 
-  <div class="info-box" *ngIf="this.subject.extra.other_fiction !== null">
+  <div class="info-box" *ngIf="this.archiveData.extra.other_fiction !== null">
     <h2 class="title-info">Other kind (fiction,...) :</h2>
-    <span class="infos">{{this.subject.extra.other_fiction}}</span>
+    <span class="infos">{{this.archiveData.extra.other_fiction}}</span>
   </div>
 
-  <div class="info-box" *ngIf="this.subject.extra.comments !== null">
+  <div class="info-box" *ngIf="this.archiveData.extra.comments !== null">
     <h2 class="title-info">Comments :</h2>
-    <span class="infos">{{this.subject.extra.comments}}</span>
+    <span class="infos">{{this.archiveData.extra.comments}}</span>
   </div>
 
-  <div class="info-box" *ngIf="this.subject.extra.platform !== null">
+  <div class="info-box" *ngIf="this.archiveData.extra.platform !== null">
     <h2 class="title-info">Platform :</h2>
-    <span class="infos">{{this.subject.extra.platform}}</span>
+    <span class="infos">{{this.archiveData.extra.platform}}</span>
   </div>
 </ng-template>

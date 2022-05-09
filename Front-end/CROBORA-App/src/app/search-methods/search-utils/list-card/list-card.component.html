@@ -1,0 +1,66 @@
+<div class="clusters-container" *ngIf="this.getAllKeywords(group_image).length>0; else show_empty_all">
+  <div class="keyword-row" *ngFor="let keyword_data of this.getAllKeywords(group_image)">
+    <div *ngIf="keyword_data.type == 'event'" class="eventKeyword Keyword">
+      <mat-icon>event</mat-icon><span>{{keyword_data.value}}</span>
+    </div>
+    <div *ngIf="keyword_data.type == 'celebrity'" class="celebrityKeyword Keyword">
+      <mat-icon>emoji_people</mat-icon><span>{{keyword_data.value}}</span>
+    </div>
+    <div *ngIf="keyword_data.type == 'location'" class="locationKeyword Keyword">
+      <mat-icon>home</mat-icon><span>{{keyword_data.value}}</span>
+    </div>
+    <div *ngIf="keyword_data.type == 'illustration'" class="illustrationKeyword Keyword">
+      <mat-icon>auto_stories</mat-icon><span>{{keyword_data.value}}</span>
+    </div>
+    <div class="image-part">
+      <ng-container *ngFor="let image of this.getImagebyKeyword(group_image,keyword_data)">
+        <img matTooltip={{image.name}} src={{image.src}} loading="lazy">          
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #show_empty_all><mat-list-item class="empty_cat"><mat-icon>not_interested</mat-icon>That archive has not been treated yet</mat-list-item></ng-template>
+
+<!--
+<div class="clusters-container">
+    <div class="list-part">
+      <div class="keywords-list-container">
+        <mat-list class="eventClusters" *ngIf="this.getGroupKeywords(group_image,'event').length>0; else show_empty_event">
+          <mat-list-item *ngFor="let cluster of this.getGroupKeywords(group_image,'event')"><mat-icon>event</mat-icon>{{cluster}}</mat-list-item>
+        </mat-list>
+      </div>
+      <mat-divider class="divider" vertical ></mat-divider>
+      <div class="keywords-list-container">
+        <mat-list class="personalityClusters" *ngIf="this.getGroupKeywords(group_image,'celebrity').length>0; else show_empty_celebrity">
+          <mat-list-item *ngFor="let cluster of this.getGroupKeywords(group_image,'celebrity')"><mat-icon>emoji_people</mat-icon>{{cluster}}</mat-list-item>
+        </mat-list>
+      </div>
+      <mat-divider class="divider" vertical></mat-divider>
+      <div class="keywords-list-container">
+        <mat-list class="placeClusters" *ngIf="this.getGroupKeywords(group_image,'location').length>0; else show_empty_location">
+          <mat-list-item *ngFor="let cluster of this.getGroupKeywords(group_image,'location')"><mat-icon>home</mat-icon>{{cluster}}</mat-list-item>
+        </mat-list>
+      </div>
+      <mat-divider class="divider" vertical></mat-divider>
+      <div class="keywords-list-container">  
+        <mat-list class="illustrationClusters" *ngIf="this.getGroupKeywords(group_image,'illustration').length>0; else show_empty_illustration">
+          <mat-list-item *ngFor="let cluster of this.getGroupKeywords(group_image,'illustration')"><mat-icon>auto_stories</mat-icon>{{cluster}}</mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+    <div class="image-part">
+      <ng-container *ngFor="let image of this.getKeywordImage(group_image)">
+        <img matTooltip={{image.name}} src={{image.src}} loading="lazy">          
+      </ng-container>
+    </div>
+  </div>
+
+  
+<ng-template #show_empty_event><mat-list-item class="empty_cat"><mat-icon>not_interested</mat-icon>no keyword in the event category</mat-list-item></ng-template> 
+<ng-template #show_empty_celebrity><mat-list-item class="empty_cat"><mat-icon>not_interested</mat-icon>no keyword in the celebrity category</mat-list-item></ng-template> 
+<ng-template #show_empty_location><mat-list-item class="empty_cat"><mat-icon>not_interested</mat-icon>no keyword in the location category</mat-list-item></ng-template> 
+<ng-template #show_empty_illustration><mat-list-item class="empty_cat"><mat-icon>not_interested</mat-icon>no keyword in the illustration category</mat-list-item></ng-template> 
+
+
+-->

@@ -7,17 +7,22 @@ def link_data(file_name_fiche):
     archive_df = pd.read_csv(file_name_fiche)
     meta_df = pd.read_csv(MData_INA)
 
-    columns_transfer=["ID_document","day_place_consult"]
+    columns_transfer=["ID_document","day_place_consult"] #always have to place ID_doc as it is what allows the merge to work
+
+    columns_transfer_toMeta=["ID_document","channel"]
     
     archive_df["ID_document"] = archive_df["ID_document"].astype("string")
     meta_df["ID_document"] = meta_df["ID_document"].astype("int64").astype("string")
 
     result = complete_data(archive_df, meta_df,columns_transfer)
+    result_meta = complete_data(meta_df,archive_df,columns_transfer_toMeta)
+    result_meta["language"]="French"
     link_images(meta_df,result)
 
     #count(meta_df,archive_df,0,result)
     print("files formated : " + str(len(result["ID_document"])))
     result = result.to_csv(final_INA_file, index=False)
+    result_meta=result_meta.to_csv(final_INA_CROBORA_file, index=False)
 
 def link_images(images_df,final_df):
     final_df["images"]=""

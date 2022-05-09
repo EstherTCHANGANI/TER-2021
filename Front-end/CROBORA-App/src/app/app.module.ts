@@ -17,6 +17,10 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {HttpClientModule} from '@angular/common/http'
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatTableModule} from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +36,7 @@ import { ThumbnailsBoxComponent } from './observation-pages/archive/thumbnails-b
 import { IndexCROBORABoxComponent } from './observation-pages/archive/index-crobora-box/index-crobora-box.component';
 import { OriginalinfoBoxComponent } from './observation-pages/archive/originalinfo-box/originalinfo-box.component';
 import { HeadbandCroboraComponent } from './headband-crobora/headband-crobora.component';
+import { ListCardComponent } from './search-methods/search-utils/list-card/list-card.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +52,7 @@ import { HeadbandCroboraComponent } from './headband-crobora/headband-crobora.co
     IndexCROBORABoxComponent,
     OriginalinfoBoxComponent,
     HeadbandCroboraComponent,
+    ListCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +76,10 @@ import { HeadbandCroboraComponent } from './headband-crobora/headband-crobora.co
     HttpClientModule,
     MatProgressSpinnerModule,
     ScrollingModule,
+    MatPaginatorModule,
+    MatRadioModule,
+    MatTableModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

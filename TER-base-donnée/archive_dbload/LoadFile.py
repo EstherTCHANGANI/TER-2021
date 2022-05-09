@@ -28,7 +28,7 @@ if __name__ == '__main__':
     # pour les champs db_url , db_collection_name, merge_file sont modifier dans constante .py
     import_csv_mongo(db_url, db_collection_file, final_INA_file)
     import_csv_mongo(db_url, db_collection_file, final_rai_file)
-    import_csv_mongo(db_url, db_collection_file, MData_INA)
-    import_csv_mongo(db_url, db_collection_file, MData_RAI)
+    import_csv_mongo(db_url, db_collection_file, final_INA_CROBORA_file)
+    import_csv_mongo(db_url, db_collection_file, final_rai_CROBORA_file)
     import_csv_mongo(db_url, db_collection_file, Webfr_CROBORA_file)
     import_csv_mongo(db_url, db_collection_file, Webfr_subject_file)
